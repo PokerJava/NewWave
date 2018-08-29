@@ -24,6 +24,8 @@ public class ExtractController {
 
         if (currentState.equals(ESubState.IDLE_RESOURCEORDER.getState())) {
         	return new In_IDLE_ResourceOrder().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
+        } else if(currentState.equals(ESubState.IDLE_XXX.getState())) {
+        	return new In_IDLE_Xxx().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
         } else if (currentState.equals(ESubState.IDLE_TRIGGER.getState())){
         	return new In_IDLE_Trigger().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
         } else if (currentState.equals(ESubState.SDF_GETRESOURCEINVENTORY.getState())){
@@ -81,7 +83,7 @@ public class ExtractController {
         
 	        if (rawDataType.equals(EEventType.REQUEST.getEventType()) && rawDataRet.equals(ERet.RET0.getRet())) {
 	            if (rawDataOrig.contains("ES05")) {
-	                currentState = ESubState.IDLE_RESOURCEORDER.getState();
+	                currentState = ESubState.IDLE_XXX.getState();
 	         
 	                
 	                String[] urlSplit =  eqxRawData.getRawDataAttribute("url").split("/");
