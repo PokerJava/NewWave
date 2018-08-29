@@ -1,0 +1,48 @@
+{
+	"resultData": [{
+		"resourceOrderType": "Prepaid-Sim2Fly",
+		"resourceParent": "promotionManagement_1H_001",
+		"dropResource": [
+		{
+			"resourceName": "roamingRestriction",
+			"requestType": "UPDATE",
+			"restrictionType": "AllowAllArea"
+		},
+		{
+			"resourceName": "voiceCall",
+			"requestType": "CREATE"
+		},
+		{
+			"resourceName": "smsOriginating",
+			"requestType": "CREATE"
+		},
+		{
+			"resourceName": "smsTerminating",
+			"requestType": "CREATE"
+		}]
+	},
+	{
+		"resourceOrderType": "Prepaid-3G2100",
+		"dropResource": [{
+			"resourceName": "suspendOutgoingCall",
+			"requestType": "DELETE"
+		},
+		{
+			"resourceName": "roamingRestriction",
+			"requestType": "UPDATE",
+			"restrictionType": "AllowAllArea"
+		},
+		{
+			"resourceName": "voiceCall",
+			"requestType": "CREATE"
+		},
+		{
+			"resourceName": "smsOriginating",
+			"requestType": "CREATE"
+		},
+		{
+			"resourceName": "smsTerminating",
+			"requestType": "CREATE"
+		}]
+	}]
+}

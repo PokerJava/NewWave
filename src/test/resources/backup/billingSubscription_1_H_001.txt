@@ -1,0 +1,110 @@
+@request
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices"
+    xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon"
+    xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <bcs:CreateSubscriberRequestMsg>
+            <RequestHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:MessageSeq>{@param:resourceItemId}</cbs:MessageSeq>
+                <cbs:AccessSecurity>
+                    <cbs:LoginSystemCode>{@param:RS_InfraNode.userName}</cbs:LoginSystemCode>
+                    <cbs:Password>{@param:RS_InfraNode.password}</cbs:Password>
+                </cbs:AccessSecurity>
+                <cbs:AccessMode>({@overwrite_def:channel_CBS({@param:channel})})</cbs:AccessMode>
+                <cbs:MsgLanguageCode>{@overwrite_def:responseLanguage_CBS({@param:responseLanguage})}</cbs:MsgLanguageCode>
+            </RequestHeader>
+            <CreateSubscriberRequest>
+                <bcs:RegisterCustomer OpType="{@param:custOperType}">
+                    <bcs:CustKey>{@param:caId}</bcs:CustKey>
+                    <bcs:CustInfo>
+                        <bcc:CustType>({@param:custType})</bcc:CustType>
+                        <bcc:CustNodeType>({@param:custNodeType})</bcc:CustNodeType>
+                        <bcc:CustCode>({@param:caId})</bcc:CustCode>
+                        <bcc:ParentCustKey>({@param:custParentId})</bcc:ParentCustKey>
+                        <bcc:CustBasicInfo>
+                            <bcc:CustSegment>({@overwrite_def:customerCategory_CBS({@param:customerCategory})})</bcc:CustSegment>
+                            <bcc:CustLevel>({@overwrite_def:customerSubCategory_CBS({@param:customerSubCategory})})</bcc:CustLevel>
+                            <bcc:CustLoyalty>({@overwrite_def:customerSegment_CBS({@param:customerSegment})})</bcc:CustLoyalty>
+                        </bcc:CustBasicInfo>
+                    </bcs:CustInfo>
+                </bcs:RegisterCustomer>
+                <bcs:Account>
+                    <bcs:AcctKey>{@param:baId}</bcs:AcctKey>
+                    <bcs:AcctInfo>
+                        <bcc:AcctCode>({@param:baId})</bcc:AcctCode>
+                        <bcc:BillCycleType>({@param:acctBillCycleType})</bcc:BillCycleType>
+                        <bcc:PaymentType>({@overwrite_def:paymentMode_CBS({@param:acctPaymentMode})})</bcc:PaymentType>
+                    </bcs:AcctInfo>
+                </bcs:Account>
+                <bcs:Subscriber>
+                    <bcs:SubscriberKey>{@overwrite_extra:cutPrefix0({@param:mobileNo})}</bcs:SubscriberKey>
+                    @if (existSomeChildParams(smsLanguage,ivrLanguage,subRegisterTime,mobileNo,imsi))
+                    <bcs:SubscriberInfo>
+			@if (existSomeChildParams(smsLanguage,ivrLanguage,subRegisterTime))
+                        <bcc:SubBasicInfo>
+                            <bcc:WrittenLang>({@overwrite_def:language_CBS({@param:smsLanguage})})</bcc:WrittenLang>
+                            <bcc:IVRLang>({@overwrite_def:language_CBS({@param:ivrLanguage})})</bcc:IVRLang>
+			    @if (existChildParam (@param:subRegisterTime))
+                            <bcc:SubProperty>
+                                <bcc:Code>C_SUB_REGISTER_TIME</bcc:Code>
+                                <bcc:Value>({@overwrite_extra:convert_ClientTimeToyyyyMMddHHmmss({@param:subRegisterTime})})</bcc:Value>
+                            </bcc:SubProperty>
+			    @endif
+                        </bcc:SubBasicInfo>
+                        @endif
+			@if (existChildParam (@param:mobileNo))
+                        <bcc:SubIdentity>
+                            <bcc:SubIdentityType>1</bcc:SubIdentityType>
+                            <bcc:SubIdentity>{@overwrite_extra:cutPrefix0({@param:mobileNo})}</bcc:SubIdentity>
+                            <bcc:PrimaryFlag>1</bcc:PrimaryFlag>
+                        </bcc:SubIdentity>
+			@endif
+			@if (existChildParam (@param:imsi))
+                        <bcc:SubIdentity>
+                            <bcc:SubIdentityType>2</bcc:SubIdentityType>
+                            <bcc:SubIdentity>{@param:imsi}</bcc:SubIdentity>
+                            <bcc:PrimaryFlag>2</bcc:PrimaryFlag>
+                        </bcc:SubIdentity>
+			@endif
+                    </bcs:SubscriberInfo>
+                    <bcs:SubPaymentMode>
+                        <bcs:PaymentMode>{@overwrite_def:paymentMode_CBS({@param:subPaymentMode})}</bcs:PaymentMode>
+                        <bcs:AcctKey>{@param:baId}</bcs:AcctKey>
+                    </bcs:SubPaymentMode>
+                </bcs:Subscriber>
+                <bcs:PrimaryOffering>
+                    <bcc:OfferingKey>
+                        <bcc:OfferingID>{@param:mainProductId}</bcc:OfferingID>
+                    </bcc:OfferingKey>
+                    <bcs:EffectiveTime>({@overwrite_extra:convert_ClientTimeToyyyyMMddHHmmss({@param:prodEffectiveTime})})</bcs:EffectiveTime>
+                </bcs:PrimaryOffering>
+            </CreateSubscriberRequest>
+        </bcs:CreateSubscriberRequestMsg>
+    </soapenv:Body>
+</soapenv:Envelope>
+@endrequest
+
+@response
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <bcs:CreateSubscriberResultMsg
+            xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices"
+            xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon"
+            xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>{@param:ResultCode}</cbs:ResultCode>
+                <cbs:ResultDesc>{@param:ResultDesc}</cbs:ResultDesc>
+            </ResultHeader>
+            <CreateSubscriberResult>
+                <bcs:EffectiveTime>({@overwrite_extra:convert_yyyyMMddHHmmssToClientTime({@param:subEffectiveTime})})</bcs:EffectiveTime>
+            </CreateSubscriberResult>
+        </bcs:CreateSubscriberResultMsg>
+    </soapenv:Body>
+</soapenv:Envelope>
+@endresponse

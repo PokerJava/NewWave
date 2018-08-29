@@ -1,0 +1,7 @@
+@request
+Act SS:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},SS=CW,Active=1;
+@endrequest
+
+@response
+ACK:ACT SS:RETN=000000, DESC=success
+@endresponse

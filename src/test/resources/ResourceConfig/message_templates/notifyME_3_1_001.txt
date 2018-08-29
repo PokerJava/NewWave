@@ -1,0 +1,11 @@
+@request
+?cmd=deletemsisdn&msisdn={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}
+@endrequest
+
+@response
+<?xml version = "1.0" encoding="UTF-8"?>
+<deletemsisdn>
+<errorcode>{@param:errorcode}</errorcode>
+<errdesc>{@param:errdesc}</errdesc>
+</deletemsisdn>
+@endresponse

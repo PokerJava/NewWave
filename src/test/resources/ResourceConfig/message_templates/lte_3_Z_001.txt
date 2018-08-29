@@ -1,0 +1,7 @@
+@request
+Mod BscEx : MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}, SubType=1;
+@endrequest
+
+@response
+ACK:MOD BSCEX:RETN=000000, DESC=success
+@endresponse

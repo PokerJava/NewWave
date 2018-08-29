@@ -1,0 +1,78 @@
+{
+  "resultData": [
+    {
+      "searchKey": "roaming_1H_001$3008$def",
+      "suppCode": "roaming_1H_001",
+      "errCode": "3008",
+      "errDescription": "def",
+      "errAction": "FC",
+      "retryTime": "",
+      "retrySleep": "",
+      "ErrHandlingSuppCode": []
+    },
+    {
+      "searchKey": "roaming_1H_001$3008$wrong status",
+      "suppCode": "roaming_1H_001",
+      "errCode": "3008",
+      "errDescription": "wrong status",
+      "errAction": "Retry",
+      "retryTime": "2",
+      "retrySleep": "10",
+      "ErrHandlingSuppCode": []
+    },
+    {
+      "searchKey": "roaming_1H_001$def$wrong profile",
+      "suppCode": "roaming_1H_001",
+      "errCode": "3008",
+      "errDescription": "wrong profile",
+      "errAction": "FC",
+      "retryTime": "",
+      "retrySleep": "",
+      "ErrHandlingSuppCode": []
+    },
+    {
+      "searchKey": "roaming_1H_001$3008$null",
+      "suppCode": "roaming_1H_001",
+      "errCode": "3008",
+      "errDescription": "wrong profile",
+      "errAction": "Retry",
+      "retryTime": "3",
+      "retrySleep": "0",
+      "ErrHandlingSuppCode": []
+    },
+    {
+      "searchKey": "roaming_1H_001$3009$def",
+      "suppCode": "roaming_1H_001",
+      "errCode": "3009",
+      "errDescription": "def",
+      "errAction": "Retry",
+      "retryTime": "1",
+      "retrySleep": "5",
+      "ErrHandlingSuppCode": []
+    },
+    {
+      "searchKey": "roaming_1H_001$3010$def",
+      "suppCode": "roaming_1H_001",
+      "errCode": "3010",
+      "errDescription": "def",
+      "errAction": "ErrHandlingSuppCode",
+      "retryTime": "",
+      "retrySleep": "",
+      "ErrHandlingSuppCode": [
+        "roaming_1H_101",
+        "roaming_1H_102",
+        "roaming_1H_103"
+      ]
+    },
+    {
+      "searchKey": "roaming_1H_001$3011$def",
+      "suppCode": "roaming_1H_001",
+      "errCode": "3011",
+      "errDescription": "def",
+      "errAction": "Special",
+      "retryTime": "0",
+      "retrySleep": "",
+      "ErrHandlingSuppCode": []
+    }
+  ]
+}

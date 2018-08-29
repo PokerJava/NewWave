@@ -1,0 +1,143 @@
+@request
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CreateVscpSubscriber xmlns="http://vsmp.ais.co.th/webservices/subscriber/">
+      <Username>{@param:user}</Username>
+      <OrderRef>{@param:orderRef}</OrderRef>
+      <OrderDesc>{@param:orderDesc}</OrderDesc>
+      <Msisdn>{@overwrite_extra:replace0with66({@param:mobileNo})}</Msisdn>
+      <Cos>{@param:productId}</Cos>
+      <CbpId>(({@param:cbpId}))</CbpId>
+      <ScpId>(({@param:scpId}))</ScpId>
+      <Lang>{@overwrite_def:language_CBS({@param:language})}</Lang>   
+      <Model>UNKNOWN</Model>
+      <Gtcf>{@overwrite_def:gprsType_USMP({@param:gprsType})}</Gtcf>
+      <OneTimePassword>(({@param:oneTimePassword}))</OneTimePassword>
+      <AltPrefixFlag></AltPrefixFlag>
+      <AltPrefixCos></AltPrefixCos>
+      <ToggleFlag></ToggleFlag>
+      <ToggleCos></ToggleCos>
+      <ToggleState></ToggleState>
+      <ServicePackageId>(({@overwrite_def:servicePackageId_USMP({@param:servicePackageId})}))</ServicePackageId>
+      <Imsi>(({@param:imsi}))</Imsi>
+      <ImsiS1>(({@param:imsiSlave1}))</ImsiS1>
+      <MsisdnS1>(({@param:mobileNoSlave1}))</MsisdnS1>
+      <ImsiS2>(({@param:imsiSlave2}))</ImsiS2>
+      <MsisdnS2>(({@param:mobileNoSlave2}))</MsisdnS2>
+      <ImsiS3>(({@param:imsiSlave3}))</ImsiS3>
+      <MsisdnS3>(({@param:mobileNoSlave3}))</MsisdnS3>
+      <ImsiS4>(({@param:imsiSlave4}))</ImsiS4>
+      <MsisdnS4>(({@param:mobileNoSlave4}))</MsisdnS4>
+      <ImsiX></ImsiX>
+      <MsisdnImsiX></MsisdnImsiX>
+      <ImsiFlag>(({@param:imsiFlag}))</ImsiFlag>
+      <spName>{@param:spName}</spName>
+      <brandName>{@param:brandName}</brandName>
+      <customerCategory>(({@param:customerCategory}))</customerCategory>
+      <customerSubCategory>(({@param:customerSubCategory}))</customerSubCategory>
+      <customerSegment>(({@param:customerSegment}))</customerSegment>
+      <SubscriberRSA></SubscriberRSA>
+      <IVRLanguage>(({@overwrite_def:language_USMP({@param:ivrLanguage})}))</IVRLanguage>
+      <SMSLanguage>(({@overwrite_def:language_USMP({@param:smsLanguage})}))</SMSLanguage>
+      <USSDLanguage>(({@overwrite_def:language_USMP({@param:ussdLanguage})}))</USSDLanguage>
+      <EmailLanguage>(({@overwrite_def:language_USMP({@param:emailLanguage})}))</EmailLanguage>
+      <HomeLocation>(({@param:homeLocation}))</HomeLocation>
+      <FraudFlag>(({@param:fraudFlag}))</FraudFlag>
+      <PinFraudFlag>(({@param:pinFraudFlag}))</PinFraudFlag>
+      <CustomerRequestF>(({@param:customerRequestFlag}))</CustomerRequestF>
+      <DPFlag>(({@param:dpFlag}))</DPFlag>
+      <BaId>(({@param:baId}))</BaId>
+      <CaId>(({@param:caId}))</CaId>
+    </CreateVscpSubscriber>
+  </soap:Body>
+</soap:Envelope>
+@endrequest
+
+@response
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Body>
+<CreateVscpSubscriberResponse xmlns="http://vsmp.ais.co.th/webservices/subscriber/">
+<CreateVscpSubscriberResult>
+<OperationStatus>
+<IsSuccess>true</IsSuccess>
+<Code>VSMP-00000000</Code>
+<Description>OK.</Description>
+<TransactionID>20180330</TransactionID>
+<OrderRef>CallSticker</OrderRef>
+</OperationStatus>
+<Subscriber>
+<Msisdn>66933516649</Msisdn>
+<CustomerID>661141289777168</CustomerID>
+<Cos>51</Cos>
+<Time>2018-03-30T14:45:48.5677068+07:00</Time>
+<Lang>1</Lang>
+<IVRLanguage>1</IVRLanguage>
+<SMSLanguage>1</SMSLanguage>
+<USSDLanguage>1</USSDLanguage>
+<EmailLanguage>1</EmailLanguage>
+<Model />
+<State>1</State>
+<VscpState>1</VscpState>
+<INstate>6</INstate>
+<ServicePackageId>6</ServicePackageId>
+<Hack>0</Hack>
+<Gtcf>1</Gtcf>
+<ScpId>401</ScpId>
+<CbpId>501</CbpId>
+<Bso />
+<NumImsi>1</NumImsi>
+<PrepaidFlag>0</PrepaidFlag>
+<VirtualFlag />
+<AltPrefixFlag />
+<AltPrefixCos />
+<ServiceLocation>3OCCB501</ServiceLocation>
+<HasOneTimePassword>false</HasOneTimePassword>
+<HasPassword>false</HasPassword>
+<ToggleF />
+<ToggleState />
+<ToggleCos />
+<CosEffectiveDate />
+<CosEffectiveValue />
+<GtcfEffectiveDate />
+<GtcfEffectiveValue />
+<FirstActDate />
+<imsiArray>
+<imsi>520033000148375</imsi>
+<imsiS1 xsi:nil="true" />
+<msisdnS1 xsi:nil="true" />
+<imsiS2 xsi:nil="true" />
+<msisdnS2 xsi:nil="true" />
+<imsiS3 xsi:nil="true" />
+<msisdnS3 xsi:nil="true" />
+<imsiS4 xsi:nil="true" />
+<msisdnS4 xsi:nil="true" />
+<imsiX xsi:nil="true" />
+<msisdnImsiX xsi:nil="true" />
+<imsiFlag xsi:nil="true" />
+</imsiArray>
+<spName>awn</spName>
+<brandName>3g-postpaid</brandName>
+<customerCategory>R</customerCategory>
+<customerSubCategory>THA</customerSubCategory>
+<customerSegment />
+<HomeLocation />
+<ActiveStopTime />
+<SuspendStopTime />
+<DisableStopTime />
+<TerminateStopTime />
+<FreezeTime />
+<FraudFlag>FALSE</FraudFlag>
+<PinFraudFlag>FALSE</PinFraudFlag>
+<CustomerRequestF>noSuspend</CustomerRequestF>
+<DPFlag>allowAllServices</DPFlag>
+<FirstModifiedTime>2018-03-30T14:45:48.0000000+07:00</FirstModifiedTime>
+<RegistrationDate>2018-03-30T14:45:48.0000000+07:00</RegistrationDate>
+<BaId xsi:nil="true" />
+<CaId xsi:nil="true" />
+</Subscriber>
+</CreateVscpSubscriberResult>
+</CreateVscpSubscriberResponse>
+</soap:Body>
+</soap:Envelope>

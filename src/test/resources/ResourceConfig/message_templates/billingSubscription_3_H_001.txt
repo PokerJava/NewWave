@@ -1,0 +1,44 @@
+@request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <bcs:SubDeactivationRequestMsg>
+            <RequestHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:MessageSeq>{@param:resourceOrderItem.resourceItemId}</cbs:MessageSeq>
+                <cbs:AccessSecurity>
+                    <cbs:LoginSystemCode>{@param:resourceInfraNode.pfUsername}</cbs:LoginSystemCode>
+                    <cbs:Password>{@param:resourceInfraNode.pfPassword}</cbs:Password>
+                </cbs:AccessSecurity>
+                <cbs:AccessMode>({@overwrite_def:channel_CBS({@param:resourceOrderItem.channel})})</cbs:AccessMode>
+                <cbs:MsgLanguageCode>{@overwrite_def:responseLanguage_CBS({@param:resourceOrderItem.responseLanguage})}</cbs:MsgLanguageCode>
+            </RequestHeader>
+         <SubDeactivationRequest>
+            <bcs:SubAccessCode>
+               <bcc:PrimaryIdentity>{@overwrite_extra:cutPrefix66({@param:resourceOrderItem.mobileNo})}</bcc:PrimaryIdentity>
+            </bcs:SubAccessCode>
+            <bcs:OpType>3</bcs:OpType>
+         </SubDeactivationRequest>
+      </bcs:SubDeactivationRequestMsg>
+   </soapenv:Body>
+</soapenv:Envelope>
+@endrequest
+
+@response
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <bcs:SubDeactivationResultMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+         <ResultHeader>
+            <cbs:Version>1</cbs:Version>
+            <cbs:ResultCode>{@param:ResultHeader.ResultCode}</cbs:ResultCode>
+            <cbs:MsgLanguageCode>2040</cbs:MsgLanguageCode>
+            <cbs:ResultDesc>{@param:ResultHeader.ResultDesc}</cbs:ResultDesc>
+         </ResultHeader>
+      </bcs:SubDeactivationResultMsg>
+	<soapenv:Fault>
+            <faultcode>{@param:faultcode}</faultcode>
+            <faultstring>{@param:faultstring}</faultstring>
+	</soapenv:Fault>
+   </soapenv:Body>
+</soapenv:Envelope>
+@endresponse

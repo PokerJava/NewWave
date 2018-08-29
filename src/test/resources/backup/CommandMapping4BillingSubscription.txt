@@ -1,0 +1,87 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bcs:CreateSubscriberRequestMsg>
+         <RequestHeader>
+            <cbs:Version>1</cbs:Version>
+            <cbs:MessageSeq>{@param:resourceItemId}</cbs:MessageSeq>
+            <cbs:AccessSecurity>
+               <cbs:LoginSystemCode>{@param??:RS_InfraNode.userName}</cbs:LoginSystemCode>
+               <cbs:Password>{@param??:RS_InfraNode.NEID_INFO.password}</cbs:Password>
+            </cbs:AccessSecurity>
+            <cbs:AccessMode>{@Overwrite_def:CHANNEL_CBS({@param:channel})}</cbs:AccessMode>
+               <cbs:MsgLanguageCode>{@Overwrite_def:RESPONSE_LANG_CBS({@param:responseLanguage})}</cbs:MsgLanguageCode>
+         </RequestHeader>
+         <CreateSubscriberRequest>
+            <bcs:RegisterCustomer OpType="{@param:custOperType}">
+             <bcs:CustKey>{@param:caId}</bcs:CustKey>
+               <!--Optional for CustInfo:-->              
+               <bcs:CustInfo>  
+                  <bcc:CustType>{@param:custType}</bcc:CustType>	
+                  <bcc:CustNodeType>{@param:custNodeType}</bcc:CustNodeType>
+                  <bcc:CustCode>{@param:caId}</bcc:CustCode>
+                   <bcc:ParentCustKey>{@param:custParentId}</bcc:ParentCustKey>
+                    <bcc:CustBasicInfo> 
+                              <bcc:CustSegment>{@Overwrite_def:C_CATEGORY_CBS({@param:customerCategory})}</bcc:CustSegment>	
+                              <bcc:CustLevel>{@Overwrite_def:C_SUB_CATEGORY_CBS({@param:customerSubCategory})}</bcc:CustLevel>
+	                      <bcc:CustLoyalty>{@Overwrite_def:C_SEGMENT_CBS({@param:customerSegment})}</bcc:CustLoyalty>
+                    </bcc:CustBasicInfo>
+               </bcs:CustInfo>
+               <!--END of Optional for CustInfo:-->
+            </bcs:RegisterCustomer>
+            <!--Optional for Account :-->
+            <bcs:Account>
+               <bcs:AcctKey>{@param:baId}</bcs:AcctKey>
+               <bcs:AcctInfo>
+                   <bcc:AcctCode>{@param:baId}</bcc:AcctCode>
+                   <bcc:BillCycleType>{@param:acctBillCycleType}</bcc:BillCycleType>
+                   <bcc:PaymentType>{@Overwrite_def:PAYMENTMODE_CBS({@param:acctPaymentMode})}</bcc:PaymentType>
+               </bcs:AcctInfo>
+            </bcs:Account>
+            <!--END of Optional for Account:-->  
+            <bcs:Subscriber>
+               <bcs:SubscriberKey>{@Overwrite_extra:({@param:mobileNo})}</bcs:SubscriberKey><!-- // cut prefix 0-->
+               <bcs:SubscriberInfo>
+                   <!--Optional for SubBasicInfo:-->
+                   <bcc:SubBasicInfo>
+                         <bcc:WrittenLang>({@Overwrite_def:LANGUAGE_CBS({@param:smsLanguage})}</bcc:WrittenLang>
+                         <bcc:IVRLang>({@Overwrite_def:LANGUAGE_CBS({@param:ivrLanguage})}</bcc:IVRLang>
+                              <!--Array for SubProperty -->
+                              <bcc:SubProperty>
+                                    <bcc:Code>C_SUB_REGISTER_TIME</bcc:Code>
+                                    <bcc:Value>{@Overwrite_extra:({@param:subRegisterTime})}</bcc:Value>
+                              </bcc:SubProperty>
+                   <!--End of Array for SubProperty -->
+                   </bcc:SubBasicInfo>
+                   <!--End of Optional for SubBasicInfo:-->
+                   <!--Array for SubIdentity -->
+                   <bcc:SubIdentity>
+                         <bcc:SubIdentityType>1</bcc:SubIdentityType>
+                         <bcc:SubIdentity>{@Overwrite_extra:({@param:mobileNo})}</bcc:SubIdentity><!-- // cut prefix 0-->
+                         <bcc:PrimaryFlag>1</bcc:PrimaryFlag>
+                   </bcc:SubIdentity>
+                   <!--Available when send IMSI -->
+                   <bcc:SubIdentity>
+                         <bcc:SubIdentityType>2</bcc:SubIdentityType>
+                         <bcc:SubIdentity>{@param:imsi}</bcc:SubIdentity>
+                         <bcc:PrimaryFlag>2</bcc:PrimaryFlag>
+                   </bcc:SubIdentity>
+                   <!--End of Available when send IMSI -->
+                   <!--End of Array for SubIdebtity -->
+                  <bcc:Brand>{@Overwrite_def:BRAND_ID_CBS({@param:brandId})}</bcc:Brand>
+               </bcs:SubscriberInfo>
+               <bcs:SubPaymentMode>
+                   <bcs:PaymentMode>{@Overwrite_def:PAYMENTMODE_CBS({@param:subPaymentMode})}</bcs:PaymentMode>
+                   <bcs:AcctKey>{@param:baId}</bcs:AcctKey>
+               </bcs:SubPaymentMode>
+               </bcs:Subscriber>
+               <bcs:PrimaryOffering><!--structure not complete-->
+                       <bcc:OfferingKey>
+                       <bcc:OfferingID>{@param:mainProductId}</bcc:OfferingID>
+               </bcc:OfferingKey>
+                <bcs:EffectiveTime>{@Overwrite_extra:({@param:prodEffectiveTime})}</bcs:EffectiveTime><!--Optional  //convert time formatl:-->
+            </bcs:PrimaryOffering>
+         </CreateSubscriberRequest>
+      </bcs:CreateSubscriberRequestMsg>
+   </soapenv:Body>
+</soapenv:Envelope>

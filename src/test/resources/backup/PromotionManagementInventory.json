@@ -1,0 +1,17 @@
+{
+  "resourceName": "PromotionManagement",
+  "inventoryType": "Soft Goods",
+  "resourceState": "Active",
+  "quotaPlan": "-1",
+  "effectiveDate": "20180302105912+0700",
+  "expireDate": "20280302105912+0700",
+  "instanceFlag": "Y",
+  "identityFlag": "Y",
+  "identityType": "mobileNo",
+  "createDate": "20180301100000+0700",
+  "createBy": "pirajitp",
+  "lastUpdBy": "teewarac",
+  "lastUpdDate": "20180302105912+0700",
+  "resourceDescriptionTH": "Resource สำหรับการจัดการโปรโมชั่น",
+  "resourceDescriptionEN": "Resource for Promotion Management"
+}

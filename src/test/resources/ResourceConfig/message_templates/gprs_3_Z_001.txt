@@ -1,0 +1,7 @@
+@request
+Mod State:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},MSFG=5,CSBIC=0,CSBOC=0,GPRSLOCK=1;
+@endrequest
+
+@response
+ACK:MOD STATE:RETN=000000, DESC=success
+@endresponse

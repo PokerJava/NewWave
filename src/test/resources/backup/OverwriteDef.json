@@ -1,0 +1,16 @@
+{
+	"resultData": [{
+		"LANGUAGE_BMP": {
+			"THA": "10",
+			"ENG": "20",
+			"THAI,POST": "30",
+			"THAI,PRE": "40"
+		},
+		"LANGUAGE_CBS": {
+			"THA": "1110",
+			"ENG": "1120",
+			"THAI,POST": "1130",
+			"THAI,PRE": "1140"
+		}
+	}]
+}

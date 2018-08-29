@@ -1,0 +1,308 @@
+{
+  "resultData": [
+    {
+      "searchKey": "promotionManagement$UPDATE$def$CBS$Main",
+      "resourceIndex": "promotionManagement_2H_001"
+    },
+    {
+      "searchKey": "promotionManagement$CREATE$def$CBS$OntopAndService",
+      "resourceIndex": "promotionManagement_1H_001"
+    },
+    {
+      "searchKey": "promotionManagement$UPDATE$def$CBS$OntopAndService",
+      "resourceIndex": "promotionManagement_2H_002"
+    },
+    {
+      "searchKey": "promotionManagement$DELETE$def$CBS$OntopAndService",
+      "resourceIndex": "promotionManagement_3H_001"
+    },
+    {
+      "searchKey": "usmpSubscriber$CREATE$def",
+      "resourceIndex": "usmpSubscriber_1_001"
+    },
+    {
+      "searchKey": "usmpSubscriber$DELETE$def",
+      "resourceIndex": "usmpSubscriber_3_001"
+    },
+    {
+      "searchKey": "billingSubscription$CREATE$def$CBS",
+      "resourceIndex": "billingSubscription_1H_001"
+    },
+    {
+      "searchKey": "billingSubscription$DELETE$def$CBS",
+      "resourceIndex": "billingSubscription_3H_001"
+    },
+    {
+      "searchKey": "gprs$CREATE$def$Huawei",
+      "resourceIndex": "gprs_1H_001"
+    },
+    {
+      "searchKey": "gprs$DELETE$def$Huawei",
+      "resourceIndex": "gprs_3H_001"
+    },
+    {
+      "searchKey": "gprs$CREATE$def$ZTE",
+      "resourceIndex": "gprs_1Z_001"
+    },
+    {
+      "searchKey": "gprs$DELETE$def$ZTE",
+      "resourceIndex": "gprs_3Z_001"
+    },
+    {
+      "searchKey": "hlrSubscriber$CREATE$def$Huawei",
+      "resourceIndex": "hlrSubscriber_1H_001"
+    },
+    {
+      "searchKey": "hlrSubscriber$CREATE$def$ZTE",
+      "resourceIndex": "hlrSubscriber_1Z_001"
+    },
+    {
+      "searchKey": "camelOriginatingSubscription$CREATE$def$Huawei",
+      "resourceIndex": "camelOriginatingSubscription_1H_001"
+    },
+    {
+      "searchKey": "camelOriginatingSubscription$DELETE$def$Huawei",
+      "resourceIndex": "camelOriginatingSubscription_3H_001"
+    },
+    {
+      "searchKey": "camelOriginatingSubscription$CREATE$def$ZTE",
+      "resourceIndex": "camelOriginatingSubscription_1Z_001"
+    },
+    {
+      "searchKey": "camelOriginatingSubscription$DELETE$def$ZTE",
+      "resourceIndex": "camelOriginatingSubscription_3Z_001"
+    },
+        {
+      "searchKey": "camelTerminatingSubscription$CREATE$def$Huawei",
+      "resourceIndex": "camelTerminatingSubscription_1H_001"
+    },
+    {
+      "searchKey": "camelTerminatingSubscription$DELETE$def$Huawei",
+      "resourceIndex": "camelTerminatingSubscription_3H_001"
+    },
+    {
+      "searchKey": "camelTerminatingSubscription$CREATE$def$ZTE",
+      "resourceIndex": "camelTerminatingSubscription_1Z_001"
+    },
+    {
+      "searchKey": "camelTerminatingSubscription$DELETE$def$ZTE",
+      "resourceIndex": "camelTerminatingSubscription_3Z_001"
+    },
+    {
+      "searchKey": "lte$CREATE$def$Huawei",
+      "resourceIndex": "lte_1H_001"
+    },
+    {
+      "searchKey": "lte$DELETE$def$Huawei",
+      "resourceIndex": "lte_3H_001"
+    },
+    {
+      "searchKey": "lte$CREATE$def$ZTE",
+      "resourceIndex": "lte_1Z_001"
+    },
+    {
+      "searchKey": "lte$DELETE$def$ZTE",
+      "resourceIndex": "lte_3Z_001"
+    },
+    {
+      "searchKey": "roamingRestrictionLTE$CREATE$def$Huawei",
+      "resourceIndex": "roamingRestrictionLTE_1H_001"
+    },
+    {
+      "searchKey": "roamingRestrictionLTE$CREATE$def$ZTE",
+      "resourceIndex": "roamingRestrictionLTE_1Z_001"
+    },
+    {
+      "searchKey": "pdpContext$CREATE$def$Huawei",
+      "resourceIndex": "pdpContext_1H_001"
+    },
+    {
+      "searchKey": "pdpContext$DELETE$def$Huawei",
+      "resourceIndex": "pdpContext_3H_001"
+    },
+    {
+      "searchKey": "pdpContext$CREATE$def$ZTE",
+      "resourceIndex": "pdpContext_1Z_001"
+    },
+    {
+      "searchKey": "pdpContext$DELETE$def$ZTE",
+      "resourceIndex": "pdpContext_3Z_001"
+    },
+    {
+      "searchKey": "pdpContextLTE$CREATE$def$Huawei$def$null",
+      "resourceIndex": "pdpContextLTE_1H_001"
+    },
+    {
+      "searchKey": "pdpContextLTE$CREATE$def$Huawei$def$def",
+      "resourceIndex": "pdpContextLTE_1H_002"
+    },
+    {
+      "searchKey": "pdpContextLTE$DELETE$def$Huawei$def$def",
+      "resourceIndex": "pdpContextLTE_3H_001"
+    },
+    {
+      "searchKey": "pdpContextLTE$CREATE$def$ZTE$def$def",
+      "resourceIndex": "pdpContextLTE_1Z_001"
+    },
+    {
+      "searchKey": "pdpContextLTE$CREATE$def$ZTE$TRUE$def",
+      "resourceIndex": "pdpContextLTE_1Z_002"
+    },
+    {
+      "searchKey": "pdpContextLTE$DELETE$def$ZTE$def$def",
+      "resourceIndex": "pdpContextLTE_3Z_001"
+    },
+    {
+      "searchKey": "suspendOutgoingCall$CREATE$def$Huawei",
+      "resourceIndex": "suspendOutgoingCall_1H_001"
+    },
+    {
+      "searchKey": "suspendOutgoingCall$DELETE$def$Huawei",
+      "resourceIndex": "suspendOutgoingCall_3H_001"
+    },
+    {
+      "searchKey": "suspendOutgoingCall$CREATE$def$ZTE",
+      "resourceIndex": "suspendOutgoingCall_1Z_001"
+    },
+    {
+      "searchKey": "suspendOutgoingCall$DELETE$def$ZTE",
+      "resourceIndex": "suspendOutgoingCall_3Z_001"
+    },
+    {
+      "searchKey": "notifyME$CREATE$def",
+      "resourceIndex": "notifyME_1_001"
+    },    
+	{
+      "searchKey": "notifyME$DELETE$def",
+      "resourceIndex": "notifyME_3_001"
+    },
+    {
+      "searchKey": "callWaiting$CREATE$def$Huawei",
+      "resourceIndex": "callWaiting_1H_001"
+    },
+    {
+      "searchKey": "callWaiting$UPDATE$activate$Huawei",
+      "resourceIndex": "callWaiting_2H_001"
+    },
+    {
+      "searchKey": "callWaiting$UPDATE$deactivate$Huawei",
+      "resourceIndex": "callWaiting_2H_002"
+    },
+    {
+      "searchKey": "callWaiting$CREATE$def$ZTE",
+      "resourceIndex": "callWaiting_1Z_001"
+    },
+    {
+      "searchKey": "callWaiting$UPDATE$activate$ZTE",
+      "resourceIndex": "callWaiting_2Z_001"
+    },
+    {
+      "searchKey": "callWaiting$UPDATE$deactivate$ZTE",
+      "resourceIndex": "callWaiting_2Z_002"
+    },
+    {
+      "searchKey": "callForwardDefault$UPDATE$activate$Huawei",
+      "resourceIndex": "callForwardDefault_2H_001"
+    },
+    {
+      "searchKey": "callForwardDefault$UPDATE$deactivate$Huawei",
+      "resourceIndex": "callForwardDefault_2H_003"
+    },
+    {
+      "searchKey": "callForwardDefault$UPDATE$activate$ZTE",
+      "resourceIndex": "callForwardDefault_2Z_001"
+    },
+    {
+      "searchKey": "callForwardDefault$UPDATE$deactivate$ZTE",
+      "resourceIndex": "callForwardDefault_2Z_004"
+    },
+    {
+      "searchKey": "roaming$CREATE$def$Huawei",
+      "resourceIndex": "roaming_1H_001"
+    },
+    {
+      "searchKey": "roaming$DELETE$def$Huawei",
+      "resourceIndex": "roaming_3H_001"
+    },
+    {
+      "searchKey": "roaming$CREATE$def$ZTE",
+      "resourceIndex": "roaming_1Z_001"
+    },
+    {
+      "searchKey": "roaming$DELETE$def$ZTE",
+      "resourceIndex": "roaming_3Z_001"
+    },
+    {
+      "searchKey": "roamingRestriction$UPDATE$def$Huawei",
+      "resourceIndex": "roamingRestriction_1H_001"
+    },
+    {
+      "searchKey": "roamingRestriction$UPDATE$def$ZTE",
+      "resourceIndex": "roamingRestriction_1Z_001"
+    },
+	{
+      "searchKey": "aafSubscriber$UPDATE$sessionTokens",
+      "resourceIndex": "aafSubscriber_2_001"
+    },
+	{
+      "searchKey": "aafSubscriber$UPDATE$setCredential",
+      "resourceIndex": "aafSubscriber_2_002"
+    },
+	{
+      "searchKey": "aafSubscriber$UPDATE$removePublicIdByAppName",
+      "resourceIndex": "aafSubscriber_2_003"
+    },
+	{
+      "searchKey": "voiceCall$CREATE$def$ZTE",
+      "resourceIndex": "voiceCall_1Z_001"
+    },
+	{
+      "searchKey": "voiceCall$DELETE$def$ZTE",
+      "resourceIndex": "voiceCall_3Z_001"
+    },
+	{
+      "searchKey": "voiceCall$CREATE$def$Huawei",
+      "resourceIndex": "voiceCall_1H_001"
+    },
+	{
+      "searchKey": "voiceCall$DELETE$def$Huawei",
+      "resourceIndex": "voiceCall_3H_001"
+    },
+	{
+      "searchKey": "smsOriginating$CREATE$def$ZTE",
+      "resourceIndex": "smsOriginating_1Z_001"
+    },
+	{
+      "searchKey": "smsOriginating$DELETE$def$ZTE",
+      "resourceIndex": "smsOriginating_3Z_001"
+    },
+	{
+      "searchKey": "smsOriginating$CREATE$def$Huawei",
+      "resourceIndex": "smsOriginating_1H_001"
+    },
+	{
+      "searchKey": "smsOriginating$DELETE$def$Huawei",
+      "resourceIndex": "smsOriginating_3H_001"
+    },
+	{
+      "searchKey": "smsTerminating$CREATE$def$ZTE",
+      "resourceIndex": "smsTerminating_1Z_001"
+    },
+	{
+      "searchKey": "smsTerminating$DELETE$def$ZTE",
+      "resourceIndex": "smsTerminating_3Z_001"
+    },
+	{
+      "searchKey": "smsTerminating$CREATE$def$Huawei",
+      "resourceIndex": "smsTerminating_1H_001"
+    },
+	{
+      "searchKey": "smsTerminating$DELETE$def$Huawei",
+      "resourceIndex": "smsTerminating_3H_001"
+    },
+    {
+      "searchKey": "queryFreeUnitByPack$READ$def",
+      "resourceIndex": "queryFreeUnitByPack_4H_001"
+    }
+  ]
+}

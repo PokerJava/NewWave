@@ -1,0 +1,27 @@
+@request
+{
+  "commandId": "{@param:command_id}",
+  "publicId": "{@overwrite_extra:AAF_REFORMAT({@param:public_type},{@param:public_id})}",
+  "credential": {
+    "type": "{@param:credential_type}",
+    "value": "{@param:credential_value}"
+  },
+  "appName": "({@param:BWO.appName})",
+  "methodName": "(({@param:BWO.methodName}))",
+  "paymentMode": "{@overwrite_def:PAYMENT_MODE({@param:paymentMode})}",
+  "activeDate": "{@overwrite_extra:CONVERT_TIME({@param:prodEffectiveTime})}",
+  
+  "FNNumber": [
+  	@foreach(FNNumber)
+    {
+      "action": "{@param_foreach:action}",
+      "number": "{@param_foreach:number}"
+    }
+    @endforeach
+  ]
+}
+@endrequest
+
+@response
+{"resultCode":"20000","developerMessage":"Success"}
+@endresponse

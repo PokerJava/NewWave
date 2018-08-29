@@ -1,0 +1,14 @@
+@request
+Add PDP:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},APN={@param:resourceOrderItem.apnName},PDPType={@overwrite_def:pdpType_HLRZTE({@param:resourceOrderItem.pdpType})},QoSID={@overwrite_def:qosPDP_HLRZTE({@param:resourceOrderItem.qosProfile})}
+@if(existParam(resourceOrderItem.pdpAddress))
+,PDPAddr={@param:resourceOrderItem.pdpAddress}
+@endif
+@if(existParam(resourceOrderItem.vplmn))
+,VPLMN={@overwrite_def:pdpVplmn_HLRZTE({@param:resourceOrderItem.vplmn})}
+@endif
+,PDPCharge={@overwrite_def:cc_HLRZTE({@param:resourceOrderItem.chargingProfile})};
+@endrequest
+
+@response
+ACK:ADD PDP:RETN=000000, DESC=success
+@endresponse

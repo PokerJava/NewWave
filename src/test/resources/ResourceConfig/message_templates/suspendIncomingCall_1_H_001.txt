@@ -1,0 +1,7 @@
+@request
+MOD ODBIC: ISDN = "{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}", ODBIC=NOBIC;
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+@endresponse

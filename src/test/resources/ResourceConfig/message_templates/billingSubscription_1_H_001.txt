@@ -1,0 +1,113 @@
+@request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <bcs:CreateSubscriberRequestMsg>
+            <RequestHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:MessageSeq>{@param:resourceOrderItem.resourceItemId}</cbs:MessageSeq>
+                <cbs:AccessSecurity>
+                    <cbs:LoginSystemCode>{@param:resourceInfraNode.pfUsername}</cbs:LoginSystemCode>
+                    <cbs:Password>{@param:resourceInfraNode.pfPassword}</cbs:Password>
+                </cbs:AccessSecurity>
+                <cbs:AccessMode>({@overwrite_def:channel_CBS({@param:resourceOrderItem.channel})})</cbs:AccessMode>
+                <cbs:MsgLanguageCode>{@overwrite_def:responseLanguage_CBS({@param:resourceOrderItem.responseLanguage})}</cbs:MsgLanguageCode>
+            </RequestHeader>
+            <CreateSubscriberRequest>
+                <bcs:RegisterCustomer OpType="{@param:resourceOrderItem.custOperType}">
+                    <bcs:CustKey>{@param:resourceOrderItem.caId}</bcs:CustKey>
+                    <bcs:CustInfo>
+                        <bcc:CustType>({@overwrite_def:customerType_CBS({@param:resourceOrderItem.custType})})</bcc:CustType>
+                        <bcc:CustNodeType>({@overwrite_def:customerNodeType_CBS({@param:resourceOrderItem.custNodeType})})</bcc:CustNodeType>
+                        <bcc:CustCode>({@param:resourceOrderItem.caId})</bcc:CustCode>
+                        <bcc:ParentCustKey>({@param:resourceOrderItem.custParentId})</bcc:ParentCustKey>
+                        <bcc:CustBasicInfo>
+                            <bcc:CustSegment>({@overwrite_def:customerCategory_CBS({@param:resourceOrderItem.customerCategory})})</bcc:CustSegment>
+                            <bcc:CustLevel>({@overwrite_def:customerSubCategory_CBS({@param:resourceOrderItem.customerSubCategory})})</bcc:CustLevel>
+                            <bcc:CustLoyalty>({@overwrite_def:customerSegment_CBS({@param:resourceOrderItem.customerSegment})})</bcc:CustLoyalty>
+                        </bcc:CustBasicInfo>
+                    </bcs:CustInfo>
+                </bcs:RegisterCustomer>
+                <bcs:Account>
+                    <bcs:AcctKey>{@param:resourceOrderItem.baId}</bcs:AcctKey>
+                    <bcs:AcctInfo>
+                        <bcc:AcctCode>({@param:resourceOrderItem.baId})</bcc:AcctCode>
+                        <bcc:BillCycleType>({@param:resourceOrderItem.acctBillCycleType})</bcc:BillCycleType>
+                        <bcc:PaymentType>({@overwrite_def:paymentMode_CBS({@param:resourceOrderItem.acctPaymentMode})})</bcc:PaymentType>
+                    </bcs:AcctInfo>
+                </bcs:Account>
+                <bcs:Subscriber>
+                    <bcs:SubscriberKey>{@overwrite_extra:cutPrefix66({@param:resourceOrderItem.mobileNo})}</bcs:SubscriberKey>
+                    <bcs:SubscriberInfo>
+                        <bcc:SubBasicInfo>
+                            <bcc:WrittenLang>({@overwrite_def:language_CBS({@param:resourceOrderItem.smsLanguage})})</bcc:WrittenLang>
+                            <bcc:IVRLang>({@overwrite_def:language_CBS({@param:resourceOrderItem.ivrLanguage})})</bcc:IVRLang>
+			    @if (existParam(resourceOrderItem.subRegisterTime))
+                            <bcc:SubProperty>
+                                <bcc:Code>C_SUB_REGISTER_TIME</bcc:Code>
+                                <bcc:Value>({@overwrite_extra:convert_ClientTimeToyyyyMMddHHmmss({@param:resourceOrderItem.subRegisterTime})})</bcc:Value>
+                            </bcc:SubProperty>
+			    @endif
+                        </bcc:SubBasicInfo>
+                        <bcc:SubIdentity>
+                            <bcc:SubIdentityType>1</bcc:SubIdentityType>
+                            <bcc:SubIdentity>{@overwrite_extra:cutPrefix66({@param:resourceOrderItem.mobileNo})}</bcc:SubIdentity>
+                            <bcc:PrimaryFlag>1</bcc:PrimaryFlag>
+                        </bcc:SubIdentity>
+                        <bcc:SubIdentity>
+                            <bcc:SubIdentityType>2</bcc:SubIdentityType>
+                            <bcc:SubIdentity>{@param:resourceOrderItem.imsi}</bcc:SubIdentity>
+                            <bcc:PrimaryFlag>2</bcc:PrimaryFlag>
+                        </bcc:SubIdentity>
+			@if (existParam(resourceOrderItem.rucCredit))	
+                        <bcc:ConsumptionLimit>
+                            <bcc:LimitType>C_104101049</bcc:LimitType>
+                            <bcc:UnitType>M</bcc:UnitType>
+                            <bcc:CurrencyID>1141</bcc:CurrencyID>
+                            <bcc:LimitValue>({@param:resourceOrderItem.rucCredit})</bcc:LimitValue>
+                        </bcc:ConsumptionLimit>
+			@endif
+                    </bcs:SubscriberInfo>
+                    <bcs:SubPaymentMode>
+                        <bcs:PaymentMode>{@overwrite_def:paymentMode_CBS({@param:resourceOrderItem.subPaymentMode})}</bcs:PaymentMode>
+                        <bcs:AcctKey>{@param:resourceOrderItem.baId}</bcs:AcctKey>
+                    </bcs:SubPaymentMode>
+                </bcs:Subscriber>
+                <bcs:PrimaryOffering>
+                    <bcc:OfferingKey>
+                        <bcc:OfferingID>{@param:resourceOrderItem.mainProductId}</bcc:OfferingID>
+                    </bcc:OfferingKey>
+                    <bcs:EffectiveTime>({@overwrite_extra:convert_ClientTimeToyyyyMMddHHmmss({@param:resourceOrderItem.prodEffectiveTime})})</bcs:EffectiveTime>
+                </bcs:PrimaryOffering>
+            </CreateSubscriberRequest>
+        </bcs:CreateSubscriberRequestMsg>
+    </soapenv:Body>
+</soapenv:Envelope>
+@endrequest
+
+@response
+<soapenv:Envelope
+    xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <bcs:CreateSubscriberResultMsg
+            xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices"
+            xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon"
+            xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>{@param:ResultHeader.ResultCode}</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2040</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>{@param:ResultHeader.ResultDesc}</cbs:ResultDesc>
+            </ResultHeader>
+            <CreateSubscriberResult>
+                <bcs:EffectiveTime>{@param:CreateSubscriberResult.EffectiveTime}</bcs:EffectiveTime>
+            </CreateSubscriberResult>
+        </bcs:CreateSubscriberResultMsg>
+        <soapenv:Fault>
+            <faultcode>{@param:faultcode}</faultcode>
+            <faultstring>{@param:faultstring}</faultstring>
+            <detail>{@param:detail}</detail>
+        </soapenv:Fault>
+    </soapenv:Body>
+</soapenv:Envelope>
+@endresponse

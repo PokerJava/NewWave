@@ -1,0 +1,7 @@
+@request
+Mod ODB:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},BR={@overwrite_def:roamingTypeRoaming_HLRZTE({@param:resourceOrderItem.roamingType})};
+@endrequest
+
+@response
+ACK:MOD ODB:RETN=000000, DESC=success
+@endresponse

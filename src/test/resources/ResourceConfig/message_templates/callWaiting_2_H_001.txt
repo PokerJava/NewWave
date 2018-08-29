@@ -1,0 +1,11 @@
+@request
+ACT CWAIT: ISDN = "{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}";
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+
+There is together 1 report
+
+---    END
+@endresponse

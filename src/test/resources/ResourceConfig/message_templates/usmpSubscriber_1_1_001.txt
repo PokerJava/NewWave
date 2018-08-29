@@ -1,0 +1,73 @@
+@request
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <CreateVscpSubscriber xmlns="http://vsmp.ais.co.th/webservices/subscriber/">
+      <Username>{@param:resourceOrderItem.user}</Username>
+      <OrderRef>{@param:resourceOrderItem.orderRef}</OrderRef>
+      <OrderDesc>{@param:resourceOrderItem.orderDesc}</OrderDesc>
+      <CustomerId>{@param:resourceOrderItem.customerId}</CustomerId>
+      <Msisdn>{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}</Msisdn>
+      <Cos>{@param:resourceOrderItem.productId}</Cos>
+      <CbpId>(({@param:resourceOrderItem.cbpId}))</CbpId>
+      <ScpId>(({@param:resourceOrderItem.scpId}))</ScpId>
+      <Lang>{@overwrite_def:language_USMP({@param:resourceOrderItem.language})}</Lang>   
+      <Model>UNKNOWN</Model>
+      <Gtcf>{@overwrite_def:gprsType_USMP({@param:resourceOrderItem.gprsType})}</Gtcf>
+      <OneTimePassword>(({@param:resourceOrderItem.oneTimePassword}))</OneTimePassword>
+      <AltPrefixFlag>(({@param:resourceOrderItem.DUMMY}))</AltPrefixFlag>
+      <AltPrefixCos>(({@param:resourceOrderItem.DUMMY}))</AltPrefixCos>
+      <ToggleFlag>(({@param:resourceOrderItem.DUMMY}))</ToggleFlag>
+      <ToggleCos>(({@param:resourceOrderItem.DUMMY}))</ToggleCos>
+      <ToggleState>(({@param:resourceOrderItem.DUMMY}))</ToggleState>
+      <ServicePackageId>(({@overwrite_def:servicePackageId_USMP({@param:resourceOrderItem.servicePackageId})}))</ServicePackageId>
+      <Imsi>(({@param:resourceOrderItem.imsi}))</Imsi>
+      <ImsiS1>(({@param:resourceOrderItem.imsiSlave1}))</ImsiS1>
+      <MsisdnS1>(({@param:resourceOrderItem.mobileNoSlave1}))</MsisdnS1>
+      <ImsiS2>(({@param:resourceOrderItem.imsiSlave2}))</ImsiS2>
+      <MsisdnS2>(({@param:resourceOrderItem.mobileNoSlave2}))</MsisdnS2>
+      <ImsiS3>(({@param:resourceOrderItem.imsiSlave3}))</ImsiS3>
+      <MsisdnS3>(({@param:resourceOrderItem.mobileNoSlave3}))</MsisdnS3>
+      <ImsiS4>(({@param:resourceOrderItem.imsiSlave4}))</ImsiS4>
+      <MsisdnS4>(({@param:resourceOrderItem.mobileNoSlave4}))</MsisdnS4>
+      <ImsiX>(({@param:resourceOrderItem.DUMMY}))</ImsiX>
+      <MsisdnImsiX>(({@param:resourceOrderItem.DUMMY}))</MsisdnImsiX>
+      <ImsiFlag>(({@param:resourceOrderItem.imsiFlag}))</ImsiFlag>
+      <spName>{@overwrite_def:spName_USMP({@param:resourceOrderItem.spName})}</spName>
+      <brandName>{@overwrite_def:brandName_USMP({@param:resourceOrderItem.brandName})}</brandName>
+      <customerCategory>(({@param:resourceOrderItem.customerCategory}))</customerCategory>
+      <customerSubCategory>(({@param:resourceOrderItem.customerSubCategory}))</customerSubCategory>
+      <customerSegment>(({@param:resourceOrderItem.customerSegment}))</customerSegment>
+      <SubscriberRSA>(({@param:resourceOrderItem.DUMMY}))</SubscriberRSA>
+      <IVRLanguage>(({@overwrite_def:language_USMP({@param:resourceOrderItem.ivrLanguage})}))</IVRLanguage>
+      <SMSLanguage>(({@overwrite_def:language_USMP({@param:resourceOrderItem.smsLanguage})}))</SMSLanguage>
+      <USSDLanguage>(({@overwrite_def:language_USMP({@param:resourceOrderItem.ussdLanguage})}))</USSDLanguage>
+      <EmailLanguage>(({@overwrite_def:language_USMP({@param:resourceOrderItem.emailLanguage})}))</EmailLanguage>
+      <HomeLocation>(({@param:resourceOrderItem.homeLocation}))</HomeLocation>
+      <FraudFlag>(({@param:resourceOrderItem.fraudFlag}))</FraudFlag>
+      <PinFraudFlag>(({@param:resourceOrderItem.pinFraudFlag}))</PinFraudFlag>
+      <CustomerRequestF>(({@param:resourceOrderItem.customerRequestFlag}))</CustomerRequestF>
+      <DPFlag>(({@param:resourceOrderItem.dpFlag}))</DPFlag>
+      <BaId>(({@param:resourceOrderItem.baId}))</BaId>
+      <CaId>(({@param:resourceOrderItem.caId}))</CaId>
+    </CreateVscpSubscriber>
+  </soap:Body>
+</soap:Envelope>
+@endrequest
+
+@response
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Body>
+<CreateVscpSubscriberResponse xmlns="http://vsmp.ais.co.th/webservices/subscriber/">
+<CreateVscpSubscriberResult>
+	<OperationStatus>
+	<IsSuccess>{@param:OperationStatus.IsSuccess}</IsSuccess>
+	<Code>{@param:OperationStatus.Code}</Code>
+	<Description>{@param:OperationStatus.Description}</Description>
+	<TransactionID>20180330</TransactionID>
+	<OrderRef>CallSticker</OrderRef>
+	</OperationStatus>
+</CreateVscpSubscriberResult>
+</CreateVscpSubscriberResponse>
+</soap:Body>
+</soap:Envelope>
+@endresponse

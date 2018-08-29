@@ -1,0 +1,2602 @@
+{
+  "resultData": [
+    {
+      "resourceIndex": "promotionManagement_2H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "resourceItemId",
+        "mainProductId",
+        "mainProductEffectiveType",
+        "billingSystem"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "resourceItemId:.{1,50}",
+        "mainProductEffectiveType:I|N|S"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "promotionManagement_2_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "{
+\"responseMainProductList\":[
+	@foreach(task.1.ChangeSubOfferingResult.PrimaryOffering)
+        {
+          \"mainProductId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.OfferingKey.OfferingID})\",
+          \"mainProductEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.EffectiveTime})})\",
+          \"mainProductExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.ExpirationTime})})\",
+          \"mainProductSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.OfferingKey.PurchaseSeq})\"
+        }
+		@endforeach
+],
+\"responseModOntopAndServiceList\":[
+	@foreach(task.1.ChangeSubOfferingResult.ModifyOffering)
+        {
+          \"productId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.OfferingKey.OfferingID})\",
+          \"productEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.EffectiveTime})})\",
+          \"productExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.ExpirationTime})})\",
+          \"productSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.OfferingKey.PurchaseSeq}\"
+        }
+		@endforeach
+],
+\"responseAddOntopAndServiceList\": [
+		@foreach(task.1.ChangeSubOfferingResult.AddOffering)
+        {
+          \"productId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.OfferingKey.OfferingID})\",
+          \"productEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.EffectiveTime})})\",
+          \"productExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.ExpirationTime})})\",
+          \"productSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.OfferingKey.PurchaseSeq})\"
+        }
+		@endforeach
+	]
+}",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for add main promotion"
+    },
+    {
+      "resourceIndex": "promotionManagement_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "resourceItemId",
+        "productId",
+        "productEffectiveType",
+        "billingSystem"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "resourceItemId:.{1,50}",
+        "productEffectiveType:I|N|S"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "promotionManagement_2_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "{
+\"responseMainProductList\":[
+	@foreach(task.1.ChangeSubOfferingResult.PrimaryOffering)
+        {
+          \"mainProductId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.OfferingKey.OfferingID})\",
+          \"mainProductEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.EffectiveTime})})\",
+          \"mainProductExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.ExpirationTime})})\",
+          \"mainProductSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.OfferingKey.PurchaseSeq})\"
+        }
+		@endforeach
+],
+\"responseModOntopAndServiceList\":[
+	@foreach(task.1.ChangeSubOfferingResult.ModifyOffering)
+        {
+          \"productId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.OfferingKey.OfferingID})\",
+          \"productEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.EffectiveTime})})\",
+          \"productExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.ExpirationTime})})\",
+          \"productSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.OfferingKey.PurchaseSeq}\"
+        }
+		@endforeach
+],
+\"responseAddOntopAndServiceList\": [
+		@foreach(task.1.ChangeSubOfferingResult.AddOffering)
+        {
+          \"productId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.OfferingKey.OfferingID})\",
+          \"productEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.EffectiveTime})})\",
+          \"productExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.ExpirationTime})})\",
+          \"productSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.OfferingKey.PurchaseSeq})\"
+        }
+		@endforeach
+	]
+}",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for add on top"
+    },
+    {
+      "resourceIndex": "promotionManagement_2H_002",
+      "mandatoryParam": [
+        "mobileNo",
+        "resourceItemId",
+        "productId",
+        "productSequenceId",
+        "billingSystem"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "resourceItemId:.{1,50}"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "promotionManagement_2_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "{
+\"responseMainProductList\":[
+	@foreach(task.1.ChangeSubOfferingResult.PrimaryOffering)
+        {
+          \"mainProductId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.OfferingKey.OfferingID})\",
+          \"mainProductEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.EffectiveTime})})\",
+          \"mainProductExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.ExpirationTime})})\",
+          \"mainProductSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.OfferingKey.PurchaseSeq})\"
+        }
+		@endforeach
+],
+\"responseModOntopAndServiceList\":[
+	@foreach(task.1.ChangeSubOfferingResult.ModifyOffering)
+        {
+          \"productId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.OfferingKey.OfferingID})\",
+          \"productEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.EffectiveTime})})\",
+          \"productExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.ExpirationTime})})\",
+          \"productSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.OfferingKey.PurchaseSeq}\"
+        }
+		@endforeach
+],
+\"responseAddOntopAndServiceList\": [
+		@foreach(task.1.ChangeSubOfferingResult.AddOffering)
+        {
+          \"productId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.OfferingKey.OfferingID})\",
+          \"productEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.EffectiveTime})})\",
+          \"productExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.ExpirationTime})})\",
+          \"productSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.OfferingKey.PurchaseSeq})\"
+        }
+		@endforeach
+	]
+}",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for update on top"
+    },
+	{
+      "resourceIndex": "promotionManagement_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "resourceItemId",
+        "productId",
+        "productSequenceId",
+        "billingSystem"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "resourceItemId:.{1,50}"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "promotionManagement_2_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "{
+\"responseMainProductList\":[
+	@foreach(task.1.ChangeSubOfferingResult.PrimaryOffering)
+        {
+          \"mainProductId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.OfferingKey.OfferingID})\",
+          \"mainProductEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.EffectiveTime})})\",
+          \"mainProductExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.ExpirationTime})})\",
+          \"mainProductSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.PrimaryOffering.OfferingKey.PurchaseSeq})\"
+        }
+		@endforeach
+],
+\"responseModOntopAndServiceList\":[
+	@foreach(task.1.ChangeSubOfferingResult.ModifyOffering)
+        {
+          \"productId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.OfferingKey.OfferingID})\",
+          \"productEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.EffectiveTime})})\",
+          \"productExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.ExpirationTime})})\",
+          \"productSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.ModifyOffering.OfferingKey.PurchaseSeq}\"
+        }
+		@endforeach
+],
+\"responseAddOntopAndServiceList\": [
+		@foreach(task.1.ChangeSubOfferingResult.AddOffering)
+        {
+          \"productId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.OfferingKey.OfferingID})\",
+          \"productEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.EffectiveTime})})\",
+          \"productExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.ExpirationTime})})\",
+          \"productSequenceId\": \"({@param_foreach:task.1.ChangeSubOfferingResult.AddOffering.OfferingKey.PurchaseSeq})\"
+        }
+		@endforeach
+	]
+}",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for delete on top"
+    },
+    {
+      "resourceIndex": "usmpSubscriber_1_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "user",
+        "orderRef",
+        "orderDesc",
+        "productId",
+        "language",
+        "gprsType",
+        "spName",
+        "brandName",
+        "customerId"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "gprsType:Volume-Based|Time-Based"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "usmpSubscriber_1_1_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Add Subscriber profile at USMP"
+    },
+    {
+      "resourceIndex": "usmpSubscriber_3_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "user",
+        "orderRef",
+        "orderDesc",
+        "imsiFlag"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "usmpSubscriber_3_1_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Boat",
+      "lastUpdBy": "Boat",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete Subscriber profile at USMP"
+    },
+    {
+      "resourceIndex": "billingSubscription_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "resourceItemId",
+        "caId",
+        "baId",
+        "custOperType",
+        "subPaymentMode",
+        "mainProductId",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "resourceItemId:.{1,50}",
+        "subPaymentMode:Pre-paid|Post-paid"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "billingSubscription_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "{\"subEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param:task.1.CreateSubscriberResult.EffectiveTime})})\"}",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Add Subscriber profile at Avatar(CBS)"
+    },
+    {
+      "resourceIndex": "billingSubscription_3H_001",
+      "mandatoryParam": [
+        "mobileNo"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "billingSubscription_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for delete Subscriber profile at Avatar(CBS)"
+    },
+    {
+      "resourceIndex": "gprs_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "gprs_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create GPRS Service at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "gprs_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "gprs_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete GPRS Service at HLR-Huawei"
+    },
+    {
+      "resourceIndex" : "gprs_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList" : [
+        {
+          "suppCode" : "gprs_1_Z_001",
+          "mandatoryFlag" : "M",
+          "errorHandlingPolicy" : {},
+          "resourceRuleList" : []
+        }
+      ],
+      "rollbackFlag" : "0",
+      "resourceRollbackThreshold" : "0",
+      "responseToClientType": "Normal",
+      "responseToClient" : "",
+      "effectiveDate" : "20180321105912+0700",
+      "expireDate" : "20280321105912+0700",
+      "createDate" : "20180301100000+0700",
+      "createBy" : "pirajitp",
+      "lastUpdBy" : "jitradun",
+      "lastUpdDate" : "20180412000000+0700",
+      "description" : "ResourceMaster for Create GPRS Service at HLR-ZTE"
+},
+{
+      "resourceIndex" : "gprs_3Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList" : [
+        {
+          "suppCode" : "gprs_3_Z_001",
+          "mandatoryFlag" : "M",
+          "errorHandlingPolicy" : {},
+          "resourceRuleList" : []
+        }
+      ],
+
+      "rollbackFlag" : "0",
+      "resourceRollbackThreshold" : "0",
+      "responseToClientType": "Normal",
+      "responseToClient" : "",
+      "effectiveDate" : "20180321105912+0700",
+      "expireDate" : "20280321105912+0700",
+      "createDate" : "20180301100000+0700",
+      "createBy" : "pirajitp",   
+      "lastUpdBy" : "jitradun",
+      "lastUpdDate" : "20180412000000+0700",
+      "description" : "ResourceMaster for Delete GPRS Service at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "hlrSubscriber_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+	 "profile"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "hlrSubscriber_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Subscriber profile at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "hlrSubscriber_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+		"profile"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "hlrSubscriber_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Subscriber profile at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "camelOriginatingSubscription_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "subProfile",
+        "scpId"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "camelOriginatingSubscription_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180419093000+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180419093000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419093000+0700",
+      "description": "ResourceMaster for Create CAMEL- OCSI profile of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "camelOriginatingSubscription_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "camelOriginatingSubscription_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180419093000+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180419093000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419093000+0700",
+      "description": "ResourceMaster for Delete CAMEL- OCSI profile of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "camelOriginatingSubscription_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+	"subProfile",
+	"scpId"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "camelOriginatingSubscription_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180419093000+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180419093000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419093000+0700",
+      "description": "ResourceMaster for Create CAMEL- OCSI profile of subscriber at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "camelOriginatingSubscription_3Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "camelOriginatingSubscription_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180419093000+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180419093000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419093000+0700",
+      "description": "ResourceMaster for Delete CAMEL- OCSI  profile of subscriber at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "camelTerminatingSubscription_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "subProfile",
+        "scpId"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "camelTerminatingSubscription_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180419093000+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180419093000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419093000+0700",
+      "description": "ResourceMaster for Create CAMEL- TCSI profile of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "camelTerminatingSubscription_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "camelTerminatingSubscription_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180419093000+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180419093000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419093000+0700",
+      "description": "ResourceMaster for Delete CAMEL- TCSI  profile of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "camelTerminatingSubscription_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+	"subProfile",
+	"scpId"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "camelTerminatingSubscription_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180419093000+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180419093000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419093000+0700",
+      "description": "ResourceMaster for Create CAMEL- TCSI  profile of subscriber at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "camelTerminatingSubscription_3Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "camelTerminatingSubscription_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180419093000+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180419093000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419093000+0700",
+      "description": "ResourceMaster for Delete CAMEL- TCSI  profile of subscriber at HLR-ZTE"
+    },  
+    {
+      "resourceIndex": "lte_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "lte_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180420105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180420105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180420105912+0700",
+      "description": "ResourceMaster for Create LTE service of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "lte_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "lte_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180420105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180420105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180420105912+0700",
+      "description": "ResourceMaster for Delete LTE service of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "lte_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "lte_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        },
+	{
+          "suppCode": "lte_1_Z_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180420105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180420105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180420105912+0700",
+      "description": "ResourceMaster for Create LTE service of subscriber at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "lte_3Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "lte_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180420105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180420105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180420105912+0700",
+      "description": "ResourceMaster for Delete LTE service of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "roamingRestrictionLTE_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "roamingRestrictionLTE_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClient": "",
+      "effectiveDate": "20180420105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180420105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180420105912+0700",
+      "description": "ResourceMaster for Create LTE Roaming Restriction Area of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "roamingRestrictionLTE_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "roamingRestrictionLTE_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180420105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180420105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180420105912+0700",
+      "description": "ResourceMaster for Create LTE Roaming Restriction Area of subscriber at HLR-ZTE"
+    },
+        {
+      "resourceIndex": "pdpContext_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "pdpId",
+        "apnId",
+        "apnName",
+        "chargingProfile"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "vplmn:TRUE|FALSE",
+        "pdpType:IPV4|IPV6|IPV4IPV6"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContext_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Add PDP Context to HLR-Huawei"
+    },
+    {
+      "resourceIndex": "pdpContext_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "apnId",
+        "pdpId",
+        "apnName"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContext_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete PDP Context to HLR-Huawei"
+    },
+    {
+      "resourceIndex": "pdpContext_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "pdpId",
+        "apnId",
+        "apnName",
+        "chargingProfile"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "vplmn:TRUE|FALSE",
+        "pdpType:IPV4|IPV6|IPV4IPV6"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContext_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        },
+	{
+          "suppCode": "pdpContext_1_Z_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Add PDP Context to HLR-ZTE"
+    },
+    {
+      "resourceIndex": "pdpContext_3Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "apnId",
+        "pdpId",
+        "apnName"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContext_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete PDP Context to HLR-ZTE"
+    },
+    {
+      "resourceIndex": "pdpContextLTE_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "apnId",
+        "apnName",
+        "chargingProfile"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "vplmn:TRUE|FALSE",
+        "pdpType:IPV4|IPV6|IPV4IPV6",
+        "defaultAPNFlag:TRUE|FALSE"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContextLTE_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Add PDP Context LTE to HLR-Huawei"
+    },
+    {
+      "resourceIndex": "pdpContextLTE_1H_002",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "apnId",
+        "apnName",
+        "chargingProfile"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "vplmn:TRUE|FALSE",
+        "pdpType:IPV4|IPV6|IPV4IPV6",
+        "defaultAPNFlag:TRUE|FALSE"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContextLTE_1_H_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Add PDP Context LTE to HLR-Huawei (STATIC)"
+    },
+    {
+      "resourceIndex": "pdpContextLTE_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "apnId",
+        "apnName"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContextLTE_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete PDP Context LTE to HLR-Huawei"
+    },
+    {
+      "resourceIndex": "pdpContextLTE_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "apnId",
+        "apnName",
+        "chargingProfile"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "vplmn:TRUE|FALSE",
+        "pdpType:IPV4|IPV6|IPV4IPV6",
+        "defaultAPNFlag:TRUE|FALSE"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContextLTE_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Add PDP Context LTE to HLR-ZTE"
+    },
+    {
+      "resourceIndex": "pdpContextLTE_1Z_002",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "apnId",
+        "apnName",
+        "chargingProfile"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "vplmn:TRUE|FALSE",
+        "pdpType:IPV4|IPV6|IPV4IPV6",
+        "defaultAPNFlag:TRUE|FALSE"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContextLTE_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        },
+        {
+          "suppCode": "pdpContextLTE_1_Z_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Add PDP Context LTE to HLR-ZTE,Set Default GCC"
+    },
+    {
+      "resourceIndex": "pdpContextLTE_3Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "apnId",
+        "apnName"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "pdpContextLTE_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete PDP Context LTE to HLR-ZTE"
+    },
+    {
+      "resourceIndex": "suspendOutgoingCall_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "suspendType"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "suspendType:IDD|ALL|BOICEXHC|BOCROAM"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "suspendOutgoingCall_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create all Suspend Outgoing Calls for subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "suspendOutgoingCall_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "suspendOutgoingCall_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete all Suspend Outgoing Calls for  subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "suspendOutgoingCall_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "suspendType"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "suspendType:IDD|ALL|BOICEXHC|BOCROAM"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "suspendOutgoingCall_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create all Suspend Outgoing Calls for subscriber at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "suspendOutgoingCall_3Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "suspendOutgoingCall_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete all Suspend Outgoing Calls for  subscriber at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "notifyME_1_001",
+      "mandatoryParam": [
+        "mobileNo"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "notifyME_1_1_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Notify Me (Alert  ME) service at Notify ME Server."
+    },
+	{
+      "resourceIndex": "notifyME_3_001",
+      "mandatoryParam": [
+        "mobileNo"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "notifyME_3_1_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Boat",
+      "lastUpdBy": "Boat",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete Notify Me (Alert  ME) service at Notify ME Server."
+    },
+    {
+      "resourceIndex": "callWaiting_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callWaiting_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Provision resource for Call Waiting servcie at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "callWaiting_2H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callWaiting_2_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Activate resource for Call Waiting servcie at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "callWaiting_2H_002",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callWaiting_2_H_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Deactivate resource for Call Waiting servcie at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "callWaiting_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callWaiting_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Provision resource for Call Waiting servcie at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "callWaiting_2Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callWaiting_2_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Activate resource for Call Waiting servcie at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "callWaiting_2Z_002",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callWaiting_2_Z_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Deactivate resource for Call Waiting servcie at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "callForwardDefault_2H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "forwardNumber"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "forwardNumber:([0-9]+)",
+        "callForwardOption:([A-Za-z&]+)"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callForwardDefault_2_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        },
+        {
+          "suppCode": "callForwardDefault_2_H_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Deactive resource for Call Forward By Default with all BSG at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "callForwardDefault_2H_003",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callForwardDefault_2_H_003",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Deactive resource for Call Forward By Default with Telephony Service (TS1X) at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "callForwardDefault_2Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "forwardNumber"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "forwardNumber:([0-9]{10,12})",
+        "callForwardOption:([A-Za-z&]+)"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callForwardDefault_2_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        },
+        {
+          "suppCode": "callForwardDefault_2_Z_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        },
+	        {
+          "suppCode": "callForwardDefault_2_Z_003",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Deactive resource for Call Forward By Default with all BSG at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "callForwardDefault_2Z_004",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "callForwardDefault_2_Z_004",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Set Call Forward Number for Call Forward By Default at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "roaming_1H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "roamingType"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "roamingType:homePLMN|domestic|internationalAndDomestic"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "roaming_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Roaming Service at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "roaming_3H_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "roaming_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete Roaming Service at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "roaming_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "roamingType"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "roamingType:homePLMN|domestic|internationalAndDomestic"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "roaming_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Roaming Service at HLR-ZTE"
+    },
+    {
+      "resourceIndex": "roaming_3Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "roaming_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete Roaming Service at HLR-ZTE"
+    },
+        {
+      "resourceIndex": "roamingRestriction_1H_001", 
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "restrictionType"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "restrictionType:BlockAllArea|AllowAllArea"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "roamingRestriction_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        },
+        {
+          "suppCode": "roamingRestriction_1_H_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Roaming Restriction Area (VLR) of subscriber at HLR-Huawei"
+    },
+    {
+      "resourceIndex": "roamingRestriction_1Z_001",
+      "mandatoryParam": [
+        "mobileNo",
+        "imsi",
+        "restrictionType"
+      ],
+      "validateParam": [
+        "mobileNo:([0-9]{10,12})",
+        "imsi:([0-9]{15})",
+        "restrictionType:BlockAllArea|AllowAllArea"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "roamingRestriction_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Roaming Restriction Area (VLR&SGSN) of subscriber at HLR-ZTE"
+    },
+	{
+      "resourceIndex": "aafSubscriber_2_001",
+      "mandatoryParam": [
+	    "resourceItemId",
+        "commandId",
+		"publicId",
+		"publicType"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"commandId:.{1,50}",
+        "publicType:msisdn|imsi|sipuri|nai|email|citizen id"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "aafSubscriber_2_1_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pornnapa",
+      "lastUpdBy": "pornnapa",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Update AAF Subscriber"
+    },
+	{
+      "resourceIndex": "aafSubscriber_2_002",
+      "mandatoryParam": [
+	    "resourceItemId",
+        "commandId",
+		"publicId",
+		"publicType"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"commandId:.{1,50}",
+        "publicType:msisdn|imsi|sipuri|nai|email|citizen id"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "aafSubscriber_2_1_002",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pornnapa",
+      "lastUpdBy": "pornnapa",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Update AAF Subscriber"
+    },
+	{
+      "resourceIndex": "aafSubscriber_2_003",
+      "mandatoryParam": [
+	    "resourceItemId",
+        "commandId",
+		"publicId",
+		"publicType"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"commandId:.{1,50}",
+        "publicType:msisdn|imsi|sipuri|nai|citizen id"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "aafSubscriber_2_1_003",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "pornnapa",
+      "lastUpdBy": "pornnapa",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Update AAF Subscriber"
+    },
+	{
+      "resourceIndex": "voiceCall_1Z_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "voiceCall_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Voice Call"
+    },
+	{
+      "resourceIndex": "voiceCall_3Z_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "voiceCall_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete Voice Call"
+    },
+	{
+      "resourceIndex": "voiceCall_1H_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "voiceCall_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create Voice Call"
+    },
+	{
+      "resourceIndex": "voiceCall_3H_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "voiceCall_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete Voice Call"
+    },
+	{
+      "resourceIndex": "smsOriginating_1Z_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "smsOriginating_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create smsOriginating"
+    },
+	{
+      "resourceIndex": "smsOriginating_3Z_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "smsOriginating_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete smsOriginating"
+    },
+	{
+      "resourceIndex": "smsOriginating_1H_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "smsOriginating_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+            "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create smsOriginating"
+    },
+	{
+      "resourceIndex": "smsOriginating_3H_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "smsOriginating_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+            "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete smsOriginating"
+    },
+	{
+      "resourceIndex": "smsTerminating_1Z_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "smsTerminating_1_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+            "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create smsTerminating"
+    },
+	{
+      "resourceIndex": "smsTerminating_3Z_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "smsTerminating_3_Z_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+            "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete smsTerminating"
+    },
+	{
+      "resourceIndex": "smsTerminating_1H_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "smsTerminating_1_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+            "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Create smsTerminating"
+    },
+	{
+      "resourceIndex": "smsTerminating_3H_001",
+      "mandatoryParam": [
+		 "mobileNo",
+		 "imsi"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})",
+		"imsi:([0-9]{15})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "smsTerminating_3_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Normal",
+      "responseToClient": "",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Delete smsTerminating"
+    },
+	{
+      "resourceIndex": "queryFreeUnitByPack_4H_001",
+      "mandatoryParam": [
+	"mobileNo",
+	"resourceItemId"
+      ],
+      "validateParam": [
+	    "resourceItemId:.{1,50}",
+		"mobileNo:([0-9]{10,12})"
+      ],
+      "suppCodesList": [
+        {
+          "suppCode": "queryFreeUnitByPack_4_H_001",
+          "mandatoryFlag": "M",
+          "errorHandlingPolicy": {},
+          "resourceRuleList": []
+        }
+      ],
+      "rollbackFlag": "0",
+      "resourceRollbackThreshold": "0",
+      "responseToClientType": "Special",
+      "responseToClient": "{
+\"freeUnitItemList\":[
+	@foreach(task.1.QueryFreeUnitResult.FreeUnitItem)
+	    {
+          \"freeUnitId\": \"({@overwrite_extra:cutPrefixC_({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitType})})\",
+          \"freeUnitName\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitTypeName})\",
+          \"measureUnit\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.MeasureUnit})\",
+          \"measureUnitName\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.MeasureUnitName})\",		
+		  \"freeUnitItemDetailList\": [
+		  @foreach(task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail)
+		  {
+			\"freeUnitInstanceId\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitInstanceID})\",
+			\"initialAmount\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.InitialAmount})\",
+			\"remainingAmount\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.CurrentAmount})\",
+			\"freeUnitEffectiveTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.EffectiveTime})})\",
+			\"freeUnitExpireTime\": \"({@overwrite_extra:CONVERT_DATETIME_TO_CLIENT({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.ExpireTime})})\",	
+			@foreach(task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin)
+			\"originType\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OriginType})\",
+			\"planId\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.planId})\",		  
+				@foreach(task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey)
+					\"productId\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey.OfferingID})\",
+					\"productSequenceId\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey.PurchaseSeq})\",
+					\"productName\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey.OfferingName})\",
+					\"notificationName\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey.NotificationName})\",
+				@endforeach
+			@endforeach
+			\"rollOverFlag\": \"({@param_foreach:task.1.QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.RollOverFlag})\"		
+		  }
+		  @endforeach
+		  ]
+		}
+	@endforeach
+	]	
+}",
+      "effectiveDate": "20180321105912+0700",
+      "expireDate": "20280321105912+0700",
+      "createDate": "20180301100000+0700",
+      "createBy": "Vorapol",
+      "lastUpdBy": "Vorapol",
+      "lastUpdDate": "20180412000000+0700",
+      "description": "ResourceMaster for Query FreeUnit By Package"
+    } 
+  ]
+}

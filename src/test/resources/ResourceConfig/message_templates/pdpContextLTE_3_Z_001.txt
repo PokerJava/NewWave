@@ -1,0 +1,7 @@
+@request
+Del  APNPROF : MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}, EPCAPN={@param:resourceOrderItem.apnName};
+@endrequest
+
+@response
+ACK:DEL APNPROF:RETN=000000, DESC=success
+@endresponse

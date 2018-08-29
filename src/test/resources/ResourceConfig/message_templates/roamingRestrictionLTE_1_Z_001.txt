@@ -1,0 +1,7 @@
+@request
+Mod BscEx :MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},EPCROAMSCHID={@overwrite_def:restrictionTypeRoamingRestrictionLTE({@param:resourceOrderItem.restrictionType})};
+@endrequest
+
+@response
+ACK:MOD BSCEX :RETN=000000, DESC=success
+@endresponse

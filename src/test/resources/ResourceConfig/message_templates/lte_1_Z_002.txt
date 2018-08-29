@@ -1,0 +1,9 @@
+@request
+Set EPCBsc: MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},
+EPCAMBRUP = {@overwrite_def:maxUpLinkLTE({@param:resourceOrderItem.maxUpLink})},
+EPCAMBRDOWN = {@overwrite_def:maxDownLinkLTE({@param:resourceOrderItem.maxDownLink})},EPCN3IPACC = 1;
+@endrequest
+
+@response
+ACK:MOD BSCEX:RETN=000000, DESC=success
+@endresponse

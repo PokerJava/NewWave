@@ -1,0 +1,40 @@
+@request
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <DeleteSubscriber xmlns="http://vsmp.ais.co.th/webservices/subscriber/">
+      <Username>{@param:resourceOrderItem.user}</Username>
+      <OrderRef>{@param:resourceOrderItem.orderRef}</OrderRef>
+      <OrderDesc>{@param:resourceOrderItem.orderDesc}</OrderDesc>
+      <Msisdn>{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}</Msisdn>
+      <Imsi>(({@param:resourceOrderItem.DUMMY}))</Imsi>
+      <ImsiS1>(({@param:resourceOrderItem.DUMMY}))</ImsiS1>
+      <MsisdnS1>(({@param:resourceOrderItem.DUMMY}))</MsisdnS1>
+      <ImsiS2>(({@param:resourceOrderItem.DUMMY}))</ImsiS2>
+      <MsisdnS2>(({@param:resourceOrderItem.DUMMY}))</MsisdnS2>
+      <ImsiS3>(({@param:resourceOrderItem.DUMMY}))</ImsiS3>
+      <MsisdnS3>(({@param:resourceOrderItem.DUMMY}))</MsisdnS3>
+      <ImsiS4>(({@param:resourceOrderItem.DUMMY}))</ImsiS4>
+      <MsisdnS4>(({@param:resourceOrderItem.DUMMY}))</MsisdnS4>
+      <ImsiX>(({@param:resourceOrderItem.DUMMY}))</ImsiX>
+      <MsisdnImsiX>(({@param:resourceOrderItem.DUMMY}))</MsisdnImsiX>
+      <ImsiFlag>{@param:resourceOrderItem.imsiFlag}</ImsiFlag>
+    </DeleteSubscriber>
+  </soap:Body>
+</soap:Envelope>
+@endrequest
+
+@response
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Body>
+<DeleteSubscriberResponse xmlns="http://vsmp.ais.co.th/webservices/subscriber/">
+<DeleteSubscriberResult>
+	<OperationStatus>
+	<IsSuccess>{@param:OperationStatus.IsSuccess}</IsSuccess>
+	<Code>{@param:OperationStatus.Code}</Code>
+	<Description>{@param:OperationStatus.Description}</Description>
+	</OperationStatus>
+</DeleteSubscriberResult>
+</DeleteSubscriberResponse>
+</soap:Body>
+</soap:Envelope>
+@endresponse

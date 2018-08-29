@@ -1,0 +1,11 @@
+@request
+MOD EPS: ISDN="{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}", PROV=TRUE, AMBRMAXUL={@overwrite_def:maxUpLinkLTE({@param:resourceOrderItem.maxUpLink})}, AMBRMAXDL={@overwrite_def:maxDownLinkLTE({@param:resourceOrderItem.maxDownLink})};
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+
+There is together 1 report
+
+---    END
+@endresponse

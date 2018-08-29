@@ -1,0 +1,19 @@
+@request
+{
+     "commandId":"{@param:resourceOrderItem.commandId}",
+     "publicId":"{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.publicId})}",
+     "credential":
+        {
+             "type":"{@param:resourceOrderItem.credential.type}",
+             "value":"{@param:resourceOrderItem.credential.value}"
+        },  
+   "appName":"({@param:resourceOrderItem.appName})"
+}
+@endrequest
+
+@response
+{
+    "resultCode":"20000",
+    "developerMessage":"Success"
+}
+@endresponse

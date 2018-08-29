@@ -1,0 +1,7 @@
+@request
+Reg FN:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},SS=CFD,Bsg=0,Register=0;
+@endrequest
+
+@response
+ACK:REG FN:RETN=000000, DESC=success
+@endresponse

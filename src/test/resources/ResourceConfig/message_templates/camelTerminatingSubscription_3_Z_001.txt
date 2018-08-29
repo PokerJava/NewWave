@@ -1,0 +1,7 @@
+@request
+Set TPLCAMEL:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},TCSITPL=0;
+@endrequest
+
+@response
+ACK:SET TPLCAMEL:RETN=000000, DESC=success
+@endresponse

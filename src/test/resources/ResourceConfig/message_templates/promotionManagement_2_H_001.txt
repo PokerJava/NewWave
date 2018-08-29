@@ -1,0 +1,128 @@
+@request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon" xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+	<soapenv:Header />
+	<soapenv:Body>
+		<bcs:ChangeSubOfferingRequestMsg>
+			<RequestHeader>
+				<cbs:Version>1</cbs:Version>
+				<cbs:MessageSeq>{@param:resourceOrderItem.resourceItemId}</cbs:MessageSeq>      
+				<cbs:AccessSecurity>
+					<cbs:LoginSystemCode>{@param:resourceInfraNode.pfUsername}</cbs:LoginSystemCode>			
+					<cbs:Password>{@param:resourceInfraNode.pfPassword}</cbs:Password>       
+				</cbs:AccessSecurity>
+				<cbs:AccessMode>({@overwrite_def:channel_CBS({@param:resourceOrderItem.channel})})</cbs:AccessMode>   
+				<cbs:MsgLanguageCode>{@overwrite_def:responseLanguage_CBS({@param:resourceOrderItem.responseLanguage})}</cbs:MsgLanguageCode>
+			</RequestHeader>
+			<ChangeSubOfferingRequest>
+				<bcs:SubAccessCode>
+					<bcc:PrimaryIdentity>{@overwrite_extra:cutPrefix66({@param:resourceOrderItem.mobileNo})}</bcc:PrimaryIdentity>   
+				</bcs:SubAccessCode>
+				@if(checkStrEqual(resourceOrderItem.serviceType,Main))
+				<bcs:PrimaryOffering>
+					<bcs:NewPrimaryOffering>
+						<bcc:OfferingKey>
+							<bcc:OfferingID>{@param:resourceOrderItem.mainProductId}</bcc:OfferingID>     
+						</bcc:OfferingKey>
+					</bcs:NewPrimaryOffering>
+					<bcs:EffectiveTime>
+						<bcc:Mode>({@param:resourceOrderItem.mainProductEffectiveType})</bcc:Mode>
+						<bcc:Time>({@overwrite_extra:convert_ClientTimeToyyyyMMddHHmmss({@param:resourceOrderItem.mainProductEffectiveTime})})</bcc:Time>
+					</bcs:EffectiveTime>
+				</bcs:PrimaryOffering>
+				@endif
+				@if(checkStrEqual(resourceOrderItem.serviceType,OntopAndService))
+				<bcs:SupplementaryOffering>
+				@if(checkStrEqual(resourceOrderItem.requestType,CREATE))
+					<bcs:AddOffering>
+						<bcc:OfferingKey>
+							<bcc:OfferingID>{@param:resourceOrderItem.productId}</bcc:OfferingID>
+						</bcc:OfferingKey>
+					<bcs:EffectiveTime>
+						<bcc:Mode>({@param:resourceOrderItem.productEffectiveType})</bcc:Mode>
+						<bcc:Time>({@overwrite_extra:convert_ClientTimeToyyyyMMddHHmmss({@param:resourceOrderItem.productEffectiveTime})})</bcc:Time>
+					</bcs:EffectiveTime>
+					</bcs:AddOffering>
+				@endif
+				@if(checkStrEqual(resourceOrderItem.requestType,DELETE))
+					<bcs:DelOffering>
+						<bcs:OfferingKey>
+							<bcc:OfferingID>{@param:resourceOrderItem.productId}</bcc:OfferingID>
+							<bcc:PurchaseSeq>{@param:resourceOrderItem.productSequenceId}</bcc:PurchaseSeq>
+						</bcs:OfferingKey>
+					</bcs:DelOffering>
+				@endif
+				@if(checkStrEqual(resourceOrderItem.requestType,UPDATE))
+					<bcs:ModifyOffering>
+						<bcs:OfferingKey>
+							<bcc:OfferingID>{@param:resourceOrderItem.productId}</bcc:OfferingID>
+							<bcc:PurchaseSeq>{@param:resourceOrderItem.productSequenceId}</bcc:PurchaseSeq>
+						</bcs:OfferingKey>
+						<bcs:NewEffectiveTime>({@overwrite_extra:convert_ClientTimeToyyyyMMddHHmmss({@param:resourceOrderItem.productEffectiveTime})})</bcs:NewEffectiveTime>
+				@if (existParam(resourceOrderItem.productExpireTime))				  
+						<bcs:NewExpirationTime>
+							<bcc:Mode>({@param:resourceOrderItem.productEffectiveType})</bcc:Mode>
+							<bcc:Time>({@overwrite_extra:convert_ClientTimeToyyyyMMddHHmmss({@param:resourceOrderItem.productExpireTime})})</bcc:Time>
+						</bcs:NewExpirationTime>
+				@endif					  
+					</bcs:ModifyOffering>
+				@endif				
+				</bcs:SupplementaryOffering>
+				@endif
+				<bcs:HandlingChargeFlag>({@overwrite_def:waiveFlag_CBS({@param:resourceOrderItem.waiveFlag})})</bcs:HandlingChargeFlag>
+			</ChangeSubOfferingRequest>
+		</bcs:ChangeSubOfferingRequestMsg>
+	</soapenv:Body>
+</soapenv:Envelope>
+@endrequest
+
+@response
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+<soapenv:Body>
+<bcs:ChangeSubOfferingResultMsg xmlns:bcs="http://www.huawei.com/bme/cbsinterface/bcservices" xmlns:bcc="http://www.huawei.com/bme/cbsinterface/bccommon" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+            <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>{@param:ResultHeader.ResultCode}</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2040</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>{@param:ResultHeader.ResultDesc}</cbs:ResultDesc>
+            </ResultHeader>
+            <ChangeSubOfferingResult>
+		 @foreach(ChangeSubOfferingResult.PrimaryOffering)
+                <bcs:PrimaryOffering>
+                    <bcs:OfferingKey>
+                        <bcc:OfferingID>{@param:ChangeSubOfferingResult.PrimaryOffering.OfferingKey.OfferingID}</bcc:OfferingID>
+                        <bcc:PurchaseSeq>{@param:ChangeSubOfferingResult.PrimaryOffering.OfferingKey.PurchaseSeq}</bcc:PurchaseSeq>
+                    </bcs:OfferingKey>
+                    <bcs:EffectiveTime>{@param:ChangeSubOfferingResult.PrimaryOffering.EffectiveTime}</bcs:EffectiveTime>
+                    <bcs:ExpirationTime>{@param:ChangeSubOfferingResult.PrimaryOffering.ExpirationTime}</bcs:ExpirationTime>
+                </bcs:PrimaryOffering>
+		  @endforeach
+		 @foreach(ChangeSubOfferingResult.ModifyOffering)
+                <bcs:ModifyOffering>
+                    <bcs:OfferingKey>
+                        <bcc:OfferingID>{@param:ChangeSubOfferingResult.ModifyOffering.OfferingKey.OfferingID}</bcc:OfferingID>
+                        <bcc:PurchaseSeq>{@param:ChangeSubOfferingResult.ModifyOffering.OfferingKey.PurchaseSeq}</bcc:PurchaseSeq>
+                    </bcs:OfferingKey>
+                    <bcs:NewEffectiveTime>{@param:ChangeSubOfferingResult.ModifyOffering.EffectiveTime}</bcs:NewEffectiveTime>
+                    <bcs:NewExpirationTime>{@param:ChangeSubOfferingResult.ModifyOffering.ExpirationTime}</bcs:NewExpirationTime>
+                </bcs:ModifyOffering>
+		  @endforeach
+		  @foreach(ChangeSubOfferingResult.AddOffering)
+                <bcs:AddOffering>
+                    <bcs:OfferingKey>
+                        <bcc:OfferingID>{@param:ChangeSubOfferingResult.AddOffering.OfferingKey.OfferingID}</bcc:OfferingID>
+                        <bcc:PurchaseSeq>{@param:ChangeSubOfferingResult.AddOffering.OfferingKey.PurchaseSeq}</bcc:PurchaseSeq>
+                    </bcs:OfferingKey>
+                    <bcs:EffectiveTime>{@param:ChangeSubOfferingResult.AddOffering.EffectiveTime}</bcs:EffectiveTime>
+                    <bcs:ExpirationTime>{@param:ChangeSubOfferingResult.AddOffering.ExpirationTime}</bcs:ExpirationTime>
+                </bcs:AddOffering>
+		@endforeach
+            </ChangeSubOfferingResult>
+        </bcs:ChangeSubOfferingResultMsg>
+		<soapenv:Fault>
+            <faultcode>{@param:faultcode}</faultcode>
+            <faultstring>{@param:faultstring}</faultstring>
+            <detail>{@param:detail}</detail>
+        </soapenv:Fault>
+    </soapenv:Body>
+</soapenv:Envelope>
+@endresponse

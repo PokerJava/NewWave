@@ -1,0 +1,97 @@
+<dummy-request>
+	<dummy-message id="1">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="1:0:0">
+			<EquinoxRawData name="HTTP" invoke="764891803" type="request" method="POST" url="/Resource/V1/PLCMngt/ResourceProvisioning/ResourceName/promotionManagement" ctype="text/plain" val="{
+			&quot;publicIdType&quot;: &quot;&quot;,
+			&quot;publicIdValue&quot;: &quot;&quot;,
+			&quot;privateIdType&quot;: &quot;&quot;,
+			&quot;privateIdValue&quot;: &quot;&quot;,
+			&quot;orderId&quot;: &quot;Rx00120180123145506979050&quot;,
+			&quot;offeringId&quot;: &quot;P0123455&quot;,
+			&quot;serviceId&quot;: &quot;123e4567-e89b-12d3-a456-4266554412345&quot;,
+			&quot;resourceId&quot;: &quot;563e4568-e89b-12d3-a456-4266554422222&quot;,
+			&quot;reasonDesc&quot;: &quot;956-มีความต้องการใช้บริการ&quot;,
+			&quot;serviceOrderType&quot;: &quot;Product Offering&quot;,
+			&quot;channel&quot;: &quot;USSD&quot;,
+			&quot;user&quot;: &quot;SSB-USR&quot;,
+			&quot;referenceId&quot;: &quot;SSB-0001&quot;,
+			&quot;sourceSystem&quot;: &quot;BSS&quot;,
+			&quot;waiveFlag&quot;: &quot;N&quot;,
+			&quot;simSerialNo&quot;: &quot;345203405694598&quot;,
+			&quot;userSys&quot;: &quot;Horizon&quot;,
+			&quot;resourceItemList&quot;: [
+				{
+					&quot;resourceItemId&quot;: &quot;563e4568-e89b-12d3-a456-426655&quot;,
+					&quot;resourceName&quot;: &quot;promotionManagement&quot;,
+					&quot;mobileNo&quot;: &quot;0932080437&quot;,
+					&quot;requestType&quot;: &quot;UPDATE&quot;,
+					&quot;productId&quot;: &quot;200155&quot;,
+					&quot;effectiveType&quot;: &quot;I&quot;,
+					&quot;productClass&quot;: &quot;Main&quot;,
+					&quot;startDate&quot;: &quot;2018-02-13 10:00:00+0700&quot;,
+					&quot;endDate&quot;: &quot;2019-02-13 23:59:59+0700&quot;,
+					&quot;paymentMode&quot;: &quot;Pre-paid&quot;,
+					&quot;billingSystem&quot;: &quot;CBS&quot;,
+					&quot;serviceCounterID&quot;: &quot;InterstellarWebService&quot;,
+					&quot;counterType&quot;: &quot;Counter&quot;,
+					&quot;channel&quot;: &quot;USSD&quot;,
+					&quot;user&quot;: &quot;User&quot;,
+					&quot;orderDesc&quot;: &quot;&quot;,
+					&quot;orderRef&quot;: &quot;&quot;,
+					&quot;productName&quot;: &quot;Zeed FN 5 Number&quot;
+				}
+			] }" to="PGZ_UAT.ES00" orig="PGZ_UAT.ES05.Serv.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	<dummy-message id="2">
+	<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+	<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.ResourceOrder.W_SDF_QUERYRESOURCEINVENTORY.01RESOURCEORDER" ecode="200" method="GET" url="/Resource/V1/PLCMngt/ResourceManagement/ResourceInventory.json" val="{
+  &quot;resultCode&quot;: &quot;20000&quot;,
+  &quot;resultDescription&quot;: &quot;Success&quot;,
+  &quot;resultData&quot;: [
+  {
+      &quot;resourceName&quot;: &quot;promotionManagement&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;-1&quot;,
+      &quot;effectiveDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680301100000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการโปรโมชั่น&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Promotion Management&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;usmpSubscriber&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;-1&quot;,
+      &quot;effectiveDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680321000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;teewarac&quot;,
+      &quot;lastUpdBy&quot;: &quot;teewarac&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ USMP&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for USMP Subscriber&quot;
+    }
+  ],
+  &quot;rowCount&quot;: &quot;1&quot;
+}" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+	<EquinoxInstance>
+		<value val="" />
+	</EquinoxInstance>
+</EquinoxMessage>
+	</dummy-message>
+</dummy-request>

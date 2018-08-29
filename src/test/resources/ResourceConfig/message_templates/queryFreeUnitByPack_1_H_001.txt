@@ -1,0 +1,88 @@
+@request
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bbs="http://www.huawei.com/bme/cbsinterface/bbservices" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon" xmlns:bbc="http://www.huawei.com/bme/cbsinterface/bbcommon">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bbs:QueryFreeUnitRequestMsg>
+         <RequestHeader>
+            <cbs:Version>1</cbs:Version>
+            <cbs:MessageSeq>{@param:resourceOrderItem.resourceItemId}</cbs:MessageSeq>
+            <cbs:AccessSecurity>
+               <cbs:LoginSystemCode>{@param:resourceInfraNode.pfUsername}</cbs:LoginSystemCode>
+               <cbs:Password>{@param:resourceInfraNode.pfPassword}</cbs:Password>
+            </cbs:AccessSecurity>
+            <cbs:AccessMode>({@overwrite_def:channel_CBS({@param:resourceOrderItem.channel})})</cbs:AccessMode>
+            <cbs:MsgLanguageCode>{@overwrite_def:responseLanguage_CBS({@param:resourceOrderItem.responseLanguage})}</cbs:MsgLanguageCode>
+         </RequestHeader>
+         <QueryFreeUnitRequest>
+            <bbs:QueryObj>
+               <bbs:SubAccessCode>
+                  <bbc:PrimaryIdentity>{@overwrite_extra:cutPrefix66({@param:resourceOrderItem.mobileNo})}</bbc:PrimaryIdentity>
+               </bbs:SubAccessCode>
+            </bbs:QueryObj>
+	     @if (existParam(resourceOrderItem.productId))
+            <bbs:OfferingKey>
+               <bbc:OfferingID>({@param:resourceOrderItem.productId})</bbc:OfferingID>
+               <bbc:PurchaseSeq>({@param:resourceOrderItem.productSequenceId})</bbc:PurchaseSeq>
+            </bbs:OfferingKey>
+	     @endif	
+         </QueryFreeUnitRequest>
+      </bbs:QueryFreeUnitRequestMsg>
+   </soapenv:Body>
+</soapenv:Envelope>
+@endrequest
+
+@response
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Body>
+        <bbs:QueryFreeUnitResultMsg xmlns:bbs="http://www.huawei.com/bme/cbsinterface/bbservices" xmlns:bbc="http://www.huawei.com/bme/cbsinterface/bbcommon" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+             <ResultHeader>
+                <cbs:Version>1</cbs:Version>
+                <cbs:ResultCode>{@param:ResultHeader.ResultCode}</cbs:ResultCode>
+                <cbs:MsgLanguageCode>2040</cbs:MsgLanguageCode>
+                <cbs:ResultDesc>{@param:ResultHeader.ResultDesc}</cbs:ResultDesc>
+            </ResultHeader>
+            <QueryFreeUnitResult>
+                 @foreach(QueryFreeUnitResult.FreeUnitItem)
+                <bbs:FreeUnitItem>
+                    <bbs:FreeUnitType>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitType}</bbs:FreeUnitType>
+                    <bbs:FreeUnitTypeName>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitTypeName}</bbs:FreeUnitTypeName>
+                    <bbs:MeasureUnit>{@param:QueryFreeUnitResult.FreeUnitItem.MeasureUnit}</bbs:MeasureUnit>
+                    <bbs:MeasureUnitName>{@param:QueryFreeUnitResult.FreeUnitItem.MeasureUnitName}</bbs:MeasureUnitName>
+                    <bbs:TotalInitialAmount>{@param:QueryFreeUnitResult.FreeUnitItem.TotalInitialAmount}</bbs:TotalInitialAmount>
+                    <bbs:TotalUnusedAmount>{@param:QueryFreeUnitResult.FreeUnitItem.TotalUnusedAmount}</bbs:TotalUnusedAmount>
+                    @foreach(QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail)
+                    <bbs:FreeUnitItemDetail>
+                        <bbs:FreeUnitInstanceID>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitInstanceID}</bbs:FreeUnitInstanceID>
+                        <bbs:InitialAmount>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.InitialAmount}</bbs:InitialAmount>
+                        <bbs:CurrentAmount>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.CurrentAmount}</bbs:CurrentAmount>
+                        <bbs:EffectiveTime>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.EffectiveTime}</bbs:EffectiveTime>
+                        <bbs:ExpireTime>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.ExpireTime}</bbs:ExpireTime>
+                        @foreach(QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin)
+                        <bbs:FreeUnitOrigin>
+                            <bbs:OriginType>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OriginType}</bbs:OriginType>
+                            <bbs:PlanID>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.PlanID}</bbs:PlanID>
+                          @foreach(QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey)
+                            <bbs:OfferingKey>
+                                <bbc:OfferingID>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey.OfferingID}</bbc:OfferingID>
+                                <bbc:PurchaseSeq>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey.PurchaseSeq}</bbc:PurchaseSeq>
+                                <bbs:OfferingName>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey.OfferingName}</bbs:OfferingName>
+                                <bbs:NotificationName>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.FreeUnitOrigin.OfferingKey.NotificationName}</bbs:NotificationName>
+                            </bbs:OfferingKey>
+                        @endforeach
+                        </bbs:FreeUnitOrigin>
+                        @endforeach
+                        <bbs:RollOverFlag>{@param:QueryFreeUnitResult.FreeUnitItem.FreeUnitItemDetail.RollOverFlag}</bbs:RollOverFlag>
+                    </bbs:FreeUnitItemDetail>
+                    @endforeach
+                </bbs:FreeUnitItem>
+                @endforeach
+            </QueryFreeUnitResult>
+        </bbs:QueryFreeUnitResultMsg>
+		<soapenv:Fault>
+            <faultcode>{@param:faultcode}</faultcode>
+            <faultstring>{@param:faultstring}</faultstring>
+            <detail>{@param:detail}</detail>
+        </soapenv:Fault>
+    </soapenv:Body>
+</soapenv:Envelope>
+@endresponse

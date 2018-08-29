@@ -1,0 +1,86 @@
+{
+  "resultData": [
+    {
+      "resourceRuleId": "1",
+      "description": "Check resource rule of for Promotion Management",
+      "resourceRuleState": "Active",
+      "effectiveDate": "20180301100000+0700",
+      "expireDate": "20280302105912+0700",
+      "ruleDetail": [
+        {
+          "ruleType": "checkVal",
+          "paramName": "resourceOrder$TRIG_criteria",
+          "paramOperand": "=",
+          "paramValue": "1"
+        },
+        {
+          "ruleType": "checkVal",
+          "paramName": "resourceOrder$Profile",
+          "paramOperand": "=",
+          "paramValue": "Cre_AWN_Roam"
+        },
+        {
+          "ruleType": "checkVal",
+          "paramName": "resourceOrder$Scp_Id",
+          "paramOperand": "!=",
+          "paramValue": "200"
+        }
+      ],
+      "createDate": "20180302105912+0700",
+      "createBy": "teewarac",
+      "lastUpdBy": "teewarac",
+      "lastUpdDate": "20180302105912+0700"
+    },
+    {
+      "resourceRuleId": "2",
+      "description": "Check resource rule of for USMPSubscriber",
+      "resourceRuleState": "Active",
+      "effectiveDate": "20180301100000+0700",
+      "expireDate": "20280302105912+0700",
+      "ruleDetail": [
+        {
+          "ruleType": "checkVal",
+          "paramName": "resourceOrderItem$TRIG_criteria",
+          "paramOperand": "=",
+          "paramValue": "1"
+        },
+        {
+          "ruleType": "checkVal",
+          "paramName": "resourceOrderItem$Profile",
+          "paramOperand": "=",
+          "paramValue": "Cre_AWN_Roam"
+        },
+        {
+          "ruleType": "checkVal",
+          "paramName": "resourceOrderItem$Scp_Id",
+          "paramOperand": "!=",
+          "paramValue": "201"
+        }
+      ],
+      "createDate": "20180302105912+0700",
+      "createBy": "teewarac",
+      "lastUpdBy": "teewarac",
+      "lastUpdDate": "20180302105912+0700"
+    },
+    {
+      "resourceRuleId": "3",
+      "description": "Check resource rule of for private M2M",
+      "resourceRuleState": "Inactive",
+      "effectiveDate": "20180301100000+0700",
+      "expireDate": "20280302105912+0700",
+      "ruleDetail": [
+        {
+          "ruleType": "checkRange",
+          "paramName": "resourceOrderItem$mobileNo",
+          "paramOperand": "not between",
+          "paramStart": "66810000000",
+          "paramStop": "66810000999"
+        }
+      ],
+      "createDate": "20180302105912+0700",
+      "createBy": "teewarac",
+      "lastUpdBy": "teewarac",
+      "lastUpdDate": "20180302105912+0700"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "publicIdType": "",
+  "publicIdValue": "",
+  "privateIdType": "",
+  "privateIdValue": "",
+  "orderId": "Rx00120180123145506979050",
+  "offeringId": "P0123455",
+  "serviceId": "123e4567-e89b-12d3-a456-4266554412345",
+  "resourceId": "563e4568-e89b-12d3-a456-4266554422222",
+  "reasonDesc": "956-มีความต้องการใช้บริการ",
+  "serviceOrderType": "Product Offering",
+  "channel": "USSD",
+  "user": "SSB-USR",
+  "referenceId": "SSB-0001",
+  "sourceSystem": "BSS",
+  "waiveFlag": "N",
+  "simSerialNo": "345203405694598",
+  "userSys": "Horizon",
+  "resourceItemList": [
+    {
+      "resourceItemId": "153e4568-e89b-12d3-a456-4266554433333",
+      "resourceName": "USMPSubscriber",
+      "requestType ": "UPDATE",
+      "user": "HORIZON",
+      "orderRef": "0932080437Ref",
+      "orderDesc": "USMPSubscriber for Change Promotion",
+      "productId": "200155",
+      "mobileNo": "0932080437",
+      "imsiFlag": "M",
+      "actionType": "UpdateSubscriber",
+      "productEffectiveDate": "2018-02-13 10:00:00+0700"
+    }
+  ]
+}

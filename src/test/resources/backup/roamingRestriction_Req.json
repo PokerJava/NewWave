@@ -1,0 +1,29 @@
+{
+  "publicIdType": "",
+  "publicIdValue": "",
+  "privateIdType": "",
+  "privateIdValue": "",
+  "orderId": "Rx00120180123145506979050",
+  "offeringId": "P0123455",
+  "serviceId": "123e4567-e89b-12d3-a456-4266554412345",
+  "resourceId": "563e4568-e89b-12d3-a456-4266554422222",
+  "reasonDesc": "956-มีความต้องการใช้บริการ",
+  "serviceOrderType": "Prepaid Identification",
+  "channel": "USSD",
+  "user": "SSB-USR",
+  "referenceId": "SSB-0001",
+  "sourceSystem": "BSS",
+  "waiveFlag": "N",
+  "simSerialNo": "345203405694598",
+  "userSys": "Horizon",
+  "resourceItemList": [
+    {
+      "resourceItemId": "563e4568-e89b-12d3-a456-426655",
+      "resourceName": "roamingRestriction",
+      "mobileNo": "0933516649",
+      "requestType": "UPDATE",
+      "imsi": "520033000148375",
+      "restrictionType": "BlockAllArea"
+    }
+  ]
+}

@@ -1,0 +1,689 @@
+<dummy-request>
+	<dummy-message id="1">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="1:0:0">
+			<EquinoxRawData name="HTTP" invoke="PGZ_UAT.E11.0.764891803" type="request" method="POST" url="" ctype="text/plain" val="" to="PGZ_UAT.ES00" orig="PGZ_UAT.E11.0.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	<dummy-message id="2">
+	<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ.E11.0" session="PGZ.E11.0.0153205854560543" timeout="10" ret="0" diag="2:1:0">
+                <EquinoxRawData to="PGZ.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.TRIGGER.W_SDF_GETRESOURCEINVENTORY.00TRIGGER" ecode="200" method="GET" url="/v1/sales/resourceSpecification/resourceInventory.json" val="{
+  &quot;resultCode&quot;: &quot;20000&quot;,
+  &quot;resultDescription&quot;: &quot;Success&quot;,
+  &quot;resultData&quot;: [
+{
+      &quot;createdBy&quot;: &quot;pornnapa&quot;,
+      &quot;createdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pornnapa&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180427000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for smsTerminating&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ  smsTerminating&quot;,
+      &quot;resourceName&quot;: &quot;queryFreeUnitByPack&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+                {
+      &quot;createdBy&quot;: &quot;kusawadk&quot;,
+      &quot;createdDate&quot;: &quot;20180607000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180607000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680301100000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180607000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Number Inventoy Management&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธซเธกเธฒเธขเน€เธฅเธเนเธ—เธฃเธจเธฑเธเธ—เน&quot;,
+      &quot;resourceName&quot;: &quot;numberInventory&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pornnapa&quot;,
+      &quot;createdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pornnapa&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180427000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for smsTerminating&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ  smsTerminating&quot;,
+      &quot;resourceName&quot;: &quot;smsTerminating&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pornnapa&quot;,
+      &quot;createdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pornnapa&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180427000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for smsOriginating&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ  smsOriginating&quot;,
+      &quot;resourceName&quot;: &quot;smsOriginating&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pornnapa&quot;,
+      &quot;createdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pornnapa&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180427000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for VoiceCall&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ  VoiceCall&quot;,
+      &quot;resourceName&quot;: &quot;voiceCall&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;kusawadk&quot;,
+      &quot;createdDate&quot;: &quot;20180607000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180607000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680301100000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180607000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Promotion Management&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝลข๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝัพ๏ฟฝ๏ฟฝ&quot;,
+      &quot;resourceName&quot;: &quot;numberInventory&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180427000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Notify ME Management)&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ Notify ME&quot;,
+      &quot;resourceName&quot;: &quot;notifyME&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180427000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Call Waiting Management)&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ Call Waitting&quot;,
+      &quot;resourceName&quot;: &quot;callWaiting&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180427000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Call Forward Default Management)&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ Call Forward Default&quot;,
+      &quot;resourceName&quot;: &quot;callForwardDefault&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180427000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for roaming)&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ Roaming&quot;,
+      &quot;resourceName&quot;: &quot;roaming&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;kusawadk&quot;,
+      &quot;createdDate&quot;: &quot;20180514000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;&quot;,
+      &quot;lastModifiedBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180514000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;&quot;,
+      &quot;resourceName&quot;: &quot;pdpContextLte&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180321000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for APN Management of LTE (PackageDataProtocol)&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ APN ๏ฟฝอง LTE&quot;,
+      &quot;resourceName&quot;: &quot;pdpContextLTE&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180321000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Roaming Restriction LTE&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ Roaming Restriction LTE&quot;,
+      &quot;resourceName&quot;: &quot;roamingRestrictionLTE&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180321000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Roaming Restriction&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ Roaming Restriction&quot;,
+      &quot;resourceName&quot;: &quot;roamingRestriction&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180321000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for LTE&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ LTE&quot;,
+      &quot;resourceName&quot;: &quot;lte&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180417000000+0700&quot;,
+     &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180321000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for GPRS&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ GPRS&quot;,
+      &quot;resourceName&quot;: &quot;gprs&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+    
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180321000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for HLR Subscriber&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ HLR&quot;,
+      &quot;resourceName&quot;: &quot;hlrSubscriber&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;kusawadk&quot;,
+      &quot;createdDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180321000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for APN Management (PackageDataProtocol)&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ APN&quot;,
+      &quot;resourceName&quot;: &quot;pdpContext&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;kusawadk&quot;,
+      &quot;createdDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180417000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+     &quot;resourceDescriptionEN&quot;: &quot;Resource for camelTerminate management&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝรค๏ฟฝ๏ฟฝ CAMEL ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝ๏ฟฝ&quot;,
+      &quot;resourceName&quot;: &quot;camelTerminatingSubscription&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;kusawadk&quot;,
+      &quot;createdDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180417000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for camelOriginate management&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝรค๏ฟฝ๏ฟฝ CAMEL ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอก&quot;,
+      &quot;resourceName&quot;: &quot;camelOriginatingSubscription&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;kusawadk&quot;,
+      &quot;createdDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180321000000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for suspendOutgoingCall&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝรก๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝอก&quot;,
+      &quot;resourceName&quot;: &quot;suspendOutgoingCall&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    },
+    {
+      &quot;createdBy&quot;: &quot;pirajitp&quot;,
+      &quot;createdDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;effectiveDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680301100000+0700&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;lastModifiedBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastModifiedTime&quot;: &quot;20180301100000+0700&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Promotion Management&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝับ๏ฟฝ๏ฟฝรจัด๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ๏ฟฝ&quot;,
+      &quot;resourceName&quot;: &quot;promotionManagement&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;
+    }
+  ],
+  &quot;rowCount&quot;: &quot;22&quot;
+}" charset="" desc="host=; port=17107; via=auto; session=140" orig="PGZ.ES04.SDF_INVENTORY.0" ret="0" />
+                <EquinoxInstance>
+                                <value val="" />
+                </EquinoxInstance>
+</EquinoxMessage>
+	
+	</dummy-message>
+	
+	
+	<dummy-message id="3">
+	
+	<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ.E11.0" session="RGroupId-20180712000001Horizon" timeout="10" ret="0" diag="1:0:0">
+                <EquinoxRawData name="HTTP" invoke="1002184796" type="request" method="POST" url="/Resources/v1/Fulfillment/synchronous/ServiceProvisioning" ctype="text/plain" val="{
+  &quot;requestHeader&quot;: {
+    &quot;publicIdType&quot;: &quot;&quot;,
+    &quot;publicIdValue&quot;: &quot;&quot;,
+    &quot;privateIdType&quot;: &quot;&quot;,
+    &quot;privateIdValue&quot;: &quot;&quot;,
+    &quot;customerOrderId&quot;: &quot;COrderId-20180712000001&quot;,
+    &quot;customerOrderType&quot;: &quot;CGroupId-20180712000001&quot;,
+    &quot;serviceOrderId&quot;: &quot;SOrderId-20180712000001&quot;,
+    &quot;serviceGroupId&quot;: &quot;SGroupId-20180712000001&quot;,
+    &quot;offeringId&quot;: &quot;P0123455&quot;,
+    &quot;resourceGroupId&quot;: &quot;RGroupId-20180712000001&quot;,
+    &quot;resourceOrderType&quot;: &quot;ROrderType-20180712000001&quot;,
+    &quot;reTransmit&quot;: &quot;0&quot;,
+    &quot;serviceOrderType&quot;: &quot;Product Offering&quot;,
+    &quot;channel&quot;: &quot;USSD&quot;,
+    &quot;user&quot;: &quot;SSB-USR&quot;,
+    &quot;referenceId&quot;: &quot;SSB-0001&quot;,
+    &quot;sourceSystem&quot;: &quot;BSS&quot;,
+    &quot;userSys&quot;: &quot;Horizon&quot;
+  },
+  &quot;resourceItemList&quot;: [
+    {
+      &quot;resourceName&quot;: &quot;queryFreeUnitByPack&quot;,
+      &quot;requestType&quot;: &quot;READ&quot;,
+      &quot;resourceItemId&quot;: &quot;queryFreeUnitByPack-20180718160500&quot;,
+      &quot;mobileNo&quot;: &quot;66659330470&quot;,
+      &quot;errorFlag&quot;: &quot;0&quot;,
+      &quot;specialErrHandling&quot;: {
+        &quot;suppCode&quot;: [],
+        &quot;taskKeyCondition&quot;: [],
+        &quot;taskDeveloperMessage&quot;: []
+      }
+    }
+  ]
+}" to="PGZ.ES00" orig="PGZ.ES05.Serv.0" ret="0" />
+                <EquinoxInstance>
+                                <value val="" />
+                </EquinoxInstance>
+</EquinoxMessage>
+</dummy-message> 
+
+
+	<dummy-message id="4">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+			<EquinoxRawData to="PGZ.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="1002184796.00000.SYNC_ResourceOrder.W_SDF_GETRESOURCEINFRANODE.01SYNC_RESOURCEORDER" ecode="200" method="GET" url="/AISCBS1" val="
+			{
+	&quot;resultCode&quot;: &quot;20000&quot;,
+	&quot;resultDescription&quot;: &quot;Success&quot;,
+	&quot;cadResourceInfraInventory&quot;: [{
+		&quot;dn&quot;: &quot;neId=AISCBS1,
+		o=resource,
+		o=cad,
+		o=nss,
+		o=services,
+		o=AIS,
+		dc=C-NTDB&quot;,
+		&quot;objectClass&quot;: &quot;cadResourceInfraInventory&quot;,
+		&quot;quotaPlan&quot;: &quot;999999999&quot;,
+		&quot;quotaAvailability&quot;: &quot;0&quot;,
+		&quot;alertRatio&quot;: &quot;10000&quot;,
+		&quot;neState&quot;: &quot;Active&quot;,
+		&quot;pfUsername&quot;: &quot;PGZTEST1&quot;,
+		&quot;pfPassword&quot;: &quot;SG7OKIZrz/sGNfTW/61JZ3aqdrN9Z2uJVodaH5yHA7A=&quot;,
+		&quot;neId&quot;: &quot;AISCBS1&quot;
+	}]
+}
+" charset="" desc="" orig="PGZ.ES04.SDF_INFRANODE.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	
+	<dummy-message id="5">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ.E11.0" session="RGroupId-20180712000001Horizon" timeout="10" ret="0" diag="3:2:0">
+                <EquinoxRawData to="PGZ.ES00.0" name="HTTP" type="response" ctype="text/xml" invoke="1002184796.00000.queryFreeUnitByPack_4H_001.W_queryFreeUnitByPack_4_H_001.02RESOURCEITEM.Task1" ecode="200" method="POST" url="/services/BbServices" orig="PGZ.ES04.AISCBS1.0" ret="0">
+                                <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                                                <soapenv:Body>
+                                                                <bbs:QueryFreeUnitResultMsg xmlns:bbs="http://www.huawei.com/bme/cbsinterface/bbservices" xmlns:bbc="http://www.huawei.com/bme/cbsinterface/bbcommon" xmlns:cbs="http://www.huawei.com/bme/cbsinterface/cbscommon">
+                                                                                <ResultHeader>
+                                                                                                <cbs:Version>1</cbs:Version>
+                                                                                                <cbs:ResultCode>0</cbs:ResultCode>
+                                                                                                <cbs:MsgLanguageCode>2040</cbs:MsgLanguageCode>
+                                                                                                <cbs:ResultDesc>Operation successfully.</cbs:ResultDesc>
+                                                                                </ResultHeader>
+                                                                                <QueryFreeUnitResult>
+                                                                                                <bbs:FreeUnitItem>
+                                                                                                                <bbs:FreeUnitType>C_184100048</bbs:FreeUnitType>
+                                                                                                                <bbs:FreeUnitTypeName>SMS Roaming Worldwide 300 Baht 30 SMS 7 days</bbs:FreeUnitTypeName>
+                                                                                                                <bbs:MeasureUnit>1101</bbs:MeasureUnit>
+                                                                                                                <bbs:MeasureUnitName>Items</bbs:MeasureUnitName>
+                                                                                                                <bbs:TotalInitialAmount>30</bbs:TotalInitialAmount>
+                                                                                                                <bbs:TotalUnusedAmount>30</bbs:TotalUnusedAmount>
+                                                                                                                <bbs:FreeUnitItemDetail>
+                                                                                                                                <bbs:FreeUnitInstanceID>701000000000024890</bbs:FreeUnitInstanceID>
+                                                                                                                                <bbs:InitialAmount>30</bbs:InitialAmount>
+                                                                                                                                <bbs:CurrentAmount>30</bbs:CurrentAmount>
+                                                                                                                                <bbs:EffectiveTime>20180717120221</bbs:EffectiveTime>
+                                                                                                                                <bbs:ExpireTime>20180724120221</bbs:ExpireTime>
+                                                                                                                                <bbs:FreeUnitOrigin>
+                                                                                                                                                <bbs:OriginType>1</bbs:OriginType>
+                                                                                                                                                <bbs:OfferingKey>
+                                                                                                                                                                <bbc:OfferingID>790244</bbc:OfferingID>
+                                                                                                                                                                <bbc:PurchaseSeq>49606</bbc:PurchaseSeq>
+                                                                                                                                                                <bbs:OfferingName>SMS Roaming Worldwide 300 Baht 30 SMS 7 days</bbs:OfferingName>
+                                                                                                                                                                <bbs:NotificationName>SMS Roaming Worldwide 300 Baht 30 SMS 7 days</bbs:NotificationName>
+                                                                                                                                                </bbs:OfferingKey>
+                                                                                                                                </bbs:FreeUnitOrigin>
+                                                                                                                                <bbs:RollOverFlag>N</bbs:RollOverFlag>
+                                                                                                                </bbs:FreeUnitItemDetail>
+                                                                                                </bbs:FreeUnitItem>
+                                                                                                <bbs:FreeUnitItem>
+                                                                                                                <bbs:FreeUnitType>C_113100001</bbs:FreeUnitType>
+                                                                                                                <bbs:FreeUnitTypeName>Voice and VDO Call AllNetwork Prepaid</bbs:FreeUnitTypeName>
+                                                                                                                <bbs:MeasureUnit>1003</bbs:MeasureUnit>
+                                                                                                                <bbs:MeasureUnitName>Seconds</bbs:MeasureUnitName>
+                                                                                                                <bbs:TotalInitialAmount>27120</bbs:TotalInitialAmount>
+                                                                                                                <bbs:TotalUnusedAmount>27180</bbs:TotalUnusedAmount>
+                                                                                                                <bbs:FreeUnitItemDetail>
+                                                                                                                                <bbs:FreeUnitInstanceID>701000000000024963</bbs:FreeUnitInstanceID>
+                                                                                                                                <bbs:InitialAmount>60</bbs:InitialAmount>
+                                                                                                                                <bbs:CurrentAmount>60</bbs:CurrentAmount>
+                                                                                                                                <bbs:EffectiveTime>20180717115959</bbs:EffectiveTime>
+                                                                                                                                <bbs:ExpireTime>20370101000000</bbs:ExpireTime>
+                                                                                                                                <bbs:FreeUnitOrigin>
+                                                                                                                                                <bbs:OriginType>6</bbs:OriginType>
+                                                                                                                                                <bbs:PlanID>0</bbs:PlanID>
+                                                                                                                                </bbs:FreeUnitOrigin>
+                                                                                                                                <bbs:RollOverFlag>N</bbs:RollOverFlag>
+                                                                                                                </bbs:FreeUnitItemDetail>
+                                                                                                                <bbs:FreeUnitItemDetail>
+                                                                                                                                <bbs:FreeUnitInstanceID>701000000000024962</bbs:FreeUnitInstanceID>
+                                                                                                                                <bbs:InitialAmount>60</bbs:InitialAmount>
+                                                                                                                                <bbs:CurrentAmount>60</bbs:CurrentAmount>
+                                                                                                                                <bbs:EffectiveTime>20180717115820</bbs:EffectiveTime>
+                                                                                                                                <bbs:ExpireTime>20370101000000</bbs:ExpireTime>
+                                                                                                                                <bbs:FreeUnitOrigin>
+                                                                                                                                                <bbs:OriginType>6</bbs:OriginType>
+                                                                                                                                                <bbs:PlanID>0</bbs:PlanID>
+                                                                                                                                </bbs:FreeUnitOrigin>
+                                                                                                                                <bbs:RollOverFlag>N</bbs:RollOverFlag>
+                                                                                                                </bbs:FreeUnitItemDetail>
+                                                                                                                <bbs:FreeUnitItemDetail>
+                                                                                                                                <bbs:FreeUnitInstanceID>701000000000024942</bbs:FreeUnitInstanceID>
+                                                                                                                                <bbs:InitialAmount>27000</bbs:InitialAmount>
+                                                                                                                                <bbs:CurrentAmount>27060</bbs:CurrentAmount>
+                                                                                                                                <bbs:EffectiveTime>20180717113843</bbs:EffectiveTime>
+                                                                                                                                <bbs:ExpireTime>20180915113843</bbs:ExpireTime>
+                                                                                                                                <bbs:FreeUnitOrigin>
+                                                                                                                                                <bbs:OriginType>1</bbs:OriginType>
+                                                                                                                                                <bbs:OfferingKey>
+                                                                                                                                                                <bbc:OfferingID>15067301</bbc:OfferingID>
+                                                                                                                                                                <bbc:PurchaseSeq>49597</bbc:PurchaseSeq>
+                                                                                                                                                                <bbs:OfferingName>ProJakHai 200B[Call in AIS 1B:hr Oth 1B:min]ExVAT - normal</bbs:OfferingName>
+                                                                                                                                                                <bbs:NotificationName>Call in AIS 1B/hr. exceed &amp; other networks 1B/min</bbs:NotificationName>
+                                                                                                                                                </bbs:OfferingKey>
+                                                                                                                                </bbs:FreeUnitOrigin>
+                                                                                                                                <bbs:RollOverFlag>N</bbs:RollOverFlag>
+                                                                                                                </bbs:FreeUnitItemDetail>
+                                                                                                </bbs:FreeUnitItem>
+                                                                                                <bbs:FreeUnitItem>
+                                                                                                                <bbs:FreeUnitType>C_243110001_U</bbs:FreeUnitType>
+                                                                                                                <bbs:FreeUnitTypeName>Internet</bbs:FreeUnitTypeName>
+                                                                                                                <bbs:MeasureUnit>1107</bbs:MeasureUnit>
+                                                                                                                <bbs:MeasureUnitName>KB</bbs:MeasureUnitName>
+                                                                                                                <bbs:TotalInitialAmount>4503599625273344</bbs:TotalInitialAmount>
+                                                                                                                <bbs:TotalUnusedAmount>4503599625273344</bbs:TotalUnusedAmount>
+                                                                                                                <bbs:FreeUnitItemDetail>
+                                                                                                                                <bbs:FreeUnitInstanceID>701000000000024889</bbs:FreeUnitInstanceID>
+                                                                                                                                <bbs:InitialAmount>2251799812636672</bbs:InitialAmount>
+                                                                                                                                <bbs:CurrentAmount>2251799812636672</bbs:CurrentAmount>
+                                                                                                                                <bbs:EffectiveTime>20180717114906</bbs:EffectiveTime>
+                                                                                                                                <bbs:ExpireTime>20180725000000</bbs:ExpireTime>
+                                                                                                                                <bbs:FreeUnitOrigin>
+                                                                                                                                                <bbs:OriginType>1</bbs:OriginType>
+                                                                                                                                                <bbs:OfferingKey>
+                                                                                                                                                                <bbc:OfferingID>761016</bbc:OfferingID>
+                                                                                                                                                                <bbc:PurchaseSeq>49601</bbc:PurchaseSeq>
+                                                                                                                                                                <bbs:OfferingName>3G MaoMao 79Baht Max512kbps 1536MBWeekly</bbs:OfferingName>
+                                                                                                                                                                <bbs:NotificationName>3G MaoMao 79Baht Max512kbps 1536MBWeekly</bbs:NotificationName>
+                                                                                                                                                </bbs:OfferingKey>
+                                                                                                                                </bbs:FreeUnitOrigin>
+                                                                                                                                <bbs:RollOverFlag>N</bbs:RollOverFlag>
+                                                                                                                </bbs:FreeUnitItemDetail>
+                                                                                                                <bbs:FreeUnitItemDetail>
+                                                                                                                                <bbs:FreeUnitInstanceID>701000000000024887</bbs:FreeUnitInstanceID>
+                                                                                                                                <bbs:InitialAmount>2251799812636672</bbs:InitialAmount>
+                                                                                                                                <bbs:CurrentAmount>2251799812636672</bbs:CurrentAmount>
+                                                                                                                                <bbs:EffectiveTime>20180717114747</bbs:EffectiveTime>
+                                                                                                                                <bbs:ExpireTime>20180725000000</bbs:ExpireTime>
+                                                                                                                                <bbs:FreeUnitOrigin>
+                                                                                                                                                <bbs:OriginType>1</bbs:OriginType>
+                                                                                                                                                <bbs:OfferingKey>
+                                                                                                                                                                <bbc:OfferingID>761016</bbc:OfferingID>
+                                                                                                                                                                <bbc:PurchaseSeq>49600</bbc:PurchaseSeq>
+                                                                                                                                                                <bbs:OfferingName>3G MaoMao 79Baht Max512kbps 1536MBWeekly</bbs:OfferingName>
+                                                                                                                                                                <bbs:NotificationName>3G MaoMao 79Baht Max512kbps 1536MBWeekly</bbs:NotificationName>
+                                                                                                                                                </bbs:OfferingKey>
+                                                                                                                                </bbs:FreeUnitOrigin>
+                                                                                                                                <bbs:RollOverFlag>N</bbs:RollOverFlag>
+                                                                                                                </bbs:FreeUnitItemDetail>
+                                                                                                </bbs:FreeUnitItem>
+                                                                                                <bbs:FreeUnitItem>
+                                                                                                                <bbs:FreeUnitType>C_243150001_U</bbs:FreeUnitType>
+                                                                                                                <bbs:FreeUnitTypeName>Internet</bbs:FreeUnitTypeName>
+                                                                                                                <bbs:MeasureUnit>1107</bbs:MeasureUnit>
+                                                                                                                <bbs:MeasureUnitName>KB</bbs:MeasureUnitName>
+                                                                                                                <bbs:TotalInitialAmount>3145728</bbs:TotalInitialAmount>
+                                                                                                                <bbs:TotalUnusedAmount>3145728</bbs:TotalUnusedAmount>
+                                                                                                                <bbs:FreeUnitItemDetail>
+                                                                                                                                <bbs:FreeUnitInstanceID>701000000000024888</bbs:FreeUnitInstanceID>
+                                                                                                                                <bbs:InitialAmount>1572864</bbs:InitialAmount>
+                                                                                                                                <bbs:CurrentAmount>1572864</bbs:CurrentAmount>
+                                                                                                                                <bbs:EffectiveTime>20180717114906</bbs:EffectiveTime>
+                                                                                                                                <bbs:ExpireTime>20180725000000</bbs:ExpireTime>
+                                                                                                                                <bbs:FreeUnitOrigin>
+                                                                                                                                                <bbs:OriginType>1</bbs:OriginType>
+                                                                                                                                                <bbs:OfferingKey>
+                                                                                                                                                                <bbc:OfferingID>7610</bbc:OfferingID>
+                                                                                                                                                                <bbc:PurchaseSeq>49601</bbc:PurchaseSeq>
+                                                                                                                                                                <bbs:OfferingName>3G MaoMao 79Baht Max512kbps 1536MBWeekly</bbs:OfferingName>
+                                                                                                                                                                <bbs:NotificationName>3G MaoMao 79Baht Max512kbps 1536MBWeekly</bbs:NotificationName>
+                                                                                                                                                </bbs:OfferingKey>
+                                                                                                                                </bbs:FreeUnitOrigin>
+                                                                                                                                <bbs:RollOverFlag>N</bbs:RollOverFlag>
+                                                                                                                </bbs:FreeUnitItemDetail>
+                                                                                                                <bbs:FreeUnitItemDetail>
+                                                                                                                                <bbs:FreeUnitInstanceID>701000000000024886</bbs:FreeUnitInstanceID>
+                                                                                                                                <bbs:InitialAmount>1572864</bbs:InitialAmount>
+                                                                                                                                <bbs:CurrentAmount>1572864</bbs:CurrentAmount>
+                                                                                                                                <bbs:EffectiveTime>20180717114747</bbs:EffectiveTime>
+                                                                                                                                <bbs:ExpireTime>20180725000000</bbs:ExpireTime>
+                                                                                                                                <bbs:FreeUnitOrigin>
+                                                                                                                                                <bbs:OriginType>1</bbs:OriginType>
+                                                                                                                                                <bbs:OfferingKey>
+                                                                                                                                                                <bbc:OfferingID>761016</bbc:OfferingID>
+                                                                                                                                                                <bbc:PurchaseSeq>49600</bbc:PurchaseSeq>
+                                                                                                                                                                <bbs:OfferingName>3G MaoMao 79Baht Max512kbps 1536MBWeekly</bbs:OfferingName>
+                                                                                                                                                                <bbs:NotificationName>3G MaoMao 79Baht Max512kbps 1536MBWeekly</bbs:NotificationName>
+                                                                                                                                                </bbs:OfferingKey>
+                                                                                                                                </bbs:FreeUnitOrigin>
+                                                                                                                                <bbs:RollOverFlag>N</bbs:RollOverFlag>
+                                                                                                                </bbs:FreeUnitItemDetail>
+                                                                                                </bbs:FreeUnitItem>
+                                                                                </QueryFreeUnitResult>
+                                                                </bbs:QueryFreeUnitResultMsg>
+                                                </soapenv:Body>
+                                </soapenv:Envelope>
+                </EquinoxRawData>
+                <EquinoxInstance>
+                                <value val="" />
+                </EquinoxInstance>
+</EquinoxMessage>
+	</dummy-message>
+	
+	
+	<dummy-message id="6">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+			<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.SYNC_ResourceOrder.W_HRZ_POSTRESULT.01SYNC_RESOURCEORDER" ecode="200" method="POST" url="/Resource/V1/PLCMngt/ResourceProvisioning/ResourceName/pdpContext" val="{
+			&quot;resourceRequestId&quot;: &quot;908xxxxx&quot;,
+			&quot;resourceId&quot;: &quot;870898a4-19a9-4597-855e-35587ab10bfd&quot;,
+			&quot;resultCode&quot;: &quot;20000&quot;,
+			&quot;developerMessage&quot;: &quot;Success&quot;
+			}" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	<dummy-message id="7">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+			<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.SYNC_ResourceOrder.W_SDF_POSTREPORT.01SYNC_RESOURCEORDER" ecode="200" method="GET" url="/Resource/V1/PLCMngt/ResourceManagement/ResourceInventory.json" val="{
+			&quot;resultCode&quot;: &quot;20000&quot;,
+			&quot;resultDescription&quot;: &quot;Success&quot;
+			}" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+</dummy-request>

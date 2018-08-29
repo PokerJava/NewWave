@@ -1,0 +1,7 @@
+@request
+Add APNPROF : MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}, EPCAPN={@param:resourceOrderItem.apnName},{@overwrite_def:pdpTypeLTE_HLRZTE({@param:resourceOrderItem.pdpType})},EPCPDNAddr1={@overwrite_def:pdpAddressLTE_HLRZTE({@param:resourceOrderItem.pdpAddress})}, EPSQOSID={@overwrite_def:qosPDPLTE_HLRZTE({@param:resourceOrderItem.qosProfile})}, VPLMNDAA={@overwrite_def:pdpVplmnLTE_HLRZTE({@param:resourceOrderItem.vplmn})}, APNCHARGE={@overwrite_def:ccLTE_HLRZTE({@param:resourceOrderItem.chargingProfile})};
+@endrequest
+
+@response
+ACK:ADD APNPROF:RETN=000000, DESC=success
+@endresponse

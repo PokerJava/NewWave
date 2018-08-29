@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="tis-620" ?>
+<configuration>
+    <cold>
+        <HomeDirectory value="/Users/huz/CT/Pegazus/pegachu" />
+        <Application group="PGZ_UAT" service="SER" instance="0" />
+        <Listener port="8888" backlog="256"/>
+        <Library function="ct.af.core.control.AFMain" />
+        <ECProperties>
+            <ThreadPool value="5" />
+            <AutoCpuUtilize value="true"/>
+            <CpuUtilizeList value="4,5,6,7,8,9,10,11,12,13,14,15,16"/>
+            <JavaOption value="-server"/>
+            <JavaOption value="-XX:CompileThreshold=1000"/>
+            <JavaOption value="-XX:ThreadStackSize=65535"/>
+            <JavaOption value="-XX:MainThreadStackSize=65535"/>
+            <JavaOption value="-Xms1G"/>
+            <JavaOption value="-Xmx1G"/>
+            <JavaOption value="-Djavax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom=com.sun.org.apache.xpath.internal.jaxp.XPathFactoryImpl"/>
+            <JavaOption value="-Djava.version=1.8"/>
+        </ECProperties>
+    </cold>
+    <warm>
+        <StatInterval value="2" />
+        <HousekeeperInterval value="10" />
+        <RestartDelay value="10" />
+		<ExpirationDate value="120" />
+		<EDR_LOG value ="PGZ_EDR" />
+		<CDR_LOG value ="PGZ_CDR" />
+		<Transaction_LOG value ="PGZ_Transaction" />
+		<IncomingUnknown_LOG value ="PGZ_IncomingUnknown" />
+		
+		
+		<Actor value="Pegazus"/>
+        <IncomingMsgDecode value="true" />
+        <OutgoingMsgEncode value="true" />
+        <IncomingMsgTrim value="false" />
+        <OutgoingMsgTrim value="false" />
+
+
+        <ServerMaxSession value="512" />
+        <ServerReadTimeout value="30" />
+        <ServerWriteTimeout value="30" />
+        <ServerIdleTimeout value="7200" />
+
+	
+		<Protocol value="HTTP|SOCKET|"/>
+
+        <Default-Timeout value="10" />
+
+
+        <SFLOG value="FATAL|ERROR|WARN|INFO|DEBUG" />
+        <AFLOG value="FATAL|ERROR|WARN|INFO|DEBUG" />
+		
+		<!-- enableTimeoutManagerFlag -->
+		<EnableTimeoutManagerFlag value = "true" />
+
+        <!-- config RandomInvoke for dev only.not on server-->
+        <RandomInvoke value="FALSE"/>
+
+        <!--Common-->
+        <PgzServerName value="DPANEAIA002G" />
+        <Provisioning-URL value="/Resources/v1/Fulfillment/ServiceProvisioning|/Resources/v1/Fulfillment/synchronous/ServiceProvisioning" />
+
+
+        <!-- UserSys List -->
+        <UserSysList value="Horizon|Orion|" />
+        
+        <!-- Servers Interface -->
+        <Resource-Name-Horizon value="HRZ" />
+        <Resource-Name-Orion value="ORO" />
+        <Resource-Name-SDF_INFRANODE value="SDF_INFRANODE" />
+        <Resource-Name-SDF_INVENTORY value="SDF_INVENTORY" />
+        <Resource-Name-SDF_JOURNEY value="SDF_JOURNEY" />
+        <Resource-Name-SDF_RESERVEQUOTA value="SDF" />
+        <Resource-Name-SDF_RELEASEQUOTA value="SDF" />
+        <Resource-Name-SDF_COMMITQUOTA value="SDF" />
+        <Resource-Name-Mongo value="Mongo" />
+        <Resource-Name-MD value="MD" />
+		<Resource-Name-Recovery_File value = "0" />
+
+
+        <!-- Servers Timeout (Sec.) -->
+        <Tm-ExpirationDate value="7200" />
+        <Tm-SDF_INVENTORY value="10" />
+        <Tm-SDF_INFRANODE value="10" />
+        <Tm-SDF_JOURNEY value="10" />
+        <Tm-SDF_RESERVEQUOTA value="10" />
+        <Tm-SDF_RELEASEQUOTA value="10" />
+        <Tm-SDF_COMMITQUOTA value="10" />
+        <Tm-Mongo value="10" />
+        <Tm-Horizon value="10" />
+        <Tm-Orion value="10" />
+        <Tm-MD value="10" />
+        <Tm-Default value="360" />
+		<Tm-Gapexectime value ="0.1" />
+        
+
+
+
+        <!-- Servers MaxRetry -->
+        <MaxRetry-SDF value="3" />
+		<MaxActive_Request value = "10" />
+	
+
+        <!-- Server url -->
+        <URL-SDF_INVENTORY value="/v1/sales/resourceSpecification/resourceInventory.json" />
+        <URL-SDF_INFRANODE value="/v1/resource/resourceSpecification/neId" />
+        <URL-SDF_JOURNEY value="" />
+        <URL-SDF_RESERVEQUOTA value="/v1/resource/resourceSpecification/neId" />
+        <URL-SDF_RELEASEQUOTA value="" />
+        <URL-SDF_COMMITQUOTA value="" />
+        <URL-Mongo value="" />
+        <URL-Horizon value="/v1/resource/Horizon" />
+        <URL-Orion value="/v1/resource/Orion" />
+		<Path-ES22-Recovery_Duplicate value="/opt/equinox/es22/Duplicate/" />
+		<Path-ES22-Recovery_Timeout value="/opt/equinox/es22/Timeout/" />
+		<Path-ES22-Recovery_error value="/opt/equinox/es22/error/" />
+		
+		<!-- ResourceInventory Mode file, SDF -->	
+		<ResourceInventoryFromFileMode value = "sdf" />
+		
+		<!-- ResourceInventory form file -->
+		<ResourceInventoryBackupPath value="src/test/resources/backup/resourceInvent/" />
+		<ResourceInventoryBackupFile value="ResourceInventory.json.20180720100701" />
+	
+	
+        <!-- Resource Config -->
+		<ResourceSearchKey value="src/test/resources/ResourceConfig/ResourceSearchKey.json" />
+		<ResourceMaster value="src/test/resources/ResourceConfig/ResourceMaster.json" />
+		<ResourceRuleMaster value="src/test/resources/ResourceConfig/ResourceRuleMaster.json" />
+		<ResourceNeTypeProperty value="src/test/resources/ResourceConfig/ResourceNeTypeProperty.json" />
+		<ResourceMappingCommand value="src/test/resources/ResourceConfig/ResourceCommandMapping.json" />
+		<ResourceProperty value="src/test/resources/ResourceConfig/ResourceProperty.json" />
+		<ResourceErrorHandling value= "src/test/resources/ResourceConfig/ResourceErrorHandling.json" />
+		<ResourceInventory value="src/test/resources/ResourceConfig/ResourceInventory.json" />
+        <ResourceNeIdRouting value="src/test/resources/ResourceConfig/ResourceNeIdRouting.json" />
+		<DropResourceOrderType value="src/test/resources/ResourceConfig/DropResourceOrderType.json" />
+		<OverwriteDef value="src/test/resources/ResourceConfig/OverwriteDef.json" />
+		<MessageTemplatePath value="src/test/resources/ResourceConfig/message_templates/" />
+		<OverwriteParam value="src/test/resources/ResourceConfig/OverwriteParam.json" />
+		
+		
+
+		
+    </warm>
+</configuration>

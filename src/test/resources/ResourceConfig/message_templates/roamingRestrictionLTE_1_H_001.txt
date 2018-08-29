@@ -1,0 +1,11 @@
+@request
+MOD DIAMRRS: ISDN = "{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}", PROV=TRUE, DIAMNODETPL_ID={@overwrite_def:restrictionTypeRoamingRestrictionLTE({@param:resourceOrderItem.restrictionType})};
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+
+There is together 1 report
+
+---    END
+@endresponse

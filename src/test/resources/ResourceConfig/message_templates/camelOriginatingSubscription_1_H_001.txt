@@ -1,0 +1,11 @@
+@request
+MOD OCSI: ISDN="{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}",PROV=TRUE,TPLID={@overwrite_def:camelOCSITemplate({@param:resourceOrderItem.subProfile},{@param:resourceOrderItem.scpId},{@overwrite_def:trigCriteriaCamelOriginatingSubscription({@param:resourceOrderItem.trigCriteria})})};
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+
+There is together 1 reportresourceOrderItem
+
+---    END
+@endresponse

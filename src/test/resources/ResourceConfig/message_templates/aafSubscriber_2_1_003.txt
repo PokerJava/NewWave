@@ -1,0 +1,14 @@
+@request
+{
+     "commandId":"{@param:resourceOrderItem.commandId}",
+      "subscriptionId":"{@overwrite_def:publicType_AAF({@param:resourceOrderItem.publicType})}|{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.publicId})}",
+     "appName":"{@param:resourceOrderItem.appName}"
+}
+@endrequest
+
+@response
+{
+    "resultCode":"20000",
+    "developerMessage":"Success"
+}
+@endresponse

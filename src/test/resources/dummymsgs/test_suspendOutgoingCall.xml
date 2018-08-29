@@ -1,0 +1,37 @@
+<dummy-request>
+	<dummy-message id="1">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="1:0:0">
+			<EquinoxRawData name="HTTP" invoke="764891803" type="request" method="POST" url="/Resource/V1/PLCMngt/ResourceProvisioning/ResourceName/suspendOutgoingCall" ctype="text/plain" val="{
+			&quot;publicIdType&quot;: &quot;&quot;,
+			&quot;publicIdValue&quot;: &quot;&quot;,
+			&quot;privateIdType&quot;: &quot;&quot;,
+			&quot;privateIdValue&quot;: &quot;&quot;,
+			&quot;orderId&quot;: &quot;Rx00120180123145506979050&quot;,
+			&quot;offeringId&quot;: &quot;P0123455&quot;,
+			&quot;serviceId&quot;: &quot;123e4567-e89b-12d3-a456-4266554412345&quot;,
+			&quot;resourceId&quot;: &quot;563e4568-e89b-12d3-a456-4266554422222&quot;,
+			&quot;reasonDesc&quot;: &quot;956-มีความต้องการใช้บริการ&quot;,
+			&quot;serviceOrderType&quot;: &quot;Preparation&quot;,
+			&quot;channel&quot;: &quot;USSD&quot;,
+			&quot;user&quot;: &quot;SSB-USR&quot;,
+			&quot;referenceId&quot;: &quot;SSB-0001&quot;,
+			&quot;sourceSystem&quot;: &quot;BSS&quot;,
+			&quot;waiveFlag&quot;: &quot;N&quot;,
+			&quot;simSerialNo&quot;: &quot;345203405694598&quot;,
+			&quot;userSys&quot;: &quot;Horizon&quot;,
+			&quot;resourceItemList&quot;: [
+				{
+					&quot;resourceItemId&quot;: &quot;563e4568-e89b-12d3-a456-426655&quot;,
+					&quot;resourceName&quot;: &quot;suspendOutgoingCall&quot;,
+					&quot;mobileNo&quot;: &quot;0933516649&quot;,
+					&quot;requestType&quot;: &quot;CREATE&quot;,
+					&quot;imsi&quot;: &quot;520033000148375&quot;,
+					&quot;suspendType&quot;: &quot;IDD&quot;
+				}
+			] }" to="PGZ_UAT.ES00" orig="PGZ_UAT.ES05.Serv.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+</dummy-request>

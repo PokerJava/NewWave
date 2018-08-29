@@ -1,0 +1,7 @@
+@request
+Mod GBsc:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},Charge={@overwrite_def:gcc_HLRZTE({@param:resourceOrderItem.chargingProfile})};
+@endrequest
+
+@response
+ACK:MOD GBSC:RETN=000000, DESC=success
+@endresponse

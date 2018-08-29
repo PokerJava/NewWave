@@ -1,0 +1,7 @@
+@request
+MOD CFNRY: ISDN = "{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}", PROV=TRUE,NFS=TRUE, NCS=TRUE, COU=0;
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+@endresponse

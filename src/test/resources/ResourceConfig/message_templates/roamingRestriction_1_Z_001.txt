@@ -1,0 +1,7 @@
+@request
+Mod Bsc:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}, {@overwrite_def:restrictionType_HLRZTE({@param:resourceOrderItem.restrictionType})};
+@endrequest
+
+@response
+ACK:MOD BSC:RETN=000000, DESC=success
+@endresponse

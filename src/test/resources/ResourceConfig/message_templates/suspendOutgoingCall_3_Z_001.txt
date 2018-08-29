@@ -1,0 +1,7 @@
+@request
+Mod ODB : MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}, BOC=0;
+@endrequest
+
+@response
+ACK:MOD ODB:RETN=000000, DESC=success
+@endresponse

@@ -1,0 +1,7 @@
+@request
+Add User:IMSI={@param:resourceOrderItem.imsi},MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},Profile=57;
+@endrequest
+
+@response
+ACK:ADD USER:RETN=000000, DESC=success
+@endresponse

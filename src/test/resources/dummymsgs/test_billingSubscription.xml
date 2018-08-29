@@ -1,0 +1,54 @@
+<dummy-request>
+	<dummy-message id="1">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="1:0:0">
+			<EquinoxRawData name="HTTP" invoke="764891803" type="request" method="POST" url="/Resource/V1/PLCMngt/ResourceProvisioning/ResourceName/billingSubscription" ctype="text/plain" val="{
+			&quot;publicIdType&quot;: &quot;&quot;,
+			&quot;publicIdValue&quot;: &quot;&quot;,
+			&quot;privateIdType&quot;: &quot;&quot;,
+			&quot;privateIdValue&quot;: &quot;&quot;,
+			&quot;orderId&quot;: &quot;Rx00120180123145506979050&quot;,
+			&quot;offeringId&quot;: &quot;P0123455&quot;,
+			&quot;serviceId&quot;: &quot;123e4567-e89b-12d3-a456-4266554412345&quot;,
+			&quot;resourceId&quot;: &quot;563e4568-e89b-12d3-a456-4266554422222&quot;,
+			&quot;reasonDesc&quot;: &quot;956-มีความต้องการใช้บริการ&quot;,
+			&quot;serviceOrderType&quot;: &quot;Product Offering&quot;,
+			&quot;channel&quot;: &quot;WebService&quot;,
+			&quot;user&quot;: &quot;SSB-USR&quot;,
+			&quot;referenceId&quot;: &quot;SSB-0001&quot;,
+			&quot;sourceSystem&quot;: &quot;BSS&quot;,
+			&quot;waiveFlag&quot;: &quot;N&quot;,
+			&quot;simSerialNo&quot;: &quot;1313306604376&quot;,
+			&quot;userSys&quot;: &quot;Horizon&quot;,
+			&quot;resourceItemList&quot;: [
+				{
+					&quot;resourceItemId&quot;: &quot;563e4568-e89b-12d3-a456-426655&quot;,
+					&quot;resourceName&quot;: &quot;billingSubscription&quot;,
+					&quot;mobileNo&quot;: &quot;0932080437&quot;,
+					&quot;requestType&quot;: &quot;CREATE&quot;,
+					&quot;billingSystem&quot;: &quot;CBS&quot;,
+					&quot;imsi&quot;: &quot;520032000201728&quot;,
+					&quot;caId&quot;: &quot;9335104200001&quot;,
+					&quot;baId&quot;: &quot;9335104200001&quot;,
+					&quot;channel&quot;: &quot;WebService&quot;,
+					&quot;custOperType&quot;: &quot;1&quot;,
+					&quot;custType&quot;: &quot;1&quot;,
+					&quot;customerCategory&quot;: &quot;B&quot;,
+					&quot;custSMSLanguage&quot;: &quot;THA&quot;,
+					&quot;custIVRLanguage&quot;: &quot;JPN&quot;,
+					&quot;customerSegment&quot;: &quot;Classic&quot;,
+					&quot;acctBillCycleType&quot;: &quot;18&quot;,
+					&quot;acctPaymentMode&quot;: &quot;Pre-paid&quot;,
+					&quot;smsLanguage&quot;: &quot;KOR&quot;,
+					&quot;ivrLanguage&quot;: &quot;LAO&quot;,
+					&quot;brandId&quot;: &quot;3G&quot;,
+					&quot;subPaymentMode&quot;: &quot;Pre-paid&quot;,
+					&quot;subRegisterTime&quot;: &quot;2018-03-13 10:00:00+0700&quot;,
+					&quot;mainProductId&quot;: &quot;150365&quot;
+				}
+			] }" to="PGZ_UAT.ES00" orig="PGZ_UAT.ES05.Serv.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+</dummy-request>

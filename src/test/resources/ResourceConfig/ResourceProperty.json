@@ -1,0 +1,361 @@
+{
+  "resultData": [
+    {
+      "resourceName": "promotionManagement",
+      "preNeRouting": "N",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "resourceOrderItem$billingSystem",
+        "resourceOrderItem$serviceType"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Promotion Management"
+    },
+    {
+      "resourceName": "usmpSubscriber",
+      "preNeRouting": "N",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for USMP Subscription"
+    },
+    {
+      "resourceName": "billingSubscription",
+      "preNeRouting": "N",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "resourceOrderItem$billingSystem"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Billing Subscription"
+    },
+    {
+      "resourceName": "gprs",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180417000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for GPRS"
+    },
+    {
+      "resourceName": "hlrSubscriber",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180418000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for HLR Subscriber"
+    },
+    {
+      "resourceName": "camelOriginatingSubscription",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180419091912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419105912+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Manage subscriber profile at HLR"
+    },
+    {
+      "resourceName": "camelTerminatingSubscription",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180419091912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419105912+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Manage subscriber profile at HLR"
+    },
+    {
+      "resourceName": "lte",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180419091912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180419105912+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Manage subscriber profile at HLR"
+    },
+    {
+      "resourceName": "roamingRestrictionLTE",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180420105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "2018042105912+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Manage LTE service of subscriber at HLR"
+    },
+    {
+      "resourceName": "pdpContext",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180418105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180418105912+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for PDP Context"
+    },
+    {
+      "resourceName": "pdpContextLTE",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName",
+        "resourceOrderItem$defaultAPNFlag",
+	"resourceOrderItem$pdpAddress"
+      ],
+      "createDate": "20180418105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180418105912+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for PDP Context (LTE)"
+    },
+    {
+      "resourceName": "suspendOutgoingCall",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180423000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Suspend Outgoing Call"
+    },
+    {
+      "resourceName": "notifyME",
+      "preNeRouting": "N",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType"
+      ],
+      "createDate": "20180427105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180427105912+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Notify ME"
+    },
+    {
+      "resourceName": "callWaiting",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180427105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "pirajitp",
+      "lastUpdDate": "20180427105912+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Call waiting"
+    },
+    {
+      "resourceName": "callForwardDefault",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Call Forward Default"
+    },
+    {
+      "resourceName": "roaming",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Roaming"
+    },
+    {
+      "resourceName": "roamingRestriction",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Roaming Restriction"
+    },
+    {
+      "resourceName": "voiceCall",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for voiceCall"
+    },
+    {
+      "resourceName": "smsOriginating",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for smsOriginating"
+    },
+    {
+      "resourceName": "smsTerminating",
+      "preNeRouting": "HLR",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType",
+        "neidRouting$PartyName"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for smsTerminating"
+    },
+    {
+      "resourceName": "queryFreeUnitByPack",
+      "preNeRouting": "N",
+      "resourceRuleList": [],
+      "defValue": [],
+      "searchKey": [
+        "resourceOrderItem$resourceName",
+        "resourceOrderItem$requestType",
+        "resourceOrderItem$actionType"
+      ],
+      "createDate": "20180321105912+0700",
+      "createBy": "pirajitp",
+      "lastUpdBy": "jitradun",
+      "lastUpdDate": "20180412000000+0700",
+      "resourcePropertyDescriptionEN": "Resource Property for Query FreeUnit By Package"
+    }
+  ]
+}

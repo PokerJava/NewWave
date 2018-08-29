@@ -1,0 +1,7 @@
+@request
+Set EPCBsc: MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},EPCDFTAPN={@param:resourceOrderItem.apnName},EPCCHARGCHRT={@overwrite_def:gccLTE_HLRZTE({@param:resourceOrderItem.chargingProfile})};
+@endrequest
+
+@response
+ACK:SET EPCBSC:RETN=000000, DESC=success
+@endresponse

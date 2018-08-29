@@ -1,0 +1,11 @@
+@request
+MOD OPTGPRS: ISDN="{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}", PROV=ADDPDPCNTX, APN_TYPE=EPS_APN, APNTPLID={@param:resourceOrderItem.apnId}, DEFAULTCFGFLAG={@overwrite_def:defaultAPNFlag_HLRHuawei({@param:resourceOrderItem.defaultAPNFlag})}, EPS_QOSTPLID={@overwrite_def:qosPDPLTE_HLRHuawei({@param:resourceOrderItem.qosProfile})}, ADDIND=DYNAMIC, PDPTYPE={@overwrite_def:pdpTypeLTE_HLRHuawei({@param:resourceOrderItem.pdpType})}, VPLMN={@overwrite_def:pdpVplmnLTE_HLRHuawei({@param:resourceOrderItem.vplmn})}, STDCHARGE="{@overwrite_def:ccLTE_HLRHuawei({@param:resourceOrderItem.chargingProfile})}";
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+
+There is together 1 report
+
+---    END
+@endresponse

@@ -1,0 +1,11 @@
+@request
+MOD TCSI: ISDN="{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}",PROV=TRUE,TPLID={@overwrite_def:camelTCSITemplate({@param:resourceOrderItem.subProfile},{@param:resourceOrderItem.scpId},{@overwrite_def:trigCriteriaCamelTerminatingSubscription({@param:resourceOrderItem.trigCriteria})})};
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+
+There is together 1 report
+
+---    END
+@endresponse

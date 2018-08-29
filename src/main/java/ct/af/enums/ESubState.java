@@ -1,0 +1,34 @@
+package ct.af.enums;
+
+public enum ESubState {
+    IDLE_TRIGGER("IDLE_TRIGGER"),
+    IDLE_RESOURCEORDER("IDLE_RESOURCEORDER"),
+    IDLE_RESOURCEITEM("IDLE_RESOURCEITEM"),
+    PROCESSING_RESOURCEITEM("PROCESSING_RESOURCEITEM"),
+    END_RESOURCEORDER("END_RESOURCEORDER"),
+    SDF_RESERVEQUOTA("SDF_RESERVEQUOTA"),
+    SDF_GETRESOURCEINVENTORY("SDF_GETRESOURCEINVENTORY"),
+    SDF_COMMITQUOTAINFRA("SDF_COMMITQUOTAINFRA"),
+    SDF_RELEASEQUOTA("SDF_RELEASEQUOTA"),
+    SDF_POSTREPORT("SDF_POSTREPORT"),
+    CLIENT_POSTRESULT("CLIENT_POSTRESULT"),
+    SDF_GETRESOURCEINFRANODE("SDF_GETRESOURCEINFRANODE"),
+    WAIT("WAIT"),
+    WAIT_REPORT("WAIT_REPORT"),
+    END("END"),
+    Unknown("Unknown"),
+    SleepForErrorHandling("SleepForErrorHandling"),
+    IDLE_Purge("IDLE_Purge"),
+    SLEEP_SENDRESULT("SLEEP_SENDRESULT")
+    ;
+
+    private String state;
+
+    ESubState(String state) {
+        this.state = state;
+    }
+
+    public String getState() {
+        return state;
+    }
+}

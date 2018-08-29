@@ -1,0 +1,7 @@
+@request
+MOD NAM: ISDN="{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}",NAM=BOTH;
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+@endresponse

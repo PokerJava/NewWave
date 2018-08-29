@@ -1,0 +1,7 @@
+@request
+Set TPLCAMEL:MSISDN={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})},OCSITPL={@overwrite_def:camelOCSITemplate({@param:resourceOrderItem.subProfile},{@param:resourceOrderItem.scpId},{@overwrite_def:trigCriteriaCamelOriginatingSubscription({@param:resourceOrderItem.trigCriteria})})};
+@endrequest
+
+@response
+ACK:SET TPLCAMEL:RETN=000000, DESC=success
+@endresponse

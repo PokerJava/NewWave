@@ -1,0 +1,15 @@
+@request
+MOD GPRS: ISDN="{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}",CHARGE_GLOBAL={@overwrite_def:gcc_HLRHuawei({@param:resourceOrderItem.chargingProfile})},PROV=TRUE,CNTXID={@param:resourceOrderItem.pdpId},PDPTYPE={@overwrite_def:pdpType_HLRHuawei({@param:resourceOrderItem.pdpType})}
+@if(existParam(resourceOrderItem.pdpAddress))
+,PDPADD="{@param:resourceOrderItem.pdpAddress}",ADDIND=STATIC
+@endif
+,{@overwrite_def:qosPDP_HLRHuawei({@param:resourceOrderItem.qosProfile})},APN="{@param:resourceOrderItem.apnName}",VPLMN={@overwrite_def:pdpVplmn_HLRHuawei({@param:resourceOrderItem.vplmn})},CHARGE={@overwrite_def:cc_HLRHuawei({@param:resourceOrderItem.chargingProfile})};
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+
+There is together 1 report
+
+---    END
+@endresponse

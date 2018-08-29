@@ -1,0 +1,468 @@
+<dummy-request>
+	<dummy-message id="1">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="1:0:0">
+			<EquinoxRawData name="HTTP" invoke="PGZ_UAT.E11.0.764891803" type="request" method="POST" url="" ctype="text/plain" val="" to="PGZ_UAT.ES00" orig="PGZ_UAT.E11.0.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	<dummy-message id="2">
+	<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+		<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.TRIGGER.W_SDF_GETRESOURCEINVENTORY.00TRIGGER" ecode="200" method="GET" url="/Resource/V1/PLCMngt/ResourceManagement/ResourceInventory.json" val="{
+			&quot;resultCode&quot;: &quot;20000&quot;,
+			&quot;resultDescription&quot;: &quot;Success&quot;,
+			&quot;resultData&quot;: [
+			{
+				&quot;resourceName&quot;: &quot;promotionManagement&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680301100000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;mobileNo&quot;,
+				&quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการโปรโมชั่น&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for Promotion Management&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;usmpSubscriber&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680321000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;mobileNo&quot;,
+				&quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;createBy&quot;: &quot;teewarac&quot;,
+				&quot;lastUpdBy&quot;: &quot;teewarac&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ USMP&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for USMP Subscriber&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;billingSubscription&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;mobileNo&quot;,
+				&quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการสมัครเบอร์&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for BillingSubscription&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;suspendOutgoingCall&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;createBy&quot;: &quot;kusawadk&quot;,
+				&quot;lastUpdBy&quot;: &quot;kusawadk&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการการโทรออก&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for suspendOutgoingCall&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;camelOriginatingSubscription&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;createBy&quot;: &quot;kusawadk&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการค่า CAMEL ขาโทรออก&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for camelOriginate management&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;camelTerminatingSubscription&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;createBy&quot;: &quot;kusawadk&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการค่า CAMEL ขารับสาย&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for camelTerminate management&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;pdpContext&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+				&quot;createBy&quot;: &quot;kusawadk&quot;,
+				&quot;lastUpdBy&quot;: &quot;kusawadk&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ APN&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for APN Management (PackageDataProtocol)&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;hlrSubscriber&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;Y&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ HLR&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for HLR Subscriber&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;gprs&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ GPRS&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for GPRS&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;lte&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ LTE&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for LTE&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;roamingRestriction&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดกา Roaming Restriction&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for Roaming Restriction&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;roamingRestrictionLTE&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดกา Roaming Restriction LTE&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for Roaming Restriction LTE&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;pdpContextLTE&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ APN ของ LTE&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for APN Management of LTE (PackageDataProtocol)&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;inventoryManagement&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;mobileNo&quot;,
+				&quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ APN ของ LTE&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for APN Management of LTE (PackageDataProtocol)&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;notifyME&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;mobileNo&quot;,
+				&quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ Notify ME&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for Notify ME Management)&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;callWaiting&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ Call Waitting&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for Call Waiting Management)&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;callForwardDefault&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ Call Forward Default&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for Call Forward Default Management)&quot;
+			},
+			{
+				&quot;resourceName&quot;: &quot;roaming&quot;,
+				&quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+				&quot;resourceState&quot;: &quot;Active&quot;,
+				&quot;quotaPlan&quot;: &quot;-1&quot;,
+				&quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+				&quot;instanceFlag&quot;: &quot;N&quot;,
+				&quot;identityFlag&quot;: &quot;Y&quot;,
+				&quot;identityType&quot;: &quot;imsi&quot;,
+				&quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;createBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+				&quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+				&quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ Roaming&quot;,
+				&quot;resourceDescriptionEN&quot;: &quot;Resource for roaming)&quot;
+			}
+			],
+			&quot;rowCount&quot;: &quot;18&quot; }" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	<dummy-message id="3">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="1:0:0">
+			<EquinoxRawData name="HTTP" invoke="764891803" type="request" method="POST" url="/Resources/v1/Fulfillment/ServiceProvisioning" ctype="text/plain" val="{
+				&quot;requestHeader&quot;: {
+					&quot;publicIdType&quot;: &quot;&quot;,
+					&quot;publicIdValue&quot;: &quot;&quot;,
+					&quot;privateIdType&quot;: &quot;&quot;,
+					&quot;privateIdValue&quot;: &quot;&quot;,
+					&quot;orderId&quot;: &quot;Rx00120180123145506979050&quot;,
+					&quot;offeringId&quot;: &quot;P0123455&quot;,
+					&quot;serviceId&quot;: &quot;123e4567-e89b-12d3-a456-4266554412345&quot;,
+					&quot;serviceOrderId&quot;: &quot;R1803271433001&quot;,
+					&quot;resourceGroupId&quot;: &quot;75a8de70-37c5-421f-a684-f71a01bfe4f3&quot;,
+					&quot;reasonDesc&quot;: &quot;956-มีความต้องการใช้บริการ&quot;,
+					&quot;serviceOrderType&quot;: &quot;Product Offering&quot;,
+					&quot;channel&quot;: &quot;USSD&quot;,
+					&quot;user&quot;: &quot;SSB-USR&quot;,
+					&quot;referenceId&quot;: &quot;SSB-0001&quot;,
+					&quot;sourceSystem&quot;: &quot;BSS&quot;,
+					&quot;userSys&quot;: &quot;Horizon&quot;
+				},
+				&quot;resourceItemList&quot;: [
+					{
+					&quot;requestType&quot;: &quot;CREATE&quot;,
+					&quot;resourceName&quot;: &quot;pdpContext&quot;,
+					&quot;imsi&quot;: &quot;520035031000001&quot;,
+					&quot;mobileNo&quot;: &quot;0932080437&quot;,
+					&quot;pdpId&quot;: &quot;111&quot;,
+					&quot;apnId&quot;: &quot;222&quot;,
+					&quot;apnName&quot;: &quot;111&quot;,	
+					&quot;chargingProfile&quot;: &quot;CBS&quot;,	  
+					&quot;resourceItemId&quot;: &quot;5b5e4f53-2d62-4bc0-b9a5-3020e4863f0e&quot;
+					}
+				]}" to="PGZ_UAT.ES00" orig="PGZ_UAT.ES05.Serv.0" ret="0" />
+            <EquinoxInstance>
+                <value val="" />
+            </EquinoxInstance>
+        </EquinoxMessage>
+    </dummy-message>
+	
+	<dummy-message id="4">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+			<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.ResourceOrder.W_SDF_GETRESOURCEINFRANODE.01RESOURCEORDER" ecode="200" method="GET" url="/v1/resource/resourceSpecification/neId/AISHLR2.json" val="{
+				&quot;resultCode&quot;: &quot;20000&quot;,
+				&quot;resultDescription&quot;: &quot;Success&quot;,
+				&quot;cadResourceInfraInventory&quot;: [
+					{
+<<<<<<< HEAD
+
+=======
+>>>>>>> feature/post_report
+						&quot;neId&quot;: &quot;AISHLR2&quot;,
+						&quot;neType&quot;: &quot;HLR&quot;,
+						&quot;partyName&quot;: &quot;ZTE&quot;,
+						&quot;productVersion&quot;: &quot;V9&quot;,
+						&quot;descriptionEN&quot;: &quot;HLR ZTE&quot;,
+						&quot;neState&quot;: &quot;Active&quot;,
+						&quot;maxConnection&quot;: &quot;80&quot;,
+						&quot;defaultWaitTime&quot;: &quot;60&quot;,
+						&quot;quotaPlan&quot;: &quot;999999999&quot;,
+						&quot;alertRatio&quot;: &quot;500&quot;,
+						&quot;neState&quot;: &quot;Active&quot;,
+						&quot;userName&quot;: &quot;&quot;,
+						&quot;password&quot;: &quot;&quot;,
+<<<<<<< HEAD
+
+=======
+						&quot;quotaAvailability&quot;: &quot;999999999&quot;
+>>>>>>> feature/post_report
+						&quot;RAConnect&quot;: &quot;HLR_ES01&quot;,
+						&quot;instanceFlagInfo&quot;: &quot;N&quot;,
+						&quot;leadMonthToExpand&quot;: &quot;5&quot;,
+						&quot;createDate&quot;: &quot;20180301105912+0700&quot;,
+						&quot;createBy&quot;: &quot;watchayo&quot;,
+						&quot;lastUpdBy&quot;: &quot;watchayo&quot;,
+						&quot;lastUpdDate&quot;: &quot;20180302105912+0700&quot;
+					}
+				],
+				&quot;rowCount&quot;: &quot;1&quot; }" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	<dummy-message id="6">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+		<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.pdpContext_1Z_001.W_pdpContext_1_Z_001.02RESOURCEITEM.Task1" ecode="200" method="GET" url="/Resource/V1/PLCMngt/ResourceManagement/ResourceInventory.json" val="RGVsIFVzZXI6TVNJU0ROPTY2OTMyMDE5NjE1Ow0KQUNLOkRFTCBVU0VSOlJFVE49MDAwMDAwLCBERVNDPXN1Y2Nlc3M=" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+<<<<<<< HEAD
+
+=======
+>>>>>>> feature/post_report
+			
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	<dummy-message id="7">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+<<<<<<< HEAD
+		<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.pdpContext_1Z_001.W_pdpContext_1_Z_002.02RESOURCEITEM.Task2" ecode="200" method="GET" url="/Resource/V1/PLCMngt/ResourceManagement/ResourceInventory.json" val="RGVsIFVzZXI6TVNJU0ROPTY2OTMyMDE5NjE1Ow0KQUNLOkRFTCBVU0VSOlJFVE49MDAwMDAwLCBERVNDPXN1Y2Nlc3M=" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />			
+=======
+		<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.pdpContext_1Z_001.W_pdpContext_1_Z_002.02RESOURCEITEM.Task2" ecode="200" method="GET" url="/Resource/V1/PLCMngt/ResourceManagement/ResourceInventory.json" val="RGVsIFVzZXI6TVNJU0ROPTY2OTMyMDE5NjE1Ow0KQUNLOkRFTCBVU0VSOlJFVE49MDAwMDAwLCBERVNDPXN1Y2Nlc3M=" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+>>>>>>> feature/post_report
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	<dummy-message id="8">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+			<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.ResourceOrder.W_HRZ_POSTRESULT.01RESOURCEORDER" ecode="200" method="POST" url="/Resource/V1/PLCMngt/ResourceProvisioning/ResourceName/pdpContext" val="{
+			&quot;resourceRequestId&quot;: &quot;908xxxxx&quot;,
+			&quot;resourceId&quot;: &quot;870898a4-19a9-4597-855e-35587ab10bfd&quot;,
+			&quot;resultCode&quot;: &quot;20000&quot;,
+			&quot;developerMessage&quot;: &quot;Success&quot;
+			}" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	
+	<dummy-message id="9">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" timeout="10" ret="0" diag="8:7:0">
+			<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="764891803.00000.ResourceOrder.W_SDF_POSTREPORT.01RESOURCEORDER" ecode="200" method="GET" url="/Resource/V1/PLCMngt/ResourceManagement/ResourceInventory.json" val="{
+			&quot;resultCode&quot;: &quot;20000&quot;,
+			&quot;resultDescription&quot;: &quot;Success&quot;
+			}" charset="" desc="host=; port=12010; via=auto; session=870898a4-19a9-4597-855e-35587ab10bfdhorizonUsr" orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+</dummy-request>

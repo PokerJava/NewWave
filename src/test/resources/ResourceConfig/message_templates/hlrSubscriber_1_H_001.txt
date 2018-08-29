@@ -1,0 +1,8 @@
+@request
+ADD TPLSUB:
+HLRSN={@param:resourceInfraNode.hlrSN},IMSI="{@param:resourceOrderItem.imsi}",ISDN="{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}",TPLID={@overwrite_def:profileHlrSubscriber_HLRHuawei({@param:resourceOrderItem.profile})};
+@endrequest
+
+@response
+RETCODE = 0 SUCCESS0001:Operation is successful
+@endresponse

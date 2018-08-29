@@ -1,0 +1,403 @@
+<dummy-request>
+	<dummy-message id="1">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="PGZ_UAT.E11.0.01529656623307457" timeout="10" ret="0" diag="1:0:0">
+			<EquinoxRawData name="HTTP" invoke="PGZ_UAT.E11.0.01529656623307457" type="request" ctype="text/xml" to="PGZ_UAT.ES00" orig="PGZ_UAT.E11.0.0" ret="0" />
+			<EquinoxInstance>
+				<value val="" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+	  <dummy-message id="2">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0" session="PGZ_UAT.E11.0.01529656623307457" timeout="10" ret="0" diag="2:1:0">
+	<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response" ctype="text/plain" invoke="01529656623307457.00000.TRIGGER.W_SDF_GETRESOURCEINVENTORY.00TRIGGER" ecode="200" method="GET" url="/v1/sales/resourceSpecification/resourceInventory.json" val="{
+  &quot;resultCode&quot;: &quot;20000&quot;,
+  &quot;resultDescription&quot;: &quot;Success&quot;,
+  &quot;resultData&quot;: [
+    {
+      &quot;resourceName&quot;: &quot;lte&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ LTE&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for LTE&quot;
+    },,
+    {
+      &quot;resourceName&quot;: &quot;promotionManagement&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680301100000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃเนเธเธฃเนเธกเธเธฑเนเธ&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Promotion Management&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;usmpSubscriber&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;2&quot;,
+      &quot;effectiveDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680321000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;teewarac&quot;,
+      &quot;lastUpdBy&quot;: &quot;teewarac&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ USMP&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for USMP Subscriber&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;billingSubscription&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธชเธกเธฑเธเธฃเน€เธเธญเธฃเน&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for BillingSubscription&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;suspendOutgoingCall&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Yes&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastUpdBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธเธฒเธฃเนเธ—เธฃเธญเธญเธ&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for suspendOutgoingCall&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;camelOriginatingSubscription&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;N&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธเนเธฒ CAMEL เธเธฒเนเธ—เธฃเธญเธญเธ&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for camelOriginate management&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;camelTerminatingSubscription&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      
+      
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃเธเนเธฒ CAMEL เธเธฒเธฃเธฑเธเธชเธฒเธข&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for camelTerminate management&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;pdpContext&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180327000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680327000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+      &quot;createBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastUpdBy&quot;: &quot;kusawadk&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ APN&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for APN Management (PackageDataProtocol)&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;hlrSubscriber&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;Y&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ HLR&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for HLR Subscriber&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;gprs&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ GPRS&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for GPRS&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;roamingRestriction&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒ Roaming Restriction&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Roaming Restriction&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;roamingRestrictionLTE&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;No&quot;,
+      &quot;identityType&quot;: &quot;&quot;,
+      &quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒ Roaming Restriction LTE&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Roaming Restriction LTE&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;pdpContextLTE&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ APN เธเธญเธ LTE&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for APN Management of LTE (PackageDataProtocol)&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;inventoryManagement&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;createDate&quot;: &quot;20180417000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ APN เธเธญเธ LTE&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for APN Management of LTE (PackageDataProtocol)&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;notifyME&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;mobileNo&quot;,
+      &quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ Notify ME&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Notify ME Management)&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;callWaiting&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ Call Waitting&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Call Waiting Management)&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;callForwardDefault&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ Call Forward Default&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for Call Forward Default Management)&quot;
+    },
+    {
+      &quot;resourceName&quot;: &quot;roaming&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;imsi&quot;,
+      &quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ Roaming&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for roaming)&quot;
+    },
+  {
+      &quot;resourceName&quot;: &quot;aafSubscriber&quot;,
+      &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+      &quot;resourceState&quot;: &quot;Active&quot;,
+      &quot;quotaPlan&quot;: &quot;999999999&quot;,
+      &quot;effectiveDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;expireDate&quot;: &quot;20680417000000+0700&quot;,
+      &quot;instanceFlag&quot;: &quot;N&quot;,
+      &quot;identityFlag&quot;: &quot;Y&quot;,
+      &quot;identityType&quot;: &quot;&quot;,
+      &quot;createDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;createBy&quot;: &quot;pornnapa&quot;,
+      &quot;lastUpdBy&quot;: &quot;pornnapa&quot;,
+      &quot;lastUpdDate&quot;: &quot;20180427000000+0700&quot;,
+      &quot;resourceDescriptionTH&quot;: &quot;Resource เธชเธณเธซเธฃเธฑเธเธเธฒเธฃเธเธฑเธ”เธเธฒเธฃ AAF Subscriber&quot;,
+      &quot;resourceDescriptionEN&quot;: &quot;Resource for AAF Subscriber&quot;
+    }
+  ],
+  &quot;rowCount&quot;: &quot;19&quot;
+}" charset="" desc="host=; port=17107; via=auto; session=1586370299" orig="PGZ_UAT.ES04.SDF_INVENTORY.0" ret="0" />
+	<EquinoxInstance>
+	</EquinoxInstance>
+</EquinoxMessage>
+	</dummy-message>
+	<dummy-message id="3">
+		<EquinoxMessage from="PGZ_UAT.E11.0" via="PGZ_UAT.E11.0"
+			session="PGZ_UAT.E11.0.01522320185458232" timeout="10" ret="0" diag="2:1:0">
+			<EquinoxRawData to="PGZ_UAT.ES00.0" name="HTTP" type="response"
+				ctype="text/plain"
+				invoke="01529656623307457.00000.TRIGGER.W_SDF_GETRESOURCEINVENTORY.00TRIGGER"
+				ecode="200" method="GET"
+				url="/Resource/V1/PLCMngt/ResourceManagement/ResourceInventory.json"
+				val="{
+								  &quot;resultCode&quot;: &quot;20000&quot;,
+								  &quot;resultDescription&quot;: &quot;Success&quot;,
+								  &quot;resultData&quot;: [
+								  {
+									  &quot;resourceName&quot;: &quot;promotionManagement&quot;,
+									  &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+									  &quot;resourceState&quot;: &quot;Active&quot;,
+									  &quot;quotaPlan&quot;: &quot;-1&quot;,
+									  &quot;effectiveDate&quot;: &quot;20180301100000+0700&quot;,
+									  &quot;expireDate&quot;: &quot;20680301100000+0700&quot;,
+									  &quot;instanceFlag&quot;: &quot;N&quot;,
+									  &quot;identityFlag&quot;: &quot;Y&quot;,
+									  &quot;identityType&quot;: &quot;mobileNo&quot;,
+									  &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+									  &quot;createBy&quot;: &quot;pirajitp&quot;,
+									  &quot;lastUpdBy&quot;: &quot;pirajitp&quot;,
+									  &quot;lastUpdDate&quot;: &quot;20180301100000+0700&quot;,
+									  &quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการโปรโมชั่น&quot;,
+									  &quot;resourceDescriptionEN&quot;: &quot;Resource for Promotion Management&quot;
+									},
+									{
+									  &quot;resourceName&quot;: &quot;usmpSubscriber&quot;,
+									  &quot;inventoryType&quot;: &quot;Soft Goods&quot;,
+									  &quot;resourceState&quot;: &quot;Active&quot;,
+									  &quot;quotaPlan&quot;: &quot;-1&quot;,
+									  &quot;effectiveDate&quot;: &quot;20180321000000+0700&quot;,
+									  &quot;expireDate&quot;: &quot;20680321000000+0700&quot;,
+									  &quot;instanceFlag&quot;: &quot;N&quot;,
+									  &quot;identityFlag&quot;: &quot;Y&quot;,
+									  &quot;identityType&quot;: &quot;mobileNo&quot;,
+									  &quot;createDate&quot;: &quot;20180301100000+0700&quot;,
+									  &quot;createBy&quot;: &quot;teewarac&quot;,
+									  &quot;lastUpdBy&quot;: &quot;teewarac&quot;,
+									  &quot;lastUpdDate&quot;: &quot;20180321000000+0700&quot;,
+									  &quot;resourceDescriptionTH&quot;: &quot;Resource สำหรับการจัดการ USMP&quot;,
+									  &quot;resourceDescriptionEN&quot;: &quot;Resource for USMP Subscriber&quot;
+									}
+								  ],
+								  &quot;rowCount&quot;: &quot;1&quot;
+								}"
+				charset="" desc="host=; port=17108; via=auto; session=379819592"
+				orig="PGZ_UAT.ES04.SDF.0" ret="0" />
+			<EquinoxInstance>
+				<value
+					val="1::W_SDF_GETRESOURCEINVENTORY::false::ZUp5TlU5RnVvekFRL0pXVFg2K3lEQWxweTlOVjFNa2hwYVFDMHFxTm9zZ0h2c1lLMkpGdDJxdXEvUHZaaEFCTlZLVnZlR2QyZDJaMytRQWxZVHlwL2lSVUtTWjRYSEhPK0Vza2dPOWMxRmpLU3Bwb1VtNURub25TWU1BSExuS3UwTUM5L3VGYytzT0JqenpvRFlZLzBTVkNZSjhVaUlyclI4STA4RkV2Y2k5Rlp2cTB0WDhUaGFVVUV2aC9TYUhvUGhpcXFjZzJSNkV4NDB5dHg0VjQrd1FZNFNGWG12Q01BdjhESUNlTnc4a0V4L2FoT3N6YTZZRVhlNHpwbnJkenJwcU1tV1IyQVBlVDU5WDhKb1hZY1NDQ1BUemtyMkpEVHhtTzU3b0QyOEFiZWxmbXE4dVl4MU5ENzk3NGxYSXpOaEROSXR4Rmd6STNzUk1EZDFTdlJkN21CNVdVSnR0WTBsYkRuRys0ZU9NTkpyaVdvamhneWUxNE5jRnBqSlBaUEE1d0dEM2dLSjNGVDN0eVJQL3A3ekcveHpxTVpYRnVMdkNBTjFiaDQrcXJ5ckJkS0x3ZWpZYk9yM01qWDlaUzdNNUZwVytrSk85VzBOSFdYUVJIcU5uNnNuUFkwci8wdVd5bWJNNDhXTE1pcjQvY1dsY1BwR0I1ZTdhZGhOT1Q2emV2bVRGVm9wSVpyVXNZR1hmbTd5RXY5TER3N1RZUU9aMHlaV290R250RWJleTVvOTF1OXg4czV5eDE=::" />
+			</EquinoxInstance>
+		</EquinoxMessage>
+	</dummy-message>
+</dummy-request>

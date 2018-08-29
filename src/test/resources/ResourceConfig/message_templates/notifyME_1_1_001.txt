@@ -1,0 +1,23 @@
+@request
+?cmd=addmsisdn&msisdn={@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}
+@if (existParam(resourceOrderItem.language))
+&language={@overwrite_def:language_NotifyME({@param:resourceOrderItem.language})}
+@endif
+@if (existParam(resourceOrderItem.smsReceiveFlag))
+(&smsrecv={@param:resourceOrderItem.smsReceiveFlag})
+@endif
+@if (existParam(resourceOrderItem.smsSentFlag))
+(&smssent={@param:resourceOrderItem.smsSentFlag})
+@endif
+@if (existParam(resourceOrderItem.classOfService))
+(&cos={@param:resourceOrderItem.classOfService})
+@endif
+@endrequest
+
+@response
+<?xml version = "1.0" encoding="UTF-8"?>
+<addmsisdn>
+<errorcode>{@param:errorcode}</errorcode>
+<errdesc>{@param:errdesc}</errdesc>
+</addmsisdn>
+@endresponse

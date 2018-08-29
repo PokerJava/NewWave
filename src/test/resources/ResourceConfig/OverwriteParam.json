@@ -1,0 +1,604 @@
+{
+  "resultData": [
+    {
+      "overwriteParam": "channel_CBS",
+      "overwritePattern": {
+        "IVR": "0",
+        "USSD": "1",
+        "SMS": "2",
+        "WebService": "3",
+        "GUI": "4",
+        "TASK": "5",
+        "IVRSM": "7",
+        "USSDGW": "8"
+      }
+    },
+    {
+      "overwriteParam": "responseLanguage_CBS",
+      "overwritePattern": {
+        "ENG": "2040",
+        "THA": "2063",
+        "LAO": "2064",
+        "KHM": "2065",
+        "MYA": "2066",
+        "NOVALUE": "2040"
+      }
+    },
+    {
+      "overwriteParam": "customerCategory_CBS",
+      "overwritePattern": {
+        "business": "1",
+        "governmentAndNonProfit": "2",
+        "exclusive": "3",
+        "inHouse": "4",
+        "residential": "5"
+      }
+    },
+    {
+      "overwriteParam": "customerType_CBS",
+      "overwritePattern": {
+        "Individual": "1",
+        "Corporate": "2",
+        "Family": "3"
+      }
+    },
+    {
+      "overwriteParam": "customerNodeType_CBS",
+      "overwritePattern": {
+        "Registrant": "1",
+        "Organization": "2",
+        "Individual": "3"
+      }
+    },
+    {
+      "overwriteParam": "customerSubCategory_CBS",
+      "overwritePattern": {
+        "STD": "1",
+        "prepaid": "2",
+        "sme": "3",
+        "tot": "4",
+        "royal": "5",
+        "government": "6",
+        "embassy": "7",
+        "stateEnterprise": "8",
+        "nonProfit": "9",
+        "keyAccount": "10",
+        "ais": "11",
+        "thaiCitizen": "12",
+        "foreigner": "13"
+      }
+    },
+    {
+      "overwriteParam": "customerSegment_CBS",
+      "overwritePattern": {
+        "emerald": "1",
+        "C": "2",
+        "classic": "3",
+        "ExecKey": "4",
+        "ExecSME": "5",
+        "gold": "6",
+        "Key Account-Bronze": "7",
+        "Key Account-Diamond": "8",
+        "Key Account-Silver": "9",
+        "platinum": "10",
+        "platinumPlus": "11",
+        "PresSME": "12",
+        "serenadeCeo": "13",
+        "SPSME": "14",
+        "standard": "15",
+        "StdSME": "16",
+        "Unclassified": "17",
+        "XL-Extra Large": "18",
+        "Corporate Plus": "19",
+        "Corporate Mass": "20",
+        "Corporate Basic": "21",
+        "Key Account": "22",
+        "SKA": "23",
+        "Diamond": "24",
+        "B": "25"
+      }
+    },
+    {
+      "overwriteParam": "paymentMode_CBS",
+      "overwritePattern": {
+        "Pre-paid": "0",
+        "Post-paid": "1"
+      }
+    },
+    {
+      "overwriteParam": "language_CBS",
+      "overwritePattern": {
+        "THA": "2063",
+        "ENG": "2040",
+        "CHN": "2040",
+        "KOR": "2040",
+        "JPN": "2040",
+        "LAO": "2040",
+        "KHM": "2040",
+        "MYA": "2040",
+        "NOVALUE": "2040"
+      }
+    },
+    {
+      "overwriteParam": "language_USMP",
+      "overwritePattern": {
+        "THA": "1",
+        "ENG": "2",
+        "MYA": "3",
+        "CHN": "4",
+        "KHM": "5",
+        "LAO": "6",
+        "JPN": "7",
+        "KOR": "8"
+      }
+    },
+    {
+      "overwriteParam": "gprsType_USMP",
+      "overwritePattern": {
+        "Volume-Based": "0",
+        "Time-Based": "1"
+      }
+    },
+    {
+      "overwriteParam": "servicePackageId_USMP",
+      "overwritePattern": {
+        "Interstellar": "7",
+        "3g-postpaid-CBS": "8",
+        "3g-prepaid-CBS": "8"
+      }
+    },
+    {
+      "overwriteParam": "profileHlrSubscriber_HLRHuawei",
+      "overwritePattern": {
+        "Postpaid-3G2100": "50",
+        "Prepaid-3G2100": "51",
+        "Prepaid-Sim2Fly": "57"
+      }
+    },
+    {
+      "overwriteParam": "profileHlrSubscriber_HLRZTE",
+      "overwritePattern": {
+        "Postpaid-3G2100": "50",
+        "Prepaid-3G2100": "51",
+        "Prepaid-Sim2Fly": "57"
+      }
+    },
+    {
+      "overwriteParam": "trigCriteriaCamelOriginatingSubscription",
+      "overwritePattern": {
+        "NOVALUE": "Always"
+      }
+    },
+    {
+      "overwriteParam": "camelOCSITemplate",
+      "overwritePattern": {
+        "PostpaidAWN,900,Always": "1003",
+        "PostpaidAWN,901,Always": "1004",
+        "PostpaidAWN,902,Always": "1005",
+        "PostpaidAWN,903,Always": "1040",
+        "PostpaidAWN,904,Always": "1041",
+        "PostpaidAWN,905,Always": "1042",
+        "PostpaidAWN,906,Always": "1043",
+        "PostpaidAWN,907,Always": "1044",
+        "PostpaidAWN,908,Always": "1045",
+        "PostpaidAWN,109,Always": "1021",
+        "PostpaidAWN,111,Always": "1022",
+        "PostpaidAWN,112,Always": "1023",
+        "PrepaidAWN,900,Always": "1013",
+        "PrepaidAWN,901,Always": "1034",
+        "PrepaidAWN,902,Always": "1035",
+        "PrepaidAWN,903,Always": "1060",
+        "PrepaidAWN,904,Always": "1061",
+        "PrepaidAWN,905,Always": "1062",
+        "PrepaidAWN,906,Always": "1063",
+        "PrepaidAWN,907,Always": "1064",
+        "PrepaidAWN,908,Always": "1065",
+        "PrepaidAWN,109,Always": "1027",
+        "PrepaidAWN,111,Always": "1028",
+        "PrepaidAWN,112,Always": "1029",
+        "Sim2FlyAWN,900,Always": "1080",
+        "Sim2FlyAWN,901,Always": "1081",
+        "Sim2FlyAWN,902,Always": "1082",
+        "Sim2FlyAWN,903,Always": "1083",
+        "Sim2FlyAWN,904,Always": "1084",
+        "Sim2FlyAWN,905,Always": "1085",
+        "Sim2FlyAWN,906,Always": "1086",
+        "Sim2FlyAWN,907,Always": "1087",
+        "Sim2FlyAWN,908,Always": "1088",
+        "Sim2FlyAWN,109,Always": "1110",
+        "Sim2FlyAWN,111,Always": "1111",
+        "Sim2FlyAWN,112,Always": "1112"
+      }
+    },
+    {
+      "overwriteParam": "trigCriteriaCamelTerminatingSubscription",
+      "overwritePattern": {
+        "NOVALUE": "Always"
+      }
+    },
+    {
+      "overwriteParam": "camelTCSITemplate",
+      "overwritePattern": {
+        "PostpaidAWN,900,Always": "1008",
+        "PostpaidAWN,901,Always": "1009",
+        "PostpaidAWN,902,Always": "1010",
+        "PostpaidAWN,903,Always": "1050",
+        "PostpaidAWN,904,Always": "1051",
+        "PostpaidAWN,905,Always": "1052",
+        "PostpaidAWN,906,Always": "1053",
+        "PostpaidAWN,907,Always": "1054",
+        "PostpaidAWN,908,Always": "1055",
+        "PostpaidAWN,109,Always": "1024",
+        "PostpaidAWN,111,Always": "1025",
+        "PostpaidAWN,112,Always": "1026",
+        "PrepaidAWN,900,Always": "1018",
+        "PrepaidAWN,901,Always": "1038",
+        "PrepaidAWN,902,Always": "1039",
+        "PrepaidAWN,903,Always": "1070",
+        "PrepaidAWN,904,Always": "1071",
+        "PrepaidAWN,905,Always": "1072",
+        "PrepaidAWN,906,Always": "1073",
+        "PrepaidAWN,907,Always": "1074",
+        "PrepaidAWN,908,Always": "1075",
+        "PrepaidAWN,109,Always": "1030",
+        "PrepaidAWN,111,Always": "1031",
+        "PrepaidAWN,112,Always": "1032",
+        "PostpaidAWN,900,VPLMN": "1003",
+        "PostpaidAWN,901,VPLMN": "1004",
+        "PostpaidAWN,902,VPLMN": "1005",
+        "PostpaidAWN,903,VPLMN": "1040",
+        "PostpaidAWN,904,VPLMN": "1041",
+        "PostpaidAWN,905,VPLMN": "1042",
+        "PostpaidAWN,906,VPLMN": "1043",
+        "PostpaidAWN,907,VPLMN": "1044",
+        "PostpaidAWN,908,VPLMN": "1045",
+        "PostpaidAWN,109,VPLMN": "1021",
+        "PostpaidAWN,111,VPLMN": "1022",
+        "PostpaidAWN,112,VPLMN": "1023",
+        "PrepaidAWN,900,VPLMN": "1013",
+        "PrepaidAWN,901,VPLMN": "1034",
+        "PrepaidAWN,902,VPLMN": "1035",
+        "PrepaidAWN,903,VPLMN": "1060",
+        "PrepaidAWN,904,VPLMN": "1061",
+        "PrepaidAWN,905,VPLMN": "1062",
+        "PrepaidAWN,906,VPLMN": "1063",
+        "PrepaidAWN,907,VPLMN": "1064",
+        "PrepaidAWN,908,VPLMN": "1065",
+        "PrepaidAWN,109,VPLMN": "1027",
+        "PrepaidAWN,111,VPLMN": "1028",
+        "PrepaidAWN,112,VPLMN": "1029",
+        "Sim2FlyAWN,900,Always": "1095",
+        "Sim2FlyAWN,901,Always": "1096",
+        "Sim2FlyAWN,902,Always": "1097",
+        "Sim2FlyAWN,903,Always": "1098",
+        "Sim2FlyAWN,904,Always": "1099",
+        "Sim2FlyAWN,905,Always": "1100",
+        "Sim2FlyAWN,906,Always": "1101",
+        "Sim2FlyAWN,907,Always": "1102",
+        "Sim2FlyAWN,908,Always": "1103",
+        "Sim2FlyAWN,109,Always": "1113",
+        "Sim2FlyAWN,111,Always": "1114",
+        "Sim2FlyAWN,112,Always": "1115",
+        "Sim2FlyAWN,900,VPLMN": "1080",
+        "Sim2FlyAWN,901,VPLMN": "1081",
+        "Sim2FlyAWN,902,VPLMN": "1082",
+        "Sim2FlyAWN,903,VPLMN": "1083",
+        "Sim2FlyAWN,904,VPLMN": "1084",
+        "Sim2FlyAWN,905,VPLMN": "1085",
+        "Sim2FlyAWN,906,VPLMN": "1086",
+        "Sim2FlyAWN,907,VPLMN": "1087",
+        "Sim2FlyAWN,908,VPLMN": "1088",
+        "Sim2FlyAWN,109,VPLMN": "1110",
+        "Sim2FlyAWN,111,VPLMN": "1111",
+        "Sim2FlyAWN,112,VPLMN": "1112"
+      }
+    },
+    {
+      "overwriteParam": "maxUpLinkLTE",
+      "overwritePattern": {
+        "NOVALUE": "300000000"
+      }
+    },
+    {
+      "overwriteParam": "maxDownLinkLTE",
+      "overwritePattern": {
+        "NOVALUE": "1000000000"
+      }
+    },
+    {
+      "overwriteParam": "restrictionTypeRoamingRestrictionLTE",
+      "overwritePattern": {
+        "Domestic": "1",
+        "Domestic and IR": "2",
+        "Domestic Free Trail": "3",
+        "Engineer Test": "99",
+        "NOVALUE": "2"
+      }
+    },
+    {
+      "overwriteParam": "gcc_HLRHuawei",
+      "overwritePattern": {
+        "CBS": "6",
+        "INS": "FLAT"
+      }
+    },
+    {
+      "overwriteParam": "cc_HLRHuawei",
+      "overwritePattern": {
+        "CBS": "6",
+        "INS": "FLAT"
+      }
+    },
+    {
+      "overwriteParam": "qosPDP_HLRHuawei",
+      "overwritePattern": {
+        "3G2100Low": "RELCLS=ACKRLCPRODT,DELAYCLS=DELAY3,PRECLS=LOW,PEAKTHR=9,MEANTHR=31,ARPRIORITY=LOW,ERRSDU=YES,DELIVERY=NO,TRAFFICCLS=INTERACT,MAXSDUSIZE=1500 OCT,RESBER=0.004,SDUERR=0.0001,TRANSFERDEL=500MS,TRAFFICPRI=PRIORITY3,MAXEXTBRUPL=21M,MAXEXTBRDWL=42M",
+        "3G2100Medium": "RELCLS=ACKRLCPRODT,DELAYCLS=DELAY2,PRECLS=NORMAL,PEAKTHR=9,MEANTHR=31,ARPRIORITY=NORMAL,ERRSDU=YES,DELIVERY=NO,TRAFFICCLS=INTERACT,MAXSDUSIZE=1500 OCT,RESBER=0.004,SDUERR=0.0001,TRANSFERDEL=500MS,TRAFFICPRI=PRIORITY2,MAXEXTBRUPL=21M,MAXEXTBRDWL=42M",
+        "3G2100High": "RELCLS=ACKRLCPRODT,DELAYCLS=DELAY1,PRECLS=HIGH,PEAKTHR=9,MEANTHR=31,ARPRIORITY=HIGH,ERRSDU=YES,DELIVERY=NO,TRAFFICCLS=INTERACT,MAXSDUSIZE=1500 OCT,RESBER=0.004,SDUERR=0.0001,TRANSFERDEL=500MS,TRAFFICPRI=PRIORITY1,MAXEXTBRUPL=21M,MAXEXTBRDWL=42M",
+        "NOVALUE": "RELCLS=ACKRLCPRODT,DELAYCLS=DELAY3,PRECLS=LOW,PEAKTHR=9,MEANTHR=31,ARPRIORITY=LOW,ERRSDU=YES,DELIVERY=NO,TRAFFICCLS=INTERACT,MAXSDUSIZE=1500 OCT,RESBER=0.004,SDUERR=0.0001,TRANSFERDEL=500MS,TRAFFICPRI=PRIORITY3,MAXEXTBRUPL=21M,MAXEXTBRDWL=42M"
+      }
+    },
+    {
+      "overwriteParam": "pdpType_HLRHuawei",
+      "overwritePattern": {
+        "NOVALUE": "IPV4"
+      }
+    },
+    {
+      "overwriteParam": "pdpVplmn_HLRHuawei",
+      "overwritePattern": {
+        "NOVALUE": "FALSE"
+      }
+    },
+    {
+      "overwriteParam": "pdpType_HLRZTE",
+      "overwritePattern": {
+        "IPV4": "0",
+        "IPV6": "1",
+        "IPV4IPV6": "0,ExtPDPType=1",
+        "NOVALUE": "0"
+      }
+    },
+    {
+      "overwriteParam": "qosPDP_HLRZTE",
+      "overwritePattern": {
+        "3G2100Low": "102",
+        "3G2100Medium": "101",
+        "3G2100High": "100",
+        "NOVALUE": "102"
+      }
+    },
+    {
+      "overwriteParam": "pdpVplmn_HLRZTE",
+      "overwritePattern": {
+        "TRUE": "1",
+        "FALSE": "0"
+      }
+    },
+    {
+      "overwriteParam": "cc_HLRZTE",
+      "overwritePattern": {
+        "CBS": "6",
+        "INS": "2"
+      }
+    },
+    {
+      "overwriteParam": "gcc_HLRZTE",
+      "overwritePattern": {
+        "CBS": "6",
+        "INS": "2"
+      }
+    },
+    {
+      "overwriteParam": "defaultAPNFlag_HLRHuawei",
+      "overwritePattern": {
+        "NOVALUE": "FALSE"
+      }
+    },
+    {
+      "overwriteParam": "qosPDPLTE_HLRHuawei",
+      "overwritePattern": {
+        "IMS": "1",
+        "Gold": "2",
+        "Silver": "3",
+        "Bronze": "4",
+        "NOVALUE": "4"
+      }
+    },
+    {
+      "overwriteParam": "pdpTypeLTE_HLRHuawei",
+      "overwritePattern": {
+        "NOVALUE": "IPV4"
+      }
+    },
+    {
+      "overwriteParam": "pdpVplmnLTE_HLRHuawei",
+      "overwritePattern": {
+        "NOVALUE": "FALSE"
+      }
+    },
+    {
+      "overwriteParam": "ccLTE_HLRHuawei",
+      "overwritePattern": {
+        "CBS": "0600",
+        "INS": "0200"
+      }
+    },
+    {
+      "overwriteParam": "pdpTypeLTE_HLRZTE",
+      "overwritePattern": {
+        "IPV4": "PDNTYPE=0,EPCPDNTYPE1=0",
+        "IPV6": "PDNTYPE=1,EPCPDNTYPE1=1",
+        "IPV4IPV6": "PDNTYPE=0,EPCPDNTYPE1=1",
+        "NOVALUE": "PDNTYPE=0,EPCPDNTYPE1=0"
+      }
+    },
+    {
+      "overwriteParam": "pdpAddressLTE_HLRZTE",
+      "overwritePattern": {
+        "NOVALUE": "*"
+      }
+    },
+    {
+      "overwriteParam": "qosPDPLTE_HLRZTE",
+      "overwritePattern": {
+        "IMS": "1",
+        "Gold": "2",
+        "Silver": "3",
+        "Bronze": "4",
+        "NOVALUE": "4"
+      }
+    },
+    {
+      "overwriteParam": "pdpVplmnLTE_HLRZTE",
+      "overwritePattern": {
+        "TRUE": "1",
+        "FALSE": "0",
+        "NOVALUE": "0"
+      }
+    },
+    {
+      "overwriteParam": "ccLTE_HLRZTE",
+      "overwritePattern": {
+        "CBS": "6",
+        "INS": "2"
+      }
+    },
+    {
+      "overwriteParam": "gccLTE_HLRZTE",
+      "overwritePattern": {
+        "CBS": "6",
+        "INS": "2"
+      }
+    },
+    {
+      "overwriteParam": "suspendTypeSuspendOutgoingCall_HLRHuawei",
+      "overwritePattern": {
+        "IDD": "BOIC",
+        "ALL": "BAOC",
+        "BOICEXHC": "BOICEXHC",
+        "BOCROAM": "BOCROAM"
+      }
+    },
+    {
+      "overwriteParam": "suspendTypeSuspendOutgoingCall_HLRZTE",
+      "overwritePattern": {
+        "IDD": "2",
+        "ALL": "1",
+        "BOICEXHC": "3",
+        "BOCROAM": "4"
+      }
+    },
+    {
+      "overwriteParam": "restrictionType_HLRHuawei",
+      "overwritePattern": {
+        "BlockAllArea": "2",
+        "AllowAllArea": "50"
+      }
+    },
+    {
+      "overwriteParam": "restrictionType_HLRZTE",
+      "overwritePattern": {
+        "BlockAllArea": "RoamSch=2,PSRoamSch=2",
+        "AllowAllArea": "RoamSch=50,PSRoamSch=50"
+      }
+    },
+    {
+      "overwriteParam": "language_NotifyME",
+      "overwritePattern": {
+        "THA": "T",
+        "ENG": "E",
+		"MYA": "E",
+		"CHN": "E",
+		"KHM": "E",
+		"LAO": "E",
+		"JPN": "E",
+		"KOR": "E"
+      }
+    },
+    {
+      "overwriteParam": "callForwardOption_HLRHuawei",
+      "overwritePattern": {
+        "busy":"CFB",
+        "noReply":"CFNRy",
+        "busy&noReply":"CFNRy & CFB",
+        "notReachable":"CFNRc",
+        "busy&notReachable":"CFNRc & CFB",
+        "notReachable&noReply":"CFNRc & CFNRy",
+        "busy&notReachable&noReply":"CFNRc & CFNRy & CFB",
+        "NOVALUE": "CFNRc"
+      }
+    },
+    {
+      "overwriteParam": "roamingTypeRoaming_HLRHuawei",
+      "overwritePattern": {
+        "homePLMN": "BROHPLMN",
+        "domestic": "BROHPLMNC",
+        "internationalAndDomestic": "NOBAR"
+      }
+    },
+    {
+      "overwriteParam": "roamingTypeRoaming_HLRZTE",
+      "overwritePattern": {
+        "homePLMN": "1",
+        "domestic": "2",
+        "internationalAndDomestic": "0"
+      }
+    },
+    {
+      "overwriteParam": "brandName_USMP",
+      "overwritePattern": {
+        "3g-hybridgsm-INS": "3g-postpaid",
+        "3g-hybridgsm": "3g-postpaid",
+        "3g-postpaid-INS": "3g-postpaid",
+        "3g-prepaid-INS": "3g-prepaid",
+        "gsm-BOS": "gsm",
+        "one2call-BOS": "one2call",
+        "gsm1800-BOS": "gsm1800",
+        "hybridgsm": "gsm",
+        "3g-postpaid-BOS ": "3g-postpaid",
+        "3g-prepaid-BOS": "3g-prepaid",
+        "3g-postpaid-CBS": "3g-postpaid",
+        "3g-prepaid-CBS": "3g-prepaid"
+      }
+    },
+    {
+      "overwriteParam": "spName_USMP",
+      "overwritePattern": {
+        "gsm-BOS": "ais",
+        "one2call-BOS": "ais",
+        "hybridgsm": "ais",
+        "gsm": "ais",
+        "one2call": "ais",
+        "gsm1800": "dpc",
+        "gsm1800-BOS": "dpc",
+        "3g-postpaid-BOS": "awn",
+        "3g-prepaid-BOS": "awn",
+        "3g-postpaid": "awn",
+        "3g-prepaid": "awn",
+        "3g-hybridgsm": "awn",
+        "3g-hybridgsm-INS": "awn",
+        "3g-postpaid-INS": "awn",
+        "3g-prepaid-INS": "awn"
+      }
+    },
+    {
+      "overwriteParam": "waiveFlag_CBS",
+      "overwritePattern": {
+        "Y": "0",
+        "N": "1"
+      }
+    },
+	{
+      "overwriteParam": "publicType_AAF",
+      "overwritePattern": {
+        "msisdn": "0",
+		"imsi": "1",
+		"sipuri": "2",
+		"nai": "3",
+		"email": "4",
+		"citizen id": "5"
+      }
+    }
+  ]
+}

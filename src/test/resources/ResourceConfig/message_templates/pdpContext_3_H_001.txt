@@ -1,0 +1,58 @@
+@request
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ins="http://soa.comptel.com/2011/02/instantlink">
+<soap:Header>
+<wsse:Security soap:mustUnderstand="true" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<wsse:UsernameToken wsu:Id="SOAI_req_SOAI" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+<wsse:Username>{@param:resourceInfraNode.pfUsername}</wsse:Username> 
+<wsse:Password>{@param:resourceInfraNode.pfPassword}</wsse:Password>
+</wsse:UsernameToken>
+</wsse:Security>
+</soap:Header>
+   <soap:Body>
+      <ins:CreateRequest>
+         <ins:RequestHeader>
+            <ins:NeType>DUMMY</ins:NeType>
+            <ins:OrderNo>{@param:resourceOrder.resourceGroupId}</ins:OrderNo>
+            <ins:Priority>5</ins:Priority>
+            <ins:ReqUser>PGZ_WS</ins:ReqUser>
+         </ins:RequestHeader>
+         <ins:RequestParameters>
+                <ins:Parameter name="MSISDN1" value="{@overwrite_extra:replacePrefix0with66({@param:resourceOrderItem.mobileNo})}" />
+                <ins:Parameter name="IMSI1" value="{@param:resourceOrderItem.imsi}" />
+                <ins:Parameter name="NO_OF_BSO" value="1" />
+                <ins:Parameter name="ROLLBACK" value="2" />
+                <ins:Parameter name="RE_TRANSMIT" value="{@param:resourceOrder.reTransmit}" />
+                <ins:Parameter name="BSO_1" value="PDP_CONTEXT" />
+                <ins:Parameter name="REQ_TYPE_1" value="3" />
+                <ins:Parameter name="ERROR_FLAG_1" value="{@param:resourceOrderItem.errorFlag}" />
+                <ins:Parameter name="APN_ID_1" value="{@param:resourceOrderItem.apnId}" />
+                <ins:Parameter name="PDP_ID_1" value="{@param:resourceOrderItem.pdpId}" />
+                <ins:Parameter name="APN_NAME_1" value="{@param:resourceOrderItem.apnName}" />
+         </ins:RequestParameters>
+      </ins:CreateRequest>
+   </soap:Body>
+</soap:Envelope>
+@endrequest
+
+@response
+<S:Envelope xmlns:S="http://www.w3.org/2003/05/soap-envelope" xmlns:env="http://www.w3.org/2003/05/soap-envelope">
+   <S:Body>
+      <Response xmlns="http://soa.comptel.com/2011/02/instantlink">
+         <ResponseHeader>
+            <RequestId>{@param:ResponseHeader.RequestId}</RequestId>
+            <Status>{@param:ResponseHeader.Status}</Status>
+            <OrderNo>TEST_BOAT</OrderNo>
+            <StatusMessage>{@param:ResponseHeader.StatusMessage}</StatusMessage>
+            <StatusMessageId>009</StatusMessageId>
+            <ReceivedDate>2018-04-19T17:05:36.162+07:00</ReceivedDate>
+            <FinishedDate>2018-04-19T17:05:37.018+07:00</FinishedDate>
+         </ResponseHeader>
+         <ResponseParameters>
+            <Parameter name="ERROR_FLAG_1" value="{@param:ResponseParameters.ERROR_FLAG_1}"/>
+            <Parameter name="BSO_STATUS_1" value="{@param:ResponseParameters.BSO_STATUS_1}"/>
+            <Parameter name="SMESSAGE_1" value="{@param:ResponseParameters.SMESSAGE_1}"/>
+         </ResponseParameters>
+      </Response>
+   </S:Body>
+</S:Envelope>
+@endresponse

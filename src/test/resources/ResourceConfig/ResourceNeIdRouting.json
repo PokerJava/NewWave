@@ -1,0 +1,60 @@
+{
+  "resultData": [
+    {
+      "neType": "CBS",
+      "start": "0000000000",
+      "end": "66899999999",
+      "neId": "AISCBS1",
+      "partyName": "Huawei",
+      "productVersion": "ANY"
+    },
+    {
+      "neType": "USMP",
+      "start": "0000000000",
+      "end": "0899999999",
+      "neId": "AISUSMP1",
+      "partyName": "AIS",
+      "productVersion": ""
+    },
+        {
+      "neType": "HLR",
+      "start": "520035031000000",
+      "end": "520035031999999",
+      "neId": "AISHLR1",
+      "partyName": "ZTE",
+      "productVersion": ""
+    },
+    {
+      "neType": "HLR",
+      "start": "520035033100000",
+      "end": "520035033199999",
+      "neId": "AISHLR2",
+      "partyName": "Huawei",
+      "productVersion": ""
+    },
+    {
+      "neType": "NOTIFYME",
+      "start": "0800000000",
+      "end": "0899999999",
+      "neId": "AISNTFME",
+      "partyName": "AIS",
+      "productVersion": ""
+    },
+	{
+      "neType": "AAF",
+      "start": "0800000000",
+      "end": "0899999999",
+      "neId": "AISAAF1",
+      "partyName": "AIS",
+      "productVersion": ""
+    },
+	{
+      "neType": "MD",
+      "start": "0800000000",
+      "end": "0899999999",
+      "neId": "AISMD",
+      "partyName": "AIS",
+      "productVersion": ""
+    }
+  ]
+}

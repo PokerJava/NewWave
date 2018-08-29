@@ -1,0 +1,64 @@
+{
+  "resultData" : [
+    {
+      "neType": "CBS",
+	  "cType":"text/xml",
+	  "protocol":"HTTP",
+      "descriptionEN": "SCP of Huawei (Avatar)",
+      "createDate": "20180301105912+0700",
+      "createBy": "watchayo",
+      "lastUpdBy": "watchayo",
+      "lastUpdDate": "20180302105912+0700"
+    },
+    {
+      "neType": "USMP",
+	  "cType":"text/xml",
+	  "protocol":"HTTP",
+      "descriptionEN": "USMP node",
+      "createDate": "20180301105912+0700",
+      "createBy": "watchayo",
+      "lastUpdBy": "watchayo",
+      "lastUpdDate": "20180302105912+0700"
+    },
+    {
+      "neType": "HLR",
+	  "cType":"tcp",
+	  "protocol":"SOCKET",
+      "descriptionEN": "HLR node",
+      "createDate": "20180301105912+0700",
+      "createBy": "watchayo",
+      "lastUpdBy": "watchayo",
+      "lastUpdDate": "20180302105912+0700"
+    },
+        {
+      "neType": "NOTIFYME",
+      "cType":"text/xml",
+      "protocol":"HTTP",
+      "descriptionEN": "NOTIFYME node",
+      "createDate": "20180301105912+0700",
+      "createBy": "watchayo",
+      "lastUpdBy": "watchayo",
+      "lastUpdDate": "20180302105912+0700"
+    },
+	{
+      "neType": "AAF",
+      "cType":"text/plain",
+      "protocol":"HTTP",
+      "descriptionEN": "AAF node",
+      "createDate": "20180301105912+0700",
+      "createBy": "pornnapa",
+      "lastUpdBy": "pornnapa",
+      "lastUpdDate": "20180302105912+0700"
+    },
+	{
+      "neType": "MD",
+      "cType":"text/xml",
+      "protocol":"HTTP",
+      "descriptionEN": "MD node",
+      "createDate": "20180301105912+0700",
+      "createBy": "watchayo",
+      "lastUpdBy": "watchayo",
+      "lastUpdDate": "20180302105912+0700"
+    }
+    ]
+}
