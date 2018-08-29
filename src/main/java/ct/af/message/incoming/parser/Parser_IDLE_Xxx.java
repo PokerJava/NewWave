@@ -20,7 +20,9 @@ public class Parser_IDLE_Xxx {
         
 //        String rawDataMessage = eqxRawData.getRawDataAttribute("val");
         String rawDataMessage = "{ \"A\" : \"a\","
-        		+ "\"B\" : [\"b1\",\"b2\"] }";
+        		+ "\"B\" : [\"b1\",\"b2\"],"
+        		+ "\"C\" : {\"X\" : \"x\","
+        		+ "\"Y\" : \"y\"}  }";
         String rawCType = eqxRawData.getCType();
         
         if(rawCType.equals("text/plain")) {
@@ -28,7 +30,8 @@ public class Parser_IDLE_Xxx {
     		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage).getAsJsonObject();
     		Gson gson = GsonPool.getGson();
 			HashMap<String, Object> resourceHashMap = gson.fromJson(resourceOrderJsonObject, HashMap.class);
-    		
+    		GsonPool.pushGson(gson);
+			
     		if(resourceHashMap.containsKey("A")) {
     			param.setA(resourceHashMap.get("A").toString());
     		}
@@ -36,10 +39,11 @@ public class Parser_IDLE_Xxx {
     			param.setB((ArrayList<String>) resourceHashMap.get("B"));
     		}
     		if(resourceHashMap.containsKey("C")) {
-    			
+    			HashMap<String, Object> instanceHash = gson.fromJson(resourceHashMap.get("C").toString(), HashMap.class);
+    			param.setC(instanceHash);
     		}
     		if(resourceHashMap.containsKey("D")) {
-    			
+    			ArrayList<HashMap<String, Object>>
     		}
     		System.out.println("Helo");
         } else if(rawCType.equals("text/xml")) {
