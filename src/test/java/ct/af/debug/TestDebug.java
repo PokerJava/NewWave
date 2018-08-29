@@ -12,7 +12,7 @@ public class TestDebug {
         String requestMsgFile,
         String homeDirectory,
         String libraryDirectory)*/
-   
+   //hello
 
         //af.run("PGZ_UAT", "src/test/resources/conf/PGZ_UAT.EC02.SER.0", "src/test/resources/dummymsgs/test_flow_promotionmanagement.xml", "src/test/resources/", "repo/co/th/PGZ/1.6.0");
 
