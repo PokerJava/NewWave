@@ -26,6 +26,7 @@ public class AFMain extends AbstractAF {
         AFLog.d("Lib Version : " + Config.getLibVersion());
         AFLog.d("[Start Process]");
         /* extract instance */
+        //hey
         AFInstance afInstance = null;
 
         String instanceString = instanceData.toString();
