@@ -33,5 +33,4 @@ public class Param_IDLE_Xxx {
 	public void setD(ArrayList<HashMap<String, String>> d) {
 		D = d;
 	}
-
 }
