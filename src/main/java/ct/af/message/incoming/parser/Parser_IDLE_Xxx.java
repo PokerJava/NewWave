@@ -19,15 +19,37 @@ public class Parser_IDLE_Xxx {
         
 //        String rawDataMessage = eqxRawData.getRawDataAttribute("val");
         String rawDataMessage = "{ \"A\" : \"a\" }";
-        String rawCType = eqxRawData.getCType();
-        
+        String rawDataMessageXml =  "<bookstore><book>" +"<title>Everyday Italian</title>" +"<author>Giada De Laurentiis</author>" +"<year>2005</year>" +
+        							"</book></bookstore>";
+
+        //String rawCType = eqxRawData.getCType();
+        String rawCType = "text/xml";
         if(rawCType.equals("text/plain")) {
         	JsonParser jsonParser = new JsonParser();
     		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage).getAsJsonObject();
     		Gson gson = GsonPool.getGson();
     		HashMap<String, String> test = gson.fromJson(resourceOrderJsonObject, HashMap.class);
+    		
         } else if(rawCType.equals("text/xml")) {
-        	
+        	HashMap<String, String> rawData = new HashMap<String, String>();
+
+        	       if(rawDataMessageXml.indexOf("<bookstore>") != -1)
+        	       {
+        	           String header = rawDataMessageXml.substring(0, rawDataMessageXml.indexOf("<bookstore>"));
+        	           String[] headerVals = header.split("/>");
+
+        	         
+        	               for(String headerVal : headerVals) {
+        	                   headerVal = headerVal.trim();
+        	                   if("".equals(headerVal)) {
+        	                       continue;
+        	                   }
+        	                   String key = headerVal.substring(headerVal.indexOf("name=") + 6, headerVal.indexOf("val") - 2);
+        	                   String value = headerVal.substring(headerVal.indexOf("value=") + 7, headerVal.length() - 1);
+        	                   rawData.put(key.toLowerCase(), value);
+        	               }
+        	       }
+        	           
         } else if(rawCType.equals("Diameter")) {
         	
         } else if(rawCType.equals("Ldap")) {
