@@ -19,13 +19,14 @@ public class Parser_IDLE_Xxx {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
         
 //        String rawDataMessage = eqxRawData.getRawDataAttribute("val");
-        String rawDataMessage = "{ \"A\" : \"a\","
-        		+ "\"B\" : [\"b1\",\"b2\"],"
-        		+ "\"C\" : {\"X\" : \"x\","
-        		+ "\"Y\" : \"y\"},"
-        		+ "\"D\" : [{\"u\" : \"u1\","
-        		+ "\"v\" : \"v1\"},"
-        		+ "{\"u\" : \"v2\"}]  }";
+        String rawDataMessage = "{ \"company\" : \"CT\","
+        		+ "\"animal\" : [\"dog\",\"cat\"],"
+        		+ "\"userName\" : {\"jojo\" : \"1234\","
+        		+ "\"momo\" : \"4321\"},"
+        		+ "\"resourceName\" : [{\"resourceA1\" : \"A1\","
+        		+ "\"resourceA2\" : \"A2\"},"
+        		+ "{\"resourceB1\" : \"B1\","
+        		+ "\"resourceB2\" : \"B2\"}]  }";
         String rawCType = eqxRawData.getCType();
         
         if(rawCType.equals("text/plain")) {
