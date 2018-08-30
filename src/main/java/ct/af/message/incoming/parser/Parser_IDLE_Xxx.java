@@ -1,5 +1,6 @@
 package ct.af.message.incoming.parser;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.google.gson.Gson;
@@ -18,17 +19,44 @@ public class Parser_IDLE_Xxx {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
         
 //        String rawDataMessage = eqxRawData.getRawDataAttribute("val");
-        String rawDataMessage = "{ \"A\" : \"a\" }";
         String rawDataMessageXml =  "<bookstore><book>" +"<title>Everyday Italian</title>" +"<author>Giada De Laurentiis</author>" +"<year>2005</year>" +
         							"</book></bookstore>";
 
         //String rawCType = eqxRawData.getCType();
         String rawCType = "text/xml";
+        String rawDataMessage = "{ \"A\" : \"a\","
+        		+ "\"B\" : [\"b1\",\"b2\"],"
+        		+ "\"C\" : {\"X\" : \"x\","
+        		+ "\"Y\" : \"y\"},"
+        		+ "\"D\" : [{\"u\" : \"u1\","
+        		+ "\"v\" : \"v1\"},"
+        		+ "{\"u\" : \"v2\"}]  }";
+        
+
         if(rawCType.equals("text/plain")) {
         	JsonParser jsonParser = new JsonParser();
     		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage).getAsJsonObject();
     		Gson gson = GsonPool.getGson();
-    		HashMap<String, String> test = gson.fromJson(resourceOrderJsonObject, HashMap.class);
+			HashMap<String, Object> resourceHashMap = gson.fromJson(resourceOrderJsonObject, HashMap.class);
+    		GsonPool.pushGson(gson);
+			
+    		if(resourceHashMap.containsKey("A")) {
+    			param.setA(resourceHashMap.get("A").toString());
+    		}
+    		if(resourceHashMap.containsKey("B")) {
+    			ArrayList<String> multiValueIns = (ArrayList<String>)resourceHashMap.get("B");
+    			param.setB(multiValueIns);
+    		}
+    		if(resourceHashMap.containsKey("C")) {
+    			HashMap<String, Object> groupIns = gson.fromJson(resourceHashMap.get("C").toString(), HashMap.class);
+    			param.setC(groupIns);
+    		}
+    		if(resourceHashMap.containsKey("D")) {
+    			ArrayList<HashMap<String, Object>> multiGroupIns = gson.fromJson(resourceHashMap.get("D").toString(), ArrayList.class);
+    			param.setD(multiGroupIns);
+    		}
+    	
+
     		
         } else if(rawCType.equals("text/xml")) {
         	HashMap<String, String> rawData = new HashMap<String, String>();
