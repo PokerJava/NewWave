@@ -22,7 +22,10 @@ public class Parser_IDLE_Xxx {
         String rawDataMessage = "{ \"A\" : \"a\","
         		+ "\"B\" : [\"b1\",\"b2\"],"
         		+ "\"C\" : {\"X\" : \"x\","
-        		+ "\"Y\" : \"y\"}  }";
+        		+ "\"Y\" : \"y\"},"
+        		+ "\"D\" : [{\"u\" : \"u1\","
+        		+ "\"v\" : \"v1\"},"
+        		+ "{\"u\" : \"v2\"}]  }";
         String rawCType = eqxRawData.getCType();
         
         if(rawCType.equals("text/plain")) {
@@ -36,16 +39,19 @@ public class Parser_IDLE_Xxx {
     			param.setA(resourceHashMap.get("A").toString());
     		}
     		if(resourceHashMap.containsKey("B")) {
-    			param.setB((ArrayList<String>) resourceHashMap.get("B"));
+    			ArrayList<String> multiValueIns = (ArrayList<String>)resourceHashMap.get("B");
+    			param.setB(multiValueIns);
     		}
     		if(resourceHashMap.containsKey("C")) {
-    			HashMap<String, Object> instanceHash = gson.fromJson(resourceHashMap.get("C").toString(), HashMap.class);
-    			param.setC(instanceHash);
+    			HashMap<String, Object> groupIns = gson.fromJson(resourceHashMap.get("C").toString(), HashMap.class);
+    			param.setC(groupIns);
     		}
     		if(resourceHashMap.containsKey("D")) {
-    			ArrayList<HashMap<String, Object>>
+    			ArrayList<HashMap<String, Object>> multiGroupIns = gson.fromJson(resourceHashMap.get("D").toString(), ArrayList.class);
+    			param.setD(multiGroupIns);
     		}
-    		System.out.println("Helo");
+    		System.out.println(param.getD().get(0).get("v"));
+    		
         } else if(rawCType.equals("text/xml")) {
         	
         } else if(rawCType.equals("Diameter")) {
