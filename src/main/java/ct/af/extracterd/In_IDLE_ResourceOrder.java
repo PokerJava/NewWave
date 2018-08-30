@@ -25,7 +25,7 @@ public class In_IDLE_ResourceOrder {
         afSubIns.setSubClientParameter(paramIdleResourceOrder);
         afSubIns.setState(ERequestState.PENDING.getState());
         AFLog.d("State : " + afSubIns.getState());
- //aaa
+ 
         //-- Stat --//
         EStats statsIn = EStats.APP_RECV_CLIENT_POST_RESOURCE_ORDER_REQUEST;
         String userSys = paramIdleResourceOrder.getUserSys().trim();

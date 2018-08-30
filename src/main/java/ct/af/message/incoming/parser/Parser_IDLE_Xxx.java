@@ -19,6 +19,7 @@ public class Parser_IDLE_Xxx {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
         
 //        String rawDataMessage = eqxRawData.getRawDataAttribute("val");
+        String rawDataMessageXml = "";
         String rawDataMessage = "{ \"company\" : \"CT\","
         		+ "\"animal\" : [\"dog\",\"cat\"],"
         		+ "\"userName\" : {\"jojo\" : \"1234\","
@@ -28,7 +29,9 @@ public class Parser_IDLE_Xxx {
         		+ "{\"resourceB1\" : \"B1\","
         		+ "\"resourceB2\" : \"B2\"}]  }";
         String rawCType = eqxRawData.getCType();
+
         
+
         if(rawCType.equals("text/plain")) {
         	JsonParser jsonParser = new JsonParser();
     		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage).getAsJsonObject();
@@ -51,10 +54,29 @@ public class Parser_IDLE_Xxx {
     			ArrayList<HashMap<String, Object>> multiGroupIns = gson.fromJson(resourceHashMap.get("D").toString(), ArrayList.class);
     			param.setD(multiGroupIns);
     		}
-    		System.out.println(param.getD().get(0).get("v"));
+    	
+
     		
         } else if(rawCType.equals("text/xml")) {
-        	
+        	HashMap<String, String> rawData = new HashMap<String, String>();
+
+        	       if(rawDataMessageXml.indexOf("<bookstore>") != -1)
+        	       {
+        	           String header = rawDataMessageXml.substring(0, rawDataMessageXml.indexOf("<bookstore>"));
+        	           String[] headerVals = header.split("/>");
+
+        	         
+        	               for(String headerVal : headerVals) {
+        	                   headerVal = headerVal.trim();
+        	                   if("".equals(headerVal)) {
+        	                       continue;
+        	                   }
+        	                   String key = headerVal.substring(headerVal.indexOf("name=") + 6, headerVal.indexOf("val") - 2);
+        	                   String value = headerVal.substring(headerVal.indexOf("value=") + 7, headerVal.length() - 1);
+        	                   rawData.put(key.toLowerCase(), value);
+        	               }
+        	       }
+        	           
         } else if(rawCType.equals("Diameter")) {
         	
         } else if(rawCType.equals("Ldap")) {
