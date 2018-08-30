@@ -21,7 +21,6 @@ public class Parser_IDLE_Xxx {
 //        String rawDataMessage = eqxRawData.getRawDataAttribute("val");
         String rawDataMessageXml =  "<bookstore><book>" +"<title>Everyday Italian</title>" +"<author>Giada De Laurentiis</author>" +"<year>2005</year>" +
         							"</book></bookstore>";
-
         //String rawCType = eqxRawData.getCType();
         String rawCType = "text/xml";
         String rawDataMessage = "{ \"A\" : \"a\","
