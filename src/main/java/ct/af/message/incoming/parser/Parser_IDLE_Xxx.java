@@ -28,33 +28,29 @@ public class Parser_IDLE_Xxx {
         		+ "\"resourceA2\" : \"A2\"},"
         		+ "{\"resourceB1\" : \"B1\","
         		+ "\"resourceB2\" : \"B2\"}]  }";
-        String rawCType = eqxRawData.getCType();
-
         
+        String rawDataMessage2 = "{ \"A\" : \"CT\","
+        		+ "\"B\" : [\"dog\",\"cat\"],"
+        		+ "\"C\" : {\"jojo\" : \"1234\","
+        		+ "\"momo\" : \"4321\"},"
+        		+ "\"D\" : [{\"resourceA1\" : \"A1\","
+        		+ "\"resourceA2\" : {\"jojo\" : \"1234\"," + 
+        		"\"momo\" : \"4321\"}},"
+        		+ "{\"resourceB1\" : \"B1\","
+        		+ "\"resourceB2\" : \"B2\"}]  }";
+        String rawCType = eqxRawData.getCType();        
 
         if(rawCType.equals("text/plain")) {
         	JsonParser jsonParser = new JsonParser();
-    		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage).getAsJsonObject();
+    		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage2).getAsJsonObject();
     		Gson gson = GsonPool.getGson();
 			HashMap<String, Object> resourceHashMap = gson.fromJson(resourceOrderJsonObject, HashMap.class);
     		GsonPool.pushGson(gson);
-			
-    		if(resourceHashMap.containsKey("A")) {
-    			param.setA(resourceHashMap.get("A").toString());
-    		}
-    		if(resourceHashMap.containsKey("B")) {
-    			ArrayList<String> multiValueIns = (ArrayList<String>)resourceHashMap.get("B");
-    			param.setB(multiValueIns);
-    		}
-    		if(resourceHashMap.containsKey("C")) {
-    			HashMap<String, Object> groupIns = gson.fromJson(resourceHashMap.get("C").toString(), HashMap.class);
-    			param.setC(groupIns);
-    		}
-    		if(resourceHashMap.containsKey("D")) {
-    			ArrayList<HashMap<String, Object>> multiGroupIns = gson.fromJson(resourceHashMap.get("D").toString(), ArrayList.class);
-    			param.setD(multiGroupIns);
-    		}
-    	
+			param = gson.fromJson(resourceOrderJsonObject, Param_IDLE_Xxx.class);
+//			param.getHashMap()
+			param.setD(resourceHashMap);
+//			resourceHashMap = paramXxx.getHashMap(paramXxx.getD());
+
 
     		
         } else if(rawCType.equals("text/xml")) {
