@@ -13,9 +13,7 @@ import ct.af.message.incoming.parameter.Param_IDLE_Xxx;
 import ct.af.utils.GsonPool;
 import ec02.af.abstracts.AbstractAF;
 import ec02.data.interfaces.EquinoxRawData;
-import phoebe.aaf.constants.rawdata.EnumMessage;
-import phoebe.aaf.message.command.ChangePromotionRequestV2;
-import phoebe.aaf.utils.GsonCenter;
+
 
 
 public class Parser_IDLE_Xxx {
