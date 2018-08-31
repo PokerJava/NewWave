@@ -6,6 +6,8 @@ import java.util.HashMap;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.internal.LinkedTreeMap;
+
 import ct.af.instance.AFInstance;
 import ct.af.instance.AFSubInstance;
 import ct.af.message.incoming.parameter.Param_IDLE_ResourceOrder;
@@ -40,7 +42,8 @@ public class Parser_IDLE_Xxx {
         		+ "\"resourceB2\" : \"B2\"}]  }";
         String rawCType = eqxRawData.getCType();        
 
-        if(rawCType.equals("text/plain")) {
+        if(rawCType.equals("text/plain")) 
+        {
         	JsonParser jsonParser = new JsonParser();
     		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage2).getAsJsonObject();
     		Gson gson = GsonPool.getGson();
@@ -48,9 +51,25 @@ public class Parser_IDLE_Xxx {
     		GsonPool.pushGson(gson);
 			param = gson.fromJson(resourceOrderJsonObject, Param_IDLE_Xxx.class);
 //			param.getHashMap()
-			param.setD(resourceHashMap);
+			
 //			resourceHashMap = paramXxx.getHashMap(paramXxx.getD());
 
+			if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
+			{
+				param.setA(param.getHashMap(param.getA()));
+			}
+			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
+			{
+				param.setB(param.getHashMap(param.getB()));
+			}
+			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
+			{
+				param.setC(param.getHashMap(param.getC()));
+			}
+			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
+			{
+				param.setD(param.getHashMap(param.getD()));
+			}
 
     		
         } else if(rawCType.equals("text/xml")) {

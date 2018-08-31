@@ -53,7 +53,7 @@ public class Param_IDLE_Xxx {
 		D = d;
 	}
 	
-	public HashMap<String, Object> getHashMap(Object data){
+	public Object getHashMap(Object data){
 		HashMap<String, Object> resourceMap;
 		if(data instanceof LinkedTreeMap) {
 			resourceMap = new HashMap<>();
@@ -74,10 +74,16 @@ public class Param_IDLE_Xxx {
 //				((ArrayList) data).add(getHashMap(((ArrayList) data).get(i)));
 				
 //				((ArrayList) data).remove(i);
-				resourceArry.add(getHashMap(((ArrayList) data).get(i)));
+//				resourceArry.add(getHashMap(((ArrayList) data).get(i)));
+				if(((ArrayList) data).get(i) instanceof ArrayList || ((ArrayList) data).get(i) instanceof LinkedTreeMap)
+				{
+					((ArrayList) data).add(getHashMap(((ArrayList) data).get(i)));
+					((ArrayList) data).remove(i);
+				}
 
 //				resourceArry.remove(i);
 			}
+			return data;
 		}else {
 			resourceMap = new HashMap<>();
 		}
