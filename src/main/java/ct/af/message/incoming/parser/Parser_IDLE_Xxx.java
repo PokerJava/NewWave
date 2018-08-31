@@ -16,6 +16,8 @@ import ct.af.utils.GsonPool;
 import ec02.af.abstracts.AbstractAF;
 import ec02.data.interfaces.EquinoxRawData;
 
+
+
 public class Parser_IDLE_Xxx {
 	public Param_IDLE_Xxx doParser(AbstractAF abstractAF, EquinoxRawData eqxRawData, AFInstance afInstance, AFSubInstance afSubIns) {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
@@ -30,7 +32,51 @@ public class Parser_IDLE_Xxx {
         		+ "\"resourceA2\" : \"A2\"},"
         		+ "{\"resourceB1\" : \"B1\","
         		+ "\"resourceB2\" : \"B2\"}]  }";
+
+        String xml = "<ERD>"
+			         +"<animal>"
+			         +"<element>dog</element>"
+			         +"<element>cat</element>"
+			         +"</animal>"
+			         +"<company>CT</company>"
+			         +"<resourceName>"
+			         +"<element>"
+			         +"<resourceA1>A1</resourceA1>"
+			         +"<resourceA2>A2</resourceA2>"
+			         +"</element>"
+			         +"<element>"
+			         +"<resourceB1>B1</resourceB1>"
+			         +"<resourceB2>B2</resourceB2>"
+			         +"</element>"
+			         +"</resourceName>"
+			         +"<userName>"
+			         +"<jojo>1234</jojo>"
+			         +"<momo>4321</momo>"
+			         +"</userName>"
+			         +"</ERD>";
         
+        String xmlMessage  = "<ERDData> value"
+        			+"\""
+        			+"{"  	         
+        			+ "  \"sessionId\":\"564093493534958340\"," 
+        			+ "  \"accessNum\":\"1775\","    
+        			+ "  \"appName\":\"fb\","      
+        			+ "  \"callBackUrl\":\"10.240.104.215:8443\","	            
+        			+ "   \"submissionTime\":\"20150731091000\","	            
+        			+ "   \"callBackUrl\":\"10.240.104.215:8443\","           
+        			+ "   \"submissionTime\":\"150903111111\","        			           
+        			+ "   \"partnerId\":\"30010\""
+        			+ "}"
+        			+ "\""
+        			+ ">]]>";
+        
+        System.out.println(xmlMessage);
+        			
+         
+        		//String rawCType = eqxRawData.getCType();
+        		String rawCType = "text/xml";
+
+
         String rawDataMessage2 = "{ \"A\" : \"CT\","
         		+ "\"B\" : [\"dog\",\"cat\"],"
         		+ "\"C\" : {\"jojo\" : \"1234\","
@@ -40,7 +86,7 @@ public class Parser_IDLE_Xxx {
         		"\"momo\" : \"4321\"}},"
         		+ "{\"resourceB1\" : \"B1\","
         		+ "\"resourceB2\" : \"B2\"}]  }";
-        String rawCType = eqxRawData.getCType();        
+     
 
         if(rawCType.equals("text/plain")) 
         {
@@ -73,25 +119,13 @@ public class Parser_IDLE_Xxx {
 
     		
         } else if(rawCType.equals("text/xml")) {
-        	HashMap<String, String> rawData = new HashMap<String, String>();
-
-        	       if(rawDataMessageXml.indexOf("<bookstore>") != -1)
-        	       {
-        	           String header = rawDataMessageXml.substring(0, rawDataMessageXml.indexOf("<bookstore>"));
-        	           String[] headerVals = header.split("/>");
-
-        	         
-        	               for(String headerVal : headerVals) {
-        	                   headerVal = headerVal.trim();
-        	                   if("".equals(headerVal)) {
-        	                       continue;
-        	                   }
-        	                   String key = headerVal.substring(headerVal.indexOf("name=") + 6, headerVal.indexOf("val") - 2);
-        	                   String value = headerVal.substring(headerVal.indexOf("value=") + 7, headerVal.length() - 1);
-        	                   rawData.put(key.toLowerCase(), value);
-        	               }
-        	       }
-        	           
+            HashMap<String, String> rawData = new HashMap<String, String>();
+            		JsonParser jsonParser = new JsonParser();
+          			String data = xmlMessage.substring(xmlMessage.indexOf("<ERDData"), xmlMessage.length()).trim();
+        			JsonObject resourceOrderJsonObject = jsonParser.parse(xmlMessage).getAsJsonObject();
+            		Gson gson = GsonPool.getGson();
+        
+        	
         } else if(rawCType.equals("Diameter")) {
         	
         } else if(rawCType.equals("Ldap")) {
