@@ -13,6 +13,10 @@ import ct.af.message.incoming.parameter.Param_IDLE_Xxx;
 import ct.af.utils.GsonPool;
 import ec02.af.abstracts.AbstractAF;
 import ec02.data.interfaces.EquinoxRawData;
+import phoebe.aaf.constants.rawdata.EnumMessage;
+import phoebe.aaf.message.command.ChangePromotionRequestV2;
+import phoebe.aaf.utils.GsonCenter;
+
 
 public class Parser_IDLE_Xxx {
 	public Param_IDLE_Xxx doParser(AbstractAF abstractAF, EquinoxRawData eqxRawData, AFInstance afInstance, AFSubInstance afSubIns) {
@@ -28,7 +32,49 @@ public class Parser_IDLE_Xxx {
         		+ "\"resourceA2\" : \"A2\"},"
         		+ "{\"resourceB1\" : \"B1\","
         		+ "\"resourceB2\" : \"B2\"}]  }";
-        String rawCType = eqxRawData.getCType();
+        
+        String xml = "<ERD>"
+			         +"<animal>"
+			         +"<element>dog</element>"
+			         +"<element>cat</element>"
+			         +"</animal>"
+			         +"<company>CT</company>"
+			         +"<resourceName>"
+			         +"<element>"
+			         +"<resourceA1>A1</resourceA1>"
+			         +"<resourceA2>A2</resourceA2>"
+			         +"</element>"
+			         +"<element>"
+			         +"<resourceB1>B1</resourceB1>"
+			         +"<resourceB2>B2</resourceB2>"
+			         +"</element>"
+			         +"</resourceName>"
+			         +"<userName>"
+			         +"<jojo>1234</jojo>"
+			         +"<momo>4321</momo>"
+			         +"</userName>"
+			         +"</ERD>";
+        
+        String xmlMessage  = "<ERDData> value"
+        			+"\""
+        			+"{"  	         
+        			+ "  \"sessionId\":\"564093493534958340\"," 
+        			+ "  \"accessNum\":\"1775\","    
+        			+ "  \"appName\":\"fb\","      
+        			+ "  \"callBackUrl\":\"10.240.104.215:8443\","	            
+        			+ "   \"submissionTime\":\"20150731091000\","	            
+        			+ "   \"callBackUrl\":\"10.240.104.215:8443\","           
+        			+ "   \"submissionTime\":\"150903111111\","        			           
+        			+ "   \"partnerId\":\"30010\""
+        			+ "}"
+        			+ "\""
+        			+ ">]]>";
+        
+        System.out.println(xmlMessage);
+        			
+        
+        		//String rawCType = eqxRawData.getCType();
+        		String rawCType = "text/xml";
 
         
 
@@ -58,25 +104,21 @@ public class Parser_IDLE_Xxx {
 
     		
         } else if(rawCType.equals("text/xml")) {
-        	HashMap<String, String> rawData = new HashMap<String, String>();
-
-        	       if(rawDataMessageXml.indexOf("<bookstore>") != -1)
-        	       {
-        	           String header = rawDataMessageXml.substring(0, rawDataMessageXml.indexOf("<bookstore>"));
-        	           String[] headerVals = header.split("/>");
-
-        	         
-        	               for(String headerVal : headerVals) {
-        	                   headerVal = headerVal.trim();
-        	                   if("".equals(headerVal)) {
-        	                       continue;
-        	                   }
-        	                   String key = headerVal.substring(headerVal.indexOf("name=") + 6, headerVal.indexOf("val") - 2);
-        	                   String value = headerVal.substring(headerVal.indexOf("value=") + 7, headerVal.length() - 1);
-        	                   rawData.put(key.toLowerCase(), value);
-        	               }
+            HashMap<String, String> rawData = new HashMap<String, String>();
+        	 try {
+        			String data = xmlMessage.substring(xmlMessage.indexOf("<ERDData"), xmlMessage.length()).trim();
+        			   
+        			changePromotionRequestV2= GsonCenter.getObjectFromGsonString(map.get(EnumMessage.ERDDATA.getKey()), ChangePromotionRequestV2.class);
+                	String type = hashMap.getType();
+                    String value = hashMap.getValue();
+                    String uid = hashMap.getUid();
+        			 
+        			   data = data.substring(data.indexOf("value="), data.indexOf("/>")).trim();
+        			   data = data.substring(data.indexOf("value=") + 7, data.length() - 1);
+        			   rawData.put("ERDData",data);
+        	       } catch (Exception e) {
         	       }
-        	           
+        	
         } else if(rawCType.equals("Diameter")) {
         	
         } else if(rawCType.equals("Ldap")) {
