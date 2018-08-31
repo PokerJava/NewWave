@@ -101,13 +101,11 @@ public class Parser_IDLE_Xxx {
     		
         } else if(rawCType.equals("text/xml")) {
             HashMap<String, String> rawData = new HashMap<String, String>();
-        	 try {
-        			String data = xmlMessage.substring(xmlMessage.indexOf("<ERDData"), xmlMessage.length()).trim();
-        			   
-        			//= GsonCenter.getObjectFromGsonString(map.get(EnumMessage.ERDDATA.getKey()), ChangePromotionRequestV2.class);
-               
-        	       } catch (Exception e) {
-        	       }
+            		JsonParser jsonParser = new JsonParser();
+          			String data = xmlMessage.substring(xmlMessage.indexOf("<ERDData"), xmlMessage.length()).trim();
+        			JsonObject resourceOrderJsonObject = jsonParser.parse(xmlMessage).getAsJsonObject();
+            		Gson gson = GsonPool.getGson();
+        
         	
         } else if(rawCType.equals("Diameter")) {
         	
