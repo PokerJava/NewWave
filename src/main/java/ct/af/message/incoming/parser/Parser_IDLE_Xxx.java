@@ -108,14 +108,8 @@ public class Parser_IDLE_Xxx {
         	 try {
         			String data = xmlMessage.substring(xmlMessage.indexOf("<ERDData"), xmlMessage.length()).trim();
         			   
-        			changePromotionRequestV2= GsonCenter.getObjectFromGsonString(map.get(EnumMessage.ERDDATA.getKey()), ChangePromotionRequestV2.class);
-                	String type = hashMap.getType();
-                    String value = hashMap.getValue();
-                    String uid = hashMap.getUid();
-        			 
-        			   data = data.substring(data.indexOf("value="), data.indexOf("/>")).trim();
-        			   data = data.substring(data.indexOf("value=") + 7, data.length() - 1);
-        			   rawData.put("ERDData",data);
+        			//= GsonCenter.getObjectFromGsonString(map.get(EnumMessage.ERDDATA.getKey()), ChangePromotionRequestV2.class);
+               
         	       } catch (Exception e) {
         	       }
         	
