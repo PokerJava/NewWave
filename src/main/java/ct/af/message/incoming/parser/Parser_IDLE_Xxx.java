@@ -18,12 +18,12 @@ import ec02.data.interfaces.EquinoxRawData;
 
 
 
+
 public class Parser_IDLE_Xxx {
 	public Param_IDLE_Xxx doParser(AbstractAF abstractAF, EquinoxRawData eqxRawData, AFInstance afInstance, AFSubInstance afSubIns) {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
-        
-//        String rawDataMessage = eqxRawData.getRawDataAttribute("val");
-        String rawDataMessageXml = "";
+
+		String rawCType = "text/xml";
         String rawDataMessage = "{ \"company\" : \"CT\","
         		+ "\"animal\" : [\"dog\",\"cat\"],"
         		+ "\"userName\" : {\"jojo\" : \"1234\","
@@ -33,50 +33,35 @@ public class Parser_IDLE_Xxx {
         		+ "{\"resourceB1\" : \"B1\","
         		+ "\"resourceB2\" : \"B2\"}]  }";
 
-        String xml = "<ERD>"
-			         +"<animal>"
-			         +"<element>dog</element>"
-			         +"<element>cat</element>"
-			         +"</animal>"
-			         +"<company>CT</company>"
-			         +"<resourceName>"
-			         +"<element>"
-			         +"<resourceA1>A1</resourceA1>"
-			         +"<resourceA2>A2</resourceA2>"
-			         +"</element>"
-			         +"<element>"
-			         +"<resourceB1>B1</resourceB1>"
-			         +"<resourceB2>B2</resourceB2>"
-			         +"</element>"
-			         +"</resourceName>"
-			         +"<userName>"
-			         +"<jojo>1234</jojo>"
-			         +"<momo>4321</momo>"
-			         +"</userName>"
-			         +"</ERD>";
+     
         
-        String xmlMessage  = "<ERDData> value"
-        			+"\""
-        			+"{"  	         
-        			+ "  \"sessionId\":\"564093493534958340\"," 
-        			+ "  \"accessNum\":\"1775\","    
-        			+ "  \"appName\":\"fb\","      
-        			+ "  \"callBackUrl\":\"10.240.104.215:8443\","	            
-        			+ "   \"submissionTime\":\"20150731091000\","	            
-        			+ "   \"callBackUrl\":\"10.240.104.215:8443\","           
-        			+ "   \"submissionTime\":\"150903111111\","        			           
-        			+ "   \"partnerId\":\"30010\""
-        			+ "}"
-        			+ "\""
-        			+ ">]]>";
+        String xmlMessage1 = "<ERDData value="+"/api/v1/aaf/publicId.json?company=CT&name=nutchapol.thathaii@gmail.co.th&invoke=999999&mobile=0909767978" +"/>]]>";
+       
+        String xmlMessage2 = "<root>"
+                               +"<A>CT</A>"
+                               +"<B>"
+                                  +"<element>dog</element>"
+                                  +"<element>cat</element>"
+                               +"</B>"
+                               +"<C>"
+                                  +"<jojo>1234</jojo>"
+                                  +"<momo>4321</momo>"
+                               +"</C>"
+                               +"<D>"
+                               +"<element>"
+                                    +"<resourceA1>A1</resourceA1>"
+                                    +"<resourceA2>"
+                                        +"<jojo>1234</jojo>"
+                                        +" <momo>4321</momo>"
+                                    +"</resourceA2>"
+                               +"</element>"
+                               +"<element>"
+                                    +" <resourceB1>B1</resourceB1>"
+                                    +" <resourceB2>B2</resourceB2>"
+                              +"</element>"
+                              +"</D>"
+                             +"</root>";
         
-        System.out.println(xmlMessage);
-        			
-         
-        		//String rawCType = eqxRawData.getCType();
-        		String rawCType = "text/xml";
-
-
         String rawDataMessage2 = "{ \"A\" : \"CT\","
         		+ "\"B\" : [\"dog\",\"cat\"],"
         		+ "\"C\" : {\"jojo\" : \"1234\","
@@ -96,9 +81,6 @@ public class Parser_IDLE_Xxx {
 			HashMap<String, Object> resourceHashMap = gson.fromJson(resourceOrderJsonObject, HashMap.class);
     		GsonPool.pushGson(gson);
 			param = gson.fromJson(resourceOrderJsonObject, Param_IDLE_Xxx.class);
-//			param.getHashMap()
-			
-//			resourceHashMap = paramXxx.getHashMap(paramXxx.getD());
 
 			if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
 			{
@@ -117,14 +99,36 @@ public class Parser_IDLE_Xxx {
 				param.setD(param.getHashMap(param.getD()));
 			}
 
-    		
         } else if(rawCType.equals("text/xml")) {
-            HashMap<String, String> rawData = new HashMap<String, String>();
-            		JsonParser jsonParser = new JsonParser();
-          			String data = xmlMessage.substring(xmlMessage.indexOf("<ERDData"), xmlMessage.length()).trim();
-        			JsonObject resourceOrderJsonObject = jsonParser.parse(xmlMessage).getAsJsonObject();
-            		Gson gson = GsonPool.getGson();
-        
+
+            Param_IDLE_Xxx paramIdle = new Param_IDLE_Xxx();
+            
+            String company = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "company");
+            String name = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "name");
+            String invoke = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "invoke");
+            String mobile = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "mobile");
+            
+            paramIdle.setCompany(company); 
+            paramIdle.setCompany(name); 
+            paramIdle.setCompany(company); 
+            paramIdle.setCompany(company); 
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         	
         } else if(rawCType.equals("Diameter")) {
         	

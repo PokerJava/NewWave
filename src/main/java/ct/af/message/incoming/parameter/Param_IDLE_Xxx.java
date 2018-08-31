@@ -13,6 +13,12 @@ public class Param_IDLE_Xxx {
 	private Object C;
 	private Object D;
 	
+	private String company;  
+    private String name;
+    private String invoke;
+    private String mobileNo;
+    
+	
 	public Object getA() {
 		return A;
 	}
@@ -29,22 +35,34 @@ public class Param_IDLE_Xxx {
 		return C;
 	}
 	public void setC(Object c) {
-//		if(c instanceof LinkedTreeMap<?, ?>) {
-//			LinkedTreeMap map = (LinkedTreeMap<Object, Object>)c;
-//			for(Map.Entry<Object, Object> item : map.entrySet()) {
-//				
-//			}
-//		}
-//		HashMap<String, Object> resourceMap = new HashMap<String, Object>();
-//		if(c instanceof LinkedTreeMap) {
-//			// get all key in LinkedTreeMap
-//			Set<String> keySet = ((LinkedTreeMap) c).keySet();
-//			// set HashMap
-//			for (String keyStr : keySet) {
-//				resourceMap.put(keyStr, ((LinkedTreeMap) c).get(keyStr));
-//			}
-//		}
 		C = c;
+	}
+	//=============XML=============//
+	
+
+	public String getCompany() {
+		return company;
+	}
+	public void setCompany(String company) {
+		this.company = company;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getInvoke() {
+		return invoke;
+	}
+	public void setInvoke(String invoke) {
+		this.invoke = invoke;
+	}
+	public String getMobileNo() {
+		return mobileNo;
+	}
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
 	}
 	public Object getD() {
 		return D;
@@ -89,4 +107,46 @@ public class Param_IDLE_Xxx {
 		}
 		return resourceMap;
 	}
+	
+    public static String getParameterValueFromUrl(String url, String parameterName) {
+        try {
+			if(url == null || "".equals(url)) {
+				return null;
+			}
+			
+			String[] splittedUrl = url.split("\\?", -1);
+			if(splittedUrl.length != 2) {
+				return null;
+			}
+			
+			String parameter = splittedUrl[1];
+			String[] splittedParameter = parameter.split("&", -1);
+			if(splittedParameter.length == 0) {
+				return null;
+			}
+			
+			for(String param : splittedParameter) {
+                if(null==param || "".equals(param)){
+                    return null;
+                }
+				String[] splittedParam = param.split("=", -1);
+				String key = splittedParam[0];
+				String value = splittedParam[1];
+				
+				if(splittedParam.length > 2) {
+					for(int i = 2;i < splittedParam.length;i++) {
+						value += "=" + splittedParam[i];
+					}
+				}
+				
+				if(key.equals(parameterName)) {
+					return value;
+				}
+			}
+			
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+    }
 }
