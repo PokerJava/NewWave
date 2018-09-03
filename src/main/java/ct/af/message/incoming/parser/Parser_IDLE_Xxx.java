@@ -118,82 +118,77 @@ public class Parser_IDLE_Xxx {
 			}
 
         } else if(rawCType.equals("text/xml")) {
-
-            Param_IDLE_Xxx paramIdle = new Param_IDLE_Xxx();
-            
-            String company = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "company");
-            String name = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "name");
-            String invoke = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "invoke");
-            String mobile = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "mobile");
-            
-            paramIdle.setCompany(company); 
-            paramIdle.setCompany(name); 
-            paramIdle.setCompany(company); 
-            paramIdle.setCompany(company); 
-            
-            DocumentBuilderFactory factory  = DocumentBuilderFactory.newInstance();
-           try {
-			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder.parse("paser.xml");
-			NodeList personList = doc.getElementsByTagName("person");
-			for(int i=0; i<personList.getLength();i++){
-				Node p = personList.item(i);
-				if(p.getNodeType() ==Node.ELEMENT_NODE){
-					Element person =  (Element) p ;
-					String id = person.getAttribute("id");
-					NodeList nameList = person.getChildNodes();
-					
-					
-					for(int j=0; j<nameList.getLength();j++){
-						Node n = nameList.item(j);
-						if(n.getNodeType() ==Node.ELEMENT_NODE){
-							Element names = (Element) n;
-							System.out.println("person " + id + ":" + names.getTagName()+ "=" + names.getTextContent());
-						}
-				}
-			}
-			
-			
-			}
-			
-		} catch (ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SAXException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-            
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-
         	HashMap<String, Object> resourceHashMap = (HashMap<String, Object>) xmlToHash(xmlMessage2);
-        	JsonParser jsonParser = new JsonParser();
-//        	JsonObject resourceJsonObject = jsonParser.parse(resourceHashMap.toString()).getAsJsonObject();
         	Gson gson = GsonPool.getGson();
-        	
-        	Object test = hashToJson(resourceHashMap, new JsonObject());
-        	
-        	System.out.println("success");
-//        	String resourceJsonObject = gson.toJson(resourceHashMap.toString());
-//        	param = gson.fromJson(resourceJsonObject, Param_IDLE_Xxx.class);
+        	Object test = gson.toJson(resourceHashMap.get("root"));
+        	GsonPool.pushGson(gson);
+        	param = gson.fromJson((String) test, Param_IDLE_Xxx.class);
+        	if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
+			{
+				param.setA(param.getHashMap(param.getA()));
+			}
+			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
+			{
+				param.setB(param.getHashMap(param.getB()));
+			}
+			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
+			{
+				param.setC(param.getHashMap(param.getC()));
+			}
+			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
+			{
+				param.setD(param.getHashMap(param.getD()));
+			}
+            
+//
+//            Param_IDLE_Xxx paramIdle = new Param_IDLE_Xxx();
+//            
+//            String company = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "company");
+//            String name = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "name");
+//            String invoke = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "invoke");
+//            String mobile = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "mobile");
+//            
+//            paramIdle.setCompany(company); 
+//            paramIdle.setCompany(name); 
+//            paramIdle.setCompany(company); 
+//            paramIdle.setCompany(company); 
+//            
+//            DocumentBuilderFactory factory  = DocumentBuilderFactory.newInstance();
+//           try {
+//			DocumentBuilder builder = factory.newDocumentBuilder();
+//			Document doc = builder.parse("paser.xml");
+//			NodeList personList = doc.getElementsByTagName("person");
+//			for(int i=0; i<personList.getLength();i++){
+//				Node p = personList.item(i);
+//				if(p.getNodeType() ==Node.ELEMENT_NODE){
+//					Element person =  (Element) p ;
+//					String id = person.getAttribute("id");
+//					NodeList nameList = person.getChildNodes();
+//					
+//					
+//					for(int j=0; j<nameList.getLength();j++){
+//						Node n = nameList.item(j);
+//						if(n.getNodeType() ==Node.ELEMENT_NODE){
+//							Element names = (Element) n;
+//							System.out.println("person " + id + ":" + names.getTagName()+ "=" + names.getTextContent());
+//						}
+//				}
+//			}
+//			
+//			
+//			}
+//			
+//		} catch (ParserConfigurationException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (SAXException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
-            
-            
-            
-            
         	
         } else if(rawCType.equals("Diameter")) {
         	
