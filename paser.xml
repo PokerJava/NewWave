@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ERD>
+	<person id = "1">
+		<lastname>Thathai</lastname>
+		<fristname>Nutchapol</fristname>
+	</person>
+ 	<person id = "2">
+		<lastname>Sirinan</lastname>
+		<fristname>Yumyuan</fristname>
+	</person>
+ 
+</ERD>
