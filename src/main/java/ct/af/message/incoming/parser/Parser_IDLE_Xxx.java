@@ -107,15 +107,26 @@ public class Parser_IDLE_Xxx {
 
         } else if(rawCType.equals("text/xml")) {
         	HashMap<String, Object> resourceHashMap = (HashMap<String, Object>) xmlToHash(xmlMessage2);
-        	JsonParser jsonParser = new JsonParser();
-//        	JsonObject resourceJsonObject = jsonParser.parse(resourceHashMap.toString()).getAsJsonObject();
         	Gson gson = GsonPool.getGson();
-        	
-        	Object test = hashToJson(resourceHashMap, new JsonObject());
-        	
-        	System.out.println("success");
-//        	String resourceJsonObject = gson.toJson(resourceHashMap.toString());
-//        	param = gson.fromJson(resourceJsonObject, Param_IDLE_Xxx.class);
+        	Object test = gson.toJson(resourceHashMap.get("root"));
+        	GsonPool.pushGson(gson);
+        	param = gson.fromJson((String) test, Param_IDLE_Xxx.class);
+        	if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
+			{
+				param.setA(param.getHashMap(param.getA()));
+			}
+			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
+			{
+				param.setB(param.getHashMap(param.getB()));
+			}
+			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
+			{
+				param.setC(param.getHashMap(param.getC()));
+			}
+			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
+			{
+				param.setD(param.getHashMap(param.getD()));
+			}
             
             
             
@@ -314,6 +325,7 @@ public class Parser_IDLE_Xxx {
         
 	public Object hashToJson(Object data, JsonObject jsonData)
 	{
+		
 		if(data instanceof HashMap)
 		{
 			HashMap<String, Object> dataHash = (HashMap<String, Object>) data;
@@ -324,6 +336,7 @@ public class Parser_IDLE_Xxx {
 					jsonData.addProperty(key, (String) dataHash.get(key));
 				}else {
 //					jsonData.add(key, (JsonElement) hashToJson(dataHash.get(key), jsonData));
+					jsonData.addProperty(key, "");
 					hashToJson(dataHash.get(key), jsonData);
 				}
 			}
