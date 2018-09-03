@@ -18,7 +18,14 @@ public class Param_IDLE_Xxx {
     private String invoke;
     private String mobileNo;
     
+	private HashMap<String, Object> clientParam = new HashMap<>();
 	
+	public HashMap<String, Object> getClientParam() {
+		return clientParam;
+	}
+	public void setClientParam(HashMap<String, Object> clientParam) {
+		this.clientParam = clientParam;
+	}
 	public Object getA() {
 		return A;
 	}
@@ -107,6 +114,7 @@ public class Param_IDLE_Xxx {
 		}
 		return resourceMap;
 	}
+	
 	
     public static String getParameterValueFromUrl(String url, String parameterName) {
         try {
