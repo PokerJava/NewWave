@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
 import com.google.gson.internal.LinkedTreeMap;
+
 
 public class Param_IDLE_Xxx {
 	private Object A;
@@ -44,7 +44,83 @@ public class Param_IDLE_Xxx {
 	public void setC(Object c) {
 		C = c;
 	}
-	//=============XML=============//
+	//=================================================================XML=================================================================//
+	
+	
+	public static HashMap<String,String> getXMLMsgToHashmap(String eqxMessage){
+	       HashMap<String, String> rawData = new HashMap<String, String>();
+	       
+	       String value = "<ERDData value=\"" + "{"+"sessionId"+":"+"564093493534958340"+","
+	       +"accessNum"+":"+"1775"+","
+	           
+	       +"appName"+":"+"fb"+","
+	            
+	       +"callBackUrl"+":"+"10.240.104.215:8443"+","
+	               
+	      +"submissionTime"+":"+"20150731091000"+","
+	               
+	      +"callBackUrl"+":"+"10.240.104.215:8443"+","
+	               
+	      +"submissionTime"+":"+"150903111111"+","
+	              
+	      +"partnerId"+":"+"30010"+"}"
+
+	      +"/>";
+	       try {
+			String data = eqxMessage.substring(eqxMessage.indexOf("<root"), eqxMessage.length()).trim();
+			   
+			   data = data.substring(data.indexOf("value="), data.indexOf("/>")).trim();
+			   data = data.substring(data.indexOf("value=") + 7, data.length() - 1);
+			   rawData.put("ERDData",data);
+	       } catch (Exception e) {
+	       }
+	         
+	       return rawData;
+	       
+	   }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	public String getCompany() {
@@ -71,6 +147,56 @@ public class Param_IDLE_Xxx {
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
+	
+    public static String getParameterValueFromUrl(String url, String parameterName) {
+        try {
+			if(url == null || "".equals(url)) {
+				return null;
+			}
+			
+			String[] splittedUrl = url.split("\\?", -1);
+			if(splittedUrl.length != 2) {
+				return null;
+			}
+			
+			String parameter = splittedUrl[1];
+			String[] splittedParameter = parameter.split("&", -1);
+			if(splittedParameter.length == 0) {
+				return null;
+			}
+			
+			for(String param : splittedParameter) {
+                if(null==param || "".equals(param)){
+                    return null;
+                }
+				String[] splittedParam = param.split("=", -1);
+				String key = splittedParam[0];
+				String value = splittedParam[1];
+				
+				if(splittedParam.length > 2) {
+					for(int i = 2;i < splittedParam.length;i++) {
+						value += "=" + splittedParam[i];
+					}
+				}
+				
+				if(key.equals(parameterName)) {
+					return value;
+				}
+			}
+			
+			return null;
+		} catch (Exception e) {
+			return null;
+		}
+    }
+	
+//=================================================================XML=================================================================//	
+	
+	
+	
+	
+	
+	
 	public Object getD() {
 		return D;
 	}
@@ -114,47 +240,4 @@ public class Param_IDLE_Xxx {
 		}
 		return resourceMap;
 	}
-	
-	
-    public static String getParameterValueFromUrl(String url, String parameterName) {
-        try {
-			if(url == null || "".equals(url)) {
-				return null;
-			}
-			
-			String[] splittedUrl = url.split("\\?", -1);
-			if(splittedUrl.length != 2) {
-				return null;
-			}
-			
-			String parameter = splittedUrl[1];
-			String[] splittedParameter = parameter.split("&", -1);
-			if(splittedParameter.length == 0) {
-				return null;
-			}
-			
-			for(String param : splittedParameter) {
-                if(null==param || "".equals(param)){
-                    return null;
-                }
-				String[] splittedParam = param.split("=", -1);
-				String key = splittedParam[0];
-				String value = splittedParam[1];
-				
-				if(splittedParam.length > 2) {
-					for(int i = 2;i < splittedParam.length;i++) {
-						value += "=" + splittedParam[i];
-					}
-				}
-				
-				if(key.equals(parameterName)) {
-					return value;
-				}
-			}
-			
-			return null;
-		} catch (Exception e) {
-			return null;
-		}
-    }
 }
