@@ -19,7 +19,7 @@ public class Parser_IDLE_Xxx {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
         Gson gson = GsonPool.getGson();
 
-		String rawCType = "Diameter";
+		String rawCType = "text/xml";
         String rawPlainMessage = "{ \"company\" : \"CT\","
         		+ "\"animal\" : [\"dog\",\"cat\"],"
         		+ "\"userName\" : {\"jojo\" : \"1234\","
@@ -44,10 +44,10 @@ public class Parser_IDLE_Xxx {
         
         String xmlMessage1 = "<ERDData value="+"/api/v1/aaf/publicId.json?company=CT&name=nutchapol.thathaii@gmail.co.th&invoke=999999&mobile=0909767978" +"/>]]>";
          
-     	String xmlValue = "<ERDData value=\"" + "{"+"A"+":"+"564093493534958340"+","
-     	       +"B"+":"+"1775"+","
+     	String xmlValue = "<ERDData value=\"" + "{"+"\"A\""+":"+"\"564093493534958340\""+","
+     	       +"\"B\""+":"+"\"1775\""+","
      	           
-     	       +"C"+":"+"fb"+","
+     	       +"\"C\""+":"+"\"fb\""+","
      	            
 //     	       +"D"+":"+"10.240.104.215:8443"+","
      	               
@@ -57,7 +57,7 @@ public class Parser_IDLE_Xxx {
 //     	               
 //     	      +"submissionTime"+":"+"150903111111"+","
 //     	              
-     	      +"D"+":"+"30010"+"}"
+     	      +"\"D\""+":"+"\"30010\""+"}"
      
      	      +"/>";
        
@@ -152,9 +152,9 @@ public class Parser_IDLE_Xxx {
 
         else if(rawCType.equals("text/xml")) 
         {
-        	if(validateFormatXML(xmlMessage2))
+        	if(validateFormatXML(xmlValue))
         	{
-        		String xmlFormat = getXmlType(xmlMessage2);
+        		String xmlFormat = getXmlType(xmlValue);
         		if(xmlFormat.equals("xmlUrl"))
         		{
         			HashMap<String, String> map = param.getXMLMsgToHashmap(xmlMessage1);
@@ -168,31 +168,30 @@ public class Parser_IDLE_Xxx {
         		}
         		else if(xmlFormat.equals("xmlValue"))
         		{
-        			HashMap<String, String> map = param.getXMLMsgToHashmap(xmlValue);
-        			Object jsonFormat = gson.toJson(map);
-                	GsonPool.pushGson(gson);
-                	
-//                	if(validateParam(map)
-//                	{
-//                    	param = gson.fromJson((String) jsonFormat, Param_IDLE_Xxx.class);
-//                    	GsonPool.pushGson(gson);
-//                    	if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
-//            			{
-//            				param.setA(param.getHashMap(param.getA()));
-//            			}
-//            			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
-//            			{
-//            				param.setB(param.getHashMap(param.getB()));
-//            			}
-//            			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
-//            			{
-//            				param.setC(param.getHashMap(param.getC()));
-//            			}
-//            			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
-//            			{
-//            				param.setD(param.getHashMap(param.getD()));
-//            			}
-//                	}
+        			String data = xmlValue.substring(xmlValue.indexOf("{"), xmlValue.lastIndexOf("}")+1);
+        			JsonParser jsonParser = new JsonParser();
+
+            		JsonObject resourceOrderJsonObject = jsonParser.parse(data).getAsJsonObject();
+        			param = gson.fromJson(resourceOrderJsonObject, Param_IDLE_Xxx.class);
+        			GsonPool.pushGson(gson);
+
+        			if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
+        			{
+        				param.setA(param.getHashMap(param.getA()));
+        			}
+        			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
+        			{
+        				param.setB(param.getHashMap(param.getB()));
+        			}
+        			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
+        			{
+        				param.setC(param.getHashMap(param.getC()));
+        			}
+        			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
+        			{
+        				param.setD(param.getHashMap(param.getD()));
+        			}	
+        			
         		}
         		else if(xmlFormat.equals("xml"))
         		{
@@ -453,7 +452,7 @@ public class Parser_IDLE_Xxx {
 		if(head.contains("value")) {
 			type = "xmlValue";
 		}
-		else if(countText(xml, "/")>2)
+		else if(countText(xml, "/")>countText(xml, "<"))
 		{
 			type = "xmlUrl";
 		}
