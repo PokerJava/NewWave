@@ -1,7 +1,17 @@
 package ct.af.message.incoming.parser;
 
+import java.io.IOException;
+import java.awt.RenderingHints.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -12,9 +22,6 @@ import ct.af.message.incoming.parameter.Param_IDLE_Xxx;
 import ct.af.utils.GsonPool;
 import ec02.af.abstracts.AbstractAF;
 import ec02.data.interfaces.EquinoxRawData;
-
-
-
 
 public class Parser_IDLE_Xxx {
 	public Param_IDLE_Xxx doParser(AbstractAF abstractAF, EquinoxRawData eqxRawData, AFInstance afInstance, AFSubInstance afSubIns) {
@@ -30,6 +37,8 @@ public class Parser_IDLE_Xxx {
         		+ "\"resourceA2\" : \"A2\"},"
         		+ "{\"resourceB1\" : \"B1\","
         		+ "\"resourceB2\" : \"B2\"}]  }";
+
+
 
         String rawPlainMessage2 = "{ \"A\" : \"CT\","
         		+ "\"B\" : [\"dog\",\"cat\"],"
@@ -72,6 +81,18 @@ public class Parser_IDLE_Xxx {
                               +"</element>"
                               +"</D>"
                              +"</root>";
+
+ 
+        String rawDataMessage2 = "{ \"A\" : \"CT\","
+        		+ "\"B\" : [\"dog\",\"cat\"],"
+        		+ "\"C\" : {\"jojo\" : \"1234\","
+        		+ "\"momo\" : \"4321\"},"
+        		+ "\"D\" : [{\"resourceA1\" : \"A1\","
+        		+ "\"resourceA2\" : {\"jojo\" : \"1234\"," + 
+        		"\"momo\" : \"4321\"}},"
+        		+ "{\"resourceB1\" : \"B1\","
+        		+ "\"resourceB2\" : \"B2\"}]  }";
+
         
         String rawDiameterMessage = "<![CDATA[" + 
         		"<Session-Id value=\"session_gx_0\"/>" + 
@@ -96,33 +117,28 @@ public class Parser_IDLE_Xxx {
         if(rawCType.equals("text/plain")) 
         {	
         	JsonParser jsonParser = new JsonParser();
-    		JsonObject resourceOrderJsonObject = jsonParser.parse(rawPlainMessage2).getAsJsonObject();	
-    		HashMap<String, Object> resourceHash = gson.fromJson(resourceOrderJsonObject, HashMap.class);
-    		GsonPool.pushGson(gson);
-    		
-    		if(validateParam(resourceHash))
-    		{
-    			param = gson.fromJson(resourceOrderJsonObject, Param_IDLE_Xxx.class);
-    			GsonPool.pushGson(gson);
 
-    			if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
-    			{
-    				param.setA(param.getHashMap(param.getA()));
-    			}
-    			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
-    			{
-    				param.setB(param.getHashMap(param.getB()));
-    			}
-    			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
-    			{
-    				param.setC(param.getHashMap(param.getC()));
-    			}
-    			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
-    			{
-    				param.setD(param.getHashMap(param.getD()));
-    			}
-    		}
-        } 
+    		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage2).getAsJsonObject();
+			param = gson.fromJson(resourceOrderJsonObject, Param_IDLE_Xxx.class);
+			GsonPool.pushGson(gson);
+
+			if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
+			{
+				param.setA(param.getHashMap(param.getA()));
+			}
+			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
+			{
+				param.setB(param.getHashMap(param.getB()));
+			}
+			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
+			{
+				param.setC(param.getHashMap(param.getC()));
+			}
+			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
+			{
+				param.setD(param.getHashMap(param.getD()));
+			}	
+        }
         else if(rawCType.equals("text/xml")) 
         {
         	if(validateFormatXML(xmlMessage2))
@@ -168,7 +184,7 @@ public class Parser_IDLE_Xxx {
         	}
         	
             
-//
+
 //            Param_IDLE_Xxx paramIdle = new Param_IDLE_Xxx();
 //            
 //            String company = Param_IDLE_Xxx.getParameterValueFromUrl(xmlMessage1, "company");

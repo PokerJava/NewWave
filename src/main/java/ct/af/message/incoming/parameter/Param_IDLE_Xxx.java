@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
 import com.google.gson.internal.LinkedTreeMap;
+
 
 public class Param_IDLE_Xxx {
 	private Object A;
@@ -44,7 +44,83 @@ public class Param_IDLE_Xxx {
 	public void setC(Object c) {
 		C = c;
 	}
-	//=============XML=============//
+	//=================================================================XML=================================================================//
+	
+	
+	public static HashMap<String,String> getXMLMsgToHashmap(String eqxMessage){
+	       HashMap<String, String> rawData = new HashMap<String, String>();
+	       
+	       String value = "<ERDData value=\"" + "{"+"sessionId"+":"+"564093493534958340"+","
+	       +"accessNum"+":"+"1775"+","
+	           
+	       +"appName"+":"+"fb"+","
+	            
+	       +"callBackUrl"+":"+"10.240.104.215:8443"+","
+	               
+	      +"submissionTime"+":"+"20150731091000"+","
+	               
+	      +"callBackUrl"+":"+"10.240.104.215:8443"+","
+	               
+	      +"submissionTime"+":"+"150903111111"+","
+	              
+	      +"partnerId"+":"+"30010"+"}"
+
+	      +"/>";
+	       try {
+			String data = eqxMessage.substring(eqxMessage.indexOf("<root"), eqxMessage.length()).trim();
+			   
+			   data = data.substring(data.indexOf("value="), data.indexOf("/>")).trim();
+			   data = data.substring(data.indexOf("value=") + 7, data.length() - 1);
+			   rawData.put("ERDData",data);
+	       } catch (Exception e) {
+	       }
+	         
+	       return rawData;
+	       
+	   }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 	public String getCompany() {
@@ -71,41 +147,6 @@ public class Param_IDLE_Xxx {
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
-	public Object getD() {
-		return D;
-	}
-	public void setD(Object d) {
-		D = d;
-	}
-	
-	public Object getHashMap(Object data){
-		HashMap<String, Object> resourceMap;
-		if(data instanceof LinkedTreeMap) {
-			resourceMap = new HashMap<>();
-			Set<String> keySet = ((LinkedTreeMap) data).keySet();
-			for (String keyStr : keySet) {
-				resourceMap.put(keyStr, ((LinkedTreeMap) data).get(keyStr));
-			}
-		}else if(data instanceof HashMap) {
-			resourceMap = new HashMap<>();
-		}else if(data instanceof ArrayList) {	
-			resourceMap = new HashMap<>();
-			ArrayList<HashMap<String, Object>> resourceArry = new ArrayList<>();
-			for(int i=((ArrayList) data).size()-1;i>=0;i--) 
-			{
-				if(((ArrayList) data).get(i) instanceof ArrayList || ((ArrayList) data).get(i) instanceof LinkedTreeMap)
-				{
-					((ArrayList) data).add(getHashMap(((ArrayList) data).get(i)));
-					((ArrayList) data).remove(i);
-				}
-			}
-			return data;
-		}else {
-			resourceMap = new HashMap<>();
-		}
-		return resourceMap;
-	}
-	
 	
     public static String getParameterValueFromUrl(String url, String parameterName) {
         try {
@@ -148,4 +189,46 @@ public class Param_IDLE_Xxx {
 			return null;
 		}
     }
+	
+//=================================================================XML=================================================================//	
+	
+	
+	
+	
+	
+	
+	public Object getD() {
+		return D;
+	}
+	public void setD(Object d) {
+		D = d;
+	}
+	
+	public Object getHashMap(Object data){
+		HashMap<String, Object> resourceMap;
+		if(data instanceof LinkedTreeMap) {
+			resourceMap = new HashMap<>();
+			Set<String> keySet = ((LinkedTreeMap) data).keySet();
+			for (String keyStr : keySet) {
+				resourceMap.put(keyStr, ((LinkedTreeMap) data).get(keyStr));
+			}
+		}else if(data instanceof HashMap) {
+			resourceMap = new HashMap<>();
+		}else if(data instanceof ArrayList) {	
+			resourceMap = new HashMap<>();
+			ArrayList<HashMap<String, Object>> resourceArry = new ArrayList<>();
+			for(int i=((ArrayList) data).size()-1;i>=0;i--) 
+			{
+				if(((ArrayList) data).get(i) instanceof ArrayList || ((ArrayList) data).get(i) instanceof LinkedTreeMap)
+				{
+					((ArrayList) data).add(getHashMap(((ArrayList) data).get(i)));
+					((ArrayList) data).remove(i);
+				}
+			}
+			return data;
+		}else {
+			resourceMap = new HashMap<>();
+		}
+		return resourceMap;
+	}
 }
