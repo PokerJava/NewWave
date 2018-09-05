@@ -82,31 +82,22 @@ public class Param_IDLE_Xxx {
 		HashMap<String, Object> resourceMap;
 		if(data instanceof LinkedTreeMap) {
 			resourceMap = new HashMap<>();
-			// get all key in LinkedTreeMap
 			Set<String> keySet = ((LinkedTreeMap) data).keySet();
-			// set HashMap
 			for (String keyStr : keySet) {
 				resourceMap.put(keyStr, ((LinkedTreeMap) data).get(keyStr));
 			}
 		}else if(data instanceof HashMap) {
 			resourceMap = new HashMap<>();
-
 		}else if(data instanceof ArrayList) {	
 			resourceMap = new HashMap<>();
 			ArrayList<HashMap<String, Object>> resourceArry = new ArrayList<>();
 			for(int i=((ArrayList) data).size()-1;i>=0;i--) 
 			{
-//				((ArrayList) data).add(getHashMap(((ArrayList) data).get(i)));
-				
-//				((ArrayList) data).remove(i);
-//				resourceArry.add(getHashMap(((ArrayList) data).get(i)));
 				if(((ArrayList) data).get(i) instanceof ArrayList || ((ArrayList) data).get(i) instanceof LinkedTreeMap)
 				{
 					((ArrayList) data).add(getHashMap(((ArrayList) data).get(i)));
 					((ArrayList) data).remove(i);
 				}
-
-//				resourceArry.remove(i);
 			}
 			return data;
 		}else {
