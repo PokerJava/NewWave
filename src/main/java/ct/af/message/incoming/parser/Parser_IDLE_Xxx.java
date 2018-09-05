@@ -125,32 +125,48 @@ public class Parser_IDLE_Xxx {
         } 
         else if(rawCType.equals("text/xml")) 
         {
-        	String XmlHeader = getHeaderXML(xmlMessage2);
-        	HashMap<String, Object> resourceHashMap = (HashMap<String, Object>) xmlToHash(xmlMessage2);
-        	Object jsonFormat = gson.toJson(resourceHashMap.get(XmlHeader));
-        	GsonPool.pushGson(gson);
-        	
-        	if(validateParam((HashMap<String, Object>) resourceHashMap.get("root")))
+        	if(validateFormatXML(xmlMessage2))
         	{
-            	param = gson.fromJson((String) jsonFormat, Param_IDLE_Xxx.class);
-            	GsonPool.pushGson(gson);
-            	if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
-    			{
-    				param.setA(param.getHashMap(param.getA()));
-    			}
-    			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
-    			{
-    				param.setB(param.getHashMap(param.getB()));
-    			}
-    			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
-    			{
-    				param.setC(param.getHashMap(param.getC()));
-    			}
-    			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
-    			{
-    				param.setD(param.getHashMap(param.getD()));
-    			}
+        		String xmlFormat = getXmlType(xmlMessage2);
+        		if(xmlFormat.equals("xmlUrl"))
+        		{
+        			
+        		}
+        		else if(xmlFormat.equals("xmlValue"))
+        		{
+        			
+        		}
+        		else if(xmlFormat.equals("xml"))
+        		{
+        			String XmlHeader = getHeaderXML(xmlMessage2);
+                	HashMap<String, Object> resourceHashMap = (HashMap<String, Object>) xmlToHash(xmlMessage2);
+                	Object jsonFormat = gson.toJson(resourceHashMap.get(XmlHeader));
+                	GsonPool.pushGson(gson);
+                	
+                	if(validateParam((HashMap<String, Object>) resourceHashMap.get("root")))
+                	{
+                    	param = gson.fromJson((String) jsonFormat, Param_IDLE_Xxx.class);
+                    	GsonPool.pushGson(gson);
+                    	if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
+            			{
+            				param.setA(param.getHashMap(param.getA()));
+            			}
+            			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
+            			{
+            				param.setB(param.getHashMap(param.getB()));
+            			}
+            			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
+            			{
+            				param.setC(param.getHashMap(param.getC()));
+            			}
+            			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
+            			{
+            				param.setD(param.getHashMap(param.getD()));
+            			}
+                	}
+        		}
         	}
+        	
             
 //
 //            Param_IDLE_Xxx paramIdle = new Param_IDLE_Xxx();
@@ -413,5 +429,24 @@ public class Parser_IDLE_Xxx {
 		}
 		
 		return header;
+	}
+	public String getXmlType(String xml) {
+		int startPosition = xml.indexOf("<")+1;
+		int endPosition = xml.indexOf(">");
+		String type = "";
+		String head = xml.substring(startPosition, endPosition);
+		
+		if(head.contains("value")) {
+			type = "xmlValue";
+		}
+		else if(countText(xml, "/")>2)
+		{
+			type = "xmlUrl";
+		}
+		else 
+		{
+			type = "xml";
+		}
+		return type;
 	}
 }
