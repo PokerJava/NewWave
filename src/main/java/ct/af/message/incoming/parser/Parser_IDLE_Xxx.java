@@ -1,5 +1,6 @@
 package ct.af.message.incoming.parser;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import com.google.gson.Gson;
@@ -42,6 +43,23 @@ public class Parser_IDLE_Xxx {
      
         
         String xmlMessage1 = "<ERDData value="+"/api/v1/aaf/publicId.json?company=CT&name=nutchapol.thathaii@gmail.co.th&invoke=999999&mobile=0909767978" +"/>]]>";
+         
+     	String xmlValue = "<ERDData value=\"" + "{"+"A"+":"+"564093493534958340"+","
+     	       +"B"+":"+"1775"+","
+     	           
+     	       +"C"+":"+"fb"+","
+     	            
+//     	       +"D"+":"+"10.240.104.215:8443"+","
+     	               
+//     	      +"submissionTime"+":"+"20150731091000"+","
+//     	               
+//     	      +"callBackUrl"+":"+"10.240.104.215:8443"+","
+//     	               
+//     	      +"submissionTime"+":"+"150903111111"+","
+//     	              
+     	      +"D"+":"+"30010"+"}"
+     
+     	      +"/>";
        
         String xmlMessage2 = "<root>"
                                +"<A>CT</A>"
@@ -129,6 +147,9 @@ public class Parser_IDLE_Xxx {
 				param.setD(param.getHashMap(param.getD()));
 			}	
         }
+
+
+
         else if(rawCType.equals("text/xml")) 
         {
         	if(validateFormatXML(xmlMessage2))
@@ -136,11 +157,42 @@ public class Parser_IDLE_Xxx {
         		String xmlFormat = getXmlType(xmlMessage2);
         		if(xmlFormat.equals("xmlUrl"))
         		{
+        			HashMap<String, String> map = param.getXMLMsgToHashmap(xmlMessage1);
+        			String erdData = map.get("ERDData");
+
+        			param.setName(param.getParameterValueFromUrl(erdData, "name"));
+        			param.setCompany(param.getParameterValueFromUrl(erdData, "company"));
+        			param.setMobileNo(param.getParameterValueFromUrl(erdData, "mobile"));
+        			param.setInvoke(param.getParameterValueFromUrl(erdData, "invoke"));
         			
         		}
         		else if(xmlFormat.equals("xmlValue"))
         		{
-        			
+        			HashMap<String, String> map = param.getXMLMsgToHashmap(xmlValue);
+        			Object jsonFormat = gson.toJson(map);
+                	GsonPool.pushGson(gson);
+                	
+//                	if(validateParam(map)
+//                	{
+//                    	param = gson.fromJson((String) jsonFormat, Param_IDLE_Xxx.class);
+//                    	GsonPool.pushGson(gson);
+//                    	if(param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap)
+//            			{
+//            				param.setA(param.getHashMap(param.getA()));
+//            			}
+//            			if(param.getB() instanceof ArrayList || param.getB() instanceof LinkedTreeMap)
+//            			{
+//            				param.setB(param.getHashMap(param.getB()));
+//            			}
+//            			if(param.getC() instanceof ArrayList || param.getC() instanceof LinkedTreeMap)
+//            			{
+//            				param.setC(param.getHashMap(param.getC()));
+//            			}
+//            			if(param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap)
+//            			{
+//            				param.setD(param.getHashMap(param.getD()));
+//            			}
+//                	}
         		}
         		else if(xmlFormat.equals("xml"))
         		{

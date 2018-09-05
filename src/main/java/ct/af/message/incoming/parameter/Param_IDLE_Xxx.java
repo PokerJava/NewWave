@@ -1,5 +1,6 @@
 package ct.af.message.incoming.parameter;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,25 +50,9 @@ public class Param_IDLE_Xxx {
 	
 	public static HashMap<String,String> getXMLMsgToHashmap(String eqxMessage){
 	       HashMap<String, String> rawData = new HashMap<String, String>();
-	       
-	       String value = "<ERDData value=\"" + "{"+"sessionId"+":"+"564093493534958340"+","
-	       +"accessNum"+":"+"1775"+","
-	           
-	       +"appName"+":"+"fb"+","
-	            
-	       +"callBackUrl"+":"+"10.240.104.215:8443"+","
-	               
-	      +"submissionTime"+":"+"20150731091000"+","
-	               
-	      +"callBackUrl"+":"+"10.240.104.215:8443"+","
-	               
-	      +"submissionTime"+":"+"150903111111"+","
-	              
-	      +"partnerId"+":"+"30010"+"}"
 
-	      +"/>";
 	       try {
-			String data = eqxMessage.substring(eqxMessage.indexOf("<root"), eqxMessage.length()).trim();
+			String data = eqxMessage.substring(eqxMessage.indexOf("<ERDData"), eqxMessage.length()).trim();
 			   
 			   data = data.substring(data.indexOf("value="), data.indexOf("/>")).trim();
 			   data = data.substring(data.indexOf("value=") + 7, data.length() - 1);
@@ -80,7 +65,14 @@ public class Param_IDLE_Xxx {
 	   }
 	
 	
-	
+	 public static String decodeUrl(String url) {
+     	try {
+ 			String result = java.net.URLDecoder.decode(url, "UTF-8");
+ 			return result;
+     	} catch (UnsupportedEncodingException e) {
+ 			return url;
+ 		}
+     }
 	
 	
 	
