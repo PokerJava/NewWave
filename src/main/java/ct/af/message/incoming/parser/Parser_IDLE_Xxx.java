@@ -28,7 +28,7 @@ public class Parser_IDLE_Xxx {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
         Gson gson = GsonPool.getGson();
 
-		String rawCType = "text/xml";
+		String rawCType = "Diameter";
         String rawPlainMessage = "{ \"company\" : \"CT\","
         		+ "\"animal\" : [\"dog\",\"cat\"],"
         		+ "\"userName\" : {\"jojo\" : \"1234\","
@@ -235,7 +235,8 @@ public class Parser_IDLE_Xxx {
 
         	
         } else if(rawCType.equals("Diameter")) {
-//          diameterToHash(rawDiameterMessage);
+        	HashMap<String, Object> dataHash = new HashMap<>();
+        	dataHash = (HashMap<String, Object>) diameterToHash(rawDiameterMessage);
         } else if(rawCType.equals("Ldap")) {
         	
         } else {
@@ -249,6 +250,7 @@ public class Parser_IDLE_Xxx {
 	public Object diameterToHash(Object message)
 	{
 		Object finalData = new Object();
+	 	HashMap<String, Object> dataHash = new HashMap<>();
 		if(message instanceof String)
 		{
 			finalData = new Object();
@@ -257,27 +259,32 @@ public class Parser_IDLE_Xxx {
 			dataStr = dataStr.replace("]]>", "");
 			
 			String[] segment = dataStr.split("/><");
-			if(dataStr.contains("<")|| dataStr.contains(">"))
-	        {
-			 	String key;
+			for(String dataLoop : segment)
+			{
+				String key;
 			 	String data;
-			 	HashMap<String, Object> dataHash = new HashMap<>();
-			 	String tempMsg = dataStr;
+
+			 	String tempMsg = dataLoop;
 	        	int startPos;
 	        	int endPos;
-	     
-	        	key = dataStr.substring(dataStr.indexOf("<")+1, dataStr.indexOf("value")).trim();     	
-	        	startPos = dataStr.indexOf("<" + key + ">")+key.length()+2;
-	        	endPos = dataStr.indexOf("</" + key + ">");	  
-	        	data = dataStr.substring(startPos, endPos);
+	        	if(dataLoop.contains("<"))
+	        	{
+	        		key = dataLoop.substring(dataLoop.indexOf("<")+1, dataLoop.indexOf("value")).trim(); 
+	        	}else {
+	        		key = dataLoop.substring(0, dataLoop.indexOf("value")).trim();
+	        	}
+	        	    	
+	        	startPos = dataLoop.indexOf("value=\"")+7;
+	        	data = dataLoop.substring(startPos, dataLoop.length()-1);
+//	        	endPos = data.indexOf("\"");	  
+//	        	data = data.substring(0, endPos);
 	        	
 	        	dataHash.put(key, data);
-	        	finalData = xmlToHash(dataHash);
-
-	        }
+//	        	finalData = xmlToHash(dataHash);
+			}
 		}
 		
-		return finalData;
+		return dataHash;
 	}
 	public Object xmlToHash(Object xmlMessage2)
 	{
