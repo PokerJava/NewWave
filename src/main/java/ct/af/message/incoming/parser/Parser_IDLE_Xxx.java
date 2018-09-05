@@ -1,7 +1,8 @@
 package ct.af.message.incoming.parser;
 
-<<<<<<< HEAD
+
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.awt.RenderingHints.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +14,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import com.google.gson.Gson;
@@ -146,9 +146,17 @@ public class Parser_IDLE_Xxx {
             
         else if(rawCType.equals("text/xml")) {
 			
-			 HashMap<String,String> map = param.getXMLMsgToHashmap(xmlMessage2);
-			 
+			HashMap<String, String> map = param.getXMLMsgToHashmap(xmlMessage1);
+			String erdData = map.get("ERDData");
+
+			param.setName(param.getParameterValueFromUrl(erdData, "name"));
+			param.setCompany(param.getParameterValueFromUrl(erdData, "company"));
+			param.setMobileNo(param.getParameterValueFromUrl(erdData, "mobile"));
+			param.setInvoke(param.getParameterValueFromUrl(erdData, "invoke"));
+        	 
 		}
+        
+       
         
         else if(rawCType.equals("text/xml")) 
         {
