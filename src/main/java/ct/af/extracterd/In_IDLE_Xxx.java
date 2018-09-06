@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 
 import ct.af.enums.ERequestState;
+import ct.af.enums.EResultCode;
 import ct.af.enums.EStats;
 import ct.af.instance.AFInstance;
 import ct.af.instance.AFSubInstance;
@@ -25,7 +26,12 @@ public class In_IDLE_Xxx {
 	
 	Parser_IDLE_Xxx parser = new Parser_IDLE_Xxx();
 	paramIdleXxx = parser.doParser(abstractAF, eqxRawData, afInstance, afSubIns);
-//	afSubIns.setSubClientParameter(paramIdleXxx);
+	
+	if(!paramIdleXxx.isValid())
+	{
+		afSubIns.setSubResultCode(EResultCode.RE40300.getResultCode());
+	}
+	afSubIns.setSubParam(paramIdleXxx);
 	afSubIns.setState(ERequestState.PENDING.getState());
 	AFLog.d("State : " + afSubIns.getState());
 

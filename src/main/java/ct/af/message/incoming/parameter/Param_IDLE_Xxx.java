@@ -8,7 +8,7 @@ import java.util.Set;
 import com.google.gson.internal.LinkedTreeMap;
 
 
-public class Param_IDLE_Xxx {
+public class Param_IDLE_Xxx{
 	private Object A;
 	private Object B;
 	private Object C;
@@ -18,15 +18,8 @@ public class Param_IDLE_Xxx {
     private String name;
     private String invoke;
     private String mobileNo;
-    
-	private HashMap<String, Object> clientParam = new HashMap<>();
-	
-	public HashMap<String, Object> getClientParam() {
-		return clientParam;
-	}
-	public void setClientParam(HashMap<String, Object> clientParam) {
-		this.clientParam = clientParam;
-	}
+
+    private boolean isValid;
 	public Object getA() {
 		return A;
 	}
@@ -48,6 +41,12 @@ public class Param_IDLE_Xxx {
 	//=================================================================XML=================================================================//
 	
 	
+	public boolean isValid() {
+		return isValid;
+	}
+	public void setValid(boolean isValid) {
+		this.isValid = isValid;
+	}
 	public static HashMap<String,String> getXMLMsgToHashmap(String eqxMessage){
 	       HashMap<String, String> rawData = new HashMap<String, String>();
 

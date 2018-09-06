@@ -25,41 +25,41 @@ public class XMLTools {
 	        return rawDataMsg;
 	    }
 	
-	   public static Object getParseObject(String rawDataMsg, Class aClass)
-	    {
-	        rawDataMsg = stringReplace(rawDataMsg);
-
-	        Object parsedObject = null;
-	        Serializer serializer = ParserPool.getPersister();
-	        try
-	        {
-	            ERDContainer container = serializer.read(ERDContainer.class,"<xml>" + rawDataMsg + "</xml>", false);
-
-	            parsedObject = serializer.read(aClass, "<xml>" + container.getData().getValue() + "</xml>", false);
-	        }
-	        catch (Exception e) {
-	            if(!isTest)
-	            {
-	                AFLog.e("[Exception] Error invalid ERDContainer");
-	                AFLog.e(e.getMessage());
-	                AFLog.d(e);
-	            }
-	            else
-	            {
-	                e.printStackTrace();
-	            }
-
-	            try
-	            {
-	                parsedObject = aClass.newInstance();
-	            }
-	            catch (Exception e2)
-	            {
-	                AFLog.e("FATAL ERROR: Cannot instantiate blank object when there's an error on parsing.");
-	                AFLog.e(e2);
-	            }
-	        }
-	        ParserPool.pushPersister((Persister) serializer);
-	        return parsedObject;
-	    }
+//	   public static Object getParseObject(String rawDataMsg, Class aClass)
+//	    {
+//	        rawDataMsg = stringReplace(rawDataMsg);
+//
+//	        Object parsedObject = null;
+//	        Serializer serializer = ParserPool.getPersister();
+//	        try
+//	        {
+//	            ERDContainer container = serializer.read(ERDContainer.class,"<xml>" + rawDataMsg + "</xml>", false);
+//
+//	            parsedObject = serializer.read(aClass, "<xml>" + container.getData().getValue() + "</xml>", false);
+//	        }
+//	        catch (Exception e) {
+//	            if(!isTest)
+//	            {
+//	                AFLog.e("[Exception] Error invalid ERDContainer");
+//	                AFLog.e(e.getMessage());
+//	                AFLog.d(e);
+//	            }
+//	            else
+//	            {
+//	                e.printStackTrace();
+//	            }
+//
+//	            try
+//	            {
+//	                parsedObject = aClass.newInstance();
+//	            }
+//	            catch (Exception e2)
+//	            {
+//	                AFLog.e("FATAL ERROR: Cannot instantiate blank object when there's an error on parsing.");
+//	                AFLog.e(e2);
+//	            }
+//	        }
+//	        ParserPool.pushPersister((Persister) serializer);
+//	        return parsedObject;
+//	    }
 }

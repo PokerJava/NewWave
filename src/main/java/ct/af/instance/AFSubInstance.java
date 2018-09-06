@@ -4,6 +4,7 @@ import ct.af.enums.EStats;
 import ct.af.enums.ESubState;
 import ct.af.message.incoming.parameter.AbsClientParam;
 import ct.af.message.incoming.parameter.Param_CLIENT_PostResult;
+import ct.af.message.incoming.parameter.Param_IDLE_Xxx;
 import ct.af.resourceModel.ResourceInfraNode;
 import ct.af.resourceModel.ResourceNeIdRouting;
 import ct.af.resourceModel.SuppCode;
@@ -15,6 +16,8 @@ import org.joda.time.DateTime;
 
 public class AFSubInstance{
 
+	
+	private Param_IDLE_Xxx subParam;
 	//Default Parameter
 	private String subInstanceNo;
 	private String subInitTimeStampIn;
@@ -171,6 +174,14 @@ public class AFSubInstance{
 	private boolean subResourceItemNeedToProcess = true;
 
 	
+
+	public Param_IDLE_Xxx getSubParam() {
+		return subParam;
+	}
+
+	public void setSubParam(Param_IDLE_Xxx subParam) {
+		this.subParam = subParam;
+	}
 
 	public String getSubResultCodeEDR() {
 		return subResultCodeEDR;

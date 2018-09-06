@@ -32,7 +32,7 @@ public class Parser_IDLE_Xml {
 		
 		System.out.println(msg);
 		
-		Param_IDLE_Xml	param = (Param_IDLE_Xml) XMLTools.getParseObject(msg, Param_IDLE_Xml.class);
+		//Param_IDLE_Xml	param = (Param_IDLE_Xml) XMLTools.getParseObject(msg, Param_IDLE_Xml.class);
 		
 		
 		
