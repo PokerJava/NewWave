@@ -18,6 +18,7 @@ public class AFSubInstance{
 
 	
 	private Param_IDLE_Xxx subParam;
+	private HashMap<String, Object> subHashMapParam = new HashMap<>();
 	//Default Parameter
 	private String subInstanceNo;
 	private String subInitTimeStampIn;
@@ -174,6 +175,14 @@ public class AFSubInstance{
 	private boolean subResourceItemNeedToProcess = true;
 
 	
+
+	public HashMap<String, Object> getSubHashMapParam() {
+		return subHashMapParam;
+	}
+
+	public void setSubHashMapParam(HashMap<String, Object> subHashMapParam) {
+		this.subHashMapParam = subHashMapParam;
+	}
 
 	public Param_IDLE_Xxx getSubParam() {
 		return subParam;
