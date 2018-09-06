@@ -15,6 +15,8 @@ public class ConstructController {
         AFLog.d("[EnterConstructERD] Next State : " + afSubInstance.getSubNextState());
         if (subNextState.equals(ESubState.END_RESOURCEORDER.getState())) {
             new Out_END_Resource().messageBuilder(abstractAF, afInstance, afSubInstance);
+        } else if(subNextState.equals(ESubState.END_XXX.getState())) {
+        	new Out_END_Xxx().messageBuilder(abstractAF, afInstance, afSubInstance);
         } else if (subNextState.equals(ESubState.SDF_GETRESOURCEINVENTORY.getState())) {
             new Out_SDF_GetResourceInventory().messageBuilder(abstractAF, afInstance, afSubInstance);
         } else if (subNextState.equals(ESubState.SDF_GETRESOURCEINFRANODE.getState())) {

@@ -291,6 +291,15 @@ public class DoBusinessController {
                 return;
             }
         }
+        if (afSubIns.getSubControlState().equals(ESubState.END_XXX.getState())) {
+            afSubIns.setSubControlState(ESubState.END.getState());
+            afSubIns.setSubNextState(ESubState.END.getState());
+            
+            if(!afSubIns.getSubNextState().equals(ESubState.Unknown.getState()))
+            {
+                return;
+            }
+        }
 
         if (afSubIns.getSubControlState().equals(ESubState.IDLE_Purge.toString())) {
             afSubIns.setSubControlState(ESubState.END.toString());
