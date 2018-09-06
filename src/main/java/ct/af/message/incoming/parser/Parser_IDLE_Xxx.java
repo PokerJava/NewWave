@@ -80,7 +80,10 @@ public class Parser_IDLE_Xxx {
 		if (rawCType.equals("text/plain")) {
 			try
 			{
-				param = gson.fromJson(rawPlainMessage, Param_IDLE_Xxx.class);
+				JsonParser jsonParser = new JsonParser();
+				JsonObject resourceObject = jsonParser.parse(rawPlainMessage).getAsJsonObject();
+				gson = GsonPool.getGson();
+				param = gson.fromJson(resourceObject, Param_IDLE_Xxx.class);
 				GsonPool.pushGson(gson);
 				if (param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap) {
 					param.setA(param.getHashMap(param.getA()));
@@ -95,18 +98,18 @@ public class Parser_IDLE_Xxx {
 					param.setD(param.getHashMap(param.getD()));
 				}
 	
-				if (param.getD() instanceof ArrayList) {
-					SortedSet<String> key = new TreeSet<>();
-					ArrayList<Object> test = (ArrayList<Object>) param.getD();
-					HashMap<String, Object> dataHash = new HashMap<>();
-					for (int i = 0; i < test.size(); i++) {
-						dataHash = (HashMap<String, Object>) test.get(i);
-						key.add(dataHash.get("resourceA").toString());
-					}
-					for (String str : key) {
-						System.out.println(str);
-					}
-				}
+//				if (param.getD() instanceof ArrayList) {
+//					SortedSet<String> key = new TreeSet<>();
+//					ArrayList<Object> test = (ArrayList<Object>) param.getD();
+//					HashMap<String, Object> dataHash = new HashMap<>();
+//					for (int i = 0; i < test.size(); i++) {
+//						dataHash = (HashMap<String, Object>) test.get(i);
+//						key.add(dataHash.get("resourceA").toString());
+//					}
+//					for (String str : key) {
+//						System.out.println(str);
+//					}
+//				}
 				param.setValid(true);
 			}
 			catch(Exception e)

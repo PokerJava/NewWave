@@ -8,7 +8,7 @@ import java.util.Set;
 import com.google.gson.internal.LinkedTreeMap;
 
 
-public class Param_IDLE_Xxx {
+public class Param_IDLE_Xxx{
 	private Object A;
 	private Object B;
 	private Object C;
