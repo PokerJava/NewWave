@@ -490,23 +490,5 @@ public class Parser_IDLE_Xxx {
 		return type;
 	}
 	
-	  private static String stringReplace(String rawDataMsg)
-      {
-          rawDataMsg = rawDataMsg.replace("&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;", "");
-          rawDataMsg = rawDataMsg.replace("&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;", "");
-          rawDataMsg = rawDataMsg.replace("&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;", "");
-          rawDataMsg = rawDataMsg.replace("&lt;?xml version=&quot;1.0&quot; encoding=&quot;tis-620&quot; ?&gt;", "");
 
-          // Insert CDATA
-          rawDataMsg = rawDataMsg.replace("&lt;ResultDesc xmlns=&quot;http://www.huawei.com/bme/cbsinterface/common&quot;&gt;",
-                  "&lt;ResultDesc xmlns=&quot;http://www.huawei.com/bme/cbsinterface/common&quot;&gt;&lt;![CDATA[");
-          rawDataMsg = rawDataMsg.replace("&lt;/ResultDesc&gt;","]]&gt;&lt;/ResultDesc&gt;");
-
-          rawDataMsg = rawDataMsg.replace("&lt;cbs:ResultDesc&gt;",
-                  "&lt;cbs:ResultDesc&gt;&lt;![CDATA[");
-          rawDataMsg = rawDataMsg.replace("&lt;/cbs:ResultDesc&gt;","]]&gt;&lt;/cbs:ResultDesc&gt;");
-
-          return rawDataMsg;
-      }
-  
 }
