@@ -25,6 +25,7 @@ public class In_IDLE_Xxx {
 	
 	Parser_IDLE_Xxx parser = new Parser_IDLE_Xxx();
 	paramIdleXxx = parser.doParser(abstractAF, eqxRawData, afInstance, afSubIns);
+	if(paramIdleXxx.isValid())
 //	afSubIns.setSubClientParameter(paramIdleXxx);
 	afSubIns.setState(ERequestState.PENDING.getState());
 	AFLog.d("State : " + afSubIns.getState());
