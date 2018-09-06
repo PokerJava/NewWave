@@ -3,6 +3,13 @@ package ct.af.message.incoming.parser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Serializer;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -19,6 +26,7 @@ public class Parser_IDLE_Xxx {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
         Gson gson = GsonPool.getGson();
 
+
         /*{
          * "A":"resourceA",
          * "B":["resourceB1","resourceB2"],
@@ -31,44 +39,26 @@ public class Parser_IDLE_Xxx {
          * }
          * 
          * */
+
 		String rawCType = "text/xml";
-        String rawPlainMessage = "{ \"company\" : \"CT\","
-        		+ "\"animal\" : [\"dog\",\"cat\"],"
-        		+ "\"userName\" : {\"jojo\" : \"1234\","
-        		+ "\"momo\" : \"4321\"},"
-        		+ "\"resourceName\" : [{\"resourceA1\" : \"A1\","
-        		+ "\"resourceA2\" : \"A2\"},"
-        		+ "{\"resourceB1\" : \"B1\","
-        		+ "\"resourceB2\" : \"B2\"}]  }";
-
-
 
         String rawPlainMessage2 = "{ \"A\" : \"CT\","
         		+ "\"B\" : [\"dog\",\"cat\"],"
         		+ "\"C\" : {\"jojo\" : \"1234\","
         		+ "\"momo\" : \"4321\"},"
-        		+ "\"D\" : [{\"resourceA1\" : \"A1\","
-        		+ "\"resourceA2\" : {\"jojo\" : \"1234\"," + 
+        		+ "\"D\" : [{\"resourceA\" : \"A1\","
+        		+ "\"resourceB\" : {\"jojo\" : \"1234\"," + 
         		"\"momo\" : \"4321\"}},"
-        		+ "{\"resourceB1\" : \"B1\","
-        		+ "\"resourceB2\" : \"B2\"}]  }";
+        		+ "{\"resourceA\" : \"A2\","
+        		+ "\"resourceB\" : \"B2\"}]  }";
      
-        
         String xmlMessage1 = "<ERDData value="+"/api/v1/aaf/publicId.json?company=CT&name=nutchapol.thathaii@gmail.co.th&invoke=999999&mobile=0909767978" +"/>]]>";
          
      	String xmlValue = "<ERDData value=\"" + "{"+"\"A\""+":"+"\"564093493534958340\""+","
      	       +"\"B\""+":"+"\"1775\""+","
      	           
      	       +"\"C\""+":"+"\"fb\""+","
-     	            
-//     	       +"D"+":"+"10.240.104.215:8443"+","
-     	               
-//     	      +"submissionTime"+":"+"20150731091000"+","
-//     	               
-//     	      +"callBackUrl"+":"+"10.240.104.215:8443"+","
-//     	               
-//     	      +"submissionTime"+":"+"150903111111"+","
-//     	              
+     	     	              
      	      +"\"D\""+":"+"\"30010\""+"}"
      
      	      +"/>";
@@ -80,24 +70,24 @@ public class Parser_IDLE_Xxx {
                                   +"<element>cat</element>"
                                +"</B>"
                                +"<C>"
-                                  +"111<jojo>1234</jojo>"
+                                  +"<jojo>1234</jojo>"
                                   +"<momo>4321</momo>"
                                +"</C>"
                                +"<D>"
                                +"<element>"
-                                    +"<resourceA1>A1</resourceA1>"
-                                    +"<resourceA2>"
+                                    +"<resourceA>A1</resourceA>"
+                                    +"<resourceB>"
                                         +"<jojo>1234</jojo>"
                                         +" <momo>4321</momo>"
-                                    +"</resourceA2>"
+                                    +"</resourceB>"
                                +"</element>"
                                +"<element>"
-                                    +" <resourceB1>B1"
-                                    	+ "<jojo>1234"
-                                    	+ "<A><B></B></A></jojo>"
+                                    +" <resourceB>B1"
+                                    	+ "<jojo>"
+                                    	+ "<A><B>1234</B></A></jojo>"
                                     	+ "<momo>3242</momo>"
-                                    + "</resourceB1>"
-                                    +" <resourceB2>B2</resourceB2>"
+                                    + "</resourceB>"
+                                    +" <resourceA>B2</resourceA>"
                               +"</element>"
                               +"</D>"
                              +"</root>";
@@ -133,12 +123,16 @@ public class Parser_IDLE_Xxx {
         		"        </PS-Furnish-Charging-Information>" + 
         		"    </PS-Information>" + 
         		"</Service-Information>]]>";
+        
+        
+        		String msg = "<ERDHeader>\n" + "      <Header name=\"Server\" value=\"Apache-Coyote/1.1\" />\n" + "      <Header name=\"X-Powered-By\" value=\"Servlet 2.4; JBoss-4.0.5.GA (build: CVSTag=Branch_4_0 date=200610162339)/Tomcat-5.5\" />\n" + "      <Header name=\"X-UA-Compatible\" value=\"IE=EmulateIE7\" />\n" + "      <Header name=\"Set-Cookie\" value=\"JSESSIONID=657179F49E5885A4A090D04B5F67FD2D.server1; Path=/\" />\n" + "      <Header name=\"Content-Type\" value=\"text/xml;charset=UTF-8\" />\n" + "      <Header name=\"Transfer-Encoding\" value=\"chunked\" />\n" + "      <Header name=\"Date\" value=\"Wed, 07 Jun 2017 10:24:08 GMT\" />\n" + "    </ERDHeader>\n" + "    <ERDData value=\"\" />";
+
 
         if(rawCType.equals("text/plain")) 
         {	
         	JsonParser jsonParser = new JsonParser();
 
-    		JsonObject resourceOrderJsonObject = jsonParser.parse(rawDataMessage2).getAsJsonObject();
+    		JsonObject resourceOrderJsonObject = jsonParser.parse(rawPlainMessage2).getAsJsonObject();
 			param = gson.fromJson(resourceOrderJsonObject, Param_IDLE_Xxx.class);
 			GsonPool.pushGson(gson);
 
@@ -158,15 +152,31 @@ public class Parser_IDLE_Xxx {
 			{
 				param.setD(param.getHashMap(param.getD()));
 			}	
+		
+			if(param.getD() instanceof ArrayList)
+			{
+				SortedSet<String> key = new TreeSet<>();
+				ArrayList<Object> test = (ArrayList<Object>)param.getD();
+				HashMap<String, Object> dataHash = new HashMap<>();
+				for(int i = 0;i<test.size();i++)
+				{
+					dataHash = (HashMap<String, Object>)test.get(i);
+					key.add(dataHash.get("resourceA").toString());			
+				}
+				for(String str : key)
+				{
+					System.out.println(str);
+				}
+			}
         }
 
 
 
         else if(rawCType.equals("text/xml")) 
         {
-        	if(validateFormatXML(xmlValue))
+        	if(validateFormatXML(xmlMessage2))
         	{
-        		String xmlFormat = getXmlType(xmlValue);
+        		String xmlFormat = getXmlType(xmlMessage2);
         		if(xmlFormat.equals("xmlUrl"))
         		{
         			HashMap<String, String> map = param.getXMLMsgToHashmap(xmlMessage1);
@@ -232,6 +242,12 @@ public class Parser_IDLE_Xxx {
             			{
             				param.setD(param.getHashMap(param.getD()));
             			}
+            			
+            			System.out.println(param.getA());
+            			System.out.println(param.getB());
+            			System.out.println(param.getC());
+            			System.out.println(param.getD());
+            			
                 	}
         		}
         	}        	
@@ -306,8 +322,8 @@ public class Parser_IDLE_Xxx {
 		        	int endPos;
 		     
 		        	key = strMessage.substring(strMessage.indexOf("<")+1, strMessage.indexOf(">"));     	
-		        	startPos = strMessage.indexOf("\"")+1;
-		        	endPos = strMessage.indexOf("\"/");	  
+		        	startPos = strMessage.indexOf(">")+1;
+		        	endPos = strMessage.lastIndexOf("<");	  
 		        	data = strMessage.substring(startPos, endPos);
 		        	
 		        	dataHash.put(key, data);
@@ -473,4 +489,24 @@ public class Parser_IDLE_Xxx {
 		}
 		return type;
 	}
+	
+	  private static String stringReplace(String rawDataMsg)
+      {
+          rawDataMsg = rawDataMsg.replace("&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;", "");
+          rawDataMsg = rawDataMsg.replace("&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;", "");
+          rawDataMsg = rawDataMsg.replace("&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;", "");
+          rawDataMsg = rawDataMsg.replace("&lt;?xml version=&quot;1.0&quot; encoding=&quot;tis-620&quot; ?&gt;", "");
+
+          // Insert CDATA
+          rawDataMsg = rawDataMsg.replace("&lt;ResultDesc xmlns=&quot;http://www.huawei.com/bme/cbsinterface/common&quot;&gt;",
+                  "&lt;ResultDesc xmlns=&quot;http://www.huawei.com/bme/cbsinterface/common&quot;&gt;&lt;![CDATA[");
+          rawDataMsg = rawDataMsg.replace("&lt;/ResultDesc&gt;","]]&gt;&lt;/ResultDesc&gt;");
+
+          rawDataMsg = rawDataMsg.replace("&lt;cbs:ResultDesc&gt;",
+                  "&lt;cbs:ResultDesc&gt;&lt;![CDATA[");
+          rawDataMsg = rawDataMsg.replace("&lt;/cbs:ResultDesc&gt;","]]&gt;&lt;/cbs:ResultDesc&gt;");
+
+          return rawDataMsg;
+      }
+  
 }
