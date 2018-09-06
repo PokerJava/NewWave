@@ -1,13 +1,18 @@
 package ct.af.utils;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementArray;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
+import com.google.gson.Gson;
+
+import ct.af.message.incoming.parameter.Param_IDLE_Xxx;
 import ct.af.utils.XMLTools.ERDData;
 import ct.af.utils.XMLTools.ERDHeader;
 import ec02.af.utils.AFLog;
@@ -16,6 +21,7 @@ public class XMLTools {
 	private static boolean isTest = false;
 
 	static class ERDData {
+		
 		@Attribute
 		private String value = "";
 
@@ -29,15 +35,28 @@ public class XMLTools {
 	}
 
 	static class ERDHeader {
+		HashMap<String, Object> hashMapAll = new HashMap<>();
 		@Attribute
 		private String name;
 
 		@Attribute
 		private String value;
+		
+		@Attribute
+		private String x;
+		
+		@Attribute
+		private String y;
 
+		@ElementList(name = "text")
+		List<String> test;
+		
+
+		
 		public String getName() {
 			return name;
 		}
+		
 
 		public void setName(String name) {
 			this.name = name;
@@ -50,6 +69,14 @@ public class XMLTools {
 		public void setValue(String value) {
 			this.value = value;
 		}
+		public HashMap<String, Object> getAll(){
+			hashMapAll.put("name", name);
+			hashMapAll.put("value", value);
+			hashMapAll.put("x", x);
+			hashMapAll.put("y", y);
+			hashMapAll.put("test", test);
+			return hashMapAll;
+		}
 	}
 
 	static class ERDContainer {
@@ -59,8 +86,9 @@ public class XMLTools {
 		@ElementList(name = "ERDHeader", required = false)
 		List<ERDHeader> header;
 		
-		@Element(name = "x")
-
+//		@Element(name = "message", required = false)
+//		private String message;
+		
 		public ERDData getData() {
 			return data;
 		}
@@ -77,6 +105,7 @@ public class XMLTools {
 			this.header = header;
 		}
 	}
+	
 
 	private static String stringReplace(String rawDataMsg) {
 		rawDataMsg = rawDataMsg.replace("&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;", "");
@@ -104,7 +133,13 @@ public class XMLTools {
 		try {
 			ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>" , true);
 
-			parsedObject = serializer.read(aClass, "<xml>" + container.getData().getValue() + "</xml>", false);
+//			parsedObject = serializer.read(aClass, "<xml>" + container.getHeader().get(0).getValue() + "</xml>", false);
+			Param_IDLE_Xxx param = new Param_IDLE_Xxx();
+			HashMap<String, Object> paramHash = new HashMap<>();
+			paramHash = (HashMap<String, Object>) container.getHeader().get(0).getAll();
+			Gson gson = GsonPool.getGson();
+			parsedObject = gson.toJson(paramHash);
+			GsonPool.pushGson(gson);
 		} catch (Exception e) {
 			if (!isTest) {
 				AFLog.e("[Exception] Error invalid ERDContainer");

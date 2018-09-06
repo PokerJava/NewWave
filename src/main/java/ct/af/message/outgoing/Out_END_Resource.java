@@ -24,7 +24,7 @@ import org.joda.time.format.DateTimeFormatter;
 public class Out_END_Resource {
   public EquinoxRawData messageBuilder(AbstractAF abstractAF, AFInstance afInstance, AFSubInstance afSubIns) {
     EquinoxRawData eqxRawData = AFDataFactory.createEquinoxRawData();
-    Param_IDLE_Xxx param = afSubIns.getSubParam();
+    Param_IDLE_Xxx param = afSubIns.getSubParam();	
 
     return eqxRawData;
   }

@@ -1,6 +1,8 @@
 package ct.af.message.incoming.parser;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import ct.af.instance.AFInstance;
 import ct.af.instance.AFSubInstance;
@@ -33,17 +35,29 @@ public class Parser_IDLE_Xml {
 		
 		
 		String poke2 =   "<ERDHeader>"
-				+ "<Header name=\"x-ssb-origin\" value=\"application\" />"
-				+ "<Header name=\"x-ssb-service-origin\" value=\"eService-Mobile\" />"
-				+ "<Header name=\"x-ssb-transaction-id\" value=\"2016081517300001234\"/>"
+				+ "<Header y=\"2\" name=\"x-ssb-origin\" value=\"application\" x=\"1\">"
+				+ "<text>Example message</text>"
+				+ "</Header>"
+				+ "<Header name=\"x-ssb-service-origin\" value=\"eService-Mobile\" x=\"1\" y=\"2\">"
+				+ "<text>Example message</text>"
+				+ "</Header>"
+				+ "<Header name=\"x-ssb-transaction-id\" value=\"2016081517300001234\" x=\"1\" y=\"2\">"
+				+ "<text>Example message</text>"
+				+ "</Header>"
 				+ "</ERDHeader>";
 		
 		String poke3 = "<ERDHeader>"
-				+ "<Header name=\"x-ssb-origin\" value=\"application\">"
-				+ 		   "<Header name=\"x-ssb-origin\" value=\"application\">"+"</Header>"
+				+ "<Header name=\"x-ssb-origin\" value=\"application\" x=\"1\" y=\"2\">"
+				+ 		   "<text><test>555</test>"
+				+ "					<test>111</test></text>"
+//				+ ""
 				+ "</Header>"
 				+ "</ERDHeader>";
-		Param_IDLE_Xml param = (Param_IDLE_Xml) XMLTools.getParseObject(poke3, Param_IDLE_Xml.class);
+		Gson gson = GsonPool.getGson();
+		JsonParser jsonParser = new JsonParser();
+		JsonObject jsonObject = jsonParser.parse(XMLTools.getParseObject(poke3, Param_IDLE_Xml.class).toString()).getAsJsonObject();
+		System.out.println(XMLTools.getParseObject(poke3, Param_IDLE_Xml.class).toString());
+		Param_IDLE_Xml param = gson.fromJson(jsonObject, Param_IDLE_Xml.class);
 
 		System.out.println(param);
 
