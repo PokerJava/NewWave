@@ -19,6 +19,18 @@ public class Parser_IDLE_Xxx {
         Param_IDLE_Xxx param = new Param_IDLE_Xxx();
         Gson gson = GsonPool.getGson();
 
+        /*{
+         * "A":"resourceA",
+         * "B":["resourceB1","resourceB2"],
+         * "C":{"resourceC1":"c1",
+         *		"resourceC2":"c2"},
+         * "D":[{"resourceD1":"d1",
+         * 			"resourceD2":"d2"},
+         * 			{"resourceD3":"d3",
+         * 			"resourceD4":"d4"}]
+         * }
+         * 
+         * */
 		String rawCType = "text/xml";
         String rawPlainMessage = "{ \"company\" : \"CT\","
         		+ "\"animal\" : [\"dog\",\"cat\"],"
@@ -222,8 +234,7 @@ public class Parser_IDLE_Xxx {
             			}
                 	}
         		}
-        	}
-        	
+        	}        	
         } else if(rawCType.equals("Diameter")) {
         	HashMap<String, Object> dataHash = new HashMap<>();
         	dataHash = (HashMap<String, Object>) diameterToHash(rawDiameterMessage);
