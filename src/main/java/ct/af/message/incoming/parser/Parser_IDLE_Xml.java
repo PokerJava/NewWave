@@ -21,7 +21,7 @@ public class Parser_IDLE_Xml {
 				+ "<Header name=\"x-ssb-transaction-id\" value=\"2016081517300001234\"/>"
 				+ "<Header name=\"x-ssb-order-channel\" value=\"MOBILE_APP\"/>"
 				+ "<Header name=\"x-ssb-version\" value=\"application\"/>" + "<Header name=\"x-app\" value=\"\"/>"
-				+ "<Header name=\"x-session\" value=\"\"/" + "</ERDHeader>"
+				+ "<Header name=\"x-session\" value=\"\"" + "</ERDHeader>"
 				+ "<ERDData value=\"&#10;{&#10;         &#10;   &quot;sessionId&quot;"
 				+ ":&quot;564093493534958340&quot;,&#10; &#10;   &quot;accessNum&quot;:&quot"
 				+ ";1775&quot;,&#10;        &#10;   &quot;appName&quot;:&quot;fb&quot;,&#10;         "

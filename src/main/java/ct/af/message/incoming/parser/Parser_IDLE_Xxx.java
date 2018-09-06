@@ -8,6 +8,9 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.internal.LinkedTreeMap;
+
+import ct.af.enums.EResultCode;
+import ct.af.enums.ESubState;
 import ct.af.instance.AFInstance;
 import ct.af.instance.AFSubInstance;
 import ct.af.message.incoming.parameter.Param_IDLE_Xxx;
@@ -78,13 +81,14 @@ public class Parser_IDLE_Xxx {
 				+ "    <ERDData value=\"\" />";
 
 		if (rawCType.equals("text/plain")) {
-			try
-			{
+			try {
 				JsonParser jsonParser = new JsonParser();
+				HashMap<String, Object> hashMapParam = new HashMap<>();
 				JsonObject resourceObject = jsonParser.parse(rawPlainMessage).getAsJsonObject();
 				gson = GsonPool.getGson();
 				param = gson.fromJson(resourceObject, Param_IDLE_Xxx.class);
 				GsonPool.pushGson(gson);
+
 				if (param.getA() instanceof ArrayList || param.getA() instanceof LinkedTreeMap) {
 					param.setA(param.getHashMap(param.getA()));
 				}
@@ -97,23 +101,42 @@ public class Parser_IDLE_Xxx {
 				if (param.getD() instanceof ArrayList || param.getD() instanceof LinkedTreeMap) {
 					param.setD(param.getHashMap(param.getD()));
 				}
-	
-//				if (param.getD() instanceof ArrayList) {
-//					SortedSet<String> key = new TreeSet<>();
-//					ArrayList<Object> test = (ArrayList<Object>) param.getD();
-//					HashMap<String, Object> dataHash = new HashMap<>();
-//					for (int i = 0; i < test.size(); i++) {
-//						dataHash = (HashMap<String, Object>) test.get(i);
-//						key.add(dataHash.get("resourceA").toString());
-//					}
-//					for (String str : key) {
-//						System.out.println(str);
-//					}
-//				}
+
+				// if (param.getD() instanceof ArrayList) {
+				// SortedSet<String> key = new TreeSet<>();
+				// ArrayList<Object> test = (ArrayList<Object>) param.getD();
+				// HashMap<String, Object> dataHash = new HashMap<>();
+				// for (int i = 0; i < test.size(); i++) {
+				// dataHash = (HashMap<String, Object>) test.get(i);
+				// key.add(dataHash.get("resourceA").toString());
+				// }
+				// for (String str : key) {
+				// System.out.println(str);
+				// }
+				// }
+				hashMapParam = gson.fromJson(resourceObject, HashMap.class);
+				if (hashMapParam.get("A") instanceof ArrayList || hashMapParam.get("A") instanceof LinkedTreeMap) {
+					hashMapParam.put("A", param.getHashMap(hashMapParam.get("A")));
+				}
+				if (hashMapParam.get("B") instanceof ArrayList || hashMapParam.get("B") instanceof LinkedTreeMap) {
+					hashMapParam.put("B", param.getHashMap(hashMapParam.get("B")));
+				}
+				if (hashMapParam.get("C") instanceof ArrayList || hashMapParam.get("C") instanceof LinkedTreeMap) {
+					hashMapParam.put("C", param.getHashMap(hashMapParam.get("C")));
+				}
+				if (hashMapParam.get("D") instanceof ArrayList || hashMapParam.get("D") instanceof LinkedTreeMap) {
+					hashMapParam.put("D", param.getHashMap(hashMapParam.get("D")));
+				}
+				afSubIns.setSubClientHashMapParameter(hashMapParam);
+				afSubIns.setSubCurrentState(ESubState.IDLE_XXX.getState());
+				afSubIns.setSubControlState(ESubState.IDLE_XXX.getState());
+				afSubIns.setSubNextState(ESubState.Unknown.toString());
+				afSubIns.setSubResultCode(EResultCode.RE20000.getResultCode());
+				afSubIns.setSubInternalCode(EResultCode.RE20000.getResultCode());
+				afInstance.incrementMainCountWait();
+				afInstance.putMainSubInstance(afSubIns.getSubInstanceNo(), afSubIns);
 				param.setValid(true);
-			}
-			catch(Exception e)
-			{
+			} catch (Exception e) {
 				param.setValid(false);
 			}
 			return param;
@@ -392,7 +415,6 @@ public class Parser_IDLE_Xxx {
 		return type;
 	}
 
-
 	public boolean validateParam(Param_IDLE_Xxx param) {
 		boolean isValid = false;
 		/* Validate format json */
@@ -409,6 +431,5 @@ public class Parser_IDLE_Xxx {
 		}
 		return isValid;
 	}
-
 
 }

@@ -94,8 +94,8 @@ public class In_SDF_GetResourceInventory {
 										.getMillis();
 						statexe.setExeTimeCustomStat(statexe, nodeName, resTime);
 						afSubIns.setStatsExeTime(statexe);
-						new ResourceInventoryFromFile()
-								.writeBackUpResourceInven((eqxRawData.getRawDataAttribute("val")));
+//						new ResourceInventoryFromFile()
+//								.writeBackUpResourceInven((eqxRawData.getRawDataAttribute("val")));
 
 					} else {
 						resultCode = EResultCode.RE40300;
