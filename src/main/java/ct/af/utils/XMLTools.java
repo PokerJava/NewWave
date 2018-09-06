@@ -58,6 +58,8 @@ public class XMLTools {
 
 		@ElementList(name = "ERDHeader", required = false)
 		List<ERDHeader> header;
+		
+		@Element(name = "x")
 
 		public ERDData getData() {
 			return data;
@@ -67,7 +69,7 @@ public class XMLTools {
 			this.data = data;
 		}
 
-		public List<ERDHeader> getHeader() {
+		public  List<ERDHeader> getHeader() {
 			return header;
 		}
 
@@ -95,12 +97,12 @@ public class XMLTools {
 	}
 
 	public static Object getParseObject(String rawDataMsg, Class aClass) {
-		rawDataMsg = stringReplace(rawDataMsg);
+//		rawDataMsg = stringReplace(rawDataMsg);
 
 		Object parsedObject = null;
 		Serializer serializer = ParserPool.getPersister();
 		try {
-			ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>", false);
+			ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>" , true);
 
 			parsedObject = serializer.read(aClass, "<xml>" + container.getData().getValue() + "</xml>", false);
 		} catch (Exception e) {

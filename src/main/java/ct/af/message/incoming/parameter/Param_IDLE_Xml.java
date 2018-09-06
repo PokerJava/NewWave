@@ -16,6 +16,15 @@ public class Param_IDLE_Xml {
 	    @Path("Envelope/Body/ChangeSubIdentityResultMsg/ResultHeader/")
 	    @Element(name = "ResultDesc" ,required = false)
 	    private String resultDesc;
+	    
+	    @Path("ERDHeader/Header/")
+	    @Element(name = "x")
+	    
+	    public String x;
+	    
+	    public String getX() {
+	    	return x;
+	    }
 
 	    public String getVersion() {
 	        return version;
