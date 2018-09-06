@@ -31,9 +31,7 @@ public class Param_IDLE_Xml {
 //	    ArrayList<Object> header = new ArrayList<>();
 	    
 	    
-	    public String getX() {
-	    	return x;
-	    }
+
 
 	    public String getVersion() {
 	        return version;
