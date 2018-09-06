@@ -5,7 +5,7 @@ import org.simpleframework.xml.Path;
 
 public class Param_IDLE_Xml {
 
-	 @Path("Envelope/Body/ChangeSubIdentityResultMsg/ResultHeader/")
+		@Path("Envelope/Body/ChangeSubIdentityResultMsg/ResultHeader/")
 	    @Element(name = "Version" ,required = false)
 	    private String version;
 
