@@ -93,6 +93,8 @@ public class DoBusinessController {
         if(afSubIns.getSubControlState().equals(ESubState.IDLE_XXX.getState()))
         {
         	Do_IDLE_Xxx doIdleXxx = new Do_IDLE_Xxx();
+        	doIdleXxx.doBusinessLogic(abstractAF, afInstance, afSubIns);
+        	
         	//TODO
         }
         if(afSubIns.getSubControlState().equals(ESubState.IDLE_RESOURCEORDER.getState())) {

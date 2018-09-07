@@ -29,11 +29,7 @@ public class Param_IDLE_Xml {
 	    public Object y;
 	    public Object value;
 //	    ArrayList<Object> header = new ArrayList<>();
-	    
-	    
-	    public String getX() {
-	    	return x;
-	    }
+
 
 	    public String getVersion() {
 	        return version;
