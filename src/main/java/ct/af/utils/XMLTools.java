@@ -134,7 +134,7 @@ public class XMLTools {
 			ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>" , true);
 
 //			parsedObject = serializer.read(aClass, "<xml>" + container.getHeader().get(0).getValue() + "</xml>", false);
-			Param_IDLE_Xxx param = new Param_IDLE_Xxx();
+
 			HashMap<String, Object> paramHash = new HashMap<>();
 			paramHash = (HashMap<String, Object>) container.getHeader().get(0).getAll();
 			Gson gson = GsonPool.getGson();
