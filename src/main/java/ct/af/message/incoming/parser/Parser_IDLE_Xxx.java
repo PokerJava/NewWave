@@ -31,7 +31,7 @@ public class Parser_IDLE_Xxx {
 		 * 
 		 */
 
-		String rawCType = "text/plain";
+		String rawCType = "text/xml";
 		String rawPlainMessage = "{ \"A\" : \"resourceA\","
 				+ "					\"B\" : [\"resourceB1\",\"resourceB2\"],"
 				+ "					\"C\" : {\"resourceC1\" : \"c1\","
@@ -280,11 +280,14 @@ public class Parser_IDLE_Xxx {
 				int startPos;
 				int endPos;
 
-				key = strMessage.substring(strMessage.indexOf("<") + 1, strMessage.indexOf(">"));
-				startPos = strMessage.indexOf(">") + 1;
-				endPos = strMessage.lastIndexOf("<");
-				data = strMessage.substring(startPos, endPos);
-
+//				key = strMessage.substring(strMessage.indexOf("<") + 1, strMessage.indexOf(">"));
+//				startPos = strMessage.indexOf(">") + 1;
+//				endPos = strMessage.lastIndexOf("<");
+//				data = strMessage.substring(startPos, endPos);
+				key = tempMsg.substring(tempMsg.indexOf("<") + 1, tempMsg.indexOf(">"));
+				startPos = tempMsg.indexOf("<" + key + ">") + key.length() + 2;
+				endPos = tempMsg.indexOf("</" + key + ">");
+				data = tempMsg.substring(startPos, endPos);
 				dataHash.put(key, data);
 				finalData = xmlToHash(dataHash);
 
@@ -305,20 +308,35 @@ public class Parser_IDLE_Xxx {
 						String key1 = "";
 						String data = "";
 						String tempMsg;
+						
 						int startPos;
 						int endPos;
 						int loop = countText(strMessage, "<") / 2;
 						tempMsg = strMessage;
 						while (!tempMsg.isEmpty()) {
+							ArrayList<Object> tempAryList = new ArrayList<>();
+							String[] tempAry;
 							if (tempMsg.contains("<") || tempMsg.contains(">")) {
-
 								key1 = tempMsg.substring(tempMsg.indexOf("<") + 1, tempMsg.indexOf(">"));
-
 								startPos = tempMsg.indexOf("<" + key1 + ">") + key1.length() + 2;
 								endPos = tempMsg.indexOf("</" + key1 + ">");
 								data = tempMsg.substring(startPos, endPos);
 								tempMsg = tempMsg.substring(endPos + key1.length() + 3);
-								dataHash1.put(key1, data);
+								if(data.contains(","))
+								{
+									tempAry = data.split(",");
+									for(int i=0;i<tempAry.length;i++)
+									{
+										tempAry[i] = tempAry[i].replace("]", "");
+										tempAry[i] = tempAry[i].replace("[", "");
+										tempAryList.add(tempAry[i]);
+									}
+									dataHash1.put(key1, tempAryList);
+									
+								}else {
+									dataHash1.put(key1, data);
+								}
+								
 							} else if (tempMsg.contains("]")) {
 								tempMsg = "";
 							} else {
@@ -329,11 +347,53 @@ public class Parser_IDLE_Xxx {
 						dataHash.put(key, dataHash1);
 						xmlToHash(dataHash.get(key));
 					}
-				} else if (dataHash.get(key) instanceof HashMap) {
+				}else if(dataHash.get(key) instanceof ArrayList) {
+					ArrayList<Object> aryList = (ArrayList)dataHash.get(key);
+					
+					String keyAry;
+					String tempAry;
+					String dataAry;
+					int startPos;
+					int endPos;
+					
+					for(int i=aryList.size()-1;i>=0;i--)
+					{
+						HashMap<String, Object> aryHash = new HashMap<>();
+						if(aryList.get(i).toString().contains("<")||aryList.get(i).toString().contains(">"))
+						{
+							tempAry = aryList.get(i).toString();
+							while(!tempAry.isEmpty())
+							{
+								startPos = tempAry.indexOf("<")+1;
+								endPos = tempAry.indexOf(">");
+								keyAry = tempAry.substring(startPos, endPos);
+								
+								startPos = tempAry.indexOf("<"+keyAry+">")+keyAry.length()+2;
+								endPos = tempAry.indexOf("</"+keyAry+">");
+								dataAry = tempAry.substring(startPos, endPos);
+								aryHash.put(keyAry, dataAry);
+								tempAry = tempAry.substring(tempAry.indexOf("</"+keyAry+">")+keyAry.length()+3);
+							}
+							aryList.add(aryHash);
+							aryList.remove(i);
+						}
+
+					}
+					dataHash.put(key, aryList);
+					xmlToHash(dataHash.get(key));
+				}else if (dataHash.get(key) instanceof HashMap) {
+				
 					finalData = xmlToHash(dataHash.get(key));
 				}
 			}
-		} else {
+		}else if(xmlMessage2 instanceof ArrayList) {
+			ArrayList<Object> finalAry = (ArrayList)xmlMessage2;
+			for(int i=0;i<finalAry.size();i++)
+			{
+				finalData = xmlToHash(finalAry.get(i));
+			}
+			finalData = xmlMessage2;
+		}else {
 			finalData = xmlMessage2;
 		}
 
