@@ -41,21 +41,17 @@ public class Parser_IDLE_Xml {
 				+ "</ERDHeader>";
 
 		String msg3 = 	"<ERDData>"
-				+ 		"<A>resourceA</A>"
-				+ 		"<B>"
-				+ 		  "<element>resourceB1</element>"
-				+ 		  "<element>resourceB2</element>"
-				+      "</B>"
-				+       "<C>"
-				+ 		  "<resourceC1>c1</resourceC1>"
-				+ 		  "<resourceC2>c2</resourceC2>"
-				+      "</C>"
+//				+ 		"<A>resourceA</A>"
+//				+ 		"<B>"
+//				+ 		  "<element>resourceB1</element>"
+//				+ 		  "<element>resourceB2</element>"
+//				+      "</B>"
+//				+       "<C>"
+//				+ 		  "<resourceC1>c1</resourceC1>"
+//				+ 		  "<resourceC2>c2</resourceC2>"
+//				+      "</C>"
 				+ 		"<D>"
 				+ 		  "<test>"
-				+ 			"<resourceD0>d1</resourceD0>"
-				+ 			"<resourceD1>d2</resourceD1>"
-				+ 			"<resourceD1>d1</resourceD1>"
-				+ 			"<resourceD1>d2</resourceD1>"
 				+ 			"<resourceD1>d1</resourceD1>"
 				+ 			"<resourceD1>d2</resourceD1>"
 				+ 		 "</test>"
@@ -70,7 +66,7 @@ public class Parser_IDLE_Xml {
 		
 		Gson gson = GsonPool.getGson();
 		JsonParser jsonParser = new JsonParser();
-		JsonObject jsonObject = jsonParser.parse(XMLTools.getParseObject(msg2, Param_IDLE_Xml.class).toString()).getAsJsonObject();
+		JsonObject jsonObject = jsonParser.parse(XMLTools.getParseObject(msg3, Param_IDLE_Xml.class).toString()).getAsJsonObject();
 		System.out.println(XMLTools.getParseObject(msg2, Param_IDLE_Xml.class).toString());
 		Param_IDLE_Xml param = gson.fromJson(jsonObject, Param_IDLE_Xml.class);
 
