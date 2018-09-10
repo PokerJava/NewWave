@@ -18,7 +18,8 @@ public class Parser_IDLE_Xml {
 	public Param_IDLE_Xml doParser(AbstractAF abstractAF, EquinoxRawData eqxRawData, AFInstance afInstance,
 			AFSubInstance afSubIns) {
 				
-		String poke2 =   "<ERDHeader>"
+
+		String msg =   "<ERDHeader>"
 				+ "<Header y=\"2\" name=\"x-ssb-origin\" value=\"application\" x=\"1\">"
 				+ "<text>Example message</text>"
 				+ "</Header>"
@@ -30,15 +31,16 @@ public class Parser_IDLE_Xml {
 				+ "</Header>"
 				+ "</ERDHeader>";
 		
-		String poke3 = "<ERDHeader>"
-				+ "<Header name=\"x-ssb-origin\" value=\"application\" x=\"1\" y=\"2\">"
+		String msg2 = "<ERDHeader>"
 				+ "<Header name=\"x-ssb-service-origin\" value=\"eService-Mobile\" x=\"2\" y=\"2\">"
-				+ 		"<text><test>555</test>"
-				+ 		"<test>111</test></text>"
+				+ 		"<text>"
+				+ 		"<test>555</test>"
+				+ 		"<test>111</test>"
+				+ "</text>"
 				+ "</Header>"
-				+ "</ERDHeader>"
-				
-				+ "<ERDData>"
+				+ "</ERDHeader>";
+
+		String msg3 = 	"<ERDData>"
 				+ 		"<A>resourceA</A>"
 				+ 		"<B>"
 				+ 		  "<element>resourceB1</element>"
@@ -49,14 +51,18 @@ public class Parser_IDLE_Xml {
 				+ 		  "<resourceC2>c2</resourceC2>"
 				+      "</C>"
 				+ 		"<D>"
-				+ 		  "<element>"
+				+ 		  "<test>"
+				+ 			"<resourceD0>d1</resourceD0>"
+				+ 			"<resourceD1>d2</resourceD1>"
 				+ 			"<resourceD1>d1</resourceD1>"
-				+ 			"<resourceD2>d2</resourceD2>"
-				+ 		 "</element>"
-				+ 		  "<element>"
-				+		    "<resourceD3>d3</resourceD3>"
-				+		    "<resourceD4>d4</resourceD4>"
-				+ 		 "</element>"
+				+ 			"<resourceD1>d2</resourceD1>"
+				+ 			"<resourceD1>d1</resourceD1>"
+				+ 			"<resourceD1>d2</resourceD1>"
+				+ 		 "</test>"
+//				+ 		  "<element>"
+//				+		    "<resourceD1>d3</resourceD1>"
+//				+		    "<resourceD2>d4</resourceD2>"
+//				+ 		 "</element>"
 				+	   "</D>"
 				+ "</ERDData>";
 		
@@ -64,11 +70,12 @@ public class Parser_IDLE_Xml {
 		
 		Gson gson = GsonPool.getGson();
 		JsonParser jsonParser = new JsonParser();
-		JsonObject jsonObject = jsonParser.parse(XMLTools.getParseObject(poke3, Param_IDLE_Xml.class).toString()).getAsJsonObject();
-		System.out.println(XMLTools.getParseObject(poke3, Param_IDLE_Xml.class).toString());
+		JsonObject jsonObject = jsonParser.parse(XMLTools.getParseObject(msg2, Param_IDLE_Xml.class).toString()).getAsJsonObject();
+		System.out.println(XMLTools.getParseObject(msg2, Param_IDLE_Xml.class).toString());
 		Param_IDLE_Xml param = gson.fromJson(jsonObject, Param_IDLE_Xml.class);
 
 		System.out.println(param);
+		System.out.println("X ="+param.getTest());
 
 		return null;
 

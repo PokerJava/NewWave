@@ -7,6 +7,7 @@ import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementArray;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Path;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
@@ -22,17 +23,53 @@ public class XMLTools {
 
 	static class ERDData {
 		
-		@Attribute
-		private String value = "";
+//		@Attribute
+//		private String value = "";
+		
+		@Element
+		private String A;
+		
+		@ElementList
+		List<String> B;
+		
+		@ElementList
+		List<String>  C;
 
-		public String getValue() {
-			return value;
-		}
+		@ElementList(name="D")
+		List<String> test;
+		
+//		@ElementList
+//		List<element>  D;
+//		
+//		@ElementArray
+//		private element[] D;
+		
+//		@Path("D/element[1]")
+//		@Element
+//		private String resourceD1;
+		
+//		@ElementList(name = "B")
+//		List<String> element;
 
-		public void setValue(String value) {
-			this.value = value;
-		}
+//		public String getValue() {
+//			return value;
+//		}
+//
+//		public void setValue(String value) {
+//			this.value = value;
+//		}
 	}
+	
+	public class element{
+		@Element
+		private String resourceD1;
+		
+		@Element
+		private String resourceD2;
+		
+	}
+	
+	
 
 	static class ERDHeader {
 		HashMap<String, Object> hashMapAll = new HashMap<>();
@@ -80,15 +117,12 @@ public class XMLTools {
 	}
 
 	static class ERDContainer {
-		@Element(name = "ERDData", required = false)
-		ERDData data = new ERDData();
-
+//		@Element(name = "ERDData", required = false)
+//		ERDData data = new ERDData();
+//
 		@ElementList(name = "ERDHeader", required = false)
 		List<ERDHeader> header;
-		
-//		@Element(name = "message", required = false)
-//		private String message;
-		
+//		
 		public ERDData getData() {
 			return data;
 		}
@@ -97,36 +131,17 @@ public class XMLTools {
 			this.data = data;
 		}
 
-		public  List<ERDHeader> getHeader() {
-			return header;
-		}
-
-		public void setHeader(List<ERDHeader> header) {
-			this.header = header;
-		}
+//		public  List<ERDHeader> getHeader() {
+//			return header;
+//		}
+//
+//		public void setHeader(List<ERDHeader> header) {
+//			this.header = header;
+//		}
 	}
 	
 
-	private static String stringReplace(String rawDataMsg) {
-		rawDataMsg = rawDataMsg.replace("&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;", "");
-		rawDataMsg = rawDataMsg.replace("&lt;?xml version=&apos;1.0&apos; encoding=&apos;UTF-8&apos;?&gt;", "");
-		rawDataMsg = rawDataMsg.replace("&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;", "");
-		rawDataMsg = rawDataMsg.replace("&lt;?xml version=&quot;1.0&quot; encoding=&quot;tis-620&quot; ?&gt;", "");
-
-		// Insert CDATA
-		rawDataMsg = rawDataMsg.replace(
-				"&lt;ResultDesc xmlns=&quot;http://www.huawei.com/bme/cbsinterface/common&quot;&gt;",
-				"&lt;ResultDesc xmlns=&quot;http://www.huawei.com/bme/cbsinterface/common&quot;&gt;&lt;![CDATA[");
-		rawDataMsg = rawDataMsg.replace("&lt;/ResultDesc&gt;", "]]&gt;&lt;/ResultDesc&gt;");
-
-		rawDataMsg = rawDataMsg.replace("&lt;cbs:ResultDesc&gt;", "&lt;cbs:ResultDesc&gt;&lt;![CDATA[");
-		rawDataMsg = rawDataMsg.replace("&lt;/cbs:ResultDesc&gt;", "]]&gt;&lt;/cbs:ResultDesc&gt;");
-
-		return rawDataMsg;
-	}
-
 	public static Object getParseObject(String rawDataMsg, Class aClass) {
-//		rawDataMsg = stringReplace(rawDataMsg);
 
 		Object parsedObject = null;
 		Serializer serializer = ParserPool.getPersister();
@@ -136,7 +151,7 @@ public class XMLTools {
 //			parsedObject = serializer.read(aClass, "<xml>" + container.getHeader().get(0).getValue() + "</xml>", false);
 
 			HashMap<String, Object> paramHash = new HashMap<>();
-			paramHash = (HashMap<String, Object>) container.getHeader().get(0).getAll();
+			//paramHash = (HashMap<String, Object>) container.getHeader().get(0).getAll();
 			Gson gson = GsonPool.getGson();
 			parsedObject = gson.toJson(paramHash);
 			GsonPool.pushGson(gson);

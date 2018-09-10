@@ -40,4 +40,47 @@ public class Param_IDLE_Xml {
 	    public String getResultDesc() {
 	        return resultDesc;
 	    }
+
+		public Object getX() {
+			return x;
+		}
+
+		public void setX(Object x) {
+			this.x = x;
+		}
+
+		public Object getTest() {
+			return test;
+		}
+
+		public void setTest(Object test) {
+			this.test = test;
+		}
+
+		public Object getName() {
+			return name;
+		}
+
+		public void setName(Object name) {
+			this.name = name;
+		}
+
+		public Object getY() {
+			return y;
+		}
+
+		public void setY(Object y) {
+			this.y = y;
+		}
+
+		public Object getValue() {
+			return value;
+		}
+
+		public void setValue(Object value) {
+			this.value = value;
+		}
+	    
+	    
+	    
 }

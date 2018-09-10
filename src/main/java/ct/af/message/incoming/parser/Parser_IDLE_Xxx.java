@@ -25,13 +25,16 @@ public class Parser_IDLE_Xxx {
 		Gson gson = GsonPool.getGson();
 
 		/*
-		 * { "A":"resourceA", "B":["resourceB1","resourceB2"], "C":{"resourceC1":"c1",
-		 * "resourceC2":"c2"}, "D":[{"resourceD1":"d1", "resourceD2":"d2"},
+		 * { "A":"resourceA", 
+		 * "B":["resourceB1","resourceB2"], 
+		 * "C":{"resourceC1":"c1",
+		 * "resourceC2":"c2"}, 
+		 * "D":[{"resourceD1":"d1", "resourceD2":"d2"},
 		 * {"resourceD3":"d3", "resourceD4":"d4"}] }
 		 * 
 		 */
 
-		String rawCType = "text/plain";
+		String rawCType = "text/xml";
 		String rawPlainMessage = "{ \"A\" : \"resourceA\","
 				+ "					\"B\" : [\"resourceB1\",\"resourceB2\"],"
 				+ "					\"C\" : {\"resourceC1\" : \"c1\","
@@ -55,11 +58,25 @@ public class Parser_IDLE_Xxx {
 				+ "/>";
 
 		String xmlMessage2 = "<root>" + "<A>CT</A>" + "<B>" + "<element>dog</element>" + "<element>cat</element>"
-				+ "</B>" + "<C>" + "<jojo>1234</jojo>" + "<momo>4321</momo>" + "</C>" + "<D>" + "<element>"
-				+ "<resourceA>A1</resourceA>" + "<resourceB>" + "<jojo>1234</jojo>" + " <momo>4321</momo>"
-				+ "</resourceB>" + "</element>" + "<element>" + " <resourceB>B1" + "<jojo>"
-				+ "<A><B>1234</B></A></jojo>" + "<momo>3242</momo>" + "</resourceB>" + " <resourceA>B2</resourceA>"
-				+ "</element>" + "</D>" + "</root>";
+				+ "</B>" + "<C>" + "<jojo>1234</jojo>" + "<momo>4321</momo>" + "</C>" + 
+				"<D>" 
+				+ "<element>"
+				+ "<resourceA>A1</resourceA>" 
+				+ "<resourceB>" 
+				+ "<jojo>1234</jojo>" 
+				+ " <momo>4321</momo>"
+				+ "</resourceB>" 
+				+ "</element>" 
+				+ "<element>" 
+				+ " <resourceB>" 
+				+ "<jojo>"
+				+ "<A><B>5678</B></A></jojo>" 
+				+ "<momo>3242</momo>" 
+				+ "</resourceB>" 
+				+ " <resourceA>B2</resourceA>"
+				+ "</element>" 
+				+ "</D>" 
+				+ "</root>";
 
 		String rawDiameterMessage = "<![CDATA[" + "<Session-Id value=\"session_gx_0\"/>"
 				+ "<Origin-Host value=\"pcrf_p3\"/>" + "<Origin-Realm value=\"pcrf_p3.sand.ais.co.th\"/>"
@@ -213,7 +230,8 @@ public class Parser_IDLE_Xxx {
 						System.out.println(param.getB());
 						System.out.println(param.getC());
 						System.out.println(param.getD());
-
+						HashMap<String, HashMap<String, HashMap<String, HashMap<String, HashMap<String, Object>>>>> test = (HashMap<String, HashMap<String, HashMap<String, HashMap<String, HashMap<String, Object>>>>>)param.getD();
+						System.out.println(test.get("resourceB").get("jojo").get("A").get("B"));
 					}
 				}
 			}
