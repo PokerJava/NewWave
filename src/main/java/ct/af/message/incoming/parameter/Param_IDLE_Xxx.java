@@ -200,8 +200,9 @@ public class Param_IDLE_Xxx{
 		if(data instanceof LinkedTreeMap) {
 			resourceMap = new HashMap<>();
 			Set<String> keySet = ((LinkedTreeMap) data).keySet();
-			for (String keyStr : keySet) {
+			for (String keyStr : keySet) {				
 				resourceMap.put(keyStr, ((LinkedTreeMap) data).get(keyStr));
+				resourceMap.put(keyStr, getHashMap(resourceMap.get(keyStr)));
 			}
 		}else if(data instanceof HashMap) {
 			resourceMap = new HashMap<>();
@@ -216,6 +217,8 @@ public class Param_IDLE_Xxx{
 					((ArrayList) data).remove(i);
 				}
 			}
+			return data;
+		}else if(data instanceof String) {
 			return data;
 		}else {
 			resourceMap = new HashMap<>();
