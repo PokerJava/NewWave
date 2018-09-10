@@ -34,19 +34,10 @@ public class XMLTools {
 		
 		@ElementList
 		List<String>  C;
-
-		@ElementList(name="D")
-		List<String> test;
 		
-//		@ElementList
-//		List<element>  D;
-//		
-//		@ElementArray
-//		private element[] D;
-		
-//		@Path("D/element[1]")
-//		@Element
-//		private String resourceD1;
+		@Path("D/element[1]")
+		@Element
+		private String resourceD1;
 		
 //		@ElementList(name = "B")
 //		List<String> element;
@@ -59,77 +50,66 @@ public class XMLTools {
 //			this.value = value;
 //		}
 	}
-	
-	public class element{
-		@Element
-		private String resourceD1;
-		
-		@Element
-		private String resourceD2;
-		
-	}
-	
-	
 
 	static class ERDHeader {
 		HashMap<String, Object> hashMapAll = new HashMap<>();
-		@Attribute
-		private String name;
+//		@Attribute
+//		private String name;
+//
+//		@Attribute
+//		private String value;
+//		
+//		@Attribute
+//		private String x;
+//		
+//		@Attribute
+//		private String y;
 
-		@Attribute
-		private String value;
-		
-		@Attribute
-		private String x;
-		
-		@Attribute
-		private String y;
-
-		@ElementList(name = "text")
+		@Element
 		List<String> test;
 		
 
 		
-		public String getName() {
-			return name;
-		}
-		
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getValue() {
-			return value;
-		}
-
-		public void setValue(String value) {
-			this.value = value;
-		}
-		public HashMap<String, Object> getAll(){
-			hashMapAll.put("name", name);
-			hashMapAll.put("value", value);
-			hashMapAll.put("x", x);
-			hashMapAll.put("y", y);
-			hashMapAll.put("test", test);
-			return hashMapAll;
-		}
+//		public String getName() {
+//			return name;
+//		}
+//		
+//
+//		public void setName(String name) {
+//			this.name = name;
+//		}
+//
+//		public String getValue() {
+//			return value;
+//		}
+//
+//		public void setValue(String value) {
+//			this.value = value;
+//		}
+//		public HashMap<String, Object> getAll(){
+//			hashMapAll.put("name", name);
+//			hashMapAll.put("value", value);
+//			hashMapAll.put("x", x);
+//			hashMapAll.put("y", y);
+//			hashMapAll.put("test", test);
+//			return hashMapAll;
+//		}
 	}
 
 	static class ERDContainer {
 //		@Element(name = "ERDData", required = false)
 //		ERDData data = new ERDData();
 //
-		@ElementList(name = "ERDHeader", required = false)
-		List<ERDHeader> header;
-//		
-		public ERDData getData() {
-			return data;
-		}
-
-		public void setData(ERDData data) {
-			this.data = data;
-		}
+		@ElementList(name = "ERDData", required = false)
+		List<ERDData> header;
+		
+//		public ERDData getData() {
+//			return data;
+//		}
+//
+//		public void setData(ERDData data) {
+//			this.data = data;
+//		}
 
 //		public  List<ERDHeader> getHeader() {
 //			return header;
