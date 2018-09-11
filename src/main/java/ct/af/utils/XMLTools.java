@@ -1,5 +1,6 @@
 package ct.af.utils;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import org.simpleframework.xml.core.Persister;
 import com.google.gson.Gson;
 
 import ct.af.message.incoming.parameter.Param_IDLE_Xxx;
+
 import ct.af.utils.XMLTools.ERDData;
 import ct.af.utils.XMLTools.ERDHeader;
 import ec02.af.utils.AFLog;
@@ -22,23 +24,29 @@ public class XMLTools {
 	private static boolean isTest = false;
 
 	static class ERDData {
+		@Element(name="D")
+		private D dVal;
 		
 //		@Attribute
 //		private String value = "";
+//		
+//		@Element
+//		private String A;
+//		
+//		@ElementList
+//		List<String> B;
+//		
+//		@ElementList
+//		List<String>  C;
 		
-		@Element
-		private String A;
+//		@ElementList(name = "ERDData", required = false)
+//		List<ERDHeader> D;
 		
-		@ElementList
-		List<String> B;
 		
-		@ElementList
-		List<String>  C;
-		
-		@Path("D/element[1]")
-		@Element
-		private String resourceD1;
-		
+//		@Path("D/element[0]")
+//		@Element
+//		private String resourceD1;
+//		
 //		@ElementList(name = "B")
 //		List<String> element;
 
@@ -52,7 +60,7 @@ public class XMLTools {
 	}
 
 	static class ERDHeader {
-		HashMap<String, Object> hashMapAll = new HashMap<>();
+//		HashMap<String, Object> hashMapAll = new HashMap<>();
 //		@Attribute
 //		private String name;
 //
@@ -65,7 +73,10 @@ public class XMLTools {
 //		@Attribute
 //		private String y;
 
-		@Element
+//		@ElementList
+//		List<String> A;
+		
+		@ElementList
 		List<String> test;
 		
 
@@ -97,19 +108,19 @@ public class XMLTools {
 	}
 
 	static class ERDContainer {
-//		@Element(name = "ERDData", required = false)
-//		ERDData data = new ERDData();
-//
-		@ElementList(name = "ERDData", required = false)
-		List<ERDData> header;
-		
-//		public ERDData getData() {
-//			return data;
-//		}
-//
-//		public void setData(ERDData data) {
-//			this.data = data;
-//		}
+		@Element(name = "ERDData", required = false)
+		ERDData data;// = new ERDData();
+
+//		@ElementList(name = "ERDData", required = false)
+//		List<ERDHeader> header;
+//		
+		public ERDData getData() {
+			return data;
+		}
+
+		public void setData(ERDData data) {
+			this.data = data;
+		}
 
 //		public  List<ERDHeader> getHeader() {
 //			return header;
@@ -118,6 +129,56 @@ public class XMLTools {
 //		public void setHeader(List<ERDHeader> header) {
 //			this.header = header;
 //		}
+		
+		
+		
+		
+	}
+	
+	static class D {
+	    @ElementList(entry = "element", inline = true,required = false)
+	    private List<Elements> elementList = new ArrayList<>();
+
+		public List<Elements> getElementList() {
+			return elementList;
+		}
+
+		public void setElementList(List<Elements> elementList) {
+			this.elementList = elementList;
+		}
+	    
+	
+	}
+	
+	static class Elements {
+		 @ElementList(entry = "resourceD1", inline = true,required = false)
+		    private List<Element> resourceD1List = new ArrayList<>();
+
+		public List<Element> getResourceD1List() {
+			return resourceD1List;
+		}
+
+		public void setResourceD1List(List<Element> resourceD1List) {
+			this.resourceD1List = resourceD1List;
+		}
+		 
+		 
+	}
+	
+	static class ResourceD1 {
+		@Element(name = "resourceD1")
+		private String val;
+
+		public String getVal() {
+			return val;
+		}
+
+		public void setVal(String val) {
+			this.val = val;
+		}
+		
+		
+		
 	}
 	
 
@@ -126,8 +187,8 @@ public class XMLTools {
 		Object parsedObject = null;
 		Serializer serializer = ParserPool.getPersister();
 		try {
-			ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>" , true);
-
+			ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>" , false);
+			parsedObject = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>" , false);
 //			parsedObject = serializer.read(aClass, "<xml>" + container.getHeader().get(0).getValue() + "</xml>", false);
 
 			HashMap<String, Object> paramHash = new HashMap<>();

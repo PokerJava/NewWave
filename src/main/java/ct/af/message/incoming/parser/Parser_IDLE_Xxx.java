@@ -34,7 +34,8 @@ public class Parser_IDLE_Xxx {
 		 * 
 		 */
 
-		String rawCType = "text/xml";
+		String rawCType = "text/plain";
+		afSubIns.setType("text/plaain");
 		String rawPlainMessage = "{ \"A\" : \"resourceA\","
 				+ "					\"B\" : [\"resourceB1\",\"resourceB2\"],"
 				+ "					\"C\" : {\"resourceC1\" : \"c1\","

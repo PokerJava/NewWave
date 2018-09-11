@@ -173,8 +173,18 @@ public class AFSubInstance{
 	private int subFirstIndexResourceItemToProcess = -1;
 	private int subFirstTaskNoToProcess = -1;
 	private boolean subResourceItemNeedToProcess = true;
-
+	private String type;
 	
+	
+	
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	public HashMap<String, Object> getSubHashMapParam() {
 		return subHashMapParam;
