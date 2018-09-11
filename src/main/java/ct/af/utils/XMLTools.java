@@ -24,25 +24,25 @@ public class XMLTools {
 	private static boolean isTest = false;
 
 	static class ERDData {
-
-		@Element(name="D")
-		private D dVal;
+		HashMap<String, Object> hashMapAll = new HashMap<>();
+//		@Element(name="D")
+//		private D dVal;
 		
 
 //		@Attribute
 //		private String value = "";
 //		
-//		@Element
-//		private String A;
-//		
-//		@ElementList
-//		List<String> B;
-//		
-//		@ElementList
-//		List<String>  C;
+		@Element
+		private String A;
 		
-//		@ElementList(name = "ERDData", required = false)
-//		List<ERDHeader> D;
+		@ElementList
+		List<String> B;
+		
+		@ElementList
+		List<String>  C;
+		
+		@ElementList
+		List<String> D;
 		
 		
 //		@Path("D/element[0]")
@@ -59,23 +59,23 @@ public class XMLTools {
 //		public void setValue(String value) {
 //			this.value = value;
 //		}
-//		public HashMap<String, Object> getAll(){
-//		hashMapAll.put("A", A);
-//		hashMapAll.put("B", B);
-//		hashMapAll.put("C", C);
-//		
-//		for(int i=0;i<D.size();i++)
-//		{
-//			if(D.get(i)==null)
-//			{
-//				D.remove(i);
-//				i--;
-//			}
-//		}
-//		
-//		hashMapAll.put("D", D);
-//		return hashMapAll;
-//	}
+		public HashMap<String, Object> getAll(){
+		hashMapAll.put("A", A);
+		hashMapAll.put("B", B);
+		hashMapAll.put("C", C);
+		
+		for(int i=0;i<D.size();i++)
+		{
+			if(D.get(i)==null)
+			{
+				D.remove(i);
+				i--;
+			}
+		}
+		
+		hashMapAll.put("D", D);
+		return hashMapAll;
+	}
 	}
 
 	static class ERDHeader {
@@ -164,14 +164,14 @@ public class XMLTools {
 	
 	static class D {
 	    @ElementList(entry = "element", inline = true,required = false)
-	    private List<Elements> elementList = new ArrayList<>();
+	    private List<Elements> element = new ArrayList<>();
 
-		public List<Elements> getElementList() {
-			return elementList;
+		public List<Elements> getElement() {
+			return element;
 		}
 
-		public void setElementList(List<Elements> elementList) {
-			this.elementList = elementList;
+		public void setElementList(List<Elements> element) {
+			this.element = element;
 		}
 	    
 	
@@ -179,14 +179,14 @@ public class XMLTools {
 	
 	static class Elements {
 		 @ElementList(entry = "resourceD1", inline = true,required = false)
-		    private List<Element> resourceD1List = new ArrayList<>();
+		    private List<Element> resourceD1 = new ArrayList<>();
 
-		public List<Element> getResourceD1List() {
-			return resourceD1List;
+		public List<Element> getResourceD1() {
+			return resourceD1;
 		}
 
-		public void setResourceD1List(List<Element> resourceD1List) {
-			this.resourceD1List = resourceD1List;
+		public void setResourceD1List(List<Element> resourceD1) {
+			this.resourceD1 = resourceD1;
 		}
 		 
 		 
@@ -220,7 +220,7 @@ public class XMLTools {
 
 			HashMap<String, Object> paramHash = new HashMap<>();
 			//paramHash = (HashMap<String, Object>) container.getHeader().get(0).getAll();
-//			paramHash = container.data.getAll();S
+			paramHash = container.data.getAll();
 			Gson gson = GsonPool.getGson();
 			parsedObject = gson.toJson(paramHash);
 			GsonPool.pushGson(gson);
