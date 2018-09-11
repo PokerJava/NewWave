@@ -24,9 +24,11 @@ public class XMLTools {
 	private static boolean isTest = false;
 
 	static class ERDData {
+
 		@Element(name="D")
 		private D dVal;
 		
+
 //		@Attribute
 //		private String value = "";
 //		
@@ -57,6 +59,23 @@ public class XMLTools {
 //		public void setValue(String value) {
 //			this.value = value;
 //		}
+//		public HashMap<String, Object> getAll(){
+//		hashMapAll.put("A", A);
+//		hashMapAll.put("B", B);
+//		hashMapAll.put("C", C);
+//		
+//		for(int i=0;i<D.size();i++)
+//		{
+//			if(D.get(i)==null)
+//			{
+//				D.remove(i);
+//				i--;
+//			}
+//		}
+//		
+//		hashMapAll.put("D", D);
+//		return hashMapAll;
+//	}
 	}
 
 	static class ERDHeader {
@@ -73,11 +92,6 @@ public class XMLTools {
 //		@Attribute
 //		private String y;
 
-//		@ElementList
-//		List<String> A;
-		
-		@ElementList
-		List<String> test;
 		
 
 		
@@ -121,6 +135,19 @@ public class XMLTools {
 		public void setData(ERDData data) {
 			this.data = data;
 		}
+
+//
+//		@ElementList(name = "ERDData", required = false)
+//		List<ERDHeader> header;
+		
+//		public ERDData getData() {
+//			return data;
+//		}
+//
+//		public void setData(ERDData data) {
+//			this.data = data;
+//		}
+
 
 //		public  List<ERDHeader> getHeader() {
 //			return header;
@@ -193,6 +220,7 @@ public class XMLTools {
 
 			HashMap<String, Object> paramHash = new HashMap<>();
 			//paramHash = (HashMap<String, Object>) container.getHeader().get(0).getAll();
+//			paramHash = container.data.getAll();S
 			Gson gson = GsonPool.getGson();
 			parsedObject = gson.toJson(paramHash);
 			GsonPool.pushGson(gson);
