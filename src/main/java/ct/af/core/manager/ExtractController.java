@@ -85,8 +85,8 @@ public class ExtractController {
         
 	        if (rawDataType.equals(EEventType.REQUEST.getEventType()) && rawDataRet.equals(ERet.RET0.getRet())) {
 	            if (rawDataOrig.contains("ES05")) {
-	//                currentState = ESubState.IDLE_XXX.getState();
-              currentState = ESubState.IDLE_XML.getState();
+	                currentState = ESubState.IDLE_XXX.getState();
+//              currentState = ESubState.IDLE_XML.getState();
 //	            	currentState = ESubState.IDLE_RESOURCEORDER.getState();
 	            	command = ECommand.RESOURCEORDER_ASYNC;
 	                

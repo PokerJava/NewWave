@@ -38,7 +38,7 @@ public class Parser_IDLE_Xxx {
 		 */
 
 		String rawCType = "text/xml";
-		boolean isParserXmlwithTool = false;
+		boolean isParserXmlwithTool = true;
 		afSubIns.setType("text/xml");
 
 		String rawPlainMessage = "{ \"A\" : \"a\","
@@ -200,6 +200,7 @@ public class Parser_IDLE_Xxx {
 						//TODO pok
 						HashMap<String, Object> paramxml =(HashMap<String, Object>) (XMLTools.getParseObject(rawXMLMessage, Param_IDLE_Xml.class));
 						
+						System.out.println("heelo");
 //						String regexResourceD0 = "^2{4}$";
 //						Pattern pattern = Pattern.compile(regexResourceD0);
 //						Matcher matcher = pattern.matcher(resourceValidGroup1);
