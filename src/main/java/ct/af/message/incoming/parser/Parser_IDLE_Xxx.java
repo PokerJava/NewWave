@@ -132,35 +132,6 @@ public class Parser_IDLE_Xxx {
 				hashMapParam.put("D", param.getD());
 			}
 
-			// if (param.getD() instanceof ArrayList) {
-			// SortedSet<String> key = new TreeSet<>();
-			// ArrayList<Object> test = (ArrayList<Object>) param.getD();
-			// HashMap<String, Object> dataHash = new HashMap<>();
-			// for (int i = 0; i < test.size(); i++) {
-			// dataHash = (HashMap<String, Object>) test.get(i);
-			// key.add(dataHash.get("resourceA").toString());
-			// }
-			// for (String str : key) {
-			// System.out.println(str);
-			// }
-			// }
-			// hashMapParam = gson.fromJson(resourceObject, HashMap.class);
-			// if (hashMapParam.get("A") instanceof ArrayList || hashMapParam.get("A")
-			// instanceof LinkedTreeMap) {
-			// hashMapParam.put("A", param.getHashMap(hashMapParam.get("A")));
-			// }
-			// if (hashMapParam.get("B") instanceof ArrayList || hashMapParam.get("B")
-			// instanceof LinkedTreeMap) {
-			// hashMapParam.put("B", param.getHashMap(hashMapParam.get("B")));
-			// }
-			// if (hashMapParam.get("C") instanceof ArrayList || hashMapParam.get("C")
-			// instanceof LinkedTreeMap) {
-			// hashMapParam.put("C", param.getHashMap(hashMapParam.get("C")));
-			// }
-			// if (hashMapParam.get("D") instanceof ArrayList || hashMapParam.get("D")
-			// instanceof LinkedTreeMap) {
-			// hashMapParam.put("D", param.getHashMap(hashMapParam.get("D")));
-			// }
 			afSubIns.setSubClientHashMapParameter(hashMapParam);
 			afSubIns.setSubCurrentState(ESubState.IDLE_XXX.getState());
 			afSubIns.setSubControlState(ESubState.IDLE_XXX.getState());
@@ -267,22 +238,22 @@ public class Parser_IDLE_Xxx {
 							hashMapParam.put("D", param.getD());
 						}
 	
-						System.out.println("CType : text/xml");
-						System.out.println("A :" + param.getA());
-						System.out.println("B :" + param.getB());
-						System.out.println("C :" + param.getC());
-						System.out.println("D :" + param.getD());
-						System.out.println(
-								((TreeMap<String, TreeMap<String, Object>>) ((ArrayList) hashMapParam.get("D")).get(0))
-										.get("resourceD2"));
-	
+//						System.out.println("CType : text/xml");
+//						System.out.println("A :" + param.getA());
+//						System.out.println("B :" + param.getB());
+//						System.out.println("C :" + param.getC());
+//						System.out.println("D :" + param.getD());
+//						System.out.println(
+//								((TreeMap<String, TreeMap<String, Object>>) ((ArrayList) hashMapParam.get("D")).get(0))
+//										.get("resourceD2"));
+						
 						String resourceValidGroup1 = ((TreeMap<String, Object>) ((ArrayList) hashMapParam.get("D")).get(0))
 								.get("resourceD2").toString();
 						String resourceValidGroup2 = ((TreeMap<String, Object>) ((ArrayList) hashMapParam.get("D")).get(1))
 								.get("resourceD2").toString();
 						
-						System.out.println("resourceD2[0] : "+resourceValidGroup1);
-						System.out.println("resourceD2[1] : "+resourceValidGroup2);
+//						System.out.println("resourceD2[0] : "+resourceValidGroup1);
+//						System.out.println("resourceD2[1] : "+resourceValidGroup2);
 						
 	
 						String regexResourceD0 = "^2{4}$";
@@ -294,6 +265,49 @@ public class Parser_IDLE_Xxx {
 						pattern = Pattern.compile(regexResourceD1);
 						matcher = pattern.matcher(resourceValidGroup2);
 						param.setValid(matcher.find());
+						
+						String a = (String)param.getA();
+						ArrayList<String> b = (ArrayList<String>)param.getB();
+						TreeMap<String, String> c = (TreeMap<String, String>)param.getC();
+						ArrayList<TreeMap<String, String>> d = (ArrayList<TreeMap<String, String>>)param.getD();
+						
+						String company = "a";
+						String regexCompany = "[0-9]";
+						pattern = Pattern.compile(regexCompany);
+						matcher = pattern.matcher(company);
+						System.out.println("Company : " + company + !matcher.find());
+						
+						
+						String email = "gdaf24152@gmail.com";
+						String regexEmail = "[a-zA-z0-9](@hotmail.com$|@gmail.com$|@yahoo.com$)";
+						pattern = Pattern.compile(regexEmail);
+						matcher = pattern.matcher(email);
+						System.out.println("Email : " + email + matcher.find());
+						
+						
+						String startTime = "22-03-1996-1353";
+						String regexStartTime = "([0-9][0-9])-([0-9][0-9])-([0-9][0-9][0-9][0-9])-(([2][0-4]|[1][0-8]|[0][0-9])([0-5][0-9]))";
+						pattern = Pattern.compile(regexStartTime);
+						matcher = pattern.matcher(startTime);
+						System.out.println("StartTime : " + startTime + matcher.find());
+						
+						String endTime = "22-03-1996-1353";
+						String regexEndTime = "([0-9][0-9])-([0-9][0-9])-([0-9][0-9][0-9][0-9])-(([2][0-4]|[1][0-8]|[0][0-9])([0-5][0-9]))";
+						pattern = Pattern.compile(regexEndTime);
+						matcher = pattern.matcher(endTime);
+						System.out.println("EndTime : " + endTime + matcher.find());
+						
+						String age = "13";
+						String regexAge = "[0-9][0-9]";
+						pattern = Pattern.compile(regexAge);
+						matcher = pattern.matcher(age);
+						System.out.println("Age : " + age + matcher.find());
+						
+						String mobile = "0814352698";
+						String regexMobile = "[0][6|8|9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]";
+						pattern = Pattern.compile(regexMobile);
+						matcher = pattern.matcher(mobile);
+						System.out.println("Mobile : " + mobile + matcher.find());
 					}
 				}
 				// }
