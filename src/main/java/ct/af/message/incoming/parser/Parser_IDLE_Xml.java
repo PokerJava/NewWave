@@ -1,5 +1,7 @@
 package ct.af.message.incoming.parser;
 
+import java.util.HashMap;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -53,7 +55,7 @@ public class Parser_IDLE_Xml {
 				+ 		"<D>"
 				+ 		  "<element>"
 				+ 			"<resourceD1>d1</resourceD1>"
-				+ 			"<resourceD1>d2</resourceD1>"
+				+ 			"<resourceD2>d2</resourceD2>"
 				+ 		 "</element>"
 				+ 		  "<element>"
 				+		    "<resourceD1>d3</resourceD1>"
@@ -61,21 +63,35 @@ public class Parser_IDLE_Xml {
 				+ 		 "</element>"
 				+	   "</D>"
 				+ "</ERDData>";
+		
 		String rawXMLMessage = "<ERDData>"
 				+ "				<A>resourceA</A>"
-				+ "				<B><element>b1</element><element>b2</element></B>"
-				+ "				<C><resourceC1>c1</resourceC1><resourceC2>c2</resourceC2></C>"
-				+ "				<D><element><resourceD1>d1</resourceD1><resourceD2>d2</resourceD2></element>"
-				+ "				<element><resourceD1>d3</resourceD1><resourceD2><resourceD3>111</resourceD3></resourceD2></element></D>"
+				+ "				<B>"
+				+                "<element>b1</element>"
+				+                "<element>b2</element>"
+				+ "            </B>"
+				+ "				<C>"
+				+                "<resourceC1>c1</resourceC1>"
+				+                "<resourceC2></resourceC2>"
+				+              "</C>"
+//				+ "				<D>"
+//				+                "<element>"
+//				+                  "<resourceD1>d1</resourceD1>"
+//				+                  "<resourceD2>2222</resourceD2>"
+//				+                "</element>"
+////				+ "				<element>"
+////				+                  "<resourceD1>d3</resourceD1>"
+////				+                  "<resourceD2>1111</resourceD2>"
+////				+              "</element>"
+//				+			"</D>"
 				+ "				</ERDData>";
 		
 		
 		
 		Gson gson = GsonPool.getGson();
 		JsonParser jsonParser = new JsonParser();
-		JsonObject jsonObject = jsonParser.parse(XMLTools.getParseObject(rawXMLMessage, Param_IDLE_Xml.class).toString()).getAsJsonObject();
-		System.out.println(XMLTools.getParseObject(rawXMLMessage, Param_IDLE_Xml.class).toString());
-		Param_IDLE_Xxx param = gson.fromJson(jsonObject, Param_IDLE_Xxx.class);
+		HashMap<String, Object> param =(HashMap<String, Object>) (XMLTools.getParseObject(msg3, Param_IDLE_Xml.class));
+
 
 		System.out.println(param);
 //		System.out.println("X ="+param.getTest());

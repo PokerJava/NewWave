@@ -17,8 +17,10 @@ import ct.af.enums.EResultCode;
 import ct.af.enums.ESubState;
 import ct.af.instance.AFInstance;
 import ct.af.instance.AFSubInstance;
+import ct.af.message.incoming.parameter.Param_IDLE_Xml;
 import ct.af.message.incoming.parameter.Param_IDLE_Xxx;
 import ct.af.utils.GsonPool;
+import ct.af.utils.XMLTools;
 import ec02.af.abstracts.AbstractAF;
 import ec02.data.interfaces.EquinoxRawData;
 
@@ -225,6 +227,7 @@ public class Parser_IDLE_Xxx {
 					if(isParserXmlwithTool) 
 					{
 						//TODO pok
+						HashMap<String, Object> paramxml =(HashMap<String, Object>) (XMLTools.getParseObject(rawXMLMessage, Param_IDLE_Xml.class));
 						
 //						String regexResourceD0 = "^2{4}$";
 //						Pattern pattern = Pattern.compile(regexResourceD0);
