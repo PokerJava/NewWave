@@ -13,11 +13,6 @@ public class Param_IDLE_Xxx{
 	private Object B;
 	private Object C;
 	private Object D;
-	
-	private String company;  
-    private String name;
-    private String invoke;
-    private String mobileNo;
 
     private boolean isValid;
 	public Object getA() {
@@ -73,72 +68,6 @@ public class Param_IDLE_Xxx{
  		}
      }
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	public String getCompany() {
-		return company;
-	}
-	public void setCompany(String company) {
-		this.company = company;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getInvoke() {
-		return invoke;
-	}
-	public void setInvoke(String invoke) {
-		this.invoke = invoke;
-	}
-	public String getMobileNo() {
-		return mobileNo;
-	}
-	public void setMobileNo(String mobileNo) {
-		this.mobileNo = mobileNo;
-	}
-	
     public static String getParameterValueFromUrl(String url, String parameterName) {
         try {
 			if(url == null || "".equals(url)) {
@@ -182,11 +111,6 @@ public class Param_IDLE_Xxx{
     }
 	
 //=================================================================XML=================================================================//	
-	
-	
-	
-	
-	
 	
 	public Object getD() {
 		return D;

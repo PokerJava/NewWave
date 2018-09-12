@@ -71,6 +71,7 @@ public class Out_END_Xxx {
 			}
 			messageJson.add("D", jsonAry);
 			message = messageJson;
+			System.out.println(message);
 		}
 		else{	
 			strbuilder.append("&lt;A&gt;"+paramXxx.getA().toString()+"&lt;/A&gt;\n"+"&lt;B&gt;\n");
