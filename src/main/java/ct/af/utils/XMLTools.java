@@ -61,13 +61,13 @@ public class XMLTools {
 //		@ElementList(name = "ERDData", required = false)
 //		List<ERDHeader> header;
 		
-//		public ERDData getData() {
-//			return data;
-//		}
-//
-//		public void setData(ERDData data) {
-//			this.data = data;
-//		}
+		public ERDData getData() {
+			return data;
+		}
+
+		public void setData(ERDData data) {
+			this.data = data;
+		}
 
 
 //		public  List<ERDHeader> getHeader() {
@@ -105,16 +105,14 @@ public class XMLTools {
 
 		Object parsedObject = null;
 		Serializer serializer = ParserPool.getPersister();
+		HashMap<String, Object> paramHash = new HashMap<>();
 		try {
 			ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>" , true);
-			parsedObject = serializer.read(ERDContainer.class, "<xml>" + rawDataMsg + "</xml>" , false);
-//			parsedObject = serializer.read(aClass, "<xml>" + container.getHeader().get(0).getValue() + "</xml>", false);
-
-			HashMap<String, Object> paramHash = new HashMap<>();
+			parsedObject = serializer.read(aClass, "<xml>" + container.getData().getAll() + "</xml>", false);
 			paramHash = container.data.getAll();
-			Gson gson = GsonPool.getGson();
-			parsedObject = gson.toJson(paramHash);
-			GsonPool.pushGson(gson);
+//			Gson gson = GsonPool.getGson();
+//			parsedObject = gson.toJson(paramHash);
+//			GsonPool.pushGson(gson);
 		} catch (Exception e) {
 			if (!isTest) {
 				AFLog.e("[Exception] Error invalid ERDContainer");
@@ -132,7 +130,7 @@ public class XMLTools {
 			}
 		}
 		ParserPool.pushPersister((Persister) serializer);
-		return parsedObject;
+		return paramHash;
 	}
 
 }

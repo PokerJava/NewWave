@@ -38,7 +38,7 @@ public class Parser_IDLE_Xxx {
 		 */
 
 		String rawCType = "text/xml";
-		boolean isParserXmlwithTool = false;
+		boolean isParserXmlwithTool = true;
 		afSubIns.setType("text/xml");
 
 		String rawPlainMessage = "{ \"A\" : \"a\","
@@ -198,8 +198,14 @@ public class Parser_IDLE_Xxx {
 					if(isParserXmlwithTool) 
 					{
 						//TODO pok
-						HashMap<String, Object> paramxml =(HashMap<String, Object>) (XMLTools.getParseObject(rawXMLMessage, Param_IDLE_Xml.class));
+						HashMap<String, Object> paramxml =(HashMap<String, Object>) (XMLTools.getParseObject(rawXMLMessage, Param_IDLE_Xxx.class));
+						param.setA(paramxml.get("A"));
+						param.setB(paramxml.get("B"));
+						param.setC(paramxml.get("C"));
+						param.setD(paramxml.get("D"));
 						
+						
+						System.out.println((HashMap<String,Object>)param.getC());
 //						String regexResourceD0 = "^2{4}$";
 //						Pattern pattern = Pattern.compile(regexResourceD0);
 //						Matcher matcher = pattern.matcher(resourceValidGroup1);
@@ -271,7 +277,7 @@ public class Parser_IDLE_Xxx {
 						TreeMap<String, String> c = (TreeMap<String, String>)param.getC();
 						ArrayList<TreeMap<String, String>> d = (ArrayList<TreeMap<String, String>>)param.getD();
 						
-						String company = "a";
+						String company = "a1";
 						String regexCompany = "[0-9]";
 						pattern = Pattern.compile(regexCompany);
 						matcher = pattern.matcher(company);
