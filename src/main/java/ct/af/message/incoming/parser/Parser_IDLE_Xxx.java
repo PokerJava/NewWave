@@ -204,8 +204,7 @@ public class Parser_IDLE_Xxx {
 						param.setC(paramxml.get("C"));
 						param.setD(paramxml.get("D"));
 						
-						
-						System.out.println((HashMap<String,Object>)param.getC());
+
 //						String regexResourceD0 = "^2{4}$";
 //						Pattern pattern = Pattern.compile(regexResourceD0);
 //						Matcher matcher = pattern.matcher(resourceValidGroup1);
