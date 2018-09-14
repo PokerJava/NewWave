@@ -1,6 +1,8 @@
 package ct.af.message.incoming.parser;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -92,8 +94,15 @@ public class Parser_IDLE_Xml {
 		JsonParser jsonParser = new JsonParser();
 		HashMap<String, Object> param =(HashMap<String, Object>) (XMLTools.getParseObject(msg3, Param_IDLE_Xxx.class));
 
-
-		System.out.println(param);
+		ArrayList<TreeMap<String, String>> d = (ArrayList<TreeMap<String, String>>)param.get("D");
+		
+		for(int i=0;i<d.size();i++){
+			
+			System.out.println(d.get(i).get("resourceD1"));
+		}
+//		System.out.println(d.get(0).get("resourceD1"));
+//		System.out.println(d.get(1).get("resourceD1"));
+//		System.out.println(param);
 //		System.out.println("X ="+param.getTest());
 
 		return null;
