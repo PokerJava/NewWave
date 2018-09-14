@@ -90,7 +90,7 @@ public class Parser_IDLE_Xml {
 		
 		Gson gson = GsonPool.getGson();
 		JsonParser jsonParser = new JsonParser();
-		HashMap<String, Object> param =(HashMap<String, Object>) (XMLTools.getParseObject(msg3, Param_IDLE_Xml.class));
+		HashMap<String, Object> param =(HashMap<String, Object>) (XMLTools.getParseObject(msg3, Param_IDLE_Xxx.class));
 
 
 		System.out.println(param);
