@@ -1,6 +1,7 @@
 package ct.af.enums;
 
 public enum ESubState {
+	IDLE_PGW("IDLE_PGW"),
 	IDLE_XXX("IDLE_XXX"),
 	END_XXX("END_XXX"),
 	IDLE_XML("IDLE_XML"),
