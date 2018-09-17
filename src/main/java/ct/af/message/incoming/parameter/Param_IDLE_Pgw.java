@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class Param_IDLE_Pgw {
+	boolean isValid = true;
 	/* Parameter CCR-I */
 	String sessionId;
 	String authApplicationId;
@@ -11,6 +12,7 @@ public class Param_IDLE_Pgw {
 	String originRealm;
 	String ccRequestType;
 	String ccRequestNumber;
+	String destinationRealm;
 	String destinationHost;
 	String originStateId;
 	String networkRequestSupport;
@@ -34,6 +36,18 @@ public class Param_IDLE_Pgw {
 	TreeMap<String, Object> chargingRuleReport = new TreeMap<>();
 	ArrayList<TreeMap<String, String>> subScriptionId = new ArrayList<TreeMap<String, String>>();
 	
+	public boolean isValid() {
+		return isValid;
+	}
+	public void setValid(boolean isValid) {
+		this.isValid = isValid;
+	}
+	public String getDestinationRealm() {
+		return destinationRealm;
+	}
+	public void setDestinationRealm(String destinationRealm) {
+		this.destinationRealm = destinationRealm;
+	}
 	public String getSessionId() {
 		return sessionId;
 	}

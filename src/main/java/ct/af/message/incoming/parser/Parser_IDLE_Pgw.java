@@ -2,10 +2,14 @@ package ct.af.message.incoming.parser;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import ct.af.instance.AFInstance;
 import ct.af.instance.AFSubInstance;
 import ct.af.message.incoming.parameter.Param_IDLE_Pgw;
+import ct.af.utils.DiameterUtils;
+import ct.af.utils.ValidateUtils;
 import ec02.af.abstracts.AbstractAF;
 import ec02.data.interfaces.EquinoxRawData;
 
@@ -73,12 +77,13 @@ public class Parser_IDLE_Pgw {
 		if(isToolParser) {
 			
 		}else {
-			TreeMap<String, Object> param = (TreeMap<String, Object>) diameterParser(requestMessageCcrI);
+			DiameterUtils diameterUtils = new DiameterUtils();
+			TreeMap<String, Object> param = (TreeMap<String, Object>) diameterUtils.parser(requestMessageCcrI);
 			paramPgw.setSessionId(param.get("Session-Id").toString());
 			paramPgw.setAuthApplicationId(param.get("Auth-Application-Id").toString());
 			paramPgw.setOriginHost(param.get("Origin-Host").toString());
 			paramPgw.setOriginRealm(param.get("Origin-Realm").toString());
-			paramPgw.setDestinationHost(param.get("Destination-Realm").toString());
+			paramPgw.setDestinationRealm(param.get("Destination-Realm").toString());
 			paramPgw.setCcRequestType(param.get("CC-Request-Type").toString());
 			paramPgw.setCcRequestNumber(param.get("CC-Request-Number").toString());
 			paramPgw.setDestinationHost(param.get("Destination-Host").toString());
@@ -103,64 +108,105 @@ public class Parser_IDLE_Pgw {
 			paramPgw.setAccessNetworkChargingAddress(param.get("Access-Network-Charging-Address").toString());
 			paramPgw.setChargingRuleReport((TreeMap<String, Object>) param.get("Charging-Rule-Report"));
 			paramPgw.setOnline(param.get("Online").toString());
-		}
-		return paramPgw;
-	}
-	public Object diameterParser(Object message){
-		TreeMap<String, Object> messageTree;
-		Object dummyMessage = "";
-		
-		if(message instanceof String)
-		{
-			messageTree = new TreeMap<>();
-			String strMessage = message.toString();	
-			String tempMessage, FocusMessage;
-			int startKeyPosition;
-			int destKeyPosition;
-			int startPosition;
-			int destPosition;
-			int startValuePosition;
-			int destValuePosition;
-			String key;
-			String value;
-			tempMessage = strMessage;
-			tempMessage = tempMessage.trim();
-			tempMessage = tempMessage.replace("\r", "").replace("\n", "");
-			while(!tempMessage.isEmpty())
-			{
-				startPosition = tempMessage.indexOf("<")+1;
-				destPosition = tempMessage.indexOf(">");
-				FocusMessage = tempMessage.substring(startPosition, destPosition);
-				FocusMessage = FocusMessage.replace("/", "");
-				if(FocusMessage.contains("value="))
-				{
-					destKeyPosition = FocusMessage.indexOf("value=")-1;
-					key = FocusMessage.substring(0, destKeyPosition);
-					value = FocusMessage.split("\"")[1];
-					messageTree.put(key, value);
-					tempMessage = tempMessage.substring(destPosition+1, tempMessage.length());
-				}else {
-					key = FocusMessage;
-					destPosition = tempMessage.indexOf("</"+FocusMessage+">")+3+FocusMessage.length();
-					startValuePosition = tempMessage.indexOf("<"+FocusMessage+">")+2+FocusMessage.length();
-					destValuePosition = tempMessage.indexOf("</"+FocusMessage+">");
-					value = tempMessage.substring(startValuePosition, destValuePosition);
-					if(messageTree.containsKey(key))
-					{
-						ArrayList<TreeMap<String, Object>> aryTree = new ArrayList<TreeMap<String, Object>>();
-						aryTree.add((TreeMap<String, Object>) messageTree.get(key));
-						aryTree.add((TreeMap<String, Object>) diameterParser(value));
-						messageTree.put(key, aryTree);
-					}else {
-						messageTree.put(key, diameterParser(value));
-					}
-					tempMessage = tempMessage.substring(destPosition, tempMessage.length());
+			
+			if(paramPgw.getCcRequestType()!=null&& !paramPgw.getCcRequestType().isEmpty()&&new ValidateUtils().validRegex(paramPgw.getCcRequestType(), "[0-9]")) {
+				switch(paramPgw.getCcRequestType()) {
+					/* CCR-I */
+					case "1" :
+						if(paramPgw.getSessionId()==null&& paramPgw.getSessionId().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getAuthApplicationId()==null&& paramPgw.getAuthApplicationId().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getOriginHost()==null&& paramPgw.getOriginHost().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getOriginRealm()==null&& paramPgw.getOriginRealm().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getDestinationRealm()==null&& paramPgw.getDestinationRealm().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getCcRequestNumber()==null&& paramPgw.getCcRequestNumber().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getDestinationHost()==null&& paramPgw.getCcRequestNumber().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getOriginStateId()==null&& paramPgw.getOriginStateId().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getSubScriptionId()==null&& paramPgw.getSubScriptionId().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						else
+						{
+							for(int i=0;i<paramPgw.getSubScriptionId().size();i++)
+							{
+								if(paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Type")==null&&paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Type").isEmpty())
+								{
+									paramPgw.setValid(false);
+								}
+								if(paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Data")==null&&paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Data").isEmpty())
+								{
+									paramPgw.setValid(false);
+								}
+							}
+						}
+						if(paramPgw.getIpCanType()==null&& paramPgw.getIpCanType().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getRatType()==null&& paramPgw.getRatType().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getUserEquipmentInfo()==null&& paramPgw.getUserEquipmentInfo().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						else
+						{
+							if(paramPgw.getUserEquipmentInfo().get("User-Equipment-Info-Type")==null&& paramPgw.getUserEquipmentInfo().get("User-Equipment-Info-Type").isEmpty())
+							{
+								paramPgw.setValid(false);
+							}
+							if(paramPgw.getUserEquipmentInfo().get("User-Equpment-Info-Value")==null&& paramPgw.getUserEquipmentInfo().get("User-Equpment-Info-Value").isEmpty())
+							{
+								paramPgw.setValid(false);
+							}
+						}
+						if(paramPgw.getTgppSgsnAddress()==null&& paramPgw.getTgppSgsnAddress().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						if(paramPgw.getCalledStationId()==null&& paramPgw.getCalledStationId().isEmpty())
+						{
+							paramPgw.setValid(false);
+						}
+						break;
+					/* CCR-U */
+					case "2" :
+						break;
+					/* CCR-T */
+					case "3" :
+						break;
 				}
 			}
-			dummyMessage = messageTree;
-			return dummyMessage;
+			/* Validate */
+			/* Mandatory */
+			
 		}
-		
-		return dummyMessage;
+		return paramPgw;
 	}
 }
