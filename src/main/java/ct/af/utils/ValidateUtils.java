@@ -10,4 +10,13 @@ public class ValidateUtils {
 		Matcher matcher = pattern.matcher(text);
 		return matcher.find();
 	}
+	public boolean isNotNullAndNotEmpty(String data)
+	{
+		boolean isValid = false;
+		if(data!=null&&!data.isEmpty())
+		{
+			isValid = true;
+		}
+		return isValid;
+	}
 }

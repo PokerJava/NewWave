@@ -78,135 +78,276 @@ public class Parser_IDLE_Pgw {
 			
 		}else {
 			DiameterUtils diameterUtils = new DiameterUtils();
-			TreeMap<String, Object> param = (TreeMap<String, Object>) diameterUtils.parser(requestMessageCcrI);
-			paramPgw.setSessionId(param.get("Session-Id").toString());
-			paramPgw.setAuthApplicationId(param.get("Auth-Application-Id").toString());
-			paramPgw.setOriginHost(param.get("Origin-Host").toString());
-			paramPgw.setOriginRealm(param.get("Origin-Realm").toString());
-			paramPgw.setDestinationRealm(param.get("Destination-Realm").toString());
-			paramPgw.setCcRequestType(param.get("CC-Request-Type").toString());
-			paramPgw.setCcRequestNumber(param.get("CC-Request-Number").toString());
-			paramPgw.setDestinationHost(param.get("Destination-Host").toString());
-			paramPgw.setOriginStateId(param.get("Origin-State-Id").toString());
-			paramPgw.setSubScriptionId((ArrayList<TreeMap<String, String>>) param.get("Subscription-Id"));
-			paramPgw.setSupportedFeatures((TreeMap<String, String>) param.get("Supported-Features"));
-			paramPgw.setNetworkRequestSupport(param.get("Network-Request-Support").toString());
-			paramPgw.setBearerIdentifier(param.get("Bearer-Identifier").toString());
-			paramPgw.setBearerOperation(param.get("Bearer-Operation").toString());
-			paramPgw.setFramedIpAddress(param.get("Framed-IP-Address").toString());
-			paramPgw.setIpCanType(param.get("IP-CAN-Type").toString());
-			paramPgw.setRatType(param.get("RAT-Type").toString());
-			paramPgw.setUserEquipmentInfo((TreeMap<String, String>) param.get("User-Equipment-Info"));
-			paramPgw.setQosInformation((TreeMap<String, Object>)param.get("QoS-Information"));
-			paramPgw.setTgppSgsnMccMnc(param.get("TGPP-SGSN-MCC-MNC").toString());
-			paramPgw.setTgppSgsnAddress(param.get("TGPP-SGSN-Address").toString());
-			paramPgw.setTgppUserLocationInfo(param.get("TGPP-User-Location-Info").toString());
-			paramPgw.setTgppMsTimeZone(param.get("TGPP-MS-TimeZone").toString());
-			paramPgw.setCalledStationId(param.get("Called-Station-Id").toString());
-			paramPgw.setBearerUsage(param.get("Bearer-Usage").toString());
-			paramPgw.setOffline(param.get("Offline").toString());
-			paramPgw.setAccessNetworkChargingAddress(param.get("Access-Network-Charging-Address").toString());
-			paramPgw.setChargingRuleReport((TreeMap<String, Object>) param.get("Charging-Rule-Report"));
-			paramPgw.setOnline(param.get("Online").toString());
-			
-			if(paramPgw.getCcRequestType()!=null&& !paramPgw.getCcRequestType().isEmpty()&&new ValidateUtils().validRegex(paramPgw.getCcRequestType(), "[0-9]")) {
-				switch(paramPgw.getCcRequestType()) {
-					/* CCR-I */
-					case "1" :
-						if(paramPgw.getSessionId()==null&& paramPgw.getSessionId().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getAuthApplicationId()==null&& paramPgw.getAuthApplicationId().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getOriginHost()==null&& paramPgw.getOriginHost().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getOriginRealm()==null&& paramPgw.getOriginRealm().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getDestinationRealm()==null&& paramPgw.getDestinationRealm().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getCcRequestNumber()==null&& paramPgw.getCcRequestNumber().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getDestinationHost()==null&& paramPgw.getCcRequestNumber().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getOriginStateId()==null&& paramPgw.getOriginStateId().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getSubScriptionId()==null&& paramPgw.getSubScriptionId().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						else
-						{
-							for(int i=0;i<paramPgw.getSubScriptionId().size();i++)
-							{
-								if(paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Type")==null&&paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Type").isEmpty())
-								{
-									paramPgw.setValid(false);
-								}
-								if(paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Data")==null&&paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Data").isEmpty())
-								{
-									paramPgw.setValid(false);
-								}
-							}
-						}
-						if(paramPgw.getIpCanType()==null&& paramPgw.getIpCanType().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getRatType()==null&& paramPgw.getRatType().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getUserEquipmentInfo()==null&& paramPgw.getUserEquipmentInfo().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						else
-						{
-							if(paramPgw.getUserEquipmentInfo().get("User-Equipment-Info-Type")==null&& paramPgw.getUserEquipmentInfo().get("User-Equipment-Info-Type").isEmpty())
-							{
-								paramPgw.setValid(false);
-							}
-							if(paramPgw.getUserEquipmentInfo().get("User-Equpment-Info-Value")==null&& paramPgw.getUserEquipmentInfo().get("User-Equpment-Info-Value").isEmpty())
-							{
-								paramPgw.setValid(false);
-							}
-						}
-						if(paramPgw.getTgppSgsnAddress()==null&& paramPgw.getTgppSgsnAddress().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						if(paramPgw.getCalledStationId()==null&& paramPgw.getCalledStationId().isEmpty())
-						{
-							paramPgw.setValid(false);
-						}
-						break;
-					/* CCR-U */
-					case "2" :
-						break;
-					/* CCR-T */
-					case "3" :
-						break;
+			ValidateUtils validateutils = new ValidateUtils();
+			TreeMap<String, Object> param;
+			try {
+				param = (TreeMap<String, Object>) diameterUtils.parser(requestMessageCcrI);
+	
+				if(validateutils.isNotNullAndNotEmpty(param.get("CC-Request-Type").toString())&&validateutils.validRegex(param.get("CC-Request-Type").toString(), "[0-9]")) {
+					switch(param.get("CC-Request-Type").toString()) {
+						/* CCR-I */
+						case "1" :
+							/* Parser CCR-I */
+							parserToObjectCCRI(paramPgw, param);
+	
+							/* Validate CCR-I */
+							validateAllParamCCRI(paramPgw, validateutils);
+							
+							break;
+						/* CCR-U */
+						case "2" :
+							/* Parser CCR-U */
+							parserToObjectCCRU(paramPgw, param);
+							/* Validate CCR-U */
+							validateAllParamCCRU(paramPgw, validateutils);
+							
+							break;
+						/* CCR-T */
+						case "3" :
+							break;
+					}
+				}
+			}catch(Exception e) {
+				paramPgw.setValid(false);
+			}
+		}
+
+		return paramPgw;
+	}
+	public void parserToObjectCCRI(Param_IDLE_Pgw paramPgw, TreeMap<String, Object> param)
+	{
+		paramPgw.setSessionId(param.get("Session-Id").toString());
+		paramPgw.setAuthApplicationId(param.get("Auth-Application-Id").toString());
+		paramPgw.setOriginHost(param.get("Origin-Host").toString());
+		paramPgw.setOriginRealm(param.get("Origin-Realm").toString());
+		paramPgw.setDestinationRealm(param.get("Destination-Realm").toString());
+		paramPgw.setCcRequestType(param.get("CC-Request-Type").toString());
+		paramPgw.setCcRequestNumber(param.get("CC-Request-Number").toString());
+		paramPgw.setDestinationHost(param.get("Destination-Host").toString());
+		paramPgw.setOriginStateId(param.get("Origin-State-Id").toString());
+		paramPgw.setSubScriptionId((ArrayList<TreeMap<String, String>>) param.get("Subscription-Id"));
+		paramPgw.setSupportedFeatures((TreeMap<String, String>) param.get("Supported-Features"));
+		paramPgw.setNetworkRequestSupport(param.get("Network-Request-Support").toString());
+		paramPgw.setBearerIdentifier(param.get("Bearer-Identifier").toString());
+		paramPgw.setBearerOperation(param.get("Bearer-Operation").toString());
+		paramPgw.setFramedIpAddress(param.get("Framed-IP-Address").toString());
+		paramPgw.setIpCanType(param.get("IP-CAN-Type").toString());
+		paramPgw.setRatType(param.get("RAT-Type").toString());
+		paramPgw.setUserEquipmentInfo((TreeMap<String, String>) param.get("User-Equipment-Info"));
+		paramPgw.setQosInformation((TreeMap<String, Object>)param.get("QoS-Information"));
+		paramPgw.setTgppSgsnMccMnc(param.get("TGPP-SGSN-MCC-MNC").toString());
+		paramPgw.setTgppSgsnAddress(param.get("TGPP-SGSN-Address").toString());
+		paramPgw.setTgppUserLocationInfo(param.get("TGPP-User-Location-Info").toString());
+		paramPgw.setTgppMsTimeZone(param.get("TGPP-MS-TimeZone").toString());
+		paramPgw.setCalledStationId(param.get("Called-Station-Id").toString());
+		paramPgw.setBearerUsage(param.get("Bearer-Usage").toString());
+		paramPgw.setOffline(param.get("Offline").toString());
+		paramPgw.setAccessNetworkChargingAddress(param.get("Access-Network-Charging-Address").toString());
+		paramPgw.setChargingRuleReport((TreeMap<String, Object>) param.get("Charging-Rule-Report"));
+		paramPgw.setOnline(param.get("Online").toString());
+	}
+	public void parserToObjectCCRU(Param_IDLE_Pgw paramPgw, TreeMap<String, Object> param)
+	{
+		paramPgw.setSessionId(param.get("Session-Id").toString());
+		paramPgw.setAuthApplicationId(param.get("Auth-Application-Id").toString());
+		paramPgw.setOriginHost(param.get("Origin-Host").toString());
+		paramPgw.setOriginRealm(param.get("Origin-Realm").toString());
+		paramPgw.setDestinationRealm(param.get("Destination-Realm").toString());
+		paramPgw.setCcRequestType(param.get("CC-Request-Type").toString());
+		paramPgw.setCcRequestNumber(param.get("CC-Request-Number").toString());
+		paramPgw.setDestinationHost(param.get("Destination-Host").toString());
+		paramPgw.setOriginStateId(param.get("Origin-State-Id").toString());
+		paramPgw.setSubScriptionId((ArrayList<TreeMap<String, String>>) param.get("Subscription-Id"));
+		paramPgw.setSupportedFeatures((TreeMap<String, String>) param.get("Supported-Features"));
+		paramPgw.setNetworkRequestSupport(param.get("Network-Request-Support").toString());
+		paramPgw.setBearerIdentifier(param.get("Bearer-Identifier").toString());
+		paramPgw.setBearerOperation(param.get("Bearer-Operation").toString());
+		paramPgw.setFramedIpAddress(param.get("Framed-IP-Address").toString());
+		paramPgw.setIpCanType(param.get("IP-CAN-Type").toString());
+		paramPgw.setRatType(param.get("RAT-Type").toString());
+		paramPgw.setUserEquipmentInfo((TreeMap<String, String>) param.get("User-Equipment-Info"));
+		paramPgw.setQosInformation((TreeMap<String, Object>)param.get("QoS-Information"));
+		paramPgw.setTgppSgsnMccMnc(param.get("TGPP-SGSN-MCC-MNC").toString());
+		paramPgw.setTgppSgsnAddress(param.get("TGPP-SGSN-Address").toString());
+		paramPgw.setTgppUserLocationInfo(param.get("TGPP-User-Location-Info").toString());
+		paramPgw.setTgppMsTimeZone(param.get("TGPP-MS-TimeZone").toString());
+		paramPgw.setCalledStationId(param.get("Called-Station-Id").toString());
+		paramPgw.setBearerUsage(param.get("Bearer-Usage").toString());
+		paramPgw.setOffline(param.get("Offline").toString());
+		paramPgw.setAccessNetworkChargingAddress(param.get("Access-Network-Charging-Address").toString());
+		paramPgw.setChargingRuleReport((TreeMap<String, Object>) param.get("Charging-Rule-Report"));
+		paramPgw.setOnline(param.get("Online").toString());
+		paramPgw.setEventTrigger((ArrayList<String>) param.get("Event-Trigger"));
+	}
+	public void parserToObjectCCRT(Param_IDLE_Pgw paramPgw, TreeMap<String, Object> param)
+	{
+		paramPgw.setSessionId(param.get("Session-Id").toString());
+		paramPgw.setAuthApplicationId(param.get("Auth-Application-Id").toString());
+		paramPgw.setOriginHost(param.get("Origin-Host").toString());
+		paramPgw.setOriginRealm(param.get("Origin-Realm").toString());
+		paramPgw.setDestinationRealm(param.get("Destination-Realm").toString());
+		paramPgw.setCcRequestType(param.get("CC-Request-Type").toString());
+		paramPgw.setCcRequestNumber(param.get("CC-Request-Number").toString());
+		paramPgw.setDestinationHost(param.get("Destination-Host").toString());
+		paramPgw.setOriginStateId(param.get("Origin-State-Id").toString());
+		paramPgw.setSubScriptionId((ArrayList<TreeMap<String, String>>) param.get("Subscription-Id"));
+		paramPgw.setSupportedFeatures((TreeMap<String, String>) param.get("Supported-Features"));
+		paramPgw.setNetworkRequestSupport(param.get("Network-Request-Support").toString());
+		paramPgw.setBearerIdentifier(param.get("Bearer-Identifier").toString());
+		paramPgw.setBearerOperation(param.get("Bearer-Operation").toString());
+		paramPgw.setFramedIpAddress(param.get("Framed-IP-Address").toString());
+		paramPgw.setIpCanType(param.get("IP-CAN-Type").toString());
+		paramPgw.setRatType(param.get("RAT-Type").toString());
+		paramPgw.setUserEquipmentInfo((TreeMap<String, String>) param.get("User-Equipment-Info"));
+		paramPgw.setQosInformation((TreeMap<String, Object>)param.get("QoS-Information"));
+		paramPgw.setTgppSgsnMccMnc(param.get("TGPP-SGSN-MCC-MNC").toString());
+		paramPgw.setTgppSgsnAddress(param.get("TGPP-SGSN-Address").toString());
+		paramPgw.setTgppUserLocationInfo(param.get("TGPP-User-Location-Info").toString());
+		paramPgw.setTgppMsTimeZone(param.get("TGPP-MS-TimeZone").toString());
+		paramPgw.setCalledStationId(param.get("Called-Station-Id").toString());
+		paramPgw.setBearerUsage(param.get("Bearer-Usage").toString());
+		paramPgw.setOffline(param.get("Offline").toString());
+		paramPgw.setAccessNetworkChargingAddress(param.get("Access-Network-Charging-Address").toString());
+		paramPgw.setChargingRuleReport((TreeMap<String, Object>) param.get("Charging-Rule-Report"));
+		paramPgw.setOnline(param.get("Online").toString());
+		paramPgw.setTerminationCause(param.get("Termination-Cause").toString());
+	}
+	public void validateAllParamCCRI(Param_IDLE_Pgw paramPgw, ValidateUtils validateutils)
+	{
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getSessionId()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getAuthApplicationId()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getOriginHost()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getOriginRealm()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getDestinationRealm()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getCcRequestNumber()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getDestinationHost()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getOriginStateId()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getSubScriptionId().toString()))
+		{
+			paramPgw.setValid(false);
+		}
+		else
+		{
+			for(int i=0;i<paramPgw.getSubScriptionId().size();i++)
+			{
+				if(!validateutils.isNotNullAndNotEmpty(paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Type")))
+				{
+					paramPgw.setValid(false);
+				}
+				if(!validateutils.isNotNullAndNotEmpty(paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Data")))
+				{
+					paramPgw.setValid(false);
 				}
 			}
-			/* Validate */
-			/* Mandatory */
-			
 		}
-		return paramPgw;
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getIpCanType()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getRatType()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getUserEquipmentInfo().toString()))
+		{
+			paramPgw.setValid(false);
+		}
+		else
+		{
+			if(!validateutils.isNotNullAndNotEmpty(paramPgw.getUserEquipmentInfo().get("User-Equipment-Info-Type")))
+			{
+				paramPgw.setValid(false);
+			}
+			if(!validateutils.isNotNullAndNotEmpty(paramPgw.getUserEquipmentInfo().get("User-Equipment-Info-Value")))
+			{
+				paramPgw.setValid(false);
+			}
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getTgppSgsnAddress()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getCalledStationId()))
+		{
+			paramPgw.setValid(false);
+		}
+	}
+	public void validateAllParamCCRU(Param_IDLE_Pgw paramPgw, ValidateUtils validateutils)
+	{
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getSessionId()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getAuthApplicationId()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getOriginHost()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getOriginRealm()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getDestinationRealm()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getCcRequestNumber()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getDestinationHost()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getOriginStateId()))
+		{
+			paramPgw.setValid(false);
+		}
+		if(!validateutils.isNotNullAndNotEmpty(paramPgw.getSubScriptionId().toString()))
+		{
+			paramPgw.setValid(false);
+		}
+		else
+		{
+			for(int i=0;i<paramPgw.getSubScriptionId().size();i++)
+			{
+				if(!validateutils.isNotNullAndNotEmpty(paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Type")))
+				{
+					paramPgw.setValid(false);
+				}
+				if(!validateutils.isNotNullAndNotEmpty(paramPgw.getSubScriptionId().get(i).get("Subscription-Id-Data")))
+				{
+					paramPgw.setValid(false);
+				}
+			}
+		}
+		
 	}
 }

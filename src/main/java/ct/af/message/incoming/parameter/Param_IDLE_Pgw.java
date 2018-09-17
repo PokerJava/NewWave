@@ -35,7 +35,23 @@ public class Param_IDLE_Pgw {
 	TreeMap<String, Object> qosInformation = new TreeMap<>();
 	TreeMap<String, Object> chargingRuleReport = new TreeMap<>();
 	ArrayList<TreeMap<String, String>> subScriptionId = new ArrayList<TreeMap<String, String>>();
+
+	ArrayList<String> eventTrigger = new ArrayList<>();
 	
+	String terminationCause;
+	
+	public String getTerminationCause() {
+		return terminationCause;
+	}
+	public void setTerminationCause(String terminationCause) {
+		this.terminationCause = terminationCause;
+	}
+	public ArrayList<String> getEventTrigger() {
+		return eventTrigger;
+	}
+	public void setEventTrigger(ArrayList<String> eventTrigger) {
+		this.eventTrigger = eventTrigger;
+	}
 	public boolean isValid() {
 		return isValid;
 	}
