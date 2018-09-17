@@ -8,6 +8,7 @@ import java.util.TreeMap;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Path;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
@@ -99,53 +100,60 @@ public class DiameterUtils {
 	
 	static class ERDContainer {
 		@Element(name="Session-Id")
-		ElementsSess SessionId;
+		PgwStandardPlattern SessionId;
 		@Element(name="Auth-Application-Id")
-		ElementsSess authApplicationId;
+		PgwStandardPlattern authApplicationId;
+		@Element(name="Origin-Host")
+		PgwStandardPlattern originHost;
+		@Element(name="Origin-Realm")
+		PgwStandardPlattern originRealm;
+		@Element(name="CC-Request-Number")
+		PgwStandardPlattern ccRequestType; 
+		@Element(name="CC-Request-Type")
+		PgwStandardPlattern ccRequestNumber;
+		@Element(name="Destination-Realm")	
+		PgwStandardPlattern destinationRealm;	
+		@Element(name="Destination-Host")
+		PgwStandardPlattern destinationHost;
+		@Element(name="Origin-State-Id")
+		PgwStandardPlattern originStateId;
+		@Element(name="Network-Request-Support")
+		PgwStandardPlattern networkRequestSupport;
+		@Element(name="Bearer-Identifier")
+		PgwStandardPlattern bearerIdentifier;	
+		@Element(name="Bearer-Operation")
+		PgwStandardPlattern bearerOperation;
+		@Element(name="Framed-IP-Address")
+		PgwStandardPlattern framedIpAddress;
+		@Element(name="IP-CAN-Type")
+		PgwStandardPlattern ipCanType;
+		@Element(name="RAT-Type")
+		PgwStandardPlattern ratType;	
+		@Element(name="TGPP-SGSN-MCC-MNC")
+		PgwStandardPlattern tgppSgsnMccMnc;
+		@Element(name="TGPP-SGSN-Address")
+		PgwStandardPlattern tgppSgsnAddress;
+		@Element(name="TGPP-User-Location-Info")
+		PgwStandardPlattern tgppUserLocationInfo;
+		@Element(name="TGPP-MS-TimeZone")
+		PgwStandardPlattern tgppMsTimeZone;
+		@Element(name="Called-Station-Id")
+		PgwStandardPlattern calledStationId;
+		@Element(name="Bearer-Usage")
+		PgwStandardPlattern bearerUsage;
+		@Element(name="Offline")
+		PgwStandardPlattern offline;
+		@Element(name="Access-Network-Charging-Address")
+		PgwStandardPlattern accessNetworkChargingAddress;
+		@Element(name="Online")
+		PgwStandardPlattern online;
+		
+//		@ElementList(name="Subscription-Id")
+//		List<SubscriptionId> subscriptionId;
+		
+//		@Path("Subscription-Id/Subscription-Id-Type/@value")
 //		@Element
-//		private String originHost;
-//		@Element
-//		private String originRealm;
-//		@Element
-//		private String ccRequestType; 
-//		@Element
-//		private String ccRequestNumber;
-//		@Element	
-//		private String destinationRealm;	
-//		@Element
-//		private String destinationHost;
-//		@Element
-//		private String originStateId;
-//		@Element
-//		private String networkRequestSupport;
-//		@Element
-//		private String bearerIdentifier;	
-//		@Element
-//		private String bearerOperation;
-//		@Element
-//		private String framedIpAddress;
-//		@Element
-//		private String ipCanType;
-//		@Element
-//		private String ratType;	
-//		@Element
-//		private String tgppSgsnMccMnc;
-//		@Element
-//		private String tgppSgsnAddress;
-//		@Element
-//		private String tgppUserLocationInfo;
-//		@Element
-//		private String tgppMsTimeZone;
-//		@Element
-//		private String calledStationId;
-//		@Element
-//		private String bearerUsage;
-//		@Element
-//		private String offline;
-//		@Element
-//		private String accessNetworkChargingAddress;
-//		@Element
-//		private String online;
+//		String test;
 //		@Element(name = "ERDData", required = false)
 //		ERDData data;// = new ERDData();
 //
@@ -162,16 +170,22 @@ public class DiameterUtils {
 	
 
 	
-	static class ElementsSess {
-		 @Attribute(required = false)
+	static class PgwStandardPlattern {
+		 @Attribute(required = true)
 		 private String value;
+	}
+	static class SubscriptionId{
+		@Element(name="Subscription-Id-Type")
+		PgwStandardPlattern subscriptionIdType;
+//		@Element(name="Subscription-Id-Data")
+//		PgwStandardPlattern subscriptionIdData;
 	}
 	static class ERDData{
 
 		
 		
 		 @Element
-		ElementsSess SessionId;
+		PgwStandardPlattern SessionId;
 //		@Element
 //		private String authApplicationId;
 //		@Element
