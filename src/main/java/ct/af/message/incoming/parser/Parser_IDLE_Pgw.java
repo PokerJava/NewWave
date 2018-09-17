@@ -22,8 +22,8 @@ public class Parser_IDLE_Pgw {
 		Param_IDLE_Pgw paramPgw = new Param_IDLE_Pgw();
 		boolean isToolParser = true;
 		String requestMessageCcrI = //"<ERDData>"+
-				"<SessionId value=\"71:1002064297:GatewayService-4-13-1.SUK8N.awn.com;1393540200;2147818684\" />\r\n" ;
-//				"<Auth-Application-Id value=\"16777238\" />\r\n" + 
+				"<Session-Id value=\"71:1002064297:GatewayService-4-13-1.SUK8N.awn.com;1393540200;2147818684\" />\r\n"+
+				"<Auth-Application-Id value=\"16777238\" />\r\n";
 //				"<Origin-Host value=\"GatewayService-4-13-1.SUK8N.awn.com\" />\r\n" + 
 //				"<Origin-Realm value=\"awn.com\" />\r\n" + 
 //				"<Destination-Realm value=\"toro.awn.co.th\" />\r\n" + 

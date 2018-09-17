@@ -83,7 +83,7 @@ public class DiameterUtils {
 			Serializer serializer = ParserPool.getPersister();
 
 			try {
-				ERDData container = serializer.read(ERDData.class, "<xml>" + message + "</xml>" , true);
+				ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + message + "</xml>" , true);
 				parsedObject = serializer.read(ERDContainer.class, "<xml>" + message + "</xml>" , false);
 
 			} catch (Exception e) {
@@ -98,17 +98,65 @@ public class DiameterUtils {
 	}
 	
 	static class ERDContainer {
-		@Element(name = "ERDData", required = false)
-		ERDData data;// = new ERDData();
-
-		
-		public ERDData getData() {
-			return data;
-		}
-
-		public void setData(ERDData data) {
-			this.data = data;
-		}
+		@Element(name="Session-Id")
+		ElementsSess SessionId;
+		@Element(name="Auth-Application-Id")
+		ElementsSess authApplicationId;
+//		@Element
+//		private String originHost;
+//		@Element
+//		private String originRealm;
+//		@Element
+//		private String ccRequestType; 
+//		@Element
+//		private String ccRequestNumber;
+//		@Element	
+//		private String destinationRealm;	
+//		@Element
+//		private String destinationHost;
+//		@Element
+//		private String originStateId;
+//		@Element
+//		private String networkRequestSupport;
+//		@Element
+//		private String bearerIdentifier;	
+//		@Element
+//		private String bearerOperation;
+//		@Element
+//		private String framedIpAddress;
+//		@Element
+//		private String ipCanType;
+//		@Element
+//		private String ratType;	
+//		@Element
+//		private String tgppSgsnMccMnc;
+//		@Element
+//		private String tgppSgsnAddress;
+//		@Element
+//		private String tgppUserLocationInfo;
+//		@Element
+//		private String tgppMsTimeZone;
+//		@Element
+//		private String calledStationId;
+//		@Element
+//		private String bearerUsage;
+//		@Element
+//		private String offline;
+//		@Element
+//		private String accessNetworkChargingAddress;
+//		@Element
+//		private String online;
+//		@Element(name = "ERDData", required = false)
+//		ERDData data;// = new ERDData();
+//
+//		
+//		public ERDData getData() {
+//			return data;
+//		}
+//
+//		public void setData(ERDData data) {
+//			this.data = data;
+//		}
 
 	}
 	
