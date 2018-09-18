@@ -15,7 +15,7 @@ import java.util.Map;
 import org.joda.time.DateTime;
 
 public class AFSubInstance{
-
+	private String ccRequestType;
 	
 	private Param_IDLE_Xxx subParam;
 	private HashMap<String, Object> subHashMapParam = new HashMap<>();
@@ -177,6 +177,14 @@ public class AFSubInstance{
 	
 	
 	
+
+	public String getCcRequestType() {
+		return ccRequestType;
+	}
+
+	public void setCcRequestType(String ccRequestType) {
+		this.ccRequestType = ccRequestType;
+	}
 
 	public String getType() {
 		return type;
