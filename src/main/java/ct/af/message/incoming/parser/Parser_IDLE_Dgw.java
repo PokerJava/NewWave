@@ -116,8 +116,8 @@ public class Parser_IDLE_Dgw {
 							break;
 						default :
 							paramDgw.setValid(false);
-							afSubIns.setSubCurrentState(ESubState.IDLE_PGW.getState());
-							afSubIns.setSubControlState(ESubState.IDLE_PGW.getState());
+							afSubIns.setSubCurrentState(ESubState.IDLE_DGW.getState());
+							afSubIns.setSubControlState(ESubState.IDLE_DGW.getState());
 							afSubIns.setSubNextState(ESubState.Unknown.toString());
 							afSubIns.setSubResultCode(EResultCode.RE40300.getResultCode());
 							afSubIns.setSubInternalCode(EResultCode.RE40300.getResultCode());
@@ -125,8 +125,8 @@ public class Parser_IDLE_Dgw {
 							afInstance.putMainSubInstance(afSubIns.getSubInstanceNo(), afSubIns);
 							return paramDgw;
 					}	
-					afSubIns.setSubCurrentState(ESubState.IDLE_PGW.getState());
-					afSubIns.setSubControlState(ESubState.IDLE_PGW.getState());
+					afSubIns.setSubCurrentState(ESubState.IDLE_DGW.getState());
+					afSubIns.setSubControlState(ESubState.IDLE_DGW.getState());
 					afSubIns.setSubNextState(ESubState.Unknown.toString());
 					afSubIns.setSubResultCode(EResultCode.RE20000.getResultCode());
 					afSubIns.setSubInternalCode(EResultCode.RE20000.getResultCode());
@@ -136,8 +136,8 @@ public class Parser_IDLE_Dgw {
 				else
 				{
 					paramDgw.setValid(false);
-					afSubIns.setSubCurrentState(ESubState.IDLE_PGW.getState());
-					afSubIns.setSubControlState(ESubState.IDLE_PGW.getState());
+					afSubIns.setSubCurrentState(ESubState.IDLE_DGW.getState());
+					afSubIns.setSubControlState(ESubState.IDLE_DGW.getState());
 					afSubIns.setSubNextState(ESubState.Unknown.toString());
 					afSubIns.setSubResultCode(EResultCode.RE40300.getResultCode());
 					afSubIns.setSubInternalCode(EResultCode.RE40300.getResultCode());
@@ -146,8 +146,8 @@ public class Parser_IDLE_Dgw {
 				}
 			}catch(Exception e) {
 				paramDgw.setValid(false);
-				afSubIns.setSubCurrentState(ESubState.IDLE_PGW.getState());
-				afSubIns.setSubControlState(ESubState.IDLE_PGW.getState());
+				afSubIns.setSubCurrentState(ESubState.IDLE_DGW.getState());
+				afSubIns.setSubControlState(ESubState.IDLE_DGW.getState());
 				afSubIns.setSubNextState(ESubState.Unknown.toString());
 				afSubIns.setSubResultCode(EResultCode.RE40300.getResultCode());
 				afSubIns.setSubInternalCode(EResultCode.RE40300.getResultCode());

@@ -22,7 +22,7 @@ public class Parser_IDLE_Pgw {
 	public Param_IDLE_Pgw doParser(AbstractAF abstractAF, EquinoxRawData eqxRawData, AFInstance afInstance,
 			AFSubInstance afSubIns) {
 		Param_IDLE_Pgw paramPgw = new Param_IDLE_Pgw();
-		boolean isToolParser = false;
+		boolean isToolParser = true;
 		String requestMessageCcrI = //"<ERDData>"+
 				"<Session-Id value=\"71:1002064297:GatewayService-4-13-1.SUK8N.awn.com;1393540200;2147818684\" />\r\n"+
 				"<Auth-Application-Id value=\"16777238\" />\r\n"+
@@ -37,33 +37,33 @@ public class Parser_IDLE_Pgw {
 				"	<Subscription-Id-Type value=\"1\" />\r\n" + 
 				"	<Subscription-Id-Data value=\"520032100481461\" />\r\n" + 
 				"</Subscription-Id>\r\n" + 
-				"<Subscription-Id>\r\n" + 
-				"	<Subscription-Id-Type value=\"0\" />\r\n" + 
-				"	<Subscription-Id-Data value=\"66931427952\" />\r\n" + 
-				"</Subscription-Id>\r\n" + 
-				"<Supported-Features>\r\n" + 
-				"	<Vendor-Id value=\"10415\" />\r\n" + 
-				"	<Feature-List-ID value=\"1\" />\r\n" + 
-				"</Supported-Features>\r\n" + 
+//				"<Subscription-Id>\r\n" + 
+//				"	<Subscription-Id-Type value=\"0\" />\r\n" + 
+//				"	<Subscription-Id-Data value=\"66931427952\" />\r\n" + 
+//				"</Subscription-Id>\r\n" + 
+//				"<Supported-Features>\r\n" + 
+//				"	<Vendor-Id value=\"10415\" />\r\n" + 
+//				"	<Feature-List-ID value=\"1\" />\r\n" + 
+//				"</Supported-Features>\r\n" + 
 				"<Network-Request-Support value=\"0\" />\r\n" + 
 				"<Bearer-Identifier value=\"0x33363138363931393831\" />\r\n" + 
 				"<Bearer-Operation value=\"1\" />\r\n" + 
 				"<Framed-IP-Address value=\"0x0a73d033\" />\r\n" + 
 				"<IP-CAN-Type value=\"0\" />\r\n" + 
 				"<RAT-Type value=\"1000\" />\r\n" + 
-				"<User-Equipment-Info>\r\n" + 
-				"	<User-Equipment-Info-Type value=\"0\" />\r\n" + 
-				"	<User-Equipment-Info-Value value=\"0x30313330353630303836393633313132\" />\r\n" + 
-				"</User-Equipment-Info>\r\n" + 
-				"<QoS-Information>\r\n" + 
-				"	<QoS-Class-Identifier value=\"8\" />\r\n" + 
-				"	<Max-Requested-Bandwidth-UL value=\"8640000\" />\r\n" + 
-				"	<Max-Requested-Bandwidth-DL value=\"42000000\" />\r\n" + 
-				"	<Bearer-Identifier value=\"0x33363138363931393831\" />\r\n" + 
-				"	<Allocation-Retention-Priority>\r\n" + 
-				"		<Priority-Level value=\"3\" />\r\n" + 
-				"	</Allocation-Retention-Priority>\r\n" + 
-				"</QoS-Information>\r\n" + 
+//				"<User-Equipment-Info>\r\n" + 
+//				"	<User-Equipment-Info-Type value=\"0\" />\r\n" + 
+//				"	<User-Equipment-Info-Value value=\"0x30313330353630303836393633313132\" />\r\n" + 
+//				"</User-Equipment-Info>\r\n" + 
+//				"<QoS-Information>\r\n" + 
+//				"	<QoS-Class-Identifier value=\"8\" />\r\n" + 
+//				"	<Max-Requested-Bandwidth-UL value=\"8640000\" />\r\n" + 
+//				"	<Max-Requested-Bandwidth-DL value=\"42000000\" />\r\n" + 
+//				"	<Bearer-Identifier value=\"0x33363138363931393831\" />\r\n" + 
+//				"	<Allocation-Retention-Priority>\r\n" + 
+//				"		<Priority-Level value=\"3\" />\r\n" + 
+//				"	</Allocation-Retention-Priority>\r\n" + 
+//				"</QoS-Information>\r\n" + 
 				"<TGPP-SGSN-MCC-MNC value=\"52003\" />\r\n" + 
 				"<TGPP-SGSN-Address value=\"119.31.127.142\" />\r\n" + 
 				"<TGPP-User-Location-Info value=\"0x0125f03004c99e7e\" />\r\n" + 
@@ -72,11 +72,11 @@ public class Parser_IDLE_Pgw {
 				"<Bearer-Usage value=\"0\" />\r\n" + 
 				"<Offline value=\"1\" />\r\n" + 
 				"<Access-Network-Charging-Address value=\"110.49.195.7\" />\r\n" + 
-				"<Charging-Rule-Report>\r\n"
-				+ "<Charging-Rule-Base-Name value=\"rbn-default\" />\r\n" + 
-				"	<Charging-Rule-Base-Name value=\"rbn-deny-all\" />\r\n" + 
-				"	<Bearer-Identifier value=\"0x33363138363931393831\" />\r\n" + 
-				"</Charging-Rule-Report>\r\n" + 
+//				"<Charging-Rule-Report>\r\n"
+//				+ "<Charging-Rule-Base-Name value=\"rbn-default\" />\r\n" + 
+//				"	<Charging-Rule-Base-Name value=\"rbn-deny-all\" />\r\n" + 
+//				"	<Bearer-Identifier value=\"0x33363138363931393831\" />\r\n" + 
+//				"</Charging-Rule-Report>\r\n" + 
 				"<Online value=\"1\" />  \r\n";
 
 //				"</ERDData>";

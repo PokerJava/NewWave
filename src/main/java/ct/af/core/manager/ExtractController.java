@@ -25,7 +25,7 @@ public class ExtractController {
         if (currentState.equals(ESubState.IDLE_RESOURCEORDER.getState())) {
         	return new In_IDLE_ResourceOrder().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
         } else if(currentState.equals(ESubState.IDLE_PGW.getState())) {
-        	return new In_IDLE_Pgw().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
+        	return new In_IDLE_Dgw().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
         } else if(currentState.equals(ESubState.IDLE_XXX.getState())) {
         	return new In_IDLE_Xxx().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
         } else if(currentState.equals(ESubState.IDLE_XML.getState())){
@@ -88,7 +88,7 @@ public class ExtractController {
 	        if (rawDataType.equals(EEventType.REQUEST.getEventType()) && rawDataRet.equals(ERet.RET0.getRet())) {
 	            if (rawDataOrig.contains("ES05")) {
 
-                currentState = ESubState.IDLE_PGW.getState();
+                currentState = ESubState.IDLE_DGW.getState();
 
 //              currentState = ESubState.IDLE_XML.getState();
 //	            	currentState = ESubState.IDLE_RESOURCEORDER.getState();

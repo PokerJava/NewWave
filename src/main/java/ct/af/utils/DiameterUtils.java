@@ -1,5 +1,6 @@
 package ct.af.utils;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.TreeMap;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementArray;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Path;
 import org.simpleframework.xml.Serializer;
@@ -148,8 +150,16 @@ public class DiameterUtils {
 		@Element(name="Online")
 		PgwStandardPlattern online;
 		
-//		@ElementList(name="Subscription-Id")
-//		List<SubscriptionId> subscriptionId;
+//		@Element(name="Subscription-Id")
+//		SubscriptionId subscriptionId;
+		
+//		@ElementList(name="Subcription-Id")
+//		SubscriptionId subscriptionId;
+		@Element(name="Subscription-Id")
+		SubscriptionId subscriptionId;
+
+		
+
 		
 //		@Path("Subscription-Id/Subscription-Id-Type/@value")
 //		@Element
@@ -177,8 +187,8 @@ public class DiameterUtils {
 	static class SubscriptionId{
 		@Element(name="Subscription-Id-Type")
 		PgwStandardPlattern subscriptionIdType;
-//		@Element(name="Subscription-Id-Data")
-//		PgwStandardPlattern subscriptionIdData;
+		@Element(name="Subscription-Id-Data")
+		PgwStandardPlattern subscriptionIdData;
 	}
 	static class ERDData{
 

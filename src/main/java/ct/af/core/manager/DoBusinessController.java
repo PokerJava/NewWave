@@ -107,6 +107,15 @@ public class DoBusinessController {
             }
         }
 
+        if(afSubIns.getSubControlState().equals(ESubState.IDLE_DGW.getState())) {
+            Do_IDLE_ResourceOrder doIdleResource = new Do_IDLE_ResourceOrder();
+            doIdleResource.doBusinessLogic(abstractAF, afInstance, afSubIns);
+
+            if(!afSubIns.getSubNextState().equals(ESubState.Unknown.getState()))
+            {
+                return;
+            }
+        }
 
         if(afSubIns.getSubControlState().equals(ESubState.SDF_GETRESOURCEINFRANODE.getState())) {
             //AFLog.d("in do_business SDF_GETRESOURCEINFRANODE ");
@@ -294,6 +303,16 @@ public class DoBusinessController {
             }
         }
         if (afSubIns.getSubControlState().equals(ESubState.END_XXX.getState())) {
+            afSubIns.setSubControlState(ESubState.END.getState());
+            afSubIns.setSubNextState(ESubState.END.getState());
+            
+            if(!afSubIns.getSubNextState().equals(ESubState.Unknown.getState()))
+            {
+                return;
+            }
+        }
+        
+        if (afSubIns.getSubControlState().equals(ESubState.END_DGW.getState())) {
             afSubIns.setSubControlState(ESubState.END.getState());
             afSubIns.setSubNextState(ESubState.END.getState());
             
