@@ -1,7 +1,7 @@
 package ct.af.enums;
 
 public enum EConfig {
-  SDF_LOCATION_INTERFACE("ResourceName_SDF_LOCATION"),
+//  SDF_LOCATION_INTERFACE("ResourceName_SDF_LOCATION"),
 	
   PGZ_SERVER_NAME("PgzServerName"),
   UserSys_List("UserSysList"),

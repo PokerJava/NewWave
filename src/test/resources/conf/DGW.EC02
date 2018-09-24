@@ -4,6 +4,9 @@
 	</cold>
 
 	<warm>
+	<Ra_List value ="OCF1|OCF2"/>
+	<OCF1 value="xxx|yyy"/>
+	<OCF2 value="aaa|bbb"/>
 	
 	<!-- Servers Interface -->
 	<ResourceName_SDF_LOCATION value="SDF_LOCATION" />
