@@ -278,6 +278,9 @@ public class Config {
     }
 
     public static void loadConfig(AbstractAF abstractAF) {
+    	
+//    	SDF_LOCATION_INTERFACE = getWarmConfig(abstractAF, EConfig.SDF_LOCATION_INTERFACE.getName());
+    	
         LIB_VERSION = getLibversion(abstractAF);
         PGZ_SERVER_NAME = getWarmConfig(abstractAF, EConfig.PGZ_SERVER_NAME.getName());
         UserSysList =getWarmConfig(abstractAF, EConfig.UserSys_List.getName());

@@ -256,5 +256,50 @@ public class DiameterUtils {
 	}
 	
 	
-	
+	public String pokXMLArray(String xmlMessage) {
+		String tempMessage = xmlMessage;
+		String headData = "";
+		while(!tempMessage.isEmpty()) 
+		{
+			if(tempMessage.contains("<")||tempMessage.contains(">"))
+			{
+				tempMessage = tempMessage.trim();
+				int startFirstPosition = tempMessage.indexOf("<")+1;
+				int destinationFirstPosition = tempMessage.indexOf(">");
+				String data = tempMessage.substring(startFirstPosition, destinationFirstPosition);
+				if(data.equals(headData))
+				{
+					int length = countText(xmlMessage, data)/2;
+					int startInsert = xmlMessage.indexOf("<"+data);
+					int endInsert = xmlMessage.lastIndexOf("</"+data);
+					
+					StringBuilder text = new StringBuilder();
+					String first = xmlMessage.substring(0, startInsert);
+					String mid = xmlMessage.substring(startInsert, endInsert);
+					String end = xmlMessage.substring(endInsert, xmlMessage.length());
+					text.append(first);
+					text.append("<array length=\""+length+"\">");
+					text.append(mid);
+					text.append("</array>");
+					text.append(end);
+					tempMessage = text.toString();
+				}
+				tempMessage = tempMessage.substring(tempMessage.indexOf("</"+data+">")+3+data.length());
+				headData = data;
+				
+			}
+		}
+		
+		return xmlMessage;
+	}
+	public int countText(String text, String textForCount) {
+		int count = 0;
+		for (int i = 0; i < text.length(); i++) {
+			if (text.substring(i, i + 1).equals(textForCount)) {
+				++count;
+			}
+		}
+
+		return count;
+	}
 }

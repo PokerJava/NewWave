@@ -83,6 +83,8 @@ public class Parser_IDLE_Dgw {
 				"<Online value=\"1\" />  \r\n";
 
 //				"</ERDData>";
+		
+		requestMessageCcrI = new DiameterUtils().pokXMLArray(requestMessageCcrI);
 		if(isToolParser) {
 			DiameterUtils diameterUtils = new DiameterUtils();
 			TreeMap<String, Object> param = (TreeMap<String, Object>) (diameterUtils.getparserObject(requestMessageCcrI));
