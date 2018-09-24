@@ -11,6 +11,7 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementArray;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Path;
+import org.simpleframework.xml.Root;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
@@ -82,12 +83,12 @@ public class DiameterUtils {
 	public Object getparserObject(String message) {
 		
 			Object parsedObject = null;
-			HashMap<String, Object> paramHash = new HashMap<>();
+			TreeMap<String, Object> paramHash = new TreeMap<>();
 			Serializer serializer = ParserPool.getPersister();
 
 			try {
-				ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + message + "</xml>" , true);
-				parsedObject = serializer.read(ERDContainer.class, "<xml>" + message + "</xml>" , false);
+				ERDContainer container = serializer.read(ERDContainer.class, "<xml>" + message + "</xml>" , false);
+				parsedObject = serializer.read(ERDContainer.class, "<xml>" + message + "</xml>" , false);	
 
 			} catch (Exception e) {
 			
@@ -155,11 +156,12 @@ public class DiameterUtils {
 		
 //		@ElementList(name="Subcription-Id")
 //		SubscriptionId subscriptionId;
-		@Element(name="Subscription-Id")
-		SubscriptionId subscriptionId;
+//		@Element(name="Subscription-Id")
+//		SubscriptionId subscriptionId;
 
 		
-
+		@ElementArray(name = "array")
+		SubscriptionId[] param;
 		
 //		@Path("Subscription-Id/Subscription-Id-Type/@value")
 //		@Element
@@ -178,24 +180,33 @@ public class DiameterUtils {
 
 	}
 	
-
+	@Root(name = "Subscription-Id")
+	static class SubscriptionId{
+		
+	@Element(name="Subscription-Id-Type")
+	PgwStandardPlattern subscriptionIdType;
+	@Element(name="Subscription-Id-Data")
+	PgwStandardPlattern subscriptionIdData;
 	
+	
+}
+	
+ 
+ 
 	static class PgwStandardPlattern {
 		 @Attribute(required = true)
 		 private String value;
 	}
-	static class SubscriptionId{
-		@Element(name="Subscription-Id-Type")
-		PgwStandardPlattern subscriptionIdType;
-		@Element(name="Subscription-Id-Data")
-		PgwStandardPlattern subscriptionIdData;
-	}
+//	static class SubscriptionId{
+//		@Element(name="Subscription-Id-Type")
+//		PgwStandardPlattern subscriptionIdType;
+//		@Element(name="Subscription-Id-Data")
+//		PgwStandardPlattern subscriptionIdData;
+//	}
 	static class ERDData{
 
-		
-		
-		 @Element
-		PgwStandardPlattern SessionId;
+//		 @Element
+//		PgwStandardPlattern SessionId;
 //		@Element
 //		private String authApplicationId;
 //		@Element
@@ -242,7 +253,6 @@ public class DiameterUtils {
 //		private String accessNetworkChargingAddress;
 //		@Element
 //		private String online;
-	
 	}
 	
 	

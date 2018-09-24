@@ -24,7 +24,7 @@ public class ExtractController {
 
         if (currentState.equals(ESubState.IDLE_RESOURCEORDER.getState())) {
         	return new In_IDLE_ResourceOrder().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
-        } else if(currentState.equals(ESubState.IDLE_PGW.getState())) {
+        } else if(currentState.equals(ESubState.IDLE_DGW.getState())) {
         	return new In_IDLE_Dgw().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);
         } else if(currentState.equals(ESubState.IDLE_XXX.getState())) {
         	return new In_IDLE_Xxx().extractRawData(abstractAF, afInstance, afSubIns, eqxRawData);

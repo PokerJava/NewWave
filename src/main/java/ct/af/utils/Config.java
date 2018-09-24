@@ -18,7 +18,7 @@ import java.util.*;
 
 public class Config {
 
-	private static String SDF_LOCATION_INTERFACE;
+//	private static String SDF_LOCATION_INTERFACE;
 	
     private static boolean hasReloadConfig = true;
 
